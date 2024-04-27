@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'java-library'
+}
+
+group = 'edu.vn.hcmuaf'
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    api 'com.google.protobuf:protobuf-java:3.22.3'
+    api 'org.projectlombok:lombok:1.18.22'
+    api 'org.redisson:redisson:3.22.0'
+    api 'redis.clients:jedis:4.4.5'
+    api 'jakarta.servlet:jakarta.servlet-api:5.0.0'
+    api 'jakarta.websocket:jakarta.websocket-api:2.0.0'
+    api 'mysql:mysql-connector-java:8.0.28'
+    api 'log4j:log4j:1.2.12'
+
+
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
