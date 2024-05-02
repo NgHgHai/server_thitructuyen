@@ -3,6 +3,7 @@ package edu.vn.hcmuaf.layer0.handler;
 import edu.vn.hcmuaf.layer1.services.AuthService;
 import edu.vn.hcmuaf.layer2.proto.Proto;
 //import io.herosnake.layer2.redis.context.SessionContext;
+import edu.vn.hcmuaf.layer2.redis.context.SessionContext;
 import jakarta.websocket.Session;
 
 public class AuthHandler implements Subscriber {
@@ -21,10 +22,10 @@ public class AuthHandler implements Subscriber {
             if (packet.hasReqLogin()) {
                 authService.checkLogin(session, packet.getReqLogin());
             }
-//            if (packet.hasReqRelogin()) {
-//                SessionContext sessionContext = authService.checkRelogin(session, packet.getReqRelogin());
+            if (packet.hasReqRelogin()) {
+                SessionContext sessionContext = authService.checkRelogin(session, packet.getReqRelogin());
 //                this.reJoinRoom(sessionContext);
-//            }
+            }
 //            if (packet.hasReqRegister()) {
 //                authService.processRegister(session, packet.getReqRegister());
 //            }

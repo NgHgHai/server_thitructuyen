@@ -9962,12 +9962,6 @@ public final class Proto {
     int getGender();
 
     /**
-     * <code>int32 sponsor = 5;</code>
-     * @return The sponsor.
-     */
-    int getSponsor();
-
-    /**
      * <code>string email = 6;</code>
      * @return The email.
      */
@@ -9990,24 +9984,6 @@ public final class Proto {
      */
     com.google.protobuf.ByteString
         getPhoneBytes();
-
-    /**
-     * <code>int64 gold = 8;</code>
-     * @return The gold.
-     */
-    long getGold();
-
-    /**
-     * <code>int64 diamond = 9;</code>
-     * @return The diamond.
-     */
-    long getDiamond();
-
-    /**
-     * <code>int32 agencyLevel = 10;</code>
-     * @return The agencyLevel.
-     */
-    int getAgencyLevel();
   }
   /**
    * Protobuf type {@code proto.User}
@@ -10148,17 +10124,6 @@ public final class Proto {
       return gender_;
     }
 
-    public static final int SPONSOR_FIELD_NUMBER = 5;
-    private int sponsor_ = 0;
-    /**
-     * <code>int32 sponsor = 5;</code>
-     * @return The sponsor.
-     */
-    @java.lang.Override
-    public int getSponsor() {
-      return sponsor_;
-    }
-
     public static final int EMAIL_FIELD_NUMBER = 6;
     @SuppressWarnings("serial")
     private volatile java.lang.Object email_ = "";
@@ -10237,39 +10202,6 @@ public final class Proto {
       }
     }
 
-    public static final int GOLD_FIELD_NUMBER = 8;
-    private long gold_ = 0L;
-    /**
-     * <code>int64 gold = 8;</code>
-     * @return The gold.
-     */
-    @java.lang.Override
-    public long getGold() {
-      return gold_;
-    }
-
-    public static final int DIAMOND_FIELD_NUMBER = 9;
-    private long diamond_ = 0L;
-    /**
-     * <code>int64 diamond = 9;</code>
-     * @return The diamond.
-     */
-    @java.lang.Override
-    public long getDiamond() {
-      return diamond_;
-    }
-
-    public static final int AGENCYLEVEL_FIELD_NUMBER = 10;
-    private int agencyLevel_ = 0;
-    /**
-     * <code>int32 agencyLevel = 10;</code>
-     * @return The agencyLevel.
-     */
-    @java.lang.Override
-    public int getAgencyLevel() {
-      return agencyLevel_;
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -10296,23 +10228,11 @@ public final class Proto {
       if (gender_ != 0) {
         output.writeInt32(4, gender_);
       }
-      if (sponsor_ != 0) {
-        output.writeInt32(5, sponsor_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, email_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phone_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, phone_);
-      }
-      if (gold_ != 0L) {
-        output.writeInt64(8, gold_);
-      }
-      if (diamond_ != 0L) {
-        output.writeInt64(9, diamond_);
-      }
-      if (agencyLevel_ != 0) {
-        output.writeInt32(10, agencyLevel_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -10337,27 +10257,11 @@ public final class Proto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(4, gender_);
       }
-      if (sponsor_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, sponsor_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, email_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phone_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, phone_);
-      }
-      if (gold_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(8, gold_);
-      }
-      if (diamond_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(9, diamond_);
-      }
-      if (agencyLevel_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, agencyLevel_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -10382,18 +10286,10 @@ public final class Proto {
           .equals(other.getPlayerName())) return false;
       if (getGender()
           != other.getGender()) return false;
-      if (getSponsor()
-          != other.getSponsor()) return false;
       if (!getEmail()
           .equals(other.getEmail())) return false;
       if (!getPhone()
           .equals(other.getPhone())) return false;
-      if (getGold()
-          != other.getGold()) return false;
-      if (getDiamond()
-          != other.getDiamond()) return false;
-      if (getAgencyLevel()
-          != other.getAgencyLevel()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -10413,20 +10309,10 @@ public final class Proto {
       hash = (53 * hash) + getPlayerName().hashCode();
       hash = (37 * hash) + GENDER_FIELD_NUMBER;
       hash = (53 * hash) + getGender();
-      hash = (37 * hash) + SPONSOR_FIELD_NUMBER;
-      hash = (53 * hash) + getSponsor();
       hash = (37 * hash) + EMAIL_FIELD_NUMBER;
       hash = (53 * hash) + getEmail().hashCode();
       hash = (37 * hash) + PHONE_FIELD_NUMBER;
       hash = (53 * hash) + getPhone().hashCode();
-      hash = (37 * hash) + GOLD_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getGold());
-      hash = (37 * hash) + DIAMOND_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getDiamond());
-      hash = (37 * hash) + AGENCYLEVEL_FIELD_NUMBER;
-      hash = (53 * hash) + getAgencyLevel();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -10560,12 +10446,8 @@ public final class Proto {
         username_ = "";
         playerName_ = "";
         gender_ = 0;
-        sponsor_ = 0;
         email_ = "";
         phone_ = "";
-        gold_ = 0L;
-        diamond_ = 0L;
-        agencyLevel_ = 0;
         return this;
       }
 
@@ -10612,22 +10494,10 @@ public final class Proto {
           result.gender_ = gender_;
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.sponsor_ = sponsor_;
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
           result.email_ = email_;
         }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
+        if (((from_bitField0_ & 0x00000020) != 0)) {
           result.phone_ = phone_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.gold_ = gold_;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.diamond_ = diamond_;
-        }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.agencyLevel_ = agencyLevel_;
         }
       }
 
@@ -10659,27 +10529,15 @@ public final class Proto {
         if (other.getGender() != 0) {
           setGender(other.getGender());
         }
-        if (other.getSponsor() != 0) {
-          setSponsor(other.getSponsor());
-        }
         if (!other.getEmail().isEmpty()) {
           email_ = other.email_;
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         if (!other.getPhone().isEmpty()) {
           phone_ = other.phone_;
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000020;
           onChanged();
-        }
-        if (other.getGold() != 0L) {
-          setGold(other.getGold());
-        }
-        if (other.getDiamond() != 0L) {
-          setDiamond(other.getDiamond());
-        }
-        if (other.getAgencyLevel() != 0) {
-          setAgencyLevel(other.getAgencyLevel());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -10727,36 +10585,16 @@ public final class Proto {
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
-              case 40: {
-                sponsor_ = input.readInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 40
               case 50: {
                 email_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
               case 58: {
                 phone_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
-              case 64: {
-                gold_ = input.readInt64();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 64
-              case 72: {
-                diamond_ = input.readInt64();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 72
-              case 80: {
-                agencyLevel_ = input.readInt32();
-                bitField0_ |= 0x00000200;
-                break;
-              } // case 80
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -10982,38 +10820,6 @@ public final class Proto {
         return this;
       }
 
-      private int sponsor_ ;
-      /**
-       * <code>int32 sponsor = 5;</code>
-       * @return The sponsor.
-       */
-      @java.lang.Override
-      public int getSponsor() {
-        return sponsor_;
-      }
-      /**
-       * <code>int32 sponsor = 5;</code>
-       * @param value The sponsor to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSponsor(int value) {
-
-        sponsor_ = value;
-        bitField0_ |= 0x00000010;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 sponsor = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSponsor() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        sponsor_ = 0;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object email_ = "";
       /**
        * <code>string email = 6;</code>
@@ -11057,7 +10863,7 @@ public final class Proto {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         email_ = value;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -11067,7 +10873,7 @@ public final class Proto {
        */
       public Builder clearEmail() {
         email_ = getDefaultInstance().getEmail();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -11081,7 +10887,7 @@ public final class Proto {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         email_ = value;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -11129,7 +10935,7 @@ public final class Proto {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         phone_ = value;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -11139,7 +10945,7 @@ public final class Proto {
        */
       public Builder clearPhone() {
         phone_ = getDefaultInstance().getPhone();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -11153,103 +10959,7 @@ public final class Proto {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         phone_ = value;
-        bitField0_ |= 0x00000040;
-        onChanged();
-        return this;
-      }
-
-      private long gold_ ;
-      /**
-       * <code>int64 gold = 8;</code>
-       * @return The gold.
-       */
-      @java.lang.Override
-      public long getGold() {
-        return gold_;
-      }
-      /**
-       * <code>int64 gold = 8;</code>
-       * @param value The gold to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGold(long value) {
-
-        gold_ = value;
-        bitField0_ |= 0x00000080;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int64 gold = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGold() {
-        bitField0_ = (bitField0_ & ~0x00000080);
-        gold_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long diamond_ ;
-      /**
-       * <code>int64 diamond = 9;</code>
-       * @return The diamond.
-       */
-      @java.lang.Override
-      public long getDiamond() {
-        return diamond_;
-      }
-      /**
-       * <code>int64 diamond = 9;</code>
-       * @param value The diamond to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDiamond(long value) {
-
-        diamond_ = value;
-        bitField0_ |= 0x00000100;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int64 diamond = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDiamond() {
-        bitField0_ = (bitField0_ & ~0x00000100);
-        diamond_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private int agencyLevel_ ;
-      /**
-       * <code>int32 agencyLevel = 10;</code>
-       * @return The agencyLevel.
-       */
-      @java.lang.Override
-      public int getAgencyLevel() {
-        return agencyLevel_;
-      }
-      /**
-       * <code>int32 agencyLevel = 10;</code>
-       * @param value The agencyLevel to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAgencyLevel(int value) {
-
-        agencyLevel_ = value;
-        bitField0_ |= 0x00000200;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 agencyLevel = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAgencyLevel() {
-        bitField0_ = (bitField0_ & ~0x00000200);
-        agencyLevel_ = 0;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -11421,12 +11131,10 @@ public final class Proto {
       "password\030\002 \001(\t\022\017\n\007sponsor\030\003 \001(\t\022\r\n\005phone" +
       "\030\004 \001(\t\"\035\n\013ResRegister\022\016\n\006status\030\001 \001(\005\"7\n" +
       "\021ReqUpdateUserInfo\022\022\n\nplayerName\030\001 \001(\t\022\016" +
-      "\n\006gender\030\002 \001(\005\"\257\001\n\004User\022\016\n\006userId\030\001 \001(\005\022" +
-      "\020\n\010username\030\002 \001(\t\022\022\n\nplayerName\030\003 \001(\t\022\016\n" +
-      "\006gender\030\004 \001(\005\022\017\n\007sponsor\030\005 \001(\005\022\r\n\005email\030" +
-      "\006 \001(\t\022\r\n\005phone\030\007 \001(\t\022\014\n\004gold\030\010 \001(\003\022\017\n\007di" +
-      "amond\030\t \001(\003\022\023\n\013agencyLevel\030\n \001(\005B\034\n\032edu." +
-      "vn.hcmuaf.layer2.protob\006proto3"
+      "\n\006gender\030\002 \001(\005\"j\n\004User\022\016\n\006userId\030\001 \001(\005\022\020" +
+      "\n\010username\030\002 \001(\t\022\022\n\nplayerName\030\003 \001(\t\022\016\n\006" +
+      "gender\030\004 \001(\005\022\r\n\005email\030\006 \001(\t\022\r\n\005phone\030\007 \001" +
+      "(\tB\034\n\032edu.vn.hcmuaf.layer2.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -11515,7 +11223,7 @@ public final class Proto {
     internal_static_proto_User_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_User_descriptor,
-        new java.lang.String[] { "UserId", "Username", "PlayerName", "Gender", "Sponsor", "Email", "Phone", "Gold", "Diamond", "AgencyLevel", });
+        new java.lang.String[] { "UserId", "Username", "PlayerName", "Gender", "Email", "Phone", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

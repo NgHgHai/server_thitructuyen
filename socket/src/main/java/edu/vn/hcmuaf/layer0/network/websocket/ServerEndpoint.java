@@ -32,7 +32,7 @@ public class ServerEndpoint {
 
         initLoadingData();
 
-//        ServerEndpoint.subscribe(new SessionHandler());
+        ServerEndpoint.subscribe(new SessionHandler());
         ServerEndpoint.subscribe(new AuthHandler());
 //        ServerEndpoint.subscribe(new NotificationHandler());
 //        ThreadManage.me().execute(() -> {
@@ -67,7 +67,9 @@ public class ServerEndpoint {
         //Ask master AI for coding.
         session.setMaxIdleTimeout(60000);
 //        subscribers.forEach(s -> ThreadManage.me().execute(() -> s.onOpen(session)));
+
         subscribers.forEach(s -> s.onOpen(session));
+
     }
 
     //    @SneakyThrows

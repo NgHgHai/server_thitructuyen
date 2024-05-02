@@ -1,11 +1,13 @@
 package edu.vn.hcmuaf.layer2.redis;
 
+import edu.vn.hcmuaf.layer2.redis.context.SessionContext;
 import lombok.SneakyThrows;
 import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 import org.apache.log4j.Logger;
 import org.redisson.Redisson;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
+import org.redisson.api.redisnode.RedisCluster;
 import org.redisson.config.Config;
 import redis.clients.jedis.*;
 import redis.clients.jedis.exceptions.JedisConnectionException;
@@ -358,6 +360,24 @@ public abstract class RedisClusterHelper {
         Thread.sleep(millisecond);
     }
 
+    public abstract boolean add(String key, SessionContext value);
+
+    public abstract boolean add(SessionContext value);
+
+    public abstract SessionContext get(String key);
+
+    public abstract List<SessionContext> getAll();
+
+    public abstract Set<String> getKeys();
+
+    public abstract SessionContext remove(String key);
+
+    public abstract boolean containsKey(String key);
+
+    public abstract void clear();
+
+    public abstract String getKey(SessionContext value);
+
 
     public static class RedisProperties {
         private static final Logger logger = Logger.getLogger(RedisProperties.class);
@@ -390,4 +410,7 @@ public abstract class RedisClusterHelper {
         }
     }
 
+    public static void main(String[] args) {
+
+    }
 }
