@@ -23,18 +23,18 @@ import static edu.vn.hcmuaf.layer2.LogUtils.warnIfSlow;
 public class SessionCache extends RedisClusterHelper implements ICache<SessionContext> {
 
 
-    private static final String USER_KEY = SessionContext.class + ":user";
-    private static final String USER_WAIT_RELGOIN_KEY = SessionContext.class + ":waitingRelogin:";
+    private static final String USER_KEY = SessionContext.class + ":user"; // key of user online in redis (map)
+    private static final String USER_WAIT_RELGOIN_KEY = SessionContext.class + ":waitingRelogin:"; // key of user waiting relogin in redis , + them userId
     private static final SessionCache install = new SessionCache();
     private static final ConcurrentHashMap<String, SessionContext> sessionContextMap = new ConcurrentHashMap<>();
-
-    private final RMapCache<String, String> userOnline = getRedissonClient().getMapCache(USER_KEY, StringCodec.INSTANCE);
+    //<UserId,SessionContext> userOnline/
+    private static ConcurrentHashMap<String, SessionContext> userOnline = new ConcurrentHashMap<>();
 //    Logger logger = Logger.getLogger(SessionCache.class);
+
     ;
 
 
-    private SessionCache() {
-    }
+
 
     public static SessionCache me() {
         System.out.println("SessionCache me");
@@ -231,12 +231,5 @@ public class SessionCache extends RedisClusterHelper implements ICache<SessionCo
         return CompressUtils.decompress(data, SessionContext.class);
     }
 
-    public static void main(String[] args) {
-//        Jedis jedis = new Jedis("localhost", 6379);
-        Config config = new Config();
-        config.useSingleServer().setAddress("redis://localhost:6379");
-        Redisson redisson = (Redisson) Redisson.create(config);
 
-//        jedis.sadd("test".getBytes(), "1".getBytes(), "2".getBytes(), "3".getBytes());
-    }
 }

@@ -7,23 +7,21 @@ import edu.vn.hcmuaf.layer2.dao.Game;
 import edu.vn.hcmuaf.layer2.dao.UserDAO;
 import edu.vn.hcmuaf.layer2.dao.bean.UserBean;
 import edu.vn.hcmuaf.layer2.proto.Proto;
-
-import edu.vn.hcmuaf.layer2.redis.cache.SessionCache;
 import edu.vn.hcmuaf.layer2.redis.SessionManage;
+import edu.vn.hcmuaf.layer2.redis.cache.SessionCache;
+import edu.vn.hcmuaf.layer2.redis.channel.RoomNotify;
 import edu.vn.hcmuaf.layer2.redis.context.SessionContext;
+import jakarta.websocket.Session;
 import org.apache.log4j.Logger;
 
-import jakarta.websocket.Session;
 import java.util.Objects;
 import java.util.Random;
 import java.util.UUID;
 
 public class AuthService {
-    private static final Logger logger = Logger.getLogger(AuthService.class);
+//    private static final Logger logger = Logger.getLogger(AuthService.class);
     private static final AuthService instance = new AuthService();
     private static final SessionManage sessionManage = SessionManage.me();
-    private static final int defaultSponsorId = 123456;
-//    private static final UserBean defaultSponsor = UserDAO.selectUser(defaultSponsorId);
     private final Random r = new Random();
 
     private AuthService() {
@@ -33,47 +31,26 @@ public class AuthService {
         return instance;
     }
 
-//    public void processRegister(Session session, Proto.ReqRegister reqRegister) {
-//        if (reqRegister.getPassword() == null || "".equals(reqRegister.getPassword())) {
-//            sendMsgRegiter(session, 401);
-//        }
-////        if (reqRegister.getPhone() == null || "".equals(reqRegister.getPhone()) || !ViettelSMS.me().validatePhoneNumber(reqRegister.getPhone())) {
-////            sendMsgRegiter(session, 404);
-////        }
-//        int status = UserDAO.checkUserRegister(reqRegister.getUsername());
-//        if (status != 200) {
-//            sendMsgRegiter(session, status);
-//            return;
-//        }
-//        UserBean sponsorUser = UserDAO.selectUser(reqRegister.getSponsor());
-//        if (reqRegister.getSponsor() != null && !reqRegister.getSponsor().isEmpty() && sponsorUser == null) {
-//            sendMsgRegiter(session, 402);
-//            return;
-//        }
-//
-//
-//        if (defaultSponsor == null) {
-//            sendMsgRegiter(session, 403);
-//            return;
-//        }
-//
-//        int sponsorId = sponsorUser != null ? sponsorUser.getId() : defaultSponsorId;
-//        String tree = sponsorUser != null ? sponsorUser.getTree() : defaultSponsor.getTree();
-//        if (tree == null || tree.isEmpty()) {
-//            tree = defaultSponsor.getTree() + "," + sponsorId;
-//        }
-//
-//
-//        status = UserDAO.insertRegisterUser(reqRegister.getUsername(),
-//                BCrypt.withDefaults().hashToString(12, reqRegister.getPassword().toCharArray()),
-//                sponsorId == -2 ? defaultSponsorId : sponsorId, reqRegister.getPhone(), "");
-//        ViettelSMS.me().sendOTP(reqRegister.getPhone(), "");
-//        if (status == 200) {
-//            UserDAO.updateTree(reqRegister.getUsername(), tree);
-//        }
-//        sendMsgRegiter(session, status);
-//    }
+    public void processRegister(Session session, Proto.ReqRegister reqRegister) {
+        if (reqRegister.getPassword() == null || "".equals(reqRegister.getPassword())) {
+            sendMsgRegiter(session, 401);
+        }
+        if (reqRegister.getPhone() == null || "".equals(reqRegister.getPhone())) {
+            sendMsgRegiter(session, 404);
+        }
+        int status = UserDAO.checkUserRegister(reqRegister.getUsername());
+        if (status != 200) {
+            sendMsgRegiter(session, status);
+            return;
+        }
 
+        status = UserDAO.insertRegisterUser(reqRegister.getUsername(),
+                BCrypt.withDefaults().hashToString(12, reqRegister.getPassword().toCharArray()),
+                reqRegister.getPhone());
+
+
+        sendMsgRegiter(session, status);
+    }
 
 
     private void sendMsgRegiter(Session session, int i) {
@@ -93,7 +70,7 @@ public class AuthService {
             currSessionContext = SessionCache.me().get(sessionManage.getSessionID(session));
             attempt++;
             if (attempt > 5) {
-                logger.error("checkRelogin: attempt > 10");
+//                logger.error("checkRelogin: attempt > 10");
                 sendLoginWithStatus(session, 405);
                 return null;
             }
@@ -106,39 +83,30 @@ public class AuthService {
         } while (currSessionContext == null);
 
         UserBean userLogin = UserDAO.getUserLogin(packet.getUsername());
-//        if (userLogin.getIsBot()==1 && !((Boolean) session.getUserProperties().get("idPrivateConnect"))) {
-//            Proto.Packet.Builder builder = Proto.Packet.newBuilder();
-//            Proto.ResLogin.Builder resLogin = Proto.ResLogin.newBuilder();
-//            resLogin.setStatus(400);
-//            sendResponse(session, builder.setResLogin(resLogin.build()).build());
-//            return null;
-//        }
         if (userLogin == null || userLogin.getReloginToken() == null || "".equals(userLogin.getReloginToken()) ||
                 !userLogin.getReloginToken().equals(packet.getToken()) || userLogin.getActive() != 1) {
             sendLoginWithStatus(session, 403);
             return null;
         }
 
-//        String checkLoginInOtherDevice = checkLoginInOtherDevice(userLogin);
-//        if (Objects.equals(checkLoginInOtherDevice, sessionManage.getSessionID(session))) return null;
-//        if (checkLoginInOtherDevice != null) {
+        String checkLoginInOtherDevice = checkLoginInOtherDevice(userLogin);
+        if (Objects.equals(checkLoginInOtherDevice, sessionManage.getSessionID(session))) return null;
+        if (checkLoginInOtherDevice != null) {
 //            sendMesUserLoginInOtherDevice(checkLoginInOtherDevice);
-//
-//            Proto.Packet.Builder builder = Proto.Packet.newBuilder();
-//            Proto.ResLogin.Builder resLogin = Proto.ResLogin.newBuilder();
-//            resLogin.setStatus(404);
-//            sendResponse(session, builder.setResLogin(resLogin.build()).build());
-//            return null;
-//        }
+            Proto.Packet.Builder builder = Proto.Packet.newBuilder();
+            Proto.ResLogin.Builder resLogin = Proto.ResLogin.newBuilder();
+            resLogin.setStatus(404);
+            sendResponse(session, builder.setResLogin(resLogin.build()).build());
+            return null;
+        }
         sendLoginMsg(session, userLogin, currSessionContext);
         if (currSessionContext.getUser() == null) return null;
 
-//        SessionContext oldSessionContext = SessionCache.me().getAndRemoveUserInWaitingReloginList(currSessionContext.getUser().getUserId());
-//        if (oldSessionContext != null && oldSessionContext.getUser() != null && oldSessionContext.getRoomId() > 0) {
-//            currSessionContext.setRoomId(oldSessionContext.getRoomId());
-//            RoomNotify.me().subscribe(currSessionContext.getRoomId());
-//        }
-//        currSessionContext.setBot(userLogin.getIsBot() == 1);
+        SessionContext oldSessionContext = SessionCache.me().getAndRemoveUserInWaitingReloginList(currSessionContext.getUser().getUserId());
+        if (oldSessionContext != null && oldSessionContext.getUser() != null && oldSessionContext.getRoomId() > 0) {
+            currSessionContext.setRoomId(oldSessionContext.getRoomId());
+            RoomNotify.me().subscribe(currSessionContext.getRoomId());
+        }
 
         return currSessionContext;
     }
@@ -150,22 +118,29 @@ public class AuthService {
         resLogin.setStatus(status);
         sendResponse(session, builder.setResLogin(resLogin.build()).build());
     }
-//
-    public void checkLogin(Session session, Proto.ReqLogin packet) {
-//        try {
 
+    //
+    public void checkLogin(Session session, Proto.ReqLogin packet) {
+        try {
+            System.out.println("checkLogin: " + packet.getUsername() + " " + packet.getPassword()   );
             long begin = System.currentTimeMillis();
             UserBean userLogin = UserDAO.getUserLogin(packet.getUsername());
             Proto.PacketWrapper.Builder builders = Proto.PacketWrapper.newBuilder();
             Proto.Packet.Builder builder = Proto.Packet.newBuilder();
             Proto.ResLogin.Builder resLogin = Proto.ResLogin.newBuilder();
+            if (userLogin == null) {
+                System.out.println("checkLogin: userLogin null");
+            }else {
+                System.out.println("checkLogin: userLogin not null");
+                System.out.println(userLogin);
+            }
             if (userLogin == null || !BCrypt.verifyer().verify(packet.getPassword().getBytes(), userLogin.getPassword().getBytes()).verified) {
                 resLogin.setStatus(400);
                 sendResponse(session, builder.setResLogin(resLogin.build()).build());
                 return;
             }
 //
-            LogUtils.warnIfSlow(logger, begin, 300, "checkLogin Time: check DB ");
+//            LogUtils.warnIfSlow(logger, begin, 300, "checkLogin Time: check DB ");
             long begin1 = System.currentTimeMillis();
 //
             if (userLogin.getActive() == 2) {
@@ -188,26 +163,28 @@ public class AuthService {
 //            LogUtils.warnIfSlow(logger, begin, 200, "checkLogin Time: ");
             sendLoginMsg(session, userLogin, sessionContext);
 //            remove user waiting relogin; loai bo user trong danh sach doi relogin
-//            SessionContext removeSession = SessionCache.me().getAndRemoveUserInWaitingReloginList(userLogin.getId());
+            SessionContext removeSession = SessionCache.me().getAndRemoveUserInWaitingReloginList(userLogin.getId());
 //
 //            sessionContext.setBot(userLogin.getIsBot() == 1);
 //
-//        } catch (Exception e) {
+        } catch (Exception e) {
 //            logger.error("Authentication fail! ", e);
-//        }
+            System.out.println( e);
+        }
     }
-//
+
+    //
 //    // TODO: viết API check user có đang login tại tomcat khác hay không
-//    private String checkLoginInOtherDevice(UserBean userLogin) {
-//        String sessionIDInOther = SessionCache.me().getSessionIdOfUserOnLocalServer(userLogin.getId());
-//        if (sessionIDInOther == null) sessionIDInOther = SessionCache.me().getSessionId(userLogin.getId());
-//        if (sessionIDInOther == null) return null;
-//        if (!sessionIDInOther.contains(sessionManage.getEndPointID())) return sessionIDInOther;
-//        if (sessionIDInOther.contains(sessionManage.getEndPointID()) && sessionManage.get(sessionIDInOther) == null)
-//            return null;
-//        Session session1 = sessionManage.get(sessionIDInOther);
-//        return session1.isOpen() ? sessionIDInOther : null;
-//    }
+    private String checkLoginInOtherDevice(UserBean userLogin) {
+        String sessionIDInOther = SessionCache.me().getSessionIdOfUserOnLocalServer(userLogin.getId());
+        if (sessionIDInOther == null) sessionIDInOther = SessionCache.me().getSessionId(userLogin.getId());
+        if (sessionIDInOther == null) return null;
+        if (!sessionIDInOther.contains(sessionManage.getEndPointID())) return sessionIDInOther;
+        if (sessionIDInOther.contains(sessionManage.getEndPointID()) && sessionManage.get(sessionIDInOther) == null)
+            return null;
+        Session session1 = sessionManage.get(sessionIDInOther);
+        return session1.isOpen() ? sessionIDInOther : null;
+    }
 
 //    private void sendMesUserLoginInOtherDevice(String sessionId) {
 //        Proto.ResUserAlert.Builder resUserAlert = Proto.ResUserAlert.newBuilder().setStatus(404);
@@ -216,7 +193,7 @@ public class AuthService {
 
     private void sendLoginMsg(Session session, UserBean userLogin, SessionContext sessionContext) {
         if (sessionContext == null) {
-            logger.error("User Lost connection");
+//            logger.error("User Lost connection");
             return;
         }
         Proto.Packet.Builder builder = Proto.Packet.newBuilder();

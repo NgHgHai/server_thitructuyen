@@ -916,6 +916,141 @@ public final class Proto {
      */
     edu.vn.hcmuaf.layer2.proto.Proto.ReqUpdateUserInfoOrBuilder getReqUpdateUserInfoOrBuilder();
 
+    /**
+     * <code>.proto.ResUserInfo resUserInfo = 11;</code>
+     * @return Whether the resUserInfo field is set.
+     */
+    boolean hasResUserInfo();
+    /**
+     * <code>.proto.ResUserInfo resUserInfo = 11;</code>
+     * @return The resUserInfo.
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo getResUserInfo();
+    /**
+     * <code>.proto.ResUserInfo resUserInfo = 11;</code>
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfoOrBuilder getResUserInfoOrBuilder();
+
+    /**
+     * <code>.proto.ReqCreateRoom reqCreateRoom = 12;</code>
+     * @return Whether the reqCreateRoom field is set.
+     */
+    boolean hasReqCreateRoom();
+    /**
+     * <code>.proto.ReqCreateRoom reqCreateRoom = 12;</code>
+     * @return The reqCreateRoom.
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom getReqCreateRoom();
+    /**
+     * <code>.proto.ReqCreateRoom reqCreateRoom = 12;</code>
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoomOrBuilder getReqCreateRoomOrBuilder();
+
+    /**
+     * <code>.proto.ResCreateRoom resCreateRoom = 13;</code>
+     * @return Whether the resCreateRoom field is set.
+     */
+    boolean hasResCreateRoom();
+    /**
+     * <code>.proto.ResCreateRoom resCreateRoom = 13;</code>
+     * @return The resCreateRoom.
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom getResCreateRoom();
+    /**
+     * <code>.proto.ResCreateRoom resCreateRoom = 13;</code>
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoomOrBuilder getResCreateRoomOrBuilder();
+
+    /**
+     * <code>.proto.ReqJoinRoom reqJoinRoom = 14;</code>
+     * @return Whether the reqJoinRoom field is set.
+     */
+    boolean hasReqJoinRoom();
+    /**
+     * <code>.proto.ReqJoinRoom reqJoinRoom = 14;</code>
+     * @return The reqJoinRoom.
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom getReqJoinRoom();
+    /**
+     * <code>.proto.ReqJoinRoom reqJoinRoom = 14;</code>
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoomOrBuilder getReqJoinRoomOrBuilder();
+
+    /**
+     * <code>.proto.ResJoinRoom resJoinRoom = 15;</code>
+     * @return Whether the resJoinRoom field is set.
+     */
+    boolean hasResJoinRoom();
+    /**
+     * <code>.proto.ResJoinRoom resJoinRoom = 15;</code>
+     * @return The resJoinRoom.
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom getResJoinRoom();
+    /**
+     * <code>.proto.ResJoinRoom resJoinRoom = 15;</code>
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoomOrBuilder getResJoinRoomOrBuilder();
+
+    /**
+     * <code>.proto.ReqOutRoom reqOutRoom = 16;</code>
+     * @return Whether the reqOutRoom field is set.
+     */
+    boolean hasReqOutRoom();
+    /**
+     * <code>.proto.ReqOutRoom reqOutRoom = 16;</code>
+     * @return The reqOutRoom.
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom getReqOutRoom();
+    /**
+     * <code>.proto.ReqOutRoom reqOutRoom = 16;</code>
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoomOrBuilder getReqOutRoomOrBuilder();
+
+    /**
+     * <code>.proto.ResOutRoom resOutRoom = 17;</code>
+     * @return Whether the resOutRoom field is set.
+     */
+    boolean hasResOutRoom();
+    /**
+     * <code>.proto.ResOutRoom resOutRoom = 17;</code>
+     * @return The resOutRoom.
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom getResOutRoom();
+    /**
+     * <code>.proto.ResOutRoom resOutRoom = 17;</code>
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoomOrBuilder getResOutRoomOrBuilder();
+
+    /**
+     * <code>.proto.ReqCloseRoom reqCloseRoom = 18;</code>
+     * @return Whether the reqCloseRoom field is set.
+     */
+    boolean hasReqCloseRoom();
+    /**
+     * <code>.proto.ReqCloseRoom reqCloseRoom = 18;</code>
+     * @return The reqCloseRoom.
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom getReqCloseRoom();
+    /**
+     * <code>.proto.ReqCloseRoom reqCloseRoom = 18;</code>
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoomOrBuilder getReqCloseRoomOrBuilder();
+
+    /**
+     * <code>.proto.ResCloseRoom resCloseRoom = 19;</code>
+     * @return Whether the resCloseRoom field is set.
+     */
+    boolean hasResCloseRoom();
+    /**
+     * <code>.proto.ResCloseRoom resCloseRoom = 19;</code>
+     * @return The resCloseRoom.
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom getResCloseRoom();
+    /**
+     * <code>.proto.ResCloseRoom resCloseRoom = 19;</code>
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoomOrBuilder getResCloseRoomOrBuilder();
+
     edu.vn.hcmuaf.layer2.proto.Proto.Packet.DataCase getDataCase();
   }
   /**
@@ -969,6 +1104,15 @@ public final class Proto {
       REQREGISTER(8),
       RESREGISTER(9),
       REQUPDATEUSERINFO(10),
+      RESUSERINFO(11),
+      REQCREATEROOM(12),
+      RESCREATEROOM(13),
+      REQJOINROOM(14),
+      RESJOINROOM(15),
+      REQOUTROOM(16),
+      RESOUTROOM(17),
+      REQCLOSEROOM(18),
+      RESCLOSEROOM(19),
       DATA_NOT_SET(0);
       private final int value;
       private DataCase(int value) {
@@ -996,6 +1140,15 @@ public final class Proto {
           case 8: return REQREGISTER;
           case 9: return RESREGISTER;
           case 10: return REQUPDATEUSERINFO;
+          case 11: return RESUSERINFO;
+          case 12: return REQCREATEROOM;
+          case 13: return RESCREATEROOM;
+          case 14: return REQJOINROOM;
+          case 15: return RESJOINROOM;
+          case 16: return REQOUTROOM;
+          case 17: return RESOUTROOM;
+          case 18: return REQCLOSEROOM;
+          case 19: return RESCLOSEROOM;
           case 0: return DATA_NOT_SET;
           default: return null;
         }
@@ -1321,6 +1474,285 @@ public final class Proto {
       return edu.vn.hcmuaf.layer2.proto.Proto.ReqUpdateUserInfo.getDefaultInstance();
     }
 
+    public static final int RESUSERINFO_FIELD_NUMBER = 11;
+    /**
+     * <code>.proto.ResUserInfo resUserInfo = 11;</code>
+     * @return Whether the resUserInfo field is set.
+     */
+    @java.lang.Override
+    public boolean hasResUserInfo() {
+      return dataCase_ == 11;
+    }
+    /**
+     * <code>.proto.ResUserInfo resUserInfo = 11;</code>
+     * @return The resUserInfo.
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo getResUserInfo() {
+      if (dataCase_ == 11) {
+         return (edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo) data_;
+      }
+      return edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo.getDefaultInstance();
+    }
+    /**
+     * <code>.proto.ResUserInfo resUserInfo = 11;</code>
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfoOrBuilder getResUserInfoOrBuilder() {
+      if (dataCase_ == 11) {
+         return (edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo) data_;
+      }
+      return edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo.getDefaultInstance();
+    }
+
+    public static final int REQCREATEROOM_FIELD_NUMBER = 12;
+    /**
+     * <code>.proto.ReqCreateRoom reqCreateRoom = 12;</code>
+     * @return Whether the reqCreateRoom field is set.
+     */
+    @java.lang.Override
+    public boolean hasReqCreateRoom() {
+      return dataCase_ == 12;
+    }
+    /**
+     * <code>.proto.ReqCreateRoom reqCreateRoom = 12;</code>
+     * @return The reqCreateRoom.
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom getReqCreateRoom() {
+      if (dataCase_ == 12) {
+         return (edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom) data_;
+      }
+      return edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom.getDefaultInstance();
+    }
+    /**
+     * <code>.proto.ReqCreateRoom reqCreateRoom = 12;</code>
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoomOrBuilder getReqCreateRoomOrBuilder() {
+      if (dataCase_ == 12) {
+         return (edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom) data_;
+      }
+      return edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom.getDefaultInstance();
+    }
+
+    public static final int RESCREATEROOM_FIELD_NUMBER = 13;
+    /**
+     * <code>.proto.ResCreateRoom resCreateRoom = 13;</code>
+     * @return Whether the resCreateRoom field is set.
+     */
+    @java.lang.Override
+    public boolean hasResCreateRoom() {
+      return dataCase_ == 13;
+    }
+    /**
+     * <code>.proto.ResCreateRoom resCreateRoom = 13;</code>
+     * @return The resCreateRoom.
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom getResCreateRoom() {
+      if (dataCase_ == 13) {
+         return (edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom) data_;
+      }
+      return edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom.getDefaultInstance();
+    }
+    /**
+     * <code>.proto.ResCreateRoom resCreateRoom = 13;</code>
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoomOrBuilder getResCreateRoomOrBuilder() {
+      if (dataCase_ == 13) {
+         return (edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom) data_;
+      }
+      return edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom.getDefaultInstance();
+    }
+
+    public static final int REQJOINROOM_FIELD_NUMBER = 14;
+    /**
+     * <code>.proto.ReqJoinRoom reqJoinRoom = 14;</code>
+     * @return Whether the reqJoinRoom field is set.
+     */
+    @java.lang.Override
+    public boolean hasReqJoinRoom() {
+      return dataCase_ == 14;
+    }
+    /**
+     * <code>.proto.ReqJoinRoom reqJoinRoom = 14;</code>
+     * @return The reqJoinRoom.
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom getReqJoinRoom() {
+      if (dataCase_ == 14) {
+         return (edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom) data_;
+      }
+      return edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom.getDefaultInstance();
+    }
+    /**
+     * <code>.proto.ReqJoinRoom reqJoinRoom = 14;</code>
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoomOrBuilder getReqJoinRoomOrBuilder() {
+      if (dataCase_ == 14) {
+         return (edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom) data_;
+      }
+      return edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom.getDefaultInstance();
+    }
+
+    public static final int RESJOINROOM_FIELD_NUMBER = 15;
+    /**
+     * <code>.proto.ResJoinRoom resJoinRoom = 15;</code>
+     * @return Whether the resJoinRoom field is set.
+     */
+    @java.lang.Override
+    public boolean hasResJoinRoom() {
+      return dataCase_ == 15;
+    }
+    /**
+     * <code>.proto.ResJoinRoom resJoinRoom = 15;</code>
+     * @return The resJoinRoom.
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom getResJoinRoom() {
+      if (dataCase_ == 15) {
+         return (edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom) data_;
+      }
+      return edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom.getDefaultInstance();
+    }
+    /**
+     * <code>.proto.ResJoinRoom resJoinRoom = 15;</code>
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoomOrBuilder getResJoinRoomOrBuilder() {
+      if (dataCase_ == 15) {
+         return (edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom) data_;
+      }
+      return edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom.getDefaultInstance();
+    }
+
+    public static final int REQOUTROOM_FIELD_NUMBER = 16;
+    /**
+     * <code>.proto.ReqOutRoom reqOutRoom = 16;</code>
+     * @return Whether the reqOutRoom field is set.
+     */
+    @java.lang.Override
+    public boolean hasReqOutRoom() {
+      return dataCase_ == 16;
+    }
+    /**
+     * <code>.proto.ReqOutRoom reqOutRoom = 16;</code>
+     * @return The reqOutRoom.
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom getReqOutRoom() {
+      if (dataCase_ == 16) {
+         return (edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom) data_;
+      }
+      return edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom.getDefaultInstance();
+    }
+    /**
+     * <code>.proto.ReqOutRoom reqOutRoom = 16;</code>
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoomOrBuilder getReqOutRoomOrBuilder() {
+      if (dataCase_ == 16) {
+         return (edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom) data_;
+      }
+      return edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom.getDefaultInstance();
+    }
+
+    public static final int RESOUTROOM_FIELD_NUMBER = 17;
+    /**
+     * <code>.proto.ResOutRoom resOutRoom = 17;</code>
+     * @return Whether the resOutRoom field is set.
+     */
+    @java.lang.Override
+    public boolean hasResOutRoom() {
+      return dataCase_ == 17;
+    }
+    /**
+     * <code>.proto.ResOutRoom resOutRoom = 17;</code>
+     * @return The resOutRoom.
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom getResOutRoom() {
+      if (dataCase_ == 17) {
+         return (edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom) data_;
+      }
+      return edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom.getDefaultInstance();
+    }
+    /**
+     * <code>.proto.ResOutRoom resOutRoom = 17;</code>
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoomOrBuilder getResOutRoomOrBuilder() {
+      if (dataCase_ == 17) {
+         return (edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom) data_;
+      }
+      return edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom.getDefaultInstance();
+    }
+
+    public static final int REQCLOSEROOM_FIELD_NUMBER = 18;
+    /**
+     * <code>.proto.ReqCloseRoom reqCloseRoom = 18;</code>
+     * @return Whether the reqCloseRoom field is set.
+     */
+    @java.lang.Override
+    public boolean hasReqCloseRoom() {
+      return dataCase_ == 18;
+    }
+    /**
+     * <code>.proto.ReqCloseRoom reqCloseRoom = 18;</code>
+     * @return The reqCloseRoom.
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom getReqCloseRoom() {
+      if (dataCase_ == 18) {
+         return (edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom) data_;
+      }
+      return edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom.getDefaultInstance();
+    }
+    /**
+     * <code>.proto.ReqCloseRoom reqCloseRoom = 18;</code>
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoomOrBuilder getReqCloseRoomOrBuilder() {
+      if (dataCase_ == 18) {
+         return (edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom) data_;
+      }
+      return edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom.getDefaultInstance();
+    }
+
+    public static final int RESCLOSEROOM_FIELD_NUMBER = 19;
+    /**
+     * <code>.proto.ResCloseRoom resCloseRoom = 19;</code>
+     * @return Whether the resCloseRoom field is set.
+     */
+    @java.lang.Override
+    public boolean hasResCloseRoom() {
+      return dataCase_ == 19;
+    }
+    /**
+     * <code>.proto.ResCloseRoom resCloseRoom = 19;</code>
+     * @return The resCloseRoom.
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom getResCloseRoom() {
+      if (dataCase_ == 19) {
+         return (edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom) data_;
+      }
+      return edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom.getDefaultInstance();
+    }
+    /**
+     * <code>.proto.ResCloseRoom resCloseRoom = 19;</code>
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoomOrBuilder getResCloseRoomOrBuilder() {
+      if (dataCase_ == 19) {
+         return (edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom) data_;
+      }
+      return edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1364,6 +1796,33 @@ public final class Proto {
       }
       if (dataCase_ == 10) {
         output.writeMessage(10, (edu.vn.hcmuaf.layer2.proto.Proto.ReqUpdateUserInfo) data_);
+      }
+      if (dataCase_ == 11) {
+        output.writeMessage(11, (edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo) data_);
+      }
+      if (dataCase_ == 12) {
+        output.writeMessage(12, (edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom) data_);
+      }
+      if (dataCase_ == 13) {
+        output.writeMessage(13, (edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom) data_);
+      }
+      if (dataCase_ == 14) {
+        output.writeMessage(14, (edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom) data_);
+      }
+      if (dataCase_ == 15) {
+        output.writeMessage(15, (edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom) data_);
+      }
+      if (dataCase_ == 16) {
+        output.writeMessage(16, (edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom) data_);
+      }
+      if (dataCase_ == 17) {
+        output.writeMessage(17, (edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom) data_);
+      }
+      if (dataCase_ == 18) {
+        output.writeMessage(18, (edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom) data_);
+      }
+      if (dataCase_ == 19) {
+        output.writeMessage(19, (edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom) data_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1413,6 +1872,42 @@ public final class Proto {
       if (dataCase_ == 10) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, (edu.vn.hcmuaf.layer2.proto.Proto.ReqUpdateUserInfo) data_);
+      }
+      if (dataCase_ == 11) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(11, (edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo) data_);
+      }
+      if (dataCase_ == 12) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(12, (edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom) data_);
+      }
+      if (dataCase_ == 13) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(13, (edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom) data_);
+      }
+      if (dataCase_ == 14) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(14, (edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom) data_);
+      }
+      if (dataCase_ == 15) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(15, (edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom) data_);
+      }
+      if (dataCase_ == 16) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(16, (edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom) data_);
+      }
+      if (dataCase_ == 17) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(17, (edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom) data_);
+      }
+      if (dataCase_ == 18) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(18, (edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom) data_);
+      }
+      if (dataCase_ == 19) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(19, (edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom) data_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1471,6 +1966,42 @@ public final class Proto {
           if (!getReqUpdateUserInfo()
               .equals(other.getReqUpdateUserInfo())) return false;
           break;
+        case 11:
+          if (!getResUserInfo()
+              .equals(other.getResUserInfo())) return false;
+          break;
+        case 12:
+          if (!getReqCreateRoom()
+              .equals(other.getReqCreateRoom())) return false;
+          break;
+        case 13:
+          if (!getResCreateRoom()
+              .equals(other.getResCreateRoom())) return false;
+          break;
+        case 14:
+          if (!getReqJoinRoom()
+              .equals(other.getReqJoinRoom())) return false;
+          break;
+        case 15:
+          if (!getResJoinRoom()
+              .equals(other.getResJoinRoom())) return false;
+          break;
+        case 16:
+          if (!getReqOutRoom()
+              .equals(other.getReqOutRoom())) return false;
+          break;
+        case 17:
+          if (!getResOutRoom()
+              .equals(other.getResOutRoom())) return false;
+          break;
+        case 18:
+          if (!getReqCloseRoom()
+              .equals(other.getReqCloseRoom())) return false;
+          break;
+        case 19:
+          if (!getResCloseRoom()
+              .equals(other.getResCloseRoom())) return false;
+          break;
         case 0:
         default:
       }
@@ -1525,6 +2056,42 @@ public final class Proto {
         case 10:
           hash = (37 * hash) + REQUPDATEUSERINFO_FIELD_NUMBER;
           hash = (53 * hash) + getReqUpdateUserInfo().hashCode();
+          break;
+        case 11:
+          hash = (37 * hash) + RESUSERINFO_FIELD_NUMBER;
+          hash = (53 * hash) + getResUserInfo().hashCode();
+          break;
+        case 12:
+          hash = (37 * hash) + REQCREATEROOM_FIELD_NUMBER;
+          hash = (53 * hash) + getReqCreateRoom().hashCode();
+          break;
+        case 13:
+          hash = (37 * hash) + RESCREATEROOM_FIELD_NUMBER;
+          hash = (53 * hash) + getResCreateRoom().hashCode();
+          break;
+        case 14:
+          hash = (37 * hash) + REQJOINROOM_FIELD_NUMBER;
+          hash = (53 * hash) + getReqJoinRoom().hashCode();
+          break;
+        case 15:
+          hash = (37 * hash) + RESJOINROOM_FIELD_NUMBER;
+          hash = (53 * hash) + getResJoinRoom().hashCode();
+          break;
+        case 16:
+          hash = (37 * hash) + REQOUTROOM_FIELD_NUMBER;
+          hash = (53 * hash) + getReqOutRoom().hashCode();
+          break;
+        case 17:
+          hash = (37 * hash) + RESOUTROOM_FIELD_NUMBER;
+          hash = (53 * hash) + getResOutRoom().hashCode();
+          break;
+        case 18:
+          hash = (37 * hash) + REQCLOSEROOM_FIELD_NUMBER;
+          hash = (53 * hash) + getReqCloseRoom().hashCode();
+          break;
+        case 19:
+          hash = (37 * hash) + RESCLOSEROOM_FIELD_NUMBER;
+          hash = (53 * hash) + getResCloseRoom().hashCode();
           break;
         case 0:
         default:
@@ -1688,6 +2255,33 @@ public final class Proto {
         if (reqUpdateUserInfoBuilder_ != null) {
           reqUpdateUserInfoBuilder_.clear();
         }
+        if (resUserInfoBuilder_ != null) {
+          resUserInfoBuilder_.clear();
+        }
+        if (reqCreateRoomBuilder_ != null) {
+          reqCreateRoomBuilder_.clear();
+        }
+        if (resCreateRoomBuilder_ != null) {
+          resCreateRoomBuilder_.clear();
+        }
+        if (reqJoinRoomBuilder_ != null) {
+          reqJoinRoomBuilder_.clear();
+        }
+        if (resJoinRoomBuilder_ != null) {
+          resJoinRoomBuilder_.clear();
+        }
+        if (reqOutRoomBuilder_ != null) {
+          reqOutRoomBuilder_.clear();
+        }
+        if (resOutRoomBuilder_ != null) {
+          resOutRoomBuilder_.clear();
+        }
+        if (reqCloseRoomBuilder_ != null) {
+          reqCloseRoomBuilder_.clear();
+        }
+        if (resCloseRoomBuilder_ != null) {
+          resCloseRoomBuilder_.clear();
+        }
         dataCase_ = 0;
         data_ = null;
         return this;
@@ -1769,6 +2363,42 @@ public final class Proto {
             reqUpdateUserInfoBuilder_ != null) {
           result.data_ = reqUpdateUserInfoBuilder_.build();
         }
+        if (dataCase_ == 11 &&
+            resUserInfoBuilder_ != null) {
+          result.data_ = resUserInfoBuilder_.build();
+        }
+        if (dataCase_ == 12 &&
+            reqCreateRoomBuilder_ != null) {
+          result.data_ = reqCreateRoomBuilder_.build();
+        }
+        if (dataCase_ == 13 &&
+            resCreateRoomBuilder_ != null) {
+          result.data_ = resCreateRoomBuilder_.build();
+        }
+        if (dataCase_ == 14 &&
+            reqJoinRoomBuilder_ != null) {
+          result.data_ = reqJoinRoomBuilder_.build();
+        }
+        if (dataCase_ == 15 &&
+            resJoinRoomBuilder_ != null) {
+          result.data_ = resJoinRoomBuilder_.build();
+        }
+        if (dataCase_ == 16 &&
+            reqOutRoomBuilder_ != null) {
+          result.data_ = reqOutRoomBuilder_.build();
+        }
+        if (dataCase_ == 17 &&
+            resOutRoomBuilder_ != null) {
+          result.data_ = resOutRoomBuilder_.build();
+        }
+        if (dataCase_ == 18 &&
+            reqCloseRoomBuilder_ != null) {
+          result.data_ = reqCloseRoomBuilder_.build();
+        }
+        if (dataCase_ == 19 &&
+            resCloseRoomBuilder_ != null) {
+          result.data_ = resCloseRoomBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1822,6 +2452,42 @@ public final class Proto {
           }
           case REQUPDATEUSERINFO: {
             mergeReqUpdateUserInfo(other.getReqUpdateUserInfo());
+            break;
+          }
+          case RESUSERINFO: {
+            mergeResUserInfo(other.getResUserInfo());
+            break;
+          }
+          case REQCREATEROOM: {
+            mergeReqCreateRoom(other.getReqCreateRoom());
+            break;
+          }
+          case RESCREATEROOM: {
+            mergeResCreateRoom(other.getResCreateRoom());
+            break;
+          }
+          case REQJOINROOM: {
+            mergeReqJoinRoom(other.getReqJoinRoom());
+            break;
+          }
+          case RESJOINROOM: {
+            mergeResJoinRoom(other.getResJoinRoom());
+            break;
+          }
+          case REQOUTROOM: {
+            mergeReqOutRoom(other.getReqOutRoom());
+            break;
+          }
+          case RESOUTROOM: {
+            mergeResOutRoom(other.getResOutRoom());
+            break;
+          }
+          case REQCLOSEROOM: {
+            mergeReqCloseRoom(other.getReqCloseRoom());
+            break;
+          }
+          case RESCLOSEROOM: {
+            mergeResCloseRoom(other.getResCloseRoom());
             break;
           }
           case DATA_NOT_SET: {
@@ -1924,6 +2590,69 @@ public final class Proto {
                 dataCase_ = 10;
                 break;
               } // case 82
+              case 90: {
+                input.readMessage(
+                    getResUserInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                dataCase_ = 11;
+                break;
+              } // case 90
+              case 98: {
+                input.readMessage(
+                    getReqCreateRoomFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                dataCase_ = 12;
+                break;
+              } // case 98
+              case 106: {
+                input.readMessage(
+                    getResCreateRoomFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                dataCase_ = 13;
+                break;
+              } // case 106
+              case 114: {
+                input.readMessage(
+                    getReqJoinRoomFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                dataCase_ = 14;
+                break;
+              } // case 114
+              case 122: {
+                input.readMessage(
+                    getResJoinRoomFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                dataCase_ = 15;
+                break;
+              } // case 122
+              case 130: {
+                input.readMessage(
+                    getReqOutRoomFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                dataCase_ = 16;
+                break;
+              } // case 130
+              case 138: {
+                input.readMessage(
+                    getResOutRoomFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                dataCase_ = 17;
+                break;
+              } // case 138
+              case 146: {
+                input.readMessage(
+                    getReqCloseRoomFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                dataCase_ = 18;
+                break;
+              } // case 146
+              case 154: {
+                input.readMessage(
+                    getResCloseRoomFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                dataCase_ = 19;
+                break;
+              } // case 154
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -3374,6 +4103,1284 @@ public final class Proto {
         dataCase_ = 10;
         onChanged();
         return reqUpdateUserInfoBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo, edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfoOrBuilder> resUserInfoBuilder_;
+      /**
+       * <code>.proto.ResUserInfo resUserInfo = 11;</code>
+       * @return Whether the resUserInfo field is set.
+       */
+      @java.lang.Override
+      public boolean hasResUserInfo() {
+        return dataCase_ == 11;
+      }
+      /**
+       * <code>.proto.ResUserInfo resUserInfo = 11;</code>
+       * @return The resUserInfo.
+       */
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo getResUserInfo() {
+        if (resUserInfoBuilder_ == null) {
+          if (dataCase_ == 11) {
+            return (edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo) data_;
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo.getDefaultInstance();
+        } else {
+          if (dataCase_ == 11) {
+            return resUserInfoBuilder_.getMessage();
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.proto.ResUserInfo resUserInfo = 11;</code>
+       */
+      public Builder setResUserInfo(edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo value) {
+        if (resUserInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          resUserInfoBuilder_.setMessage(value);
+        }
+        dataCase_ = 11;
+        return this;
+      }
+      /**
+       * <code>.proto.ResUserInfo resUserInfo = 11;</code>
+       */
+      public Builder setResUserInfo(
+          edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo.Builder builderForValue) {
+        if (resUserInfoBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          resUserInfoBuilder_.setMessage(builderForValue.build());
+        }
+        dataCase_ = 11;
+        return this;
+      }
+      /**
+       * <code>.proto.ResUserInfo resUserInfo = 11;</code>
+       */
+      public Builder mergeResUserInfo(edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo value) {
+        if (resUserInfoBuilder_ == null) {
+          if (dataCase_ == 11 &&
+              data_ != edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo.getDefaultInstance()) {
+            data_ = edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo.newBuilder((edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo) data_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataCase_ == 11) {
+            resUserInfoBuilder_.mergeFrom(value);
+          } else {
+            resUserInfoBuilder_.setMessage(value);
+          }
+        }
+        dataCase_ = 11;
+        return this;
+      }
+      /**
+       * <code>.proto.ResUserInfo resUserInfo = 11;</code>
+       */
+      public Builder clearResUserInfo() {
+        if (resUserInfoBuilder_ == null) {
+          if (dataCase_ == 11) {
+            dataCase_ = 0;
+            data_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataCase_ == 11) {
+            dataCase_ = 0;
+            data_ = null;
+          }
+          resUserInfoBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.proto.ResUserInfo resUserInfo = 11;</code>
+       */
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo.Builder getResUserInfoBuilder() {
+        return getResUserInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.ResUserInfo resUserInfo = 11;</code>
+       */
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfoOrBuilder getResUserInfoOrBuilder() {
+        if ((dataCase_ == 11) && (resUserInfoBuilder_ != null)) {
+          return resUserInfoBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataCase_ == 11) {
+            return (edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo) data_;
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.proto.ResUserInfo resUserInfo = 11;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo, edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfoOrBuilder> 
+          getResUserInfoFieldBuilder() {
+        if (resUserInfoBuilder_ == null) {
+          if (!(dataCase_ == 11)) {
+            data_ = edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo.getDefaultInstance();
+          }
+          resUserInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo, edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfoOrBuilder>(
+                  (edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo) data_,
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        dataCase_ = 11;
+        onChanged();
+        return resUserInfoBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom, edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoomOrBuilder> reqCreateRoomBuilder_;
+      /**
+       * <code>.proto.ReqCreateRoom reqCreateRoom = 12;</code>
+       * @return Whether the reqCreateRoom field is set.
+       */
+      @java.lang.Override
+      public boolean hasReqCreateRoom() {
+        return dataCase_ == 12;
+      }
+      /**
+       * <code>.proto.ReqCreateRoom reqCreateRoom = 12;</code>
+       * @return The reqCreateRoom.
+       */
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom getReqCreateRoom() {
+        if (reqCreateRoomBuilder_ == null) {
+          if (dataCase_ == 12) {
+            return (edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom) data_;
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom.getDefaultInstance();
+        } else {
+          if (dataCase_ == 12) {
+            return reqCreateRoomBuilder_.getMessage();
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.proto.ReqCreateRoom reqCreateRoom = 12;</code>
+       */
+      public Builder setReqCreateRoom(edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom value) {
+        if (reqCreateRoomBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          reqCreateRoomBuilder_.setMessage(value);
+        }
+        dataCase_ = 12;
+        return this;
+      }
+      /**
+       * <code>.proto.ReqCreateRoom reqCreateRoom = 12;</code>
+       */
+      public Builder setReqCreateRoom(
+          edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom.Builder builderForValue) {
+        if (reqCreateRoomBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          reqCreateRoomBuilder_.setMessage(builderForValue.build());
+        }
+        dataCase_ = 12;
+        return this;
+      }
+      /**
+       * <code>.proto.ReqCreateRoom reqCreateRoom = 12;</code>
+       */
+      public Builder mergeReqCreateRoom(edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom value) {
+        if (reqCreateRoomBuilder_ == null) {
+          if (dataCase_ == 12 &&
+              data_ != edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom.getDefaultInstance()) {
+            data_ = edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom.newBuilder((edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom) data_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataCase_ == 12) {
+            reqCreateRoomBuilder_.mergeFrom(value);
+          } else {
+            reqCreateRoomBuilder_.setMessage(value);
+          }
+        }
+        dataCase_ = 12;
+        return this;
+      }
+      /**
+       * <code>.proto.ReqCreateRoom reqCreateRoom = 12;</code>
+       */
+      public Builder clearReqCreateRoom() {
+        if (reqCreateRoomBuilder_ == null) {
+          if (dataCase_ == 12) {
+            dataCase_ = 0;
+            data_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataCase_ == 12) {
+            dataCase_ = 0;
+            data_ = null;
+          }
+          reqCreateRoomBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.proto.ReqCreateRoom reqCreateRoom = 12;</code>
+       */
+      public edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom.Builder getReqCreateRoomBuilder() {
+        return getReqCreateRoomFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.ReqCreateRoom reqCreateRoom = 12;</code>
+       */
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoomOrBuilder getReqCreateRoomOrBuilder() {
+        if ((dataCase_ == 12) && (reqCreateRoomBuilder_ != null)) {
+          return reqCreateRoomBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataCase_ == 12) {
+            return (edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom) data_;
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.proto.ReqCreateRoom reqCreateRoom = 12;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom, edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoomOrBuilder> 
+          getReqCreateRoomFieldBuilder() {
+        if (reqCreateRoomBuilder_ == null) {
+          if (!(dataCase_ == 12)) {
+            data_ = edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom.getDefaultInstance();
+          }
+          reqCreateRoomBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom, edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoomOrBuilder>(
+                  (edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom) data_,
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        dataCase_ = 12;
+        onChanged();
+        return reqCreateRoomBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom, edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoomOrBuilder> resCreateRoomBuilder_;
+      /**
+       * <code>.proto.ResCreateRoom resCreateRoom = 13;</code>
+       * @return Whether the resCreateRoom field is set.
+       */
+      @java.lang.Override
+      public boolean hasResCreateRoom() {
+        return dataCase_ == 13;
+      }
+      /**
+       * <code>.proto.ResCreateRoom resCreateRoom = 13;</code>
+       * @return The resCreateRoom.
+       */
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom getResCreateRoom() {
+        if (resCreateRoomBuilder_ == null) {
+          if (dataCase_ == 13) {
+            return (edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom) data_;
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom.getDefaultInstance();
+        } else {
+          if (dataCase_ == 13) {
+            return resCreateRoomBuilder_.getMessage();
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.proto.ResCreateRoom resCreateRoom = 13;</code>
+       */
+      public Builder setResCreateRoom(edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom value) {
+        if (resCreateRoomBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          resCreateRoomBuilder_.setMessage(value);
+        }
+        dataCase_ = 13;
+        return this;
+      }
+      /**
+       * <code>.proto.ResCreateRoom resCreateRoom = 13;</code>
+       */
+      public Builder setResCreateRoom(
+          edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom.Builder builderForValue) {
+        if (resCreateRoomBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          resCreateRoomBuilder_.setMessage(builderForValue.build());
+        }
+        dataCase_ = 13;
+        return this;
+      }
+      /**
+       * <code>.proto.ResCreateRoom resCreateRoom = 13;</code>
+       */
+      public Builder mergeResCreateRoom(edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom value) {
+        if (resCreateRoomBuilder_ == null) {
+          if (dataCase_ == 13 &&
+              data_ != edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom.getDefaultInstance()) {
+            data_ = edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom.newBuilder((edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom) data_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataCase_ == 13) {
+            resCreateRoomBuilder_.mergeFrom(value);
+          } else {
+            resCreateRoomBuilder_.setMessage(value);
+          }
+        }
+        dataCase_ = 13;
+        return this;
+      }
+      /**
+       * <code>.proto.ResCreateRoom resCreateRoom = 13;</code>
+       */
+      public Builder clearResCreateRoom() {
+        if (resCreateRoomBuilder_ == null) {
+          if (dataCase_ == 13) {
+            dataCase_ = 0;
+            data_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataCase_ == 13) {
+            dataCase_ = 0;
+            data_ = null;
+          }
+          resCreateRoomBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.proto.ResCreateRoom resCreateRoom = 13;</code>
+       */
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom.Builder getResCreateRoomBuilder() {
+        return getResCreateRoomFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.ResCreateRoom resCreateRoom = 13;</code>
+       */
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoomOrBuilder getResCreateRoomOrBuilder() {
+        if ((dataCase_ == 13) && (resCreateRoomBuilder_ != null)) {
+          return resCreateRoomBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataCase_ == 13) {
+            return (edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom) data_;
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.proto.ResCreateRoom resCreateRoom = 13;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom, edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoomOrBuilder> 
+          getResCreateRoomFieldBuilder() {
+        if (resCreateRoomBuilder_ == null) {
+          if (!(dataCase_ == 13)) {
+            data_ = edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom.getDefaultInstance();
+          }
+          resCreateRoomBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom, edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoomOrBuilder>(
+                  (edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom) data_,
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        dataCase_ = 13;
+        onChanged();
+        return resCreateRoomBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom, edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoomOrBuilder> reqJoinRoomBuilder_;
+      /**
+       * <code>.proto.ReqJoinRoom reqJoinRoom = 14;</code>
+       * @return Whether the reqJoinRoom field is set.
+       */
+      @java.lang.Override
+      public boolean hasReqJoinRoom() {
+        return dataCase_ == 14;
+      }
+      /**
+       * <code>.proto.ReqJoinRoom reqJoinRoom = 14;</code>
+       * @return The reqJoinRoom.
+       */
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom getReqJoinRoom() {
+        if (reqJoinRoomBuilder_ == null) {
+          if (dataCase_ == 14) {
+            return (edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom) data_;
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom.getDefaultInstance();
+        } else {
+          if (dataCase_ == 14) {
+            return reqJoinRoomBuilder_.getMessage();
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.proto.ReqJoinRoom reqJoinRoom = 14;</code>
+       */
+      public Builder setReqJoinRoom(edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom value) {
+        if (reqJoinRoomBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          reqJoinRoomBuilder_.setMessage(value);
+        }
+        dataCase_ = 14;
+        return this;
+      }
+      /**
+       * <code>.proto.ReqJoinRoom reqJoinRoom = 14;</code>
+       */
+      public Builder setReqJoinRoom(
+          edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom.Builder builderForValue) {
+        if (reqJoinRoomBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          reqJoinRoomBuilder_.setMessage(builderForValue.build());
+        }
+        dataCase_ = 14;
+        return this;
+      }
+      /**
+       * <code>.proto.ReqJoinRoom reqJoinRoom = 14;</code>
+       */
+      public Builder mergeReqJoinRoom(edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom value) {
+        if (reqJoinRoomBuilder_ == null) {
+          if (dataCase_ == 14 &&
+              data_ != edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom.getDefaultInstance()) {
+            data_ = edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom.newBuilder((edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom) data_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataCase_ == 14) {
+            reqJoinRoomBuilder_.mergeFrom(value);
+          } else {
+            reqJoinRoomBuilder_.setMessage(value);
+          }
+        }
+        dataCase_ = 14;
+        return this;
+      }
+      /**
+       * <code>.proto.ReqJoinRoom reqJoinRoom = 14;</code>
+       */
+      public Builder clearReqJoinRoom() {
+        if (reqJoinRoomBuilder_ == null) {
+          if (dataCase_ == 14) {
+            dataCase_ = 0;
+            data_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataCase_ == 14) {
+            dataCase_ = 0;
+            data_ = null;
+          }
+          reqJoinRoomBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.proto.ReqJoinRoom reqJoinRoom = 14;</code>
+       */
+      public edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom.Builder getReqJoinRoomBuilder() {
+        return getReqJoinRoomFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.ReqJoinRoom reqJoinRoom = 14;</code>
+       */
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoomOrBuilder getReqJoinRoomOrBuilder() {
+        if ((dataCase_ == 14) && (reqJoinRoomBuilder_ != null)) {
+          return reqJoinRoomBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataCase_ == 14) {
+            return (edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom) data_;
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.proto.ReqJoinRoom reqJoinRoom = 14;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom, edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoomOrBuilder> 
+          getReqJoinRoomFieldBuilder() {
+        if (reqJoinRoomBuilder_ == null) {
+          if (!(dataCase_ == 14)) {
+            data_ = edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom.getDefaultInstance();
+          }
+          reqJoinRoomBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom, edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoomOrBuilder>(
+                  (edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom) data_,
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        dataCase_ = 14;
+        onChanged();
+        return reqJoinRoomBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom, edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoomOrBuilder> resJoinRoomBuilder_;
+      /**
+       * <code>.proto.ResJoinRoom resJoinRoom = 15;</code>
+       * @return Whether the resJoinRoom field is set.
+       */
+      @java.lang.Override
+      public boolean hasResJoinRoom() {
+        return dataCase_ == 15;
+      }
+      /**
+       * <code>.proto.ResJoinRoom resJoinRoom = 15;</code>
+       * @return The resJoinRoom.
+       */
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom getResJoinRoom() {
+        if (resJoinRoomBuilder_ == null) {
+          if (dataCase_ == 15) {
+            return (edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom) data_;
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom.getDefaultInstance();
+        } else {
+          if (dataCase_ == 15) {
+            return resJoinRoomBuilder_.getMessage();
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.proto.ResJoinRoom resJoinRoom = 15;</code>
+       */
+      public Builder setResJoinRoom(edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom value) {
+        if (resJoinRoomBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          resJoinRoomBuilder_.setMessage(value);
+        }
+        dataCase_ = 15;
+        return this;
+      }
+      /**
+       * <code>.proto.ResJoinRoom resJoinRoom = 15;</code>
+       */
+      public Builder setResJoinRoom(
+          edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom.Builder builderForValue) {
+        if (resJoinRoomBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          resJoinRoomBuilder_.setMessage(builderForValue.build());
+        }
+        dataCase_ = 15;
+        return this;
+      }
+      /**
+       * <code>.proto.ResJoinRoom resJoinRoom = 15;</code>
+       */
+      public Builder mergeResJoinRoom(edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom value) {
+        if (resJoinRoomBuilder_ == null) {
+          if (dataCase_ == 15 &&
+              data_ != edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom.getDefaultInstance()) {
+            data_ = edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom.newBuilder((edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom) data_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataCase_ == 15) {
+            resJoinRoomBuilder_.mergeFrom(value);
+          } else {
+            resJoinRoomBuilder_.setMessage(value);
+          }
+        }
+        dataCase_ = 15;
+        return this;
+      }
+      /**
+       * <code>.proto.ResJoinRoom resJoinRoom = 15;</code>
+       */
+      public Builder clearResJoinRoom() {
+        if (resJoinRoomBuilder_ == null) {
+          if (dataCase_ == 15) {
+            dataCase_ = 0;
+            data_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataCase_ == 15) {
+            dataCase_ = 0;
+            data_ = null;
+          }
+          resJoinRoomBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.proto.ResJoinRoom resJoinRoom = 15;</code>
+       */
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom.Builder getResJoinRoomBuilder() {
+        return getResJoinRoomFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.ResJoinRoom resJoinRoom = 15;</code>
+       */
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoomOrBuilder getResJoinRoomOrBuilder() {
+        if ((dataCase_ == 15) && (resJoinRoomBuilder_ != null)) {
+          return resJoinRoomBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataCase_ == 15) {
+            return (edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom) data_;
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.proto.ResJoinRoom resJoinRoom = 15;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom, edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoomOrBuilder> 
+          getResJoinRoomFieldBuilder() {
+        if (resJoinRoomBuilder_ == null) {
+          if (!(dataCase_ == 15)) {
+            data_ = edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom.getDefaultInstance();
+          }
+          resJoinRoomBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom, edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoomOrBuilder>(
+                  (edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom) data_,
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        dataCase_ = 15;
+        onChanged();
+        return resJoinRoomBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom, edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoomOrBuilder> reqOutRoomBuilder_;
+      /**
+       * <code>.proto.ReqOutRoom reqOutRoom = 16;</code>
+       * @return Whether the reqOutRoom field is set.
+       */
+      @java.lang.Override
+      public boolean hasReqOutRoom() {
+        return dataCase_ == 16;
+      }
+      /**
+       * <code>.proto.ReqOutRoom reqOutRoom = 16;</code>
+       * @return The reqOutRoom.
+       */
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom getReqOutRoom() {
+        if (reqOutRoomBuilder_ == null) {
+          if (dataCase_ == 16) {
+            return (edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom) data_;
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom.getDefaultInstance();
+        } else {
+          if (dataCase_ == 16) {
+            return reqOutRoomBuilder_.getMessage();
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.proto.ReqOutRoom reqOutRoom = 16;</code>
+       */
+      public Builder setReqOutRoom(edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom value) {
+        if (reqOutRoomBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          reqOutRoomBuilder_.setMessage(value);
+        }
+        dataCase_ = 16;
+        return this;
+      }
+      /**
+       * <code>.proto.ReqOutRoom reqOutRoom = 16;</code>
+       */
+      public Builder setReqOutRoom(
+          edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom.Builder builderForValue) {
+        if (reqOutRoomBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          reqOutRoomBuilder_.setMessage(builderForValue.build());
+        }
+        dataCase_ = 16;
+        return this;
+      }
+      /**
+       * <code>.proto.ReqOutRoom reqOutRoom = 16;</code>
+       */
+      public Builder mergeReqOutRoom(edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom value) {
+        if (reqOutRoomBuilder_ == null) {
+          if (dataCase_ == 16 &&
+              data_ != edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom.getDefaultInstance()) {
+            data_ = edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom.newBuilder((edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom) data_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataCase_ == 16) {
+            reqOutRoomBuilder_.mergeFrom(value);
+          } else {
+            reqOutRoomBuilder_.setMessage(value);
+          }
+        }
+        dataCase_ = 16;
+        return this;
+      }
+      /**
+       * <code>.proto.ReqOutRoom reqOutRoom = 16;</code>
+       */
+      public Builder clearReqOutRoom() {
+        if (reqOutRoomBuilder_ == null) {
+          if (dataCase_ == 16) {
+            dataCase_ = 0;
+            data_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataCase_ == 16) {
+            dataCase_ = 0;
+            data_ = null;
+          }
+          reqOutRoomBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.proto.ReqOutRoom reqOutRoom = 16;</code>
+       */
+      public edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom.Builder getReqOutRoomBuilder() {
+        return getReqOutRoomFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.ReqOutRoom reqOutRoom = 16;</code>
+       */
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoomOrBuilder getReqOutRoomOrBuilder() {
+        if ((dataCase_ == 16) && (reqOutRoomBuilder_ != null)) {
+          return reqOutRoomBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataCase_ == 16) {
+            return (edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom) data_;
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.proto.ReqOutRoom reqOutRoom = 16;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom, edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoomOrBuilder> 
+          getReqOutRoomFieldBuilder() {
+        if (reqOutRoomBuilder_ == null) {
+          if (!(dataCase_ == 16)) {
+            data_ = edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom.getDefaultInstance();
+          }
+          reqOutRoomBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom, edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoomOrBuilder>(
+                  (edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom) data_,
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        dataCase_ = 16;
+        onChanged();
+        return reqOutRoomBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom, edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoomOrBuilder> resOutRoomBuilder_;
+      /**
+       * <code>.proto.ResOutRoom resOutRoom = 17;</code>
+       * @return Whether the resOutRoom field is set.
+       */
+      @java.lang.Override
+      public boolean hasResOutRoom() {
+        return dataCase_ == 17;
+      }
+      /**
+       * <code>.proto.ResOutRoom resOutRoom = 17;</code>
+       * @return The resOutRoom.
+       */
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom getResOutRoom() {
+        if (resOutRoomBuilder_ == null) {
+          if (dataCase_ == 17) {
+            return (edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom) data_;
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom.getDefaultInstance();
+        } else {
+          if (dataCase_ == 17) {
+            return resOutRoomBuilder_.getMessage();
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.proto.ResOutRoom resOutRoom = 17;</code>
+       */
+      public Builder setResOutRoom(edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom value) {
+        if (resOutRoomBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          resOutRoomBuilder_.setMessage(value);
+        }
+        dataCase_ = 17;
+        return this;
+      }
+      /**
+       * <code>.proto.ResOutRoom resOutRoom = 17;</code>
+       */
+      public Builder setResOutRoom(
+          edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom.Builder builderForValue) {
+        if (resOutRoomBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          resOutRoomBuilder_.setMessage(builderForValue.build());
+        }
+        dataCase_ = 17;
+        return this;
+      }
+      /**
+       * <code>.proto.ResOutRoom resOutRoom = 17;</code>
+       */
+      public Builder mergeResOutRoom(edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom value) {
+        if (resOutRoomBuilder_ == null) {
+          if (dataCase_ == 17 &&
+              data_ != edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom.getDefaultInstance()) {
+            data_ = edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom.newBuilder((edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom) data_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataCase_ == 17) {
+            resOutRoomBuilder_.mergeFrom(value);
+          } else {
+            resOutRoomBuilder_.setMessage(value);
+          }
+        }
+        dataCase_ = 17;
+        return this;
+      }
+      /**
+       * <code>.proto.ResOutRoom resOutRoom = 17;</code>
+       */
+      public Builder clearResOutRoom() {
+        if (resOutRoomBuilder_ == null) {
+          if (dataCase_ == 17) {
+            dataCase_ = 0;
+            data_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataCase_ == 17) {
+            dataCase_ = 0;
+            data_ = null;
+          }
+          resOutRoomBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.proto.ResOutRoom resOutRoom = 17;</code>
+       */
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom.Builder getResOutRoomBuilder() {
+        return getResOutRoomFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.ResOutRoom resOutRoom = 17;</code>
+       */
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoomOrBuilder getResOutRoomOrBuilder() {
+        if ((dataCase_ == 17) && (resOutRoomBuilder_ != null)) {
+          return resOutRoomBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataCase_ == 17) {
+            return (edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom) data_;
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.proto.ResOutRoom resOutRoom = 17;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom, edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoomOrBuilder> 
+          getResOutRoomFieldBuilder() {
+        if (resOutRoomBuilder_ == null) {
+          if (!(dataCase_ == 17)) {
+            data_ = edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom.getDefaultInstance();
+          }
+          resOutRoomBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom, edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoomOrBuilder>(
+                  (edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom) data_,
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        dataCase_ = 17;
+        onChanged();
+        return resOutRoomBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom, edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoomOrBuilder> reqCloseRoomBuilder_;
+      /**
+       * <code>.proto.ReqCloseRoom reqCloseRoom = 18;</code>
+       * @return Whether the reqCloseRoom field is set.
+       */
+      @java.lang.Override
+      public boolean hasReqCloseRoom() {
+        return dataCase_ == 18;
+      }
+      /**
+       * <code>.proto.ReqCloseRoom reqCloseRoom = 18;</code>
+       * @return The reqCloseRoom.
+       */
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom getReqCloseRoom() {
+        if (reqCloseRoomBuilder_ == null) {
+          if (dataCase_ == 18) {
+            return (edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom) data_;
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom.getDefaultInstance();
+        } else {
+          if (dataCase_ == 18) {
+            return reqCloseRoomBuilder_.getMessage();
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.proto.ReqCloseRoom reqCloseRoom = 18;</code>
+       */
+      public Builder setReqCloseRoom(edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom value) {
+        if (reqCloseRoomBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          reqCloseRoomBuilder_.setMessage(value);
+        }
+        dataCase_ = 18;
+        return this;
+      }
+      /**
+       * <code>.proto.ReqCloseRoom reqCloseRoom = 18;</code>
+       */
+      public Builder setReqCloseRoom(
+          edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom.Builder builderForValue) {
+        if (reqCloseRoomBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          reqCloseRoomBuilder_.setMessage(builderForValue.build());
+        }
+        dataCase_ = 18;
+        return this;
+      }
+      /**
+       * <code>.proto.ReqCloseRoom reqCloseRoom = 18;</code>
+       */
+      public Builder mergeReqCloseRoom(edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom value) {
+        if (reqCloseRoomBuilder_ == null) {
+          if (dataCase_ == 18 &&
+              data_ != edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom.getDefaultInstance()) {
+            data_ = edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom.newBuilder((edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom) data_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataCase_ == 18) {
+            reqCloseRoomBuilder_.mergeFrom(value);
+          } else {
+            reqCloseRoomBuilder_.setMessage(value);
+          }
+        }
+        dataCase_ = 18;
+        return this;
+      }
+      /**
+       * <code>.proto.ReqCloseRoom reqCloseRoom = 18;</code>
+       */
+      public Builder clearReqCloseRoom() {
+        if (reqCloseRoomBuilder_ == null) {
+          if (dataCase_ == 18) {
+            dataCase_ = 0;
+            data_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataCase_ == 18) {
+            dataCase_ = 0;
+            data_ = null;
+          }
+          reqCloseRoomBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.proto.ReqCloseRoom reqCloseRoom = 18;</code>
+       */
+      public edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom.Builder getReqCloseRoomBuilder() {
+        return getReqCloseRoomFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.ReqCloseRoom reqCloseRoom = 18;</code>
+       */
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoomOrBuilder getReqCloseRoomOrBuilder() {
+        if ((dataCase_ == 18) && (reqCloseRoomBuilder_ != null)) {
+          return reqCloseRoomBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataCase_ == 18) {
+            return (edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom) data_;
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.proto.ReqCloseRoom reqCloseRoom = 18;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom, edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoomOrBuilder> 
+          getReqCloseRoomFieldBuilder() {
+        if (reqCloseRoomBuilder_ == null) {
+          if (!(dataCase_ == 18)) {
+            data_ = edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom.getDefaultInstance();
+          }
+          reqCloseRoomBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom, edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoomOrBuilder>(
+                  (edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom) data_,
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        dataCase_ = 18;
+        onChanged();
+        return reqCloseRoomBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom, edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoomOrBuilder> resCloseRoomBuilder_;
+      /**
+       * <code>.proto.ResCloseRoom resCloseRoom = 19;</code>
+       * @return Whether the resCloseRoom field is set.
+       */
+      @java.lang.Override
+      public boolean hasResCloseRoom() {
+        return dataCase_ == 19;
+      }
+      /**
+       * <code>.proto.ResCloseRoom resCloseRoom = 19;</code>
+       * @return The resCloseRoom.
+       */
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom getResCloseRoom() {
+        if (resCloseRoomBuilder_ == null) {
+          if (dataCase_ == 19) {
+            return (edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom) data_;
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom.getDefaultInstance();
+        } else {
+          if (dataCase_ == 19) {
+            return resCloseRoomBuilder_.getMessage();
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.proto.ResCloseRoom resCloseRoom = 19;</code>
+       */
+      public Builder setResCloseRoom(edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom value) {
+        if (resCloseRoomBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          resCloseRoomBuilder_.setMessage(value);
+        }
+        dataCase_ = 19;
+        return this;
+      }
+      /**
+       * <code>.proto.ResCloseRoom resCloseRoom = 19;</code>
+       */
+      public Builder setResCloseRoom(
+          edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom.Builder builderForValue) {
+        if (resCloseRoomBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          resCloseRoomBuilder_.setMessage(builderForValue.build());
+        }
+        dataCase_ = 19;
+        return this;
+      }
+      /**
+       * <code>.proto.ResCloseRoom resCloseRoom = 19;</code>
+       */
+      public Builder mergeResCloseRoom(edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom value) {
+        if (resCloseRoomBuilder_ == null) {
+          if (dataCase_ == 19 &&
+              data_ != edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom.getDefaultInstance()) {
+            data_ = edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom.newBuilder((edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom) data_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataCase_ == 19) {
+            resCloseRoomBuilder_.mergeFrom(value);
+          } else {
+            resCloseRoomBuilder_.setMessage(value);
+          }
+        }
+        dataCase_ = 19;
+        return this;
+      }
+      /**
+       * <code>.proto.ResCloseRoom resCloseRoom = 19;</code>
+       */
+      public Builder clearResCloseRoom() {
+        if (resCloseRoomBuilder_ == null) {
+          if (dataCase_ == 19) {
+            dataCase_ = 0;
+            data_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataCase_ == 19) {
+            dataCase_ = 0;
+            data_ = null;
+          }
+          resCloseRoomBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.proto.ResCloseRoom resCloseRoom = 19;</code>
+       */
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom.Builder getResCloseRoomBuilder() {
+        return getResCloseRoomFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.ResCloseRoom resCloseRoom = 19;</code>
+       */
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoomOrBuilder getResCloseRoomOrBuilder() {
+        if ((dataCase_ == 19) && (resCloseRoomBuilder_ != null)) {
+          return resCloseRoomBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataCase_ == 19) {
+            return (edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom) data_;
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.proto.ResCloseRoom resCloseRoom = 19;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom, edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoomOrBuilder> 
+          getResCloseRoomFieldBuilder() {
+        if (resCloseRoomBuilder_ == null) {
+          if (!(dataCase_ == 19)) {
+            data_ = edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom.getDefaultInstance();
+          }
+          resCloseRoomBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom, edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoomOrBuilder>(
+                  (edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom) data_,
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        dataCase_ = 19;
+        onChanged();
+        return resCloseRoomBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -9921,6 +11928,572 @@ public final class Proto {
 
   }
 
+  public interface ResUserInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.ResUserInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.proto.User user = 1;</code>
+     * @return Whether the user field is set.
+     */
+    boolean hasUser();
+    /**
+     * <code>.proto.User user = 1;</code>
+     * @return The user.
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.User getUser();
+    /**
+     * <code>.proto.User user = 1;</code>
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.UserOrBuilder getUserOrBuilder();
+  }
+  /**
+   * Protobuf type {@code proto.ResUserInfo}
+   */
+  public static final class ResUserInfo extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.ResUserInfo)
+      ResUserInfoOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ResUserInfo.newBuilder() to construct.
+    private ResUserInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ResUserInfo() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ResUserInfo();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ResUserInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ResUserInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo.class, edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo.Builder.class);
+    }
+
+    public static final int USER_FIELD_NUMBER = 1;
+    private edu.vn.hcmuaf.layer2.proto.Proto.User user_;
+    /**
+     * <code>.proto.User user = 1;</code>
+     * @return Whether the user field is set.
+     */
+    @java.lang.Override
+    public boolean hasUser() {
+      return user_ != null;
+    }
+    /**
+     * <code>.proto.User user = 1;</code>
+     * @return The user.
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.User getUser() {
+      return user_ == null ? edu.vn.hcmuaf.layer2.proto.Proto.User.getDefaultInstance() : user_;
+    }
+    /**
+     * <code>.proto.User user = 1;</code>
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.UserOrBuilder getUserOrBuilder() {
+      return user_ == null ? edu.vn.hcmuaf.layer2.proto.Proto.User.getDefaultInstance() : user_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (user_ != null) {
+        output.writeMessage(1, getUser());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (user_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getUser());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo)) {
+        return super.equals(obj);
+      }
+      edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo other = (edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo) obj;
+
+      if (hasUser() != other.hasUser()) return false;
+      if (hasUser()) {
+        if (!getUser()
+            .equals(other.getUser())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasUser()) {
+        hash = (37 * hash) + USER_FIELD_NUMBER;
+        hash = (53 * hash) + getUser().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.ResUserInfo}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.ResUserInfo)
+        edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ResUserInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ResUserInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo.class, edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo.Builder.class);
+      }
+
+      // Construct using edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        user_ = null;
+        if (userBuilder_ != null) {
+          userBuilder_.dispose();
+          userBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ResUserInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo getDefaultInstanceForType() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo build() {
+        edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo buildPartial() {
+        edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo result = new edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.user_ = userBuilder_ == null
+              ? user_
+              : userBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo) {
+          return mergeFrom((edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo other) {
+        if (other == edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo.getDefaultInstance()) return this;
+        if (other.hasUser()) {
+          mergeUser(other.getUser());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getUserFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private edu.vn.hcmuaf.layer2.proto.Proto.User user_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.User, edu.vn.hcmuaf.layer2.proto.Proto.User.Builder, edu.vn.hcmuaf.layer2.proto.Proto.UserOrBuilder> userBuilder_;
+      /**
+       * <code>.proto.User user = 1;</code>
+       * @return Whether the user field is set.
+       */
+      public boolean hasUser() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <code>.proto.User user = 1;</code>
+       * @return The user.
+       */
+      public edu.vn.hcmuaf.layer2.proto.Proto.User getUser() {
+        if (userBuilder_ == null) {
+          return user_ == null ? edu.vn.hcmuaf.layer2.proto.Proto.User.getDefaultInstance() : user_;
+        } else {
+          return userBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.proto.User user = 1;</code>
+       */
+      public Builder setUser(edu.vn.hcmuaf.layer2.proto.Proto.User value) {
+        if (userBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          user_ = value;
+        } else {
+          userBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.proto.User user = 1;</code>
+       */
+      public Builder setUser(
+          edu.vn.hcmuaf.layer2.proto.Proto.User.Builder builderForValue) {
+        if (userBuilder_ == null) {
+          user_ = builderForValue.build();
+        } else {
+          userBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.proto.User user = 1;</code>
+       */
+      public Builder mergeUser(edu.vn.hcmuaf.layer2.proto.Proto.User value) {
+        if (userBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0) &&
+            user_ != null &&
+            user_ != edu.vn.hcmuaf.layer2.proto.Proto.User.getDefaultInstance()) {
+            getUserBuilder().mergeFrom(value);
+          } else {
+            user_ = value;
+          }
+        } else {
+          userBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.proto.User user = 1;</code>
+       */
+      public Builder clearUser() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        user_ = null;
+        if (userBuilder_ != null) {
+          userBuilder_.dispose();
+          userBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.proto.User user = 1;</code>
+       */
+      public edu.vn.hcmuaf.layer2.proto.Proto.User.Builder getUserBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getUserFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.User user = 1;</code>
+       */
+      public edu.vn.hcmuaf.layer2.proto.Proto.UserOrBuilder getUserOrBuilder() {
+        if (userBuilder_ != null) {
+          return userBuilder_.getMessageOrBuilder();
+        } else {
+          return user_ == null ?
+              edu.vn.hcmuaf.layer2.proto.Proto.User.getDefaultInstance() : user_;
+        }
+      }
+      /**
+       * <code>.proto.User user = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.User, edu.vn.hcmuaf.layer2.proto.Proto.User.Builder, edu.vn.hcmuaf.layer2.proto.Proto.UserOrBuilder> 
+          getUserFieldBuilder() {
+        if (userBuilder_ == null) {
+          userBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              edu.vn.hcmuaf.layer2.proto.Proto.User, edu.vn.hcmuaf.layer2.proto.Proto.User.Builder, edu.vn.hcmuaf.layer2.proto.Proto.UserOrBuilder>(
+                  getUser(),
+                  getParentForChildren(),
+                  isClean());
+          user_ = null;
+        }
+        return userBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.ResUserInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.ResUserInfo)
+    private static final edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo();
+    }
+
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ResUserInfo>
+        PARSER = new com.google.protobuf.AbstractParser<ResUserInfo>() {
+      @java.lang.Override
+      public ResUserInfo parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ResUserInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ResUserInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.ResUserInfo getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface UserOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.User)
       com.google.protobuf.MessageOrBuilder {
@@ -11027,6 +13600,4474 @@ public final class Proto {
 
   }
 
+  public interface ReqCreateRoomOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.ReqCreateRoom)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string userId = 1;</code>
+     * @return The userId.
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>string userId = 1;</code>
+     * @return The bytes for userId.
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
+
+    /**
+     * <code>string testId = 2;</code>
+     * @return The testId.
+     */
+    java.lang.String getTestId();
+    /**
+     * <code>string testId = 2;</code>
+     * @return The bytes for testId.
+     */
+    com.google.protobuf.ByteString
+        getTestIdBytes();
+  }
+  /**
+   * Protobuf type {@code proto.ReqCreateRoom}
+   */
+  public static final class ReqCreateRoom extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.ReqCreateRoom)
+      ReqCreateRoomOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ReqCreateRoom.newBuilder() to construct.
+    private ReqCreateRoom(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ReqCreateRoom() {
+      userId_ = "";
+      testId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ReqCreateRoom();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ReqCreateRoom_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ReqCreateRoom_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom.class, edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom.Builder.class);
+    }
+
+    public static final int USERID_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object userId_ = "";
+    /**
+     * <code>string userId = 1;</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string userId = 1;</code>
+     * @return The bytes for userId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TESTID_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object testId_ = "";
+    /**
+     * <code>string testId = 2;</code>
+     * @return The testId.
+     */
+    @java.lang.Override
+    public java.lang.String getTestId() {
+      java.lang.Object ref = testId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        testId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string testId = 2;</code>
+     * @return The bytes for testId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTestIdBytes() {
+      java.lang.Object ref = testId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        testId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(testId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, testId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(testId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, testId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom)) {
+        return super.equals(obj);
+      }
+      edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom other = (edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom) obj;
+
+      if (!getUserId()
+          .equals(other.getUserId())) return false;
+      if (!getTestId()
+          .equals(other.getTestId())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USERID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId().hashCode();
+      hash = (37 * hash) + TESTID_FIELD_NUMBER;
+      hash = (53 * hash) + getTestId().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.ReqCreateRoom}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.ReqCreateRoom)
+        edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoomOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ReqCreateRoom_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ReqCreateRoom_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom.class, edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom.Builder.class);
+      }
+
+      // Construct using edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        userId_ = "";
+        testId_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ReqCreateRoom_descriptor;
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom getDefaultInstanceForType() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom build() {
+        edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom buildPartial() {
+        edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom result = new edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.userId_ = userId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.testId_ = testId_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom) {
+          return mergeFrom((edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom other) {
+        if (other == edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom.getDefaultInstance()) return this;
+        if (!other.getUserId().isEmpty()) {
+          userId_ = other.userId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getTestId().isEmpty()) {
+          testId_ = other.testId_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                userId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                testId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>string userId = 1;</code>
+       * @return The userId.
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string userId = 1;</code>
+       * @return The bytes for userId.
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string userId = 1;</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        userId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string userId = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserId() {
+        userId_ = getDefaultInstance().getUserId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string userId = 1;</code>
+       * @param value The bytes for userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        userId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object testId_ = "";
+      /**
+       * <code>string testId = 2;</code>
+       * @return The testId.
+       */
+      public java.lang.String getTestId() {
+        java.lang.Object ref = testId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          testId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string testId = 2;</code>
+       * @return The bytes for testId.
+       */
+      public com.google.protobuf.ByteString
+          getTestIdBytes() {
+        java.lang.Object ref = testId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          testId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string testId = 2;</code>
+       * @param value The testId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTestId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        testId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string testId = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTestId() {
+        testId_ = getDefaultInstance().getTestId();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string testId = 2;</code>
+       * @param value The bytes for testId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTestIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        testId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.ReqCreateRoom)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.ReqCreateRoom)
+    private static final edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom();
+    }
+
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ReqCreateRoom>
+        PARSER = new com.google.protobuf.AbstractParser<ReqCreateRoom>() {
+      @java.lang.Override
+      public ReqCreateRoom parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ReqCreateRoom> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ReqCreateRoom> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.ReqCreateRoom getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ResCreateRoomOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.ResCreateRoom)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 status = 1;</code>
+     * @return The status.
+     */
+    int getStatus();
+
+    /**
+     * <code>string roomId = 2;</code>
+     * @return The roomId.
+     */
+    java.lang.String getRoomId();
+    /**
+     * <code>string roomId = 2;</code>
+     * @return The bytes for roomId.
+     */
+    com.google.protobuf.ByteString
+        getRoomIdBytes();
+  }
+  /**
+   * Protobuf type {@code proto.ResCreateRoom}
+   */
+  public static final class ResCreateRoom extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.ResCreateRoom)
+      ResCreateRoomOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ResCreateRoom.newBuilder() to construct.
+    private ResCreateRoom(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ResCreateRoom() {
+      roomId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ResCreateRoom();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ResCreateRoom_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ResCreateRoom_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom.class, edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom.Builder.class);
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 1;
+    private int status_ = 0;
+    /**
+     * <code>int32 status = 1;</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public int getStatus() {
+      return status_;
+    }
+
+    public static final int ROOMID_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object roomId_ = "";
+    /**
+     * <code>string roomId = 2;</code>
+     * @return The roomId.
+     */
+    @java.lang.Override
+    public java.lang.String getRoomId() {
+      java.lang.Object ref = roomId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        roomId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string roomId = 2;</code>
+     * @return The bytes for roomId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRoomIdBytes() {
+      java.lang.Object ref = roomId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        roomId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (status_ != 0) {
+        output.writeInt32(1, status_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roomId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, roomId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (status_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, status_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roomId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, roomId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom)) {
+        return super.equals(obj);
+      }
+      edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom other = (edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom) obj;
+
+      if (getStatus()
+          != other.getStatus()) return false;
+      if (!getRoomId()
+          .equals(other.getRoomId())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus();
+      hash = (37 * hash) + ROOMID_FIELD_NUMBER;
+      hash = (53 * hash) + getRoomId().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.ResCreateRoom}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.ResCreateRoom)
+        edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoomOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ResCreateRoom_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ResCreateRoom_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom.class, edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom.Builder.class);
+      }
+
+      // Construct using edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        status_ = 0;
+        roomId_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ResCreateRoom_descriptor;
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom getDefaultInstanceForType() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom build() {
+        edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom buildPartial() {
+        edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom result = new edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.status_ = status_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.roomId_ = roomId_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom) {
+          return mergeFrom((edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom other) {
+        if (other == edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom.getDefaultInstance()) return this;
+        if (other.getStatus() != 0) {
+          setStatus(other.getStatus());
+        }
+        if (!other.getRoomId().isEmpty()) {
+          roomId_ = other.roomId_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                status_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                roomId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int status_ ;
+      /**
+       * <code>int32 status = 1;</code>
+       * @return The status.
+       */
+      @java.lang.Override
+      public int getStatus() {
+        return status_;
+      }
+      /**
+       * <code>int32 status = 1;</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(int value) {
+
+        status_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 status = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        status_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object roomId_ = "";
+      /**
+       * <code>string roomId = 2;</code>
+       * @return The roomId.
+       */
+      public java.lang.String getRoomId() {
+        java.lang.Object ref = roomId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          roomId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string roomId = 2;</code>
+       * @return The bytes for roomId.
+       */
+      public com.google.protobuf.ByteString
+          getRoomIdBytes() {
+        java.lang.Object ref = roomId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          roomId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string roomId = 2;</code>
+       * @param value The roomId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoomId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        roomId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string roomId = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRoomId() {
+        roomId_ = getDefaultInstance().getRoomId();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string roomId = 2;</code>
+       * @param value The bytes for roomId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoomIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        roomId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.ResCreateRoom)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.ResCreateRoom)
+    private static final edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom();
+    }
+
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ResCreateRoom>
+        PARSER = new com.google.protobuf.AbstractParser<ResCreateRoom>() {
+      @java.lang.Override
+      public ResCreateRoom parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ResCreateRoom> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ResCreateRoom> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.ResCreateRoom getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ReqJoinRoomOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.ReqJoinRoom)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string roomId = 1;</code>
+     * @return The roomId.
+     */
+    java.lang.String getRoomId();
+    /**
+     * <code>string roomId = 1;</code>
+     * @return The bytes for roomId.
+     */
+    com.google.protobuf.ByteString
+        getRoomIdBytes();
+  }
+  /**
+   * Protobuf type {@code proto.ReqJoinRoom}
+   */
+  public static final class ReqJoinRoom extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.ReqJoinRoom)
+      ReqJoinRoomOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ReqJoinRoom.newBuilder() to construct.
+    private ReqJoinRoom(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ReqJoinRoom() {
+      roomId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ReqJoinRoom();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ReqJoinRoom_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ReqJoinRoom_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom.class, edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom.Builder.class);
+    }
+
+    public static final int ROOMID_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object roomId_ = "";
+    /**
+     * <code>string roomId = 1;</code>
+     * @return The roomId.
+     */
+    @java.lang.Override
+    public java.lang.String getRoomId() {
+      java.lang.Object ref = roomId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        roomId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string roomId = 1;</code>
+     * @return The bytes for roomId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRoomIdBytes() {
+      java.lang.Object ref = roomId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        roomId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roomId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, roomId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roomId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, roomId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom)) {
+        return super.equals(obj);
+      }
+      edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom other = (edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom) obj;
+
+      if (!getRoomId()
+          .equals(other.getRoomId())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ROOMID_FIELD_NUMBER;
+      hash = (53 * hash) + getRoomId().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.ReqJoinRoom}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.ReqJoinRoom)
+        edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoomOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ReqJoinRoom_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ReqJoinRoom_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom.class, edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom.Builder.class);
+      }
+
+      // Construct using edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        roomId_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ReqJoinRoom_descriptor;
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom getDefaultInstanceForType() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom build() {
+        edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom buildPartial() {
+        edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom result = new edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.roomId_ = roomId_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom) {
+          return mergeFrom((edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom other) {
+        if (other == edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom.getDefaultInstance()) return this;
+        if (!other.getRoomId().isEmpty()) {
+          roomId_ = other.roomId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                roomId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object roomId_ = "";
+      /**
+       * <code>string roomId = 1;</code>
+       * @return The roomId.
+       */
+      public java.lang.String getRoomId() {
+        java.lang.Object ref = roomId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          roomId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string roomId = 1;</code>
+       * @return The bytes for roomId.
+       */
+      public com.google.protobuf.ByteString
+          getRoomIdBytes() {
+        java.lang.Object ref = roomId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          roomId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string roomId = 1;</code>
+       * @param value The roomId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoomId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        roomId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string roomId = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRoomId() {
+        roomId_ = getDefaultInstance().getRoomId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string roomId = 1;</code>
+       * @param value The bytes for roomId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoomIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        roomId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.ReqJoinRoom)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.ReqJoinRoom)
+    private static final edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom();
+    }
+
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ReqJoinRoom>
+        PARSER = new com.google.protobuf.AbstractParser<ReqJoinRoom>() {
+      @java.lang.Override
+      public ReqJoinRoom parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ReqJoinRoom> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ReqJoinRoom> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.ReqJoinRoom getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ResJoinRoomOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.ResJoinRoom)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 status = 1;</code>
+     * @return The status.
+     */
+    int getStatus();
+
+    /**
+     * <code>string roomId = 2;</code>
+     * @return The roomId.
+     */
+    java.lang.String getRoomId();
+    /**
+     * <code>string roomId = 2;</code>
+     * @return The bytes for roomId.
+     */
+    com.google.protobuf.ByteString
+        getRoomIdBytes();
+  }
+  /**
+   * Protobuf type {@code proto.ResJoinRoom}
+   */
+  public static final class ResJoinRoom extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.ResJoinRoom)
+      ResJoinRoomOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ResJoinRoom.newBuilder() to construct.
+    private ResJoinRoom(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ResJoinRoom() {
+      roomId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ResJoinRoom();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ResJoinRoom_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ResJoinRoom_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom.class, edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom.Builder.class);
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 1;
+    private int status_ = 0;
+    /**
+     * <code>int32 status = 1;</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public int getStatus() {
+      return status_;
+    }
+
+    public static final int ROOMID_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object roomId_ = "";
+    /**
+     * <code>string roomId = 2;</code>
+     * @return The roomId.
+     */
+    @java.lang.Override
+    public java.lang.String getRoomId() {
+      java.lang.Object ref = roomId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        roomId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string roomId = 2;</code>
+     * @return The bytes for roomId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRoomIdBytes() {
+      java.lang.Object ref = roomId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        roomId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (status_ != 0) {
+        output.writeInt32(1, status_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roomId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, roomId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (status_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, status_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roomId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, roomId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom)) {
+        return super.equals(obj);
+      }
+      edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom other = (edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom) obj;
+
+      if (getStatus()
+          != other.getStatus()) return false;
+      if (!getRoomId()
+          .equals(other.getRoomId())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus();
+      hash = (37 * hash) + ROOMID_FIELD_NUMBER;
+      hash = (53 * hash) + getRoomId().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.ResJoinRoom}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.ResJoinRoom)
+        edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoomOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ResJoinRoom_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ResJoinRoom_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom.class, edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom.Builder.class);
+      }
+
+      // Construct using edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        status_ = 0;
+        roomId_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ResJoinRoom_descriptor;
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom getDefaultInstanceForType() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom build() {
+        edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom buildPartial() {
+        edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom result = new edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.status_ = status_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.roomId_ = roomId_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom) {
+          return mergeFrom((edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom other) {
+        if (other == edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom.getDefaultInstance()) return this;
+        if (other.getStatus() != 0) {
+          setStatus(other.getStatus());
+        }
+        if (!other.getRoomId().isEmpty()) {
+          roomId_ = other.roomId_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                status_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                roomId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int status_ ;
+      /**
+       * <code>int32 status = 1;</code>
+       * @return The status.
+       */
+      @java.lang.Override
+      public int getStatus() {
+        return status_;
+      }
+      /**
+       * <code>int32 status = 1;</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(int value) {
+
+        status_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 status = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        status_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object roomId_ = "";
+      /**
+       * <code>string roomId = 2;</code>
+       * @return The roomId.
+       */
+      public java.lang.String getRoomId() {
+        java.lang.Object ref = roomId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          roomId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string roomId = 2;</code>
+       * @return The bytes for roomId.
+       */
+      public com.google.protobuf.ByteString
+          getRoomIdBytes() {
+        java.lang.Object ref = roomId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          roomId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string roomId = 2;</code>
+       * @param value The roomId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoomId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        roomId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string roomId = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRoomId() {
+        roomId_ = getDefaultInstance().getRoomId();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string roomId = 2;</code>
+       * @param value The bytes for roomId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoomIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        roomId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.ResJoinRoom)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.ResJoinRoom)
+    private static final edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom();
+    }
+
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ResJoinRoom>
+        PARSER = new com.google.protobuf.AbstractParser<ResJoinRoom>() {
+      @java.lang.Override
+      public ResJoinRoom parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ResJoinRoom> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ResJoinRoom> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ReqOutRoomOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.ReqOutRoom)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string roomId = 1;</code>
+     * @return The roomId.
+     */
+    java.lang.String getRoomId();
+    /**
+     * <code>string roomId = 1;</code>
+     * @return The bytes for roomId.
+     */
+    com.google.protobuf.ByteString
+        getRoomIdBytes();
+  }
+  /**
+   * Protobuf type {@code proto.ReqOutRoom}
+   */
+  public static final class ReqOutRoom extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.ReqOutRoom)
+      ReqOutRoomOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ReqOutRoom.newBuilder() to construct.
+    private ReqOutRoom(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ReqOutRoom() {
+      roomId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ReqOutRoom();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ReqOutRoom_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ReqOutRoom_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom.class, edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom.Builder.class);
+    }
+
+    public static final int ROOMID_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object roomId_ = "";
+    /**
+     * <code>string roomId = 1;</code>
+     * @return The roomId.
+     */
+    @java.lang.Override
+    public java.lang.String getRoomId() {
+      java.lang.Object ref = roomId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        roomId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string roomId = 1;</code>
+     * @return The bytes for roomId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRoomIdBytes() {
+      java.lang.Object ref = roomId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        roomId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roomId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, roomId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roomId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, roomId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom)) {
+        return super.equals(obj);
+      }
+      edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom other = (edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom) obj;
+
+      if (!getRoomId()
+          .equals(other.getRoomId())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ROOMID_FIELD_NUMBER;
+      hash = (53 * hash) + getRoomId().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.ReqOutRoom}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.ReqOutRoom)
+        edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoomOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ReqOutRoom_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ReqOutRoom_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom.class, edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom.Builder.class);
+      }
+
+      // Construct using edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        roomId_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ReqOutRoom_descriptor;
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom getDefaultInstanceForType() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom build() {
+        edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom buildPartial() {
+        edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom result = new edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.roomId_ = roomId_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom) {
+          return mergeFrom((edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom other) {
+        if (other == edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom.getDefaultInstance()) return this;
+        if (!other.getRoomId().isEmpty()) {
+          roomId_ = other.roomId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                roomId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object roomId_ = "";
+      /**
+       * <code>string roomId = 1;</code>
+       * @return The roomId.
+       */
+      public java.lang.String getRoomId() {
+        java.lang.Object ref = roomId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          roomId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string roomId = 1;</code>
+       * @return The bytes for roomId.
+       */
+      public com.google.protobuf.ByteString
+          getRoomIdBytes() {
+        java.lang.Object ref = roomId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          roomId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string roomId = 1;</code>
+       * @param value The roomId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoomId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        roomId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string roomId = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRoomId() {
+        roomId_ = getDefaultInstance().getRoomId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string roomId = 1;</code>
+       * @param value The bytes for roomId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoomIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        roomId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.ReqOutRoom)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.ReqOutRoom)
+    private static final edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom();
+    }
+
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ReqOutRoom>
+        PARSER = new com.google.protobuf.AbstractParser<ReqOutRoom>() {
+      @java.lang.Override
+      public ReqOutRoom parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ReqOutRoom> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ReqOutRoom> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.ReqOutRoom getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ResOutRoomOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.ResOutRoom)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 status = 1;</code>
+     * @return The status.
+     */
+    int getStatus();
+  }
+  /**
+   * Protobuf type {@code proto.ResOutRoom}
+   */
+  public static final class ResOutRoom extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.ResOutRoom)
+      ResOutRoomOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ResOutRoom.newBuilder() to construct.
+    private ResOutRoom(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ResOutRoom() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ResOutRoom();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ResOutRoom_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ResOutRoom_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom.class, edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom.Builder.class);
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 1;
+    private int status_ = 0;
+    /**
+     * <code>int32 status = 1;</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public int getStatus() {
+      return status_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (status_ != 0) {
+        output.writeInt32(1, status_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (status_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, status_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom)) {
+        return super.equals(obj);
+      }
+      edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom other = (edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom) obj;
+
+      if (getStatus()
+          != other.getStatus()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.ResOutRoom}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.ResOutRoom)
+        edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoomOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ResOutRoom_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ResOutRoom_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom.class, edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom.Builder.class);
+      }
+
+      // Construct using edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        status_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ResOutRoom_descriptor;
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom getDefaultInstanceForType() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom build() {
+        edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom buildPartial() {
+        edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom result = new edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.status_ = status_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom) {
+          return mergeFrom((edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom other) {
+        if (other == edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom.getDefaultInstance()) return this;
+        if (other.getStatus() != 0) {
+          setStatus(other.getStatus());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                status_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int status_ ;
+      /**
+       * <code>int32 status = 1;</code>
+       * @return The status.
+       */
+      @java.lang.Override
+      public int getStatus() {
+        return status_;
+      }
+      /**
+       * <code>int32 status = 1;</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(int value) {
+
+        status_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 status = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        status_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.ResOutRoom)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.ResOutRoom)
+    private static final edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom();
+    }
+
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ResOutRoom>
+        PARSER = new com.google.protobuf.AbstractParser<ResOutRoom>() {
+      @java.lang.Override
+      public ResOutRoom parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ResOutRoom> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ResOutRoom> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ReqCloseRoomOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.ReqCloseRoom)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * check token truoc, sau do publish xuong redis, doi mess tu redis sau do moi xu ly
+     * </pre>
+     *
+     * <code>string roomId = 1;</code>
+     * @return The roomId.
+     */
+    java.lang.String getRoomId();
+    /**
+     * <pre>
+     * check token truoc, sau do publish xuong redis, doi mess tu redis sau do moi xu ly
+     * </pre>
+     *
+     * <code>string roomId = 1;</code>
+     * @return The bytes for roomId.
+     */
+    com.google.protobuf.ByteString
+        getRoomIdBytes();
+
+    /**
+     * <code>string token = 2;</code>
+     * @return The token.
+     */
+    java.lang.String getToken();
+    /**
+     * <code>string token = 2;</code>
+     * @return The bytes for token.
+     */
+    com.google.protobuf.ByteString
+        getTokenBytes();
+  }
+  /**
+   * Protobuf type {@code proto.ReqCloseRoom}
+   */
+  public static final class ReqCloseRoom extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.ReqCloseRoom)
+      ReqCloseRoomOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ReqCloseRoom.newBuilder() to construct.
+    private ReqCloseRoom(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ReqCloseRoom() {
+      roomId_ = "";
+      token_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ReqCloseRoom();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ReqCloseRoom_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ReqCloseRoom_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom.class, edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom.Builder.class);
+    }
+
+    public static final int ROOMID_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object roomId_ = "";
+    /**
+     * <pre>
+     * check token truoc, sau do publish xuong redis, doi mess tu redis sau do moi xu ly
+     * </pre>
+     *
+     * <code>string roomId = 1;</code>
+     * @return The roomId.
+     */
+    @java.lang.Override
+    public java.lang.String getRoomId() {
+      java.lang.Object ref = roomId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        roomId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * check token truoc, sau do publish xuong redis, doi mess tu redis sau do moi xu ly
+     * </pre>
+     *
+     * <code>string roomId = 1;</code>
+     * @return The bytes for roomId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRoomIdBytes() {
+      java.lang.Object ref = roomId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        roomId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TOKEN_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object token_ = "";
+    /**
+     * <code>string token = 2;</code>
+     * @return The token.
+     */
+    @java.lang.Override
+    public java.lang.String getToken() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        token_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string token = 2;</code>
+     * @return The bytes for token.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTokenBytes() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        token_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roomId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, roomId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(token_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, token_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roomId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, roomId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(token_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, token_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom)) {
+        return super.equals(obj);
+      }
+      edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom other = (edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom) obj;
+
+      if (!getRoomId()
+          .equals(other.getRoomId())) return false;
+      if (!getToken()
+          .equals(other.getToken())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ROOMID_FIELD_NUMBER;
+      hash = (53 * hash) + getRoomId().hashCode();
+      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getToken().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.ReqCloseRoom}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.ReqCloseRoom)
+        edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoomOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ReqCloseRoom_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ReqCloseRoom_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom.class, edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom.Builder.class);
+      }
+
+      // Construct using edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        roomId_ = "";
+        token_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ReqCloseRoom_descriptor;
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom getDefaultInstanceForType() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom build() {
+        edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom buildPartial() {
+        edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom result = new edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.roomId_ = roomId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.token_ = token_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom) {
+          return mergeFrom((edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom other) {
+        if (other == edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom.getDefaultInstance()) return this;
+        if (!other.getRoomId().isEmpty()) {
+          roomId_ = other.roomId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getToken().isEmpty()) {
+          token_ = other.token_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                roomId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                token_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object roomId_ = "";
+      /**
+       * <pre>
+       * check token truoc, sau do publish xuong redis, doi mess tu redis sau do moi xu ly
+       * </pre>
+       *
+       * <code>string roomId = 1;</code>
+       * @return The roomId.
+       */
+      public java.lang.String getRoomId() {
+        java.lang.Object ref = roomId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          roomId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * check token truoc, sau do publish xuong redis, doi mess tu redis sau do moi xu ly
+       * </pre>
+       *
+       * <code>string roomId = 1;</code>
+       * @return The bytes for roomId.
+       */
+      public com.google.protobuf.ByteString
+          getRoomIdBytes() {
+        java.lang.Object ref = roomId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          roomId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * check token truoc, sau do publish xuong redis, doi mess tu redis sau do moi xu ly
+       * </pre>
+       *
+       * <code>string roomId = 1;</code>
+       * @param value The roomId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoomId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        roomId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * check token truoc, sau do publish xuong redis, doi mess tu redis sau do moi xu ly
+       * </pre>
+       *
+       * <code>string roomId = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRoomId() {
+        roomId_ = getDefaultInstance().getRoomId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * check token truoc, sau do publish xuong redis, doi mess tu redis sau do moi xu ly
+       * </pre>
+       *
+       * <code>string roomId = 1;</code>
+       * @param value The bytes for roomId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoomIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        roomId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object token_ = "";
+      /**
+       * <code>string token = 2;</code>
+       * @return The token.
+       */
+      public java.lang.String getToken() {
+        java.lang.Object ref = token_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          token_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string token = 2;</code>
+       * @return The bytes for token.
+       */
+      public com.google.protobuf.ByteString
+          getTokenBytes() {
+        java.lang.Object ref = token_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          token_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string token = 2;</code>
+       * @param value The token to set.
+       * @return This builder for chaining.
+       */
+      public Builder setToken(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        token_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string token = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearToken() {
+        token_ = getDefaultInstance().getToken();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string token = 2;</code>
+       * @param value The bytes for token to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        token_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.ReqCloseRoom)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.ReqCloseRoom)
+    private static final edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom();
+    }
+
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ReqCloseRoom>
+        PARSER = new com.google.protobuf.AbstractParser<ReqCloseRoom>() {
+      @java.lang.Override
+      public ReqCloseRoom parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ReqCloseRoom> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ReqCloseRoom> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.ReqCloseRoom getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ResCloseRoomOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.ResCloseRoom)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 status = 1;</code>
+     * @return The status.
+     */
+    int getStatus();
+  }
+  /**
+   * Protobuf type {@code proto.ResCloseRoom}
+   */
+  public static final class ResCloseRoom extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.ResCloseRoom)
+      ResCloseRoomOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ResCloseRoom.newBuilder() to construct.
+    private ResCloseRoom(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ResCloseRoom() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ResCloseRoom();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ResCloseRoom_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ResCloseRoom_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom.class, edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom.Builder.class);
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 1;
+    private int status_ = 0;
+    /**
+     * <code>int32 status = 1;</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public int getStatus() {
+      return status_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (status_ != 0) {
+        output.writeInt32(1, status_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (status_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, status_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom)) {
+        return super.equals(obj);
+      }
+      edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom other = (edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom) obj;
+
+      if (getStatus()
+          != other.getStatus()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.ResCloseRoom}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.ResCloseRoom)
+        edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoomOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ResCloseRoom_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ResCloseRoom_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom.class, edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom.Builder.class);
+      }
+
+      // Construct using edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        status_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ResCloseRoom_descriptor;
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom getDefaultInstanceForType() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom build() {
+        edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom buildPartial() {
+        edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom result = new edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.status_ = status_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom) {
+          return mergeFrom((edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom other) {
+        if (other == edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom.getDefaultInstance()) return this;
+        if (other.getStatus() != 0) {
+          setStatus(other.getStatus());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                status_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int status_ ;
+      /**
+       * <code>int32 status = 1;</code>
+       * @return The status.
+       */
+      @java.lang.Override
+      public int getStatus() {
+        return status_;
+      }
+      /**
+       * <code>int32 status = 1;</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(int value) {
+
+        status_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 status = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        status_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.ResCloseRoom)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.ResCloseRoom)
+    private static final edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom();
+    }
+
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ResCloseRoom>
+        PARSER = new com.google.protobuf.AbstractParser<ResCloseRoom>() {
+      @java.lang.Override
+      public ResCloseRoom parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ResCloseRoom> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ResCloseRoom> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.ResCloseRoom getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_proto_PacketWrapper_descriptor;
   private static final 
@@ -11093,10 +18134,55 @@ public final class Proto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_proto_ReqUpdateUserInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ResUserInfo_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ResUserInfo_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_proto_User_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_proto_User_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ReqCreateRoom_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ReqCreateRoom_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ResCreateRoom_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ResCreateRoom_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ReqJoinRoom_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ReqJoinRoom_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ResJoinRoom_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ResJoinRoom_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ReqOutRoom_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ReqOutRoom_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ResOutRoom_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ResOutRoom_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ReqCloseRoom_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ReqCloseRoom_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ResCloseRoom_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ResCloseRoom_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -11107,7 +18193,7 @@ public final class Proto {
   static {
     java.lang.String[] descriptorData = {
       "\n\013Proto.proto\022\005proto\".\n\rPacketWrapper\022\035\n" +
-      "\006packet\030\001 \003(\0132\r.proto.Packet\"\314\003\n\006Packet\022" +
+      "\006packet\030\001 \003(\0132\r.proto.Packet\"\327\006\n\006Packet\022" +
       "#\n\010reqLogin\030\001 \001(\0132\017.proto.ReqLoginH\000\022\'\n\n" +
       "reqRelogin\030\002 \001(\0132\021.proto.ReqReloginH\000\022#\n" +
       "\010resLogin\030\003 \001(\0132\017.proto.ResLoginH\000\022%\n\tre" +
@@ -11119,22 +18205,41 @@ public final class Proto {
       "\001(\0132\022.proto.ReqRegisterH\000\022)\n\013resRegister" +
       "\030\t \001(\0132\022.proto.ResRegisterH\000\0225\n\021reqUpdat" +
       "eUserInfo\030\n \001(\0132\030.proto.ReqUpdateUserInf" +
-      "oH\000B\006\n\004data\".\n\010ReqLogin\022\020\n\010username\030\001 \001(" +
-      "\t\022\020\n\010password\030\002 \001(\t\"-\n\nReqRelogin\022\020\n\010use" +
-      "rname\030\001 \001(\t\022\r\n\005token\030\002 \001(\t\"D\n\010ResLogin\022\016" +
-      "\n\006status\030\001 \001(\005\022\r\n\005token\030\002 \001(\t\022\031\n\004user\030\003 " +
-      "\001(\0132\013.proto.User\"\036\n\014ResUserAlert\022\016\n\006stat" +
-      "us\030\001 \001(\005\"\013\n\tReqLogout\"\033\n\tResLogout\022\016\n\006st" +
-      "atus\030\001 \001(\005\"\"\n\021ReqForgotPassword\022\r\n\005email" +
-      "\030\001 \001(\t\"#\n\021ResForgotPassword\022\016\n\006status\030\001 " +
-      "\001(\005\"Q\n\013ReqRegister\022\020\n\010username\030\001 \001(\t\022\020\n\010" +
-      "password\030\002 \001(\t\022\017\n\007sponsor\030\003 \001(\t\022\r\n\005phone" +
-      "\030\004 \001(\t\"\035\n\013ResRegister\022\016\n\006status\030\001 \001(\005\"7\n" +
-      "\021ReqUpdateUserInfo\022\022\n\nplayerName\030\001 \001(\t\022\016" +
-      "\n\006gender\030\002 \001(\005\"j\n\004User\022\016\n\006userId\030\001 \001(\005\022\020" +
-      "\n\010username\030\002 \001(\t\022\022\n\nplayerName\030\003 \001(\t\022\016\n\006" +
-      "gender\030\004 \001(\005\022\r\n\005email\030\006 \001(\t\022\r\n\005phone\030\007 \001" +
-      "(\tB\034\n\032edu.vn.hcmuaf.layer2.protob\006proto3"
+      "oH\000\022)\n\013resUserInfo\030\013 \001(\0132\022.proto.ResUser" +
+      "InfoH\000\022-\n\rreqCreateRoom\030\014 \001(\0132\024.proto.Re" +
+      "qCreateRoomH\000\022-\n\rresCreateRoom\030\r \001(\0132\024.p" +
+      "roto.ResCreateRoomH\000\022)\n\013reqJoinRoom\030\016 \001(" +
+      "\0132\022.proto.ReqJoinRoomH\000\022)\n\013resJoinRoom\030\017" +
+      " \001(\0132\022.proto.ResJoinRoomH\000\022\'\n\nreqOutRoom" +
+      "\030\020 \001(\0132\021.proto.ReqOutRoomH\000\022\'\n\nresOutRoo" +
+      "m\030\021 \001(\0132\021.proto.ResOutRoomH\000\022+\n\014reqClose" +
+      "Room\030\022 \001(\0132\023.proto.ReqCloseRoomH\000\022+\n\014res" +
+      "CloseRoom\030\023 \001(\0132\023.proto.ResCloseRoomH\000B\006" +
+      "\n\004data\".\n\010ReqLogin\022\020\n\010username\030\001 \001(\t\022\020\n\010" +
+      "password\030\002 \001(\t\"-\n\nReqRelogin\022\020\n\010username" +
+      "\030\001 \001(\t\022\r\n\005token\030\002 \001(\t\"D\n\010ResLogin\022\016\n\006sta" +
+      "tus\030\001 \001(\005\022\r\n\005token\030\002 \001(\t\022\031\n\004user\030\003 \001(\0132\013" +
+      ".proto.User\"\036\n\014ResUserAlert\022\016\n\006status\030\001 " +
+      "\001(\005\"\013\n\tReqLogout\"\033\n\tResLogout\022\016\n\006status\030" +
+      "\001 \001(\005\"\"\n\021ReqForgotPassword\022\r\n\005email\030\001 \001(" +
+      "\t\"#\n\021ResForgotPassword\022\016\n\006status\030\001 \001(\005\"Q" +
+      "\n\013ReqRegister\022\020\n\010username\030\001 \001(\t\022\020\n\010passw" +
+      "ord\030\002 \001(\t\022\017\n\007sponsor\030\003 \001(\t\022\r\n\005phone\030\004 \001(" +
+      "\t\"\035\n\013ResRegister\022\016\n\006status\030\001 \001(\005\"7\n\021ReqU" +
+      "pdateUserInfo\022\022\n\nplayerName\030\001 \001(\t\022\016\n\006gen" +
+      "der\030\002 \001(\005\"(\n\013ResUserInfo\022\031\n\004user\030\001 \001(\0132\013" +
+      ".proto.User\"j\n\004User\022\016\n\006userId\030\001 \001(\005\022\020\n\010u" +
+      "sername\030\002 \001(\t\022\022\n\nplayerName\030\003 \001(\t\022\016\n\006gen" +
+      "der\030\004 \001(\005\022\r\n\005email\030\006 \001(\t\022\r\n\005phone\030\007 \001(\t\"" +
+      "/\n\rReqCreateRoom\022\016\n\006userId\030\001 \001(\t\022\016\n\006test" +
+      "Id\030\002 \001(\t\"/\n\rResCreateRoom\022\016\n\006status\030\001 \001(" +
+      "\005\022\016\n\006roomId\030\002 \001(\t\"\035\n\013ReqJoinRoom\022\016\n\006room" +
+      "Id\030\001 \001(\t\"-\n\013ResJoinRoom\022\016\n\006status\030\001 \001(\005\022" +
+      "\016\n\006roomId\030\002 \001(\t\"\034\n\nReqOutRoom\022\016\n\006roomId\030" +
+      "\001 \001(\t\"\034\n\nResOutRoom\022\016\n\006status\030\001 \001(\005\"-\n\014R" +
+      "eqCloseRoom\022\016\n\006roomId\030\001 \001(\t\022\r\n\005token\030\002 \001" +
+      "(\t\"\036\n\014ResCloseRoom\022\016\n\006status\030\001 \001(\005B\034\n\032ed" +
+      "u.vn.hcmuaf.layer2.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -11151,7 +18256,7 @@ public final class Proto {
     internal_static_proto_Packet_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Packet_descriptor,
-        new java.lang.String[] { "ReqLogin", "ReqRelogin", "ResLogin", "ReqLogout", "ResLogout", "ReqForgotPassword", "ResForgotPassword", "ReqRegister", "ResRegister", "ReqUpdateUserInfo", "Data", });
+        new java.lang.String[] { "ReqLogin", "ReqRelogin", "ResLogin", "ReqLogout", "ResLogout", "ReqForgotPassword", "ResForgotPassword", "ReqRegister", "ResRegister", "ReqUpdateUserInfo", "ResUserInfo", "ReqCreateRoom", "ResCreateRoom", "ReqJoinRoom", "ResJoinRoom", "ReqOutRoom", "ResOutRoom", "ReqCloseRoom", "ResCloseRoom", "Data", });
     internal_static_proto_ReqLogin_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_proto_ReqLogin_fieldAccessorTable = new
@@ -11218,12 +18323,66 @@ public final class Proto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ReqUpdateUserInfo_descriptor,
         new java.lang.String[] { "PlayerName", "Gender", });
-    internal_static_proto_User_descriptor =
+    internal_static_proto_ResUserInfo_descriptor =
       getDescriptor().getMessageTypes().get(13);
+    internal_static_proto_ResUserInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ResUserInfo_descriptor,
+        new java.lang.String[] { "User", });
+    internal_static_proto_User_descriptor =
+      getDescriptor().getMessageTypes().get(14);
     internal_static_proto_User_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_User_descriptor,
         new java.lang.String[] { "UserId", "Username", "PlayerName", "Gender", "Email", "Phone", });
+    internal_static_proto_ReqCreateRoom_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_proto_ReqCreateRoom_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ReqCreateRoom_descriptor,
+        new java.lang.String[] { "UserId", "TestId", });
+    internal_static_proto_ResCreateRoom_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_proto_ResCreateRoom_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ResCreateRoom_descriptor,
+        new java.lang.String[] { "Status", "RoomId", });
+    internal_static_proto_ReqJoinRoom_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_proto_ReqJoinRoom_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ReqJoinRoom_descriptor,
+        new java.lang.String[] { "RoomId", });
+    internal_static_proto_ResJoinRoom_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_proto_ResJoinRoom_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ResJoinRoom_descriptor,
+        new java.lang.String[] { "Status", "RoomId", });
+    internal_static_proto_ReqOutRoom_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_proto_ReqOutRoom_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ReqOutRoom_descriptor,
+        new java.lang.String[] { "RoomId", });
+    internal_static_proto_ResOutRoom_descriptor =
+      getDescriptor().getMessageTypes().get(20);
+    internal_static_proto_ResOutRoom_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ResOutRoom_descriptor,
+        new java.lang.String[] { "Status", });
+    internal_static_proto_ReqCloseRoom_descriptor =
+      getDescriptor().getMessageTypes().get(21);
+    internal_static_proto_ReqCloseRoom_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ReqCloseRoom_descriptor,
+        new java.lang.String[] { "RoomId", "Token", });
+    internal_static_proto_ResCloseRoom_descriptor =
+      getDescriptor().getMessageTypes().get(22);
+    internal_static_proto_ResCloseRoom_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ResCloseRoom_descriptor,
+        new java.lang.String[] { "Status", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

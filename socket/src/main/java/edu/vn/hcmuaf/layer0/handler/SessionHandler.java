@@ -11,7 +11,7 @@ import org.apache.log4j.Logger;
 import jakarta.websocket.Session;
 public class SessionHandler implements Subscriber {
 
-    private static Logger logger = Logger.getLogger(SessionHandler.class);
+//    private static Logger logger = Logger.getLogger(SessionHandler.class);
 
     private SessionService sessionService = SessionService.me();
 
@@ -42,7 +42,7 @@ public class SessionHandler implements Subscriber {
         SessionCache.me().logout(sessionContext);
         clearUserData(session, sessionContext);
 
-        logger.info("Session Logout: Session " + session.getId() + " ; sessionId " + sessionId);
+//        logger.info("Session Logout: Session " + session.getId() + " ; sessionId " + sessionId);
     }
 
     private void clearUserData(Session session, SessionContext sessionContext) {
@@ -59,7 +59,7 @@ public class SessionHandler implements Subscriber {
     @Override
     public void onClose(Session session) {
         String sessionID = SessionManage.me().getSessionID(session);
-        logger.info("Session Close: Session " + session.getId() + " ; sessionId " + sessionID);
+//        logger.info("Session Close: Session " + session.getId() + " ; sessionId " + sessionID);
         System.out.println("Session Close: Session " + session.getId() + " ; sessionId " + sessionID);
         sessionService.onClose(session);
     }

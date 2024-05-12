@@ -11,7 +11,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class SessionManage {
-    private static final Logger logger = Logger.getLogger(SessionManage.class);
+//    private static final Logger logger = Logger.getLogger(SessionManage.class);
     private static final SessionManage install = new SessionManage();
     public final Map<String, Session> sessionMap = new ConcurrentHashMap<>();
 
@@ -20,7 +20,8 @@ public class SessionManage {
     private final String endPointID = SessionID.ownerEndPointID;
 
     private SessionManage() {
-        logger.info("SessionManage created");
+//        logger.info("SessionManage created");
+        System.out.println("SessionManage created");
     }
 
     public static SessionManage me() {

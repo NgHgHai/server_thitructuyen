@@ -20,6 +20,8 @@ public class AuthHandler implements Subscriber {
         packetWrapper.getPacketList().forEach(packet -> {
             //to check user đang login trong hệ thống
             if (packet.hasReqLogin()) {
+                System.out.println("co req yeu cau login");
+                session.getAsyncRemote().sendText("da nhan yeu cau login");
                 authService.checkLogin(session, packet.getReqLogin());
             }
             if (packet.hasReqRelogin()) {

@@ -8,7 +8,7 @@ import jakarta.servlet.ServletContextListener;
 @WebListener
 
 public class SocketInitialization implements ServletContextListener {
-    private static final Logger logger = Logger.getLogger(SocketInitialization.class);
+//    private static final Logger logger = Logger.getLogger(SocketInitialization.class);
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {

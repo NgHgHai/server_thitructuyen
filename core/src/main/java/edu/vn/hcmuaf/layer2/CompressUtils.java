@@ -8,7 +8,7 @@ import java.util.zip.ZipOutputStream;
 
 public class CompressUtils {
 
-    private static Logger logger = Logger.getLogger(CompressUtils.class);
+//    private static Logger logger = Logger.getLogger(CompressUtils.class);
 
     public static byte[] compress(String json) {
         try (ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
@@ -44,7 +44,7 @@ public class CompressUtils {
             Object deserializedObject = objectIn.readObject();
             return desire.cast(deserializedObject);
         } catch (IOException | ClassNotFoundException e) {
-            logger.error("decompress error", e);
+//            logger.error("decompress error", e);
             return null;
         }
     }

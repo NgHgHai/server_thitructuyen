@@ -1,22 +1,20 @@
 package edu.vn.hcmuaf.layer1.services;
 
 
+import edu.vn.hcmuaf.layer2.dao.UserDAO;
 import edu.vn.hcmuaf.layer2.redis.SessionManage;
 import edu.vn.hcmuaf.layer2.proto.Proto;
-import edu.vn.hcmuaf.layer2.redis.cache.MySessionCache;
+//import edu.vn.hcmuaf.layer2.redis.cache.MySessionCache;
 import edu.vn.hcmuaf.layer2.redis.cache.SessionCache;
 import edu.vn.hcmuaf.layer2.redis.context.SessionContext;
-import edu.vn.hcmuaf.layer2.dao.UserDAO;
-import org.apache.log4j.Logger;
+//import org.apache.log4j.Logger;
 
 
 import jakarta.websocket.Session;
 
-import java.util.*;
-
 public class SessionService implements IService {
 
-    private static final Logger logger = Logger.getLogger(SessionService.class);
+    //    private static final Logger logger = Logger.getLogger(SessionService.class);
     private static final SessionService install = new SessionService();
 
     private final SessionManage sessionManage = SessionManage.me();
@@ -34,15 +32,10 @@ public class SessionService implements IService {
         //loi o dong nay
         SessionContext sessionContext = SessionContext.builder().sessionID(sessionID).socketID(sessionManage.getEndPointID()).build();
         System.out.println(sessionContext);
-        logger.info("Session Open: Open - " + session.getId() + " ; all - " + sessionManage.count() + " UUID " + sessionID);
+//        logger.info("Session Open: Open - " + session.getId() + " ; all - " + sessionManage.count() + " UUID " + sessionID);
         System.out.println("Session Open: Open - " + session.getId() + " ; all - " + sessionManage.count() + " UUID " + sessionID);
-        try {
-            session.getBasicRemote().sendText("this is your ssid : " + sessionID);
-            MySessionCache.me().add(sessionID, sessionContext);
-        } catch (Exception e) {
-            System.out.println("loi o day");
-        }
-
+        session.getAsyncRemote().sendText("this is your ssid : " + sessionID);
+        SessionCache.me().add(sessionID, sessionContext);
     }
 
     public void onMessage(Session session, Proto.PacketWrapper packetWrapper) {
@@ -52,8 +45,9 @@ public class SessionService implements IService {
     public void onClose(Session session) {
         String sessionID = sessionManage.getSessionID(session);
         sessionManage.removeSessionId(sessionID);
-//        SessionCache.me().addWaitingReloginList(sessionContext);
-//        SessionCache.me().remove(sessionID);
+        SessionContext sessionContext = SessionCache.me().get(sessionID);
+        SessionCache.me().addWaitingReloginList(sessionContext);
+        SessionCache.me().remove(sessionID);
     }
 
 //    public void updateServerStatus() {
@@ -88,37 +82,37 @@ public class SessionService implements IService {
 //        SessionCache.me().clearMultiUser(offlineUser);
 //    }
 
-//    public boolean checkLogin(Session session) {
-//        SessionContext sessionContext = SessionCache.me().get(sessionManage.getSessionID(session));
-//        if (sessionContext == null) {
-//            return false;
-//        }
-//        return sessionContext.getUser() != null;
-//    }
+    public boolean checkLogin(Session session) {
+        SessionContext sessionContext = SessionCache.me().get(sessionManage.getSessionID(session));
+        if (sessionContext == null) {
+            return false;
+        }
+        return sessionContext.getUser() != null;
+    }
 
 
-//    public void sendUserInfo(Session session) {
-//        SessionContext sessionContext = SessionCache.me().get(sessionManage.getSessionID(session));
-////        Proto.ResUserInfo resUserInfo = Proto.ResUserInfo.newBuilder().setUser(sessionContext.getUser()).build();
-////        session.getAsyncRemote().sendObject(
-////                Proto.PacketWrapper.newBuilder().addPacket(Proto.Packet.newBuilder().setResUserInfo(resUserInfo)).build()
-////        );
-//    }
+    public void sendUserInfo(Session session) {
+        SessionContext sessionContext = SessionCache.me().get(sessionManage.getSessionID(session));
+        Proto.ResUserInfo resUserInfo = Proto.ResUserInfo.newBuilder().setUser(sessionContext.getUser()).build();
+        session.getAsyncRemote().sendObject(
+                Proto.PacketWrapper.newBuilder().addPacket(Proto.Packet.newBuilder().setResUserInfo(resUserInfo)).build()
+        );
+    }
 
-//    public void updateUserInfo(Session session, Proto.ReqUpdateUserInfo reqUpdateUserInfo) {
-//        SessionContext sessionContext = SessionCache.me().get(sessionManage.getSessionID(session));
-//        Proto.User.Builder user = sessionContext.getUser().toBuilder();
-//        user.setPlayerName(reqUpdateUserInfo.getPlayerName().equals("") ? user.getPlayerName() : reqUpdateUserInfo.getPlayerName());
-//        user.setGender(reqUpdateUserInfo.getGender());
-//        sessionContext.setUser(user.build());
-//        UserDAO.updateUserInfo(sessionContext.getUser());
-//        SessionCache.me().update(sessionContext);
-////        session.getAsyncRemote().sendObject(
-////                Proto.PacketWrapper.newBuilder().addPacket(Proto.Packet.newBuilder()
-////                        .setResUserInfo(Proto.ResUserInfo.newBuilder()
-////                                .setUser(sessionContext.getUser()))).build()
-////        );
-//    }
+    public void updateUserInfo(Session session, Proto.ReqUpdateUserInfo reqUpdateUserInfo) {
+        SessionContext sessionContext = SessionCache.me().get(sessionManage.getSessionID(session));
+        Proto.User.Builder user = sessionContext.getUser().toBuilder();
+        user.setPlayerName(reqUpdateUserInfo.getPlayerName().equals("") ? user.getPlayerName() : reqUpdateUserInfo.getPlayerName());
+        user.setGender(reqUpdateUserInfo.getGender());
+        sessionContext.setUser(user.build());
+        UserDAO.updateUserInfo(sessionContext.getUser());
+        SessionCache.me().update(sessionContext);
+        session.getAsyncRemote().sendObject(
+                Proto.PacketWrapper.newBuilder().addPacket(Proto.Packet.newBuilder()
+                        .setResUserInfo(Proto.ResUserInfo.newBuilder()
+                                .setUser(sessionContext.getUser()))).build()
+        );
+    }
 
 //    public void verifyPhoneNumberStep1(Session session, Proto.ReqVerifyPhoneNumberStep1 reqVerifyPhoneNumberStep1) {
 //

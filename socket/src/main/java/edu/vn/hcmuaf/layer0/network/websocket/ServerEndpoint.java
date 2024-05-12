@@ -22,18 +22,19 @@ import java.util.Set;
 
 @jakarta.websocket.server.ServerEndpoint(value = "/", configurator = CustomEndpointConfigurator.class, decoders = MessageDecoder.class, encoders = MessageEncoder.class)
 public class ServerEndpoint {
-    private static final Logger logger = Logger.getLogger(ServerEndpoint.class);
+//    private static final Logger logger = Logger.getLogger(ServerEndpoint.class);
 
     private static final Set<Subscriber> subscribers = new HashSet<>();
 
     public static void init() {
-        logger.info("init socket");
+//        logger.info("init socket");
 //        SessionService.me().updateServerStatus();
 
         initLoadingData();
 
         ServerEndpoint.subscribe(new SessionHandler());
         ServerEndpoint.subscribe(new AuthHandler());
+        ServerEndpoint.subscribe(new RoomHandler());
 //        ServerEndpoint.subscribe(new NotificationHandler());
 //        ThreadManage.me().execute(() -> {
 ////            while (true) {
@@ -50,7 +51,7 @@ public class ServerEndpoint {
     }
 
     public static void destroy() {
-        logger.info("destroy socket");
+//        logger.info("destroy socket");
         RedisClusterHelper.closeConnection();
         subscribers.clear();
 //        SystemNotify.me().destroy();

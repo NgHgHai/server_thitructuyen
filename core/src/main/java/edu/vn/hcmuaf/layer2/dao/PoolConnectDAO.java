@@ -2,10 +2,9 @@ package edu.vn.hcmuaf.layer2.dao;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import edu.vn.hcmuaf.layer2.dao.bean.UserBean;
 import org.jdbi.v3.core.Jdbi;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.util.Properties;
 
 
@@ -17,16 +16,10 @@ public abstract class PoolConnectDAO {
 
     static {
         try {
-
-            File file = new File("/database.properties");
-            if (file.exists()) {
-                prop.load(new FileInputStream(file));
-            } else {
-                prop.load(PoolConnectDAO.class.getClassLoader().getResourceAsStream("database.properties"));
-            }
-
+            prop.load(PoolConnectDAO.class.getClassLoader().getResourceAsStream("db.properties"));
             config = new HikariConfig();
             config.setJdbcUrl("jdbc:mysql://" + getDbHost() + ":" + getDbPort() + "/" + getDbName());
+            System.out.println("jdbc:mysql://" + getDbHost() + ":" + getDbPort() + "/" + getDbName());
             config.setDriverClassName("com.mysql.cj.jdbc.Driver");
             config.setUsername(getUsername());
             config.setPassword(getPassword());
@@ -35,6 +28,7 @@ public abstract class PoolConnectDAO {
             config.addDataSourceProperty("cachePrepStmts", "true");
             config.addDataSourceProperty("prepStmtCacheSize", "250");
             config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
+            System.out.println("connecting...");
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException(e);
@@ -51,22 +45,23 @@ public abstract class PoolConnectDAO {
     }
 
     private static String getPassword() {
-        return prop.getProperty("password");
+        return prop.getProperty("db.password");
     }
 
     private static String getUsername() {
-        return prop.getProperty("username");
+        return prop.getProperty("db.username");
     }
 
     private static String getDbName() {
-        return prop.getProperty("dbName");
+        return prop.getProperty("db.name");
     }
 
     private static String getDbPort() {
-        return prop.getProperty("dbPort");
+        return prop.getProperty("db.port");
     }
 
     private static String getDbHost() {
-        return prop.getProperty("dbHost");
+        return prop.getProperty("db.host");
     }
+
 }
