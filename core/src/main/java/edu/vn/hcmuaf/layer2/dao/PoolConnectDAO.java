@@ -45,23 +45,42 @@ public abstract class PoolConnectDAO {
     }
 
     private static String getPassword() {
+        if (System.getenv("DB_PASSWORD") != null) {
+            return System.getenv("DB_PASSWORD");
+        }
         return prop.getProperty("db.password");
     }
 
     private static String getUsername() {
+        if (System.getenv("DB_USER") != null) {
+            return System.getenv("DB_USER");
+        }
         return prop.getProperty("db.username");
     }
 
     private static String getDbName() {
+        if (System.getenv("DB_NAME") != null) {
+            return System.getenv("DB_NAME");
+        }
         return prop.getProperty("db.name");
     }
 
     private static String getDbPort() {
+        if (System.getenv("DB_PORT") != null) {
+            return System.getenv("DB_PORT");
+        }
         return prop.getProperty("db.port");
     }
 
     private static String getDbHost() {
+        if (System.getenv("DB_HOST") != null) {
+            return System.getenv("DB_HOST");
+        }
         return prop.getProperty("db.host");
     }
+
+//    public static void main(String[] args) {
+//        System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaa"+System.getenv("JAVA_HOME"));
+//    }
 
 }

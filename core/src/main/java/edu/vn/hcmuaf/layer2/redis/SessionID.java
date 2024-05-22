@@ -38,6 +38,9 @@ public class SessionID {
         return this.endPointID + ":" + this.sessionID;
     }
 
+//    public static void main(String[] args) {
+//        System.out.println( String.valueOf(System.currentTimeMillis()).substring(7) );
+//    }
 
 
 }

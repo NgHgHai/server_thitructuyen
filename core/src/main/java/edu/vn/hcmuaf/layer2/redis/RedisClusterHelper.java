@@ -51,6 +51,16 @@ public abstract class RedisClusterHelper {
 
     protected JedisCluster getConnection() {
         if (cluster == null) {
+            System.out.println("dang tao");
+            Set<HostAndPort> jedisClusterNode = new HashSet<>();
+            jedisClusterNode.add(new HostAndPort(RedisProperties.getHost(), 7001));
+            jedisClusterNode.add(new HostAndPort(RedisProperties.getHost(), 7002));
+            jedisClusterNode.add(new HostAndPort(RedisProperties.getHost(), 7003));
+            jedisClusterNode.add(new HostAndPort(RedisProperties.getHost(), 7004));
+            jedisClusterNode.add(new HostAndPort(RedisProperties.getHost(), 7005));
+            jedisClusterNode.add(new HostAndPort(RedisProperties.getHost(), 7006));
+
+
             var poolConfig = new GenericObjectPoolConfig<Connection>();
             poolConfig.setTimeBetweenEvictionRuns(Duration.ofSeconds(60)); // thoi gian giua cac lan chay thread kiem tra cac connection
             poolConfig.setTestOnBorrow(true);
@@ -60,20 +70,27 @@ public abstract class RedisClusterHelper {
             poolConfig.setMaxTotal(80);
             poolConfig.setMaxIdle(35);// số kết nối tối đa không sử dụng được giữ trong redis
             poolConfig.setMinIdle(35);
-            provider = new ClusterConnectionProvider(Set.of(new HostAndPort(RedisProperties.getHost(), RedisProperties.getPort())),
-                    DefaultJedisClientConfig.builder().build(), poolConfig);
+
+            provider = new ClusterConnectionProvider(jedisClusterNode, DefaultJedisClientConfig.builder().password(RedisProperties.getPassword()).build(), poolConfig);
             cluster = new JedisCluster(provider, 30, Duration.ofMillis(1000));
         }
         return cluster;
     }
 
     protected RedissonClient getRedissonClient() {
+        List<String> nodes = new ArrayList<>();
+        nodes.add("redis://" + RedisProperties.getHost() + ":7001");
+        nodes.add("redis://" + RedisProperties.getHost() + ":7002");
+        nodes.add("redis://" + RedisProperties.getHost() + ":7003");
+        nodes.add("redis://" + RedisProperties.getHost() + ":7004");
+        nodes.add("redis://" + RedisProperties.getHost() + ":7005");
+        nodes.add("redis://" + RedisProperties.getHost() + ":7006");
         if (Objects.isNull(redisson)) {
             Config config = new Config();
             config.setThreads(8);//thử nghiệm
             config.useClusterServers();
             config.useClusterServers().setNodeAddresses(List.of("redis://" + RedisProperties.getHost() + ":" + RedisProperties.getPort()));
-
+            config.useClusterServers().setPassword(RedisProperties.getPassword());
             redisson = Redisson.create(config);
         }
         return redisson;
@@ -82,8 +99,7 @@ public abstract class RedisClusterHelper {
     public boolean healthCheck() {
         for (Map.Entry<String, ConnectionPool> node : cluster.getClusterNodes().entrySet()) {
             try (Connection jedis = node.getValue().getResource()) {
-                if (!jedis.ping())
-                    return false;
+                if (!jedis.ping()) return false;
                 //Node is OK
             } catch (JedisConnectionException jce) {
                 //Node FAILS
@@ -134,26 +150,23 @@ public abstract class RedisClusterHelper {
         pipeline.sync();
         pipeline.close();
         if (collect.size() == 0) return new HashMap<>();
-        Stream<List<Object>> stream = collect.stream().filter(Objects::nonNull)
-                .filter(objects -> nonNull(objects.get(0)) && nonNull(objects.get(1)));
+        Stream<List<Object>> stream = collect.stream().filter(Objects::nonNull).filter(objects -> nonNull(objects.get(0)) && nonNull(objects.get(1)));
 
-        return stream.collect(Collectors.toMap(
-                keyAndValue -> {
-                    try {
-                        return new String((byte[]) keyAndValue.get(0));
-                    } catch (Exception e) {
+        return stream.collect(Collectors.toMap(keyAndValue -> {
+            try {
+                return new String((byte[]) keyAndValue.get(0));
+            } catch (Exception e) {
 //                        logger.error("keyAndValue.toString() data=" + keyAndValue);
-                        throw new RuntimeException(e);
-                    }
-                },
-                keyAndValue -> {
-                    try {
-                        return decompress(((Response<byte[]>) keyAndValue.get(1)).get(), c);
-                    } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }, keyAndValue -> {
+            try {
+                return decompress(((Response<byte[]>) keyAndValue.get(1)).get(), c);
+            } catch (Exception e) {
 //                        logger.error("((Response<String>) keyAndValue[1]).get() data=" + keyAndValue);
-                        throw new RuntimeException(e);
-                    }
-                }));
+                throw new RuntimeException(e);
+            }
+        }));
     }
 
     private <T extends Serializable> Map<String, T> get(Set<String> keys, Class<T> c) {
@@ -213,18 +226,24 @@ public abstract class RedisClusterHelper {
         getConnection().srem(tClass.getCanonicalName(), keys);
         return t;
     }
-    /** them 1 phan tu vao hash map o redis co key la key va field la field voi gia tri la value cua kieu T
+
+    /**
+     * them 1 phan tu vao hash map o redis co key la key va field la field voi gia tri la value cua kieu T
      */
     protected <T extends Serializable> void hset(String key, String field, T t) {
         getConnection().hset(key.getBytes(), field.getBytes(), compress(t));
     }
-    /** lay gia tri cua 1 field trong hash map co key la key va field la field voi kieu T la keu du lieu cua value
+
+    /**
+     * lay gia tri cua 1 field trong hash map co key la key va field la field voi kieu T la keu du lieu cua value
      */
     protected <T extends Serializable> T hget(String key, String field, Class<T> t) {
         byte[] s = getConnection().hget(key.getBytes(), field.getBytes());
         return decompress(s, t);
     }
-    /** lay tat ca cac gia tri cua hash map co key la key voi kieu T la kieu du lieu cua value
+
+    /**
+     * lay tat ca cac gia tri cua hash map co key la key voi kieu T la kieu du lieu cua value
      */
     protected <T extends Serializable> Map<String, T> hgetAll(String key, Class<T> c) {
         Map<byte[], byte[]> all = getConnection().hgetAll(key.getBytes());
@@ -232,12 +251,16 @@ public abstract class RedisClusterHelper {
         all.forEach((s, v) -> data.put(new String(s), decompress(v, c)));
         return data;
     }
-    /** lay ra danh sach cac field cua hash map co key la key
+
+    /**
+     * lay ra danh sach cac field cua hash map co key la key
      */
     protected Set<String> hkeys(String key) {
         return getConnection().hkeys(key);
     }
-    /** xoa 1 field cua hash map co key la key va field la field
+
+    /**
+     * xoa 1 field cua hash map co key la key va field la field
      */
     protected void hdel(String key, String... field) {
         getConnection().hdel(key, field);
@@ -276,9 +299,10 @@ public abstract class RedisClusterHelper {
             throw new RuntimeException(e);
         }
     }
-    protected double increaseDouble(String key,double value) {
+
+    protected double increaseDouble(String key, double value) {
         try {
-            return getConnection().incrByFloat(key,value);
+            return getConnection().incrByFloat(key, value);
         } catch (Exception e) {
 //            logger.error("increaseInt key=" + key);
             throw new RuntimeException(e);
@@ -302,9 +326,10 @@ public abstract class RedisClusterHelper {
             throw new RuntimeException(e);
         }
     }
-    protected double decreaseDouble(String key,double value) {
+
+    protected double decreaseDouble(String key, double value) {
         try {
-            return getConnection().incrByFloat(key,-value);
+            return getConnection().incrByFloat(key, -value);
         } catch (Exception e) {
 //            logger.error("decreaseInt key=" + key);
             throw new RuntimeException(e);
@@ -389,17 +414,27 @@ public abstract class RedisClusterHelper {
         }
 
         public static String getHost() {
+            if (System.getenv("redis_host") != null) {
+                System.out.println("redis_host: " + System.getenv("redis_host"));
+                return System.getenv("redis_host");
+            }
             return prop.get("redis.host").toString();
         }
 
         public static int getPort() {
+            if (System.getenv("redis_port") != null) {
+                System.out.println("redis_port: " + System.getenv("redis_port"));
+                return Integer.parseInt(System.getenv("redis_port"));
+            }
             return Integer.parseInt(prop.get("redis.port").toString());
         }
-    }
 
-    public static void main(String[] args) {
-        System.out.println(RedisProperties.getHost());
-        System.out.println(RedisProperties.getPort());
-
+        public static String getPassword() {
+            if (System.getenv("redis_password") != null) {
+                System.out.println("redis_password: " + System.getenv("redis_password"));
+                return System.getenv("redis_password");
+            }
+            return prop.get("redis.password").toString();
+        }
     }
 }

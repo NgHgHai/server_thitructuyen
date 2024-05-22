@@ -15379,22 +15379,28 @@ public final class Proto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 status = 1;</code>
-     * @return The status.
+     * <code>string name = 1;</code>
+     * @return The name.
      */
-    int getStatus();
-
+    java.lang.String getName();
     /**
-     * <code>string roomId = 2;</code>
-     * @return The roomId.
-     */
-    java.lang.String getRoomId();
-    /**
-     * <code>string roomId = 2;</code>
-     * @return The bytes for roomId.
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
-        getRoomIdBytes();
+        getNameBytes();
+
+    /**
+     * <code>string sessionId = 2;</code>
+     * @return The sessionId.
+     */
+    java.lang.String getSessionId();
+    /**
+     * <code>string sessionId = 2;</code>
+     * @return The bytes for sessionId.
+     */
+    com.google.protobuf.ByteString
+        getSessionIdBytes();
   }
   /**
    * Protobuf type {@code proto.ResJoinRoom}
@@ -15409,7 +15415,8 @@ public final class Proto {
       super(builder);
     }
     private ResJoinRoom() {
-      roomId_ = "";
+      name_ = "";
+      sessionId_ = "";
     }
 
     @java.lang.Override
@@ -15432,50 +15439,78 @@ public final class Proto {
               edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom.class, edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom.Builder.class);
     }
 
-    public static final int STATUS_FIELD_NUMBER = 1;
-    private int status_ = 0;
-    /**
-     * <code>int32 status = 1;</code>
-     * @return The status.
-     */
-    @java.lang.Override
-    public int getStatus() {
-      return status_;
-    }
-
-    public static final int ROOMID_FIELD_NUMBER = 2;
+    public static final int NAME_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
-    private volatile java.lang.Object roomId_ = "";
+    private volatile java.lang.Object name_ = "";
     /**
-     * <code>string roomId = 2;</code>
-     * @return The roomId.
+     * <code>string name = 1;</code>
+     * @return The name.
      */
     @java.lang.Override
-    public java.lang.String getRoomId() {
-      java.lang.Object ref = roomId_;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        roomId_ = s;
+        name_ = s;
         return s;
       }
     }
     /**
-     * <code>string roomId = 2;</code>
-     * @return The bytes for roomId.
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getRoomIdBytes() {
-      java.lang.Object ref = roomId_;
+        getNameBytes() {
+      java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        roomId_ = b;
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SESSIONID_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sessionId_ = "";
+    /**
+     * <code>string sessionId = 2;</code>
+     * @return The sessionId.
+     */
+    @java.lang.Override
+    public java.lang.String getSessionId() {
+      java.lang.Object ref = sessionId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sessionId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string sessionId = 2;</code>
+     * @return The bytes for sessionId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSessionIdBytes() {
+      java.lang.Object ref = sessionId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sessionId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -15496,11 +15531,11 @@ public final class Proto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (status_ != 0) {
-        output.writeInt32(1, status_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roomId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, roomId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sessionId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sessionId_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -15511,12 +15546,11 @@ public final class Proto {
       if (size != -1) return size;
 
       size = 0;
-      if (status_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, status_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roomId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, roomId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sessionId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sessionId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -15533,10 +15567,10 @@ public final class Proto {
       }
       edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom other = (edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom) obj;
 
-      if (getStatus()
-          != other.getStatus()) return false;
-      if (!getRoomId()
-          .equals(other.getRoomId())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getSessionId()
+          .equals(other.getSessionId())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -15548,10 +15582,10 @@ public final class Proto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + getStatus();
-      hash = (37 * hash) + ROOMID_FIELD_NUMBER;
-      hash = (53 * hash) + getRoomId().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + SESSIONID_FIELD_NUMBER;
+      hash = (53 * hash) + getSessionId().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -15681,8 +15715,8 @@ public final class Proto {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        status_ = 0;
-        roomId_ = "";
+        name_ = "";
+        sessionId_ = "";
         return this;
       }
 
@@ -15717,10 +15751,10 @@ public final class Proto {
       private void buildPartial0(edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.status_ = status_;
+          result.name_ = name_;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.roomId_ = roomId_;
+          result.sessionId_ = sessionId_;
         }
       }
 
@@ -15736,11 +15770,13 @@ public final class Proto {
 
       public Builder mergeFrom(edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom other) {
         if (other == edu.vn.hcmuaf.layer2.proto.Proto.ResJoinRoom.getDefaultInstance()) return this;
-        if (other.getStatus() != 0) {
-          setStatus(other.getStatus());
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000001;
+          onChanged();
         }
-        if (!other.getRoomId().isEmpty()) {
-          roomId_ = other.roomId_;
+        if (!other.getSessionId().isEmpty()) {
+          sessionId_ = other.sessionId_;
           bitField0_ |= 0x00000002;
           onChanged();
         }
@@ -15770,13 +15806,13 @@ public final class Proto {
               case 0:
                 done = true;
                 break;
-              case 8: {
-                status_ = input.readInt32();
+              case 10: {
+                name_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000001;
                 break;
-              } // case 8
+              } // case 10
               case 18: {
-                roomId_ = input.readStringRequireUtf8();
+                sessionId_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
@@ -15797,105 +15833,145 @@ public final class Proto {
       }
       private int bitField0_;
 
-      private int status_ ;
+      private java.lang.Object name_ = "";
       /**
-       * <code>int32 status = 1;</code>
-       * @return The status.
+       * <code>string name = 1;</code>
+       * @return The name.
        */
-      @java.lang.Override
-      public int getStatus() {
-        return status_;
-      }
-      /**
-       * <code>int32 status = 1;</code>
-       * @param value The status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatus(int value) {
-
-        status_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 status = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStatus() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        status_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object roomId_ = "";
-      /**
-       * <code>string roomId = 2;</code>
-       * @return The roomId.
-       */
-      public java.lang.String getRoomId() {
-        java.lang.Object ref = roomId_;
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          roomId_ = s;
+          name_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string roomId = 2;</code>
-       * @return The bytes for roomId.
+       * <code>string name = 1;</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
-          getRoomIdBytes() {
-        java.lang.Object ref = roomId_;
+          getNameBytes() {
+        java.lang.Object ref = name_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          roomId_ = b;
+          name_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string roomId = 2;</code>
-       * @param value The roomId to set.
+       * <code>string name = 1;</code>
+       * @param value The name to set.
        * @return This builder for chaining.
        */
-      public Builder setRoomId(
+      public Builder setName(
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        roomId_ = value;
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object sessionId_ = "";
+      /**
+       * <code>string sessionId = 2;</code>
+       * @return The sessionId.
+       */
+      public java.lang.String getSessionId() {
+        java.lang.Object ref = sessionId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sessionId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string sessionId = 2;</code>
+       * @return The bytes for sessionId.
+       */
+      public com.google.protobuf.ByteString
+          getSessionIdBytes() {
+        java.lang.Object ref = sessionId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sessionId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string sessionId = 2;</code>
+       * @param value The sessionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSessionId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        sessionId_ = value;
         bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
-       * <code>string roomId = 2;</code>
+       * <code>string sessionId = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearRoomId() {
-        roomId_ = getDefaultInstance().getRoomId();
+      public Builder clearSessionId() {
+        sessionId_ = getDefaultInstance().getSessionId();
         bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
       /**
-       * <code>string roomId = 2;</code>
-       * @param value The bytes for roomId to set.
+       * <code>string sessionId = 2;</code>
+       * @param value The bytes for sessionId to set.
        * @return This builder for chaining.
        */
-      public Builder setRoomIdBytes(
+      public Builder setSessionIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
-        roomId_ = value;
+        sessionId_ = value;
         bitField0_ |= 0x00000002;
         onChanged();
         return this;
@@ -16487,10 +16563,28 @@ public final class Proto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 status = 1;</code>
-     * @return The status.
+     * <code>string name = 1;</code>
+     * @return The name.
      */
-    int getStatus();
+    java.lang.String getName();
+    /**
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>string sessionId = 2;</code>
+     * @return The sessionId.
+     */
+    java.lang.String getSessionId();
+    /**
+     * <code>string sessionId = 2;</code>
+     * @return The bytes for sessionId.
+     */
+    com.google.protobuf.ByteString
+        getSessionIdBytes();
   }
   /**
    * Protobuf type {@code proto.ResOutRoom}
@@ -16505,6 +16599,8 @@ public final class Proto {
       super(builder);
     }
     private ResOutRoom() {
+      name_ = "";
+      sessionId_ = "";
     }
 
     @java.lang.Override
@@ -16527,15 +16623,82 @@ public final class Proto {
               edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom.class, edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom.Builder.class);
     }
 
-    public static final int STATUS_FIELD_NUMBER = 1;
-    private int status_ = 0;
+    public static final int NAME_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
-     * <code>int32 status = 1;</code>
-     * @return The status.
+     * <code>string name = 1;</code>
+     * @return The name.
      */
     @java.lang.Override
-    public int getStatus() {
-      return status_;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SESSIONID_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sessionId_ = "";
+    /**
+     * <code>string sessionId = 2;</code>
+     * @return The sessionId.
+     */
+    @java.lang.Override
+    public java.lang.String getSessionId() {
+      java.lang.Object ref = sessionId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sessionId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string sessionId = 2;</code>
+     * @return The bytes for sessionId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSessionIdBytes() {
+      java.lang.Object ref = sessionId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sessionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -16552,8 +16715,11 @@ public final class Proto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (status_ != 0) {
-        output.writeInt32(1, status_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sessionId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sessionId_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -16564,9 +16730,11 @@ public final class Proto {
       if (size != -1) return size;
 
       size = 0;
-      if (status_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, status_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sessionId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sessionId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -16583,8 +16751,10 @@ public final class Proto {
       }
       edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom other = (edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom) obj;
 
-      if (getStatus()
-          != other.getStatus()) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getSessionId()
+          .equals(other.getSessionId())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -16596,8 +16766,10 @@ public final class Proto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + getStatus();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + SESSIONID_FIELD_NUMBER;
+      hash = (53 * hash) + getSessionId().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -16727,7 +16899,8 @@ public final class Proto {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        status_ = 0;
+        name_ = "";
+        sessionId_ = "";
         return this;
       }
 
@@ -16762,7 +16935,10 @@ public final class Proto {
       private void buildPartial0(edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.status_ = status_;
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.sessionId_ = sessionId_;
         }
       }
 
@@ -16778,8 +16954,15 @@ public final class Proto {
 
       public Builder mergeFrom(edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom other) {
         if (other == edu.vn.hcmuaf.layer2.proto.Proto.ResOutRoom.getDefaultInstance()) return this;
-        if (other.getStatus() != 0) {
-          setStatus(other.getStatus());
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getSessionId().isEmpty()) {
+          sessionId_ = other.sessionId_;
+          bitField0_ |= 0x00000002;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -16807,11 +16990,16 @@ public final class Proto {
               case 0:
                 done = true;
                 break;
-              case 8: {
-                status_ = input.readInt32();
+              case 10: {
+                name_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000001;
                 break;
-              } // case 8
+              } // case 10
+              case 18: {
+                sessionId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -16829,34 +17017,146 @@ public final class Proto {
       }
       private int bitField0_;
 
-      private int status_ ;
+      private java.lang.Object name_ = "";
       /**
-       * <code>int32 status = 1;</code>
-       * @return The status.
+       * <code>string name = 1;</code>
+       * @return The name.
        */
-      @java.lang.Override
-      public int getStatus() {
-        return status_;
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>int32 status = 1;</code>
-       * @param value The status to set.
+       * <code>string name = 1;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @param value The name to set.
        * @return This builder for chaining.
        */
-      public Builder setStatus(int value) {
-
-        status_ = value;
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        name_ = value;
         bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 status = 1;</code>
+       * <code>string name = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearStatus() {
+      public Builder clearName() {
+        name_ = getDefaultInstance().getName();
         bitField0_ = (bitField0_ & ~0x00000001);
-        status_ = 0;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object sessionId_ = "";
+      /**
+       * <code>string sessionId = 2;</code>
+       * @return The sessionId.
+       */
+      public java.lang.String getSessionId() {
+        java.lang.Object ref = sessionId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sessionId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string sessionId = 2;</code>
+       * @return The bytes for sessionId.
+       */
+      public com.google.protobuf.ByteString
+          getSessionIdBytes() {
+        java.lang.Object ref = sessionId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sessionId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string sessionId = 2;</code>
+       * @param value The sessionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSessionId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        sessionId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string sessionId = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSessionId() {
+        sessionId_ = getDefaultInstance().getSessionId();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string sessionId = 2;</code>
+       * @param value The bytes for sessionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSessionIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        sessionId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -18234,12 +18534,13 @@ public final class Proto {
       "/\n\rReqCreateRoom\022\016\n\006userId\030\001 \001(\t\022\016\n\006test" +
       "Id\030\002 \001(\t\"/\n\rResCreateRoom\022\016\n\006status\030\001 \001(" +
       "\005\022\016\n\006roomId\030\002 \001(\t\"\035\n\013ReqJoinRoom\022\016\n\006room" +
-      "Id\030\001 \001(\t\"-\n\013ResJoinRoom\022\016\n\006status\030\001 \001(\005\022" +
-      "\016\n\006roomId\030\002 \001(\t\"\034\n\nReqOutRoom\022\016\n\006roomId\030" +
-      "\001 \001(\t\"\034\n\nResOutRoom\022\016\n\006status\030\001 \001(\005\"-\n\014R" +
-      "eqCloseRoom\022\016\n\006roomId\030\001 \001(\t\022\r\n\005token\030\002 \001" +
-      "(\t\"\036\n\014ResCloseRoom\022\016\n\006status\030\001 \001(\005B\034\n\032ed" +
-      "u.vn.hcmuaf.layer2.protob\006proto3"
+      "Id\030\001 \001(\t\".\n\013ResJoinRoom\022\014\n\004name\030\001 \001(\t\022\021\n" +
+      "\tsessionId\030\002 \001(\t\"\034\n\nReqOutRoom\022\016\n\006roomId" +
+      "\030\001 \001(\t\"-\n\nResOutRoom\022\014\n\004name\030\001 \001(\t\022\021\n\tse" +
+      "ssionId\030\002 \001(\t\"-\n\014ReqCloseRoom\022\016\n\006roomId\030" +
+      "\001 \001(\t\022\r\n\005token\030\002 \001(\t\"\036\n\014ResCloseRoom\022\016\n\006" +
+      "status\030\001 \001(\005B\034\n\032edu.vn.hcmuaf.layer2.pro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -18358,7 +18659,7 @@ public final class Proto {
     internal_static_proto_ResJoinRoom_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ResJoinRoom_descriptor,
-        new java.lang.String[] { "Status", "RoomId", });
+        new java.lang.String[] { "Name", "SessionId", });
     internal_static_proto_ReqOutRoom_descriptor =
       getDescriptor().getMessageTypes().get(19);
     internal_static_proto_ReqOutRoom_fieldAccessorTable = new
@@ -18370,7 +18671,7 @@ public final class Proto {
     internal_static_proto_ResOutRoom_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ResOutRoom_descriptor,
-        new java.lang.String[] { "Status", });
+        new java.lang.String[] { "Name", "SessionId", });
     internal_static_proto_ReqCloseRoom_descriptor =
       getDescriptor().getMessageTypes().get(21);
     internal_static_proto_ReqCloseRoom_fieldAccessorTable = new

@@ -19,7 +19,7 @@ import java.util.Random;
 import java.util.UUID;
 
 public class AuthService {
-//    private static final Logger logger = Logger.getLogger(AuthService.class);
+    //    private static final Logger logger = Logger.getLogger(AuthService.class);
     private static final AuthService instance = new AuthService();
     private static final SessionManage sessionManage = SessionManage.me();
     private final Random r = new Random();
@@ -102,11 +102,12 @@ public class AuthService {
         sendLoginMsg(session, userLogin, currSessionContext);
         if (currSessionContext.getUser() == null) return null;
 
-        SessionContext oldSessionContext = SessionCache.me().getAndRemoveUserInWaitingReloginList(currSessionContext.getUser().getUserId());
-        if (oldSessionContext != null && oldSessionContext.getUser() != null && oldSessionContext.getRoomId() > 0) {
-            currSessionContext.setRoomId(oldSessionContext.getRoomId());
-            RoomNotify.me().subscribe(currSessionContext.getRoomId());
-        }
+//        SessionContext oldSessionContext = SessionCache.me().getAndRemoveUserInWaitingReloginList(currSessionContext.getUser().getUserId());
+// neu user cu vo lai ma co phong thi se cho  ho  vao phong  cu
+//        if (oldSessionContext != null && oldSessionContext.getUser() != null && Integer.parseInt(oldSessionContext.getRoomId()) > 0) {
+//            currSessionContext.setRoomId(oldSessionContext.getRoomId());
+//            RoomNotify.me().subscribe(currSessionContext.getRoomId());
+//        }
 
         return currSessionContext;
     }
@@ -122,7 +123,7 @@ public class AuthService {
     //
     public void checkLogin(Session session, Proto.ReqLogin packet) {
         try {
-            System.out.println("checkLogin: " + packet.getUsername() + " " + packet.getPassword()   );
+            System.out.println("checkLogin: " + packet.getUsername() + " " + packet.getPassword());
             long begin = System.currentTimeMillis();
             UserBean userLogin = UserDAO.getUserLogin(packet.getUsername());
             Proto.PacketWrapper.Builder builders = Proto.PacketWrapper.newBuilder();
@@ -130,7 +131,7 @@ public class AuthService {
             Proto.ResLogin.Builder resLogin = Proto.ResLogin.newBuilder();
             if (userLogin == null) {
                 System.out.println("checkLogin: userLogin null");
-            }else {
+            } else {
                 System.out.println("checkLogin: userLogin not null");
                 System.out.println(userLogin);
             }
@@ -169,7 +170,7 @@ public class AuthService {
 //
         } catch (Exception e) {
 //            logger.error("Authentication fail! ", e);
-            System.out.println( e);
+            System.out.println(e);
         }
     }
 
@@ -231,4 +232,12 @@ public class AuthService {
         if (session != null && session.isOpen())
             session.getAsyncRemote().sendObject(packets);
     }
+
+//    public static void main(String[] args) {
+//        System.out.println(BCrypt.withDefaults().hashToString(12, "123456".toCharArray()));
+//        System.out.println(BCrypt.verifyer().verify("123456".getBytes(), "$2a$12$mtv9AJjQEl6YzC0w2AyljeDmY.19KI3gG4g3aBDEbavVFIMwZ2Nqu".getBytes()).verified);
+//        System.out.println(BCrypt.verifyer().verify("123456".getBytes(), "$2a$12$fOat4ELq3HZW.".getBytes()).verified);
+//    }
+
+
 }

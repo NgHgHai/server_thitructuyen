@@ -11,6 +11,6 @@ import java.io.Serializable;
 public class SessionContext implements Serializable {
     private String sessionID; // sessionID la id cua server : id cua session
     private Proto.User user;
-    private int roomId;
+    private String roomId;
     private String socketID; // socketID la id cua server
 }

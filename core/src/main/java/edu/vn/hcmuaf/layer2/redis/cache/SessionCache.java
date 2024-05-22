@@ -6,13 +6,16 @@ import edu.vn.hcmuaf.layer2.LogUtils;
 import edu.vn.hcmuaf.layer2.proto.Proto;
 import edu.vn.hcmuaf.layer2.redis.RedisClusterHelper;
 import edu.vn.hcmuaf.layer2.redis.context.SessionContext;
+import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 import org.apache.log4j.Logger;
 import org.redisson.Redisson;
 import org.redisson.api.RMapCache;
 import org.redisson.client.codec.StringCodec;
 import org.redisson.config.Config;
-import redis.clients.jedis.Jedis;
+import redis.clients.jedis.*;
+import redis.clients.jedis.providers.ClusterConnectionProvider;
 
+import java.time.Duration;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
@@ -31,22 +34,26 @@ public class SessionCache extends RedisClusterHelper implements ICache<SessionCo
     private static ConcurrentHashMap<String, SessionContext> userOnline = new ConcurrentHashMap<>();
 //    Logger logger = Logger.getLogger(SessionCache.class);
 
-    ;
-
 
 
 
     public static SessionCache me() {
         System.out.println("SessionCache me");
+
         return install;
     }
 
 
     @Override
     public boolean add(String key, SessionContext value) {
-        sessionContextMap.put(key, value);
-        System.out.println("add key " + key + " " + value);
-        return true;
+        try {
+            sessionContextMap.put(key, value);
+            System.out.println("add key " + key + " " + value);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     @Override
@@ -231,5 +238,9 @@ public class SessionCache extends RedisClusterHelper implements ICache<SessionCo
         return CompressUtils.decompress(data, SessionContext.class);
     }
 
+    public static void main(String[] args) {
+        SessionCache sessionCache = SessionCache.me();
+        sessionCache.addUserOnline(1, "1");
+    }
 
 }

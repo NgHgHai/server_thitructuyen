@@ -24,6 +24,7 @@ dependencies {
     api 'jakarta.websocket:jakarta.websocket-api:2.0.0'
     api 'mysql:mysql-connector-java:8.0.28'
     api 'log4j:log4j:1.2.12'
+    api 'org.quartz-scheduler:quartz:2.3.2'
 
 
     testImplementation platform('org.junit:junit-bom:5.9.1')

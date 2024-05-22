@@ -31,6 +31,19 @@ public class UserDAO extends PoolConnectDAO {
                 .bind("username", username)
                 .execute());
     }
+    public static boolean checkToken(String token, String username) {
+        Jdbi jdbi = getJdbi();
+        if (jdbi == null) {
+            return false;
+        }
+        int count = jdbi.withHandle(h -> h.createQuery("select * from users where relogin_token = :token and username = :username")
+                .bind("token", token)
+                .bind("username", username)
+                .mapTo(Integer.class)
+                .findOnly());
+        return count > 0;
+    }
+
 
 
     public static void updateReloginToken(int id, String reloginToken) {

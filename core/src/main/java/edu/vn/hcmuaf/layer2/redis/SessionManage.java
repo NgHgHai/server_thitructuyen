@@ -21,7 +21,7 @@ public class SessionManage {
 
     private SessionManage() {
 //        logger.info("SessionManage created");
-        System.out.println("SessionManage created");
+        System.out.println("SessionManage created dddd");
     }
 
     public static SessionManage me() {
