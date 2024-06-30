@@ -29,6 +29,7 @@ public abstract class PoolConnectDAO {
             config.addDataSourceProperty("prepStmtCacheSize", "250");
             config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
             System.out.println("connecting...");
+            System.out.println("connecting...ok");
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException(e);

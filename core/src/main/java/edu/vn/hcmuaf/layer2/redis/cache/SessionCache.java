@@ -30,11 +30,9 @@ public class SessionCache extends RedisClusterHelper implements ICache<SessionCo
     private static final String USER_WAIT_RELGOIN_KEY = SessionContext.class + ":waitingRelogin:"; // key of user waiting relogin in redis , + them userId
     private static final SessionCache install = new SessionCache();
     private static final ConcurrentHashMap<String, SessionContext> sessionContextMap = new ConcurrentHashMap<>();
-    //<UserId,SessionContext> userOnline/
+    //<SessionID,SessionContext> userOnline/
     private static ConcurrentHashMap<String, SessionContext> userOnline = new ConcurrentHashMap<>();
 //    Logger logger = Logger.getLogger(SessionCache.class);
-
-
 
 
     public static SessionCache me() {
@@ -48,7 +46,7 @@ public class SessionCache extends RedisClusterHelper implements ICache<SessionCo
     public boolean add(String key, SessionContext value) {
         try {
             sessionContextMap.put(key, value);
-            System.out.println("add key " + key + " " + value);
+            System.out.println("SessionCache : " + "add key " + key + " " + value);
             return true;
         } catch (Exception e) {
             e.printStackTrace();
@@ -140,17 +138,21 @@ public class SessionCache extends RedisClusterHelper implements ICache<SessionCo
         }
         boolean isUpdate = false;
         if (sc.getUser() != null && sessionContext.getUser() == null) {
+            // phai co account moi update
             logout(sessionContext);
         }
         if (sc.getUser() == null || !sc.getUser().equals(sessionContext.getUser())) {
+            // account cu khac account moi thi update
             sc.setUser(sessionContext.getUser());
             isUpdate = true;
         }
         if (sc.getRoomId() != sessionContext.getRoomId()) {
+            // room cu khac room moi thi update
             sc.setRoomId(sessionContext.getRoomId());
             isUpdate = true;
         }
         if (isUpdate) sessionContextMap.put(getKey(sessionContext), sessionContext);
+        System.out.println("SessionCache : " + "update sessionContext :" + sessionContext);
         return true;
     }
 
@@ -209,7 +211,7 @@ public class SessionCache extends RedisClusterHelper implements ICache<SessionCo
 //        LogUtils.warnIfSlow(logger, begin, 200, "getUserOnline: cost ");
         return decompress;
     }
-
+// phai dung o dau do de tu dong update lai sessioncontext tu redis ve local
     public void updateSessionToCache() {
         if (sessionContextMap == null || sessionContextMap.isEmpty()) return;
         sessionContextMap.forEach((k, v) -> {

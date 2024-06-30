@@ -41,7 +41,10 @@ public class SessionHandler implements Subscriber {
             UserDAO.removeToken(sessionContext.getUser().getUsername());
         SessionCache.me().logout(sessionContext);
         clearUserData(session, sessionContext);
-
+        Proto.ResLogout resLogout = Proto.ResLogout.newBuilder().setStatus(200).build();
+        Proto.Packet packet = Proto.Packet.newBuilder().setResLogout(resLogout).build();
+        Proto.PacketWrapper packetWrapper = Proto.PacketWrapper.newBuilder().addPacket(packet).build();
+        session.getAsyncRemote().sendObject(packetWrapper);
 //        logger.info("Session Logout: Session " + session.getId() + " ; sessionId " + sessionId);
     }
 

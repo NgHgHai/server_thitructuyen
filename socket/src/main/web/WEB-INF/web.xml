@@ -7,4 +7,7 @@
     <listener>
         <listener-class>edu.vn.hcmuaf.layer0.network.websocket.SocketInitialization</listener-class>
     </listener>
+    <listener>
+        <listener-class>edu.vn.hcmuaf.layer0.scheduled.CronInitialization</listener-class>
+    </listener>
 </web-app>

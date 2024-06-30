@@ -15,21 +15,22 @@ public class RoomHandler implements Subscriber {
     public void onMessage(Session session, Proto.PacketWrapper message) {
         message.getPacketList().forEach(packet -> {
             if (packet.hasReqCreateRoom()) {
-                System.out.println("co req create room");
+                System.out.println("RoomHandler : co req create room");
                 session.getAsyncRemote().sendText("da nhan yeu cau create room");
                 //logic create room
                 Proto.ReqCreateRoom reqCreateRoom = packet.getReqCreateRoom();
-                roomService.createRoom(reqCreateRoom);
-
-
+                roomService.createRoom(session,reqCreateRoom);
             }
             if (packet.hasReqJoinRoom()) {
-                System.out.println("co req join room");
+                System.out.println("RoomHandler : co req join room");
                 session.getAsyncRemote().sendText("da nhan yeu cau join room");
+                roomService.joinRoom(packet.getReqJoinRoom().getRoomId(),session);
+
             }
             if (packet.hasReqOutRoom()) {
-                System.out.println("co req leave room");
+                System.out.println("RoomHandler : co req leave room");
                 session.getAsyncRemote().sendText("da nhan yeu cau leave room");
+                roomService.outRoom(packet.getReqOutRoom().getRoomId(),session);
             }
             if (packet.hasReqCloseRoom()) {
                 //close room

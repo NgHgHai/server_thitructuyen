@@ -28,9 +28,27 @@ public class AuthHandler implements Subscriber {
                 SessionContext sessionContext = authService.checkRelogin(session, packet.getReqRelogin());
 //                this.reJoinRoom(sessionContext);
             }
-//            if (packet.hasReqRegister()) {
-//                authService.processRegister(session, packet.getReqRegister());
-//            }
+            
+            if (packet.hasReqRegister()) {
+                authService.processRegister(session, packet.getReqRegister());
+            }
+            if (packet.hasReqVerify()){
+                authService.verifyEmail(session, packet.getReqVerify());
+            }
+            if (packet.hasReqChangePassword()){
+                authService.changePassword(session, packet.getReqChangePassword());
+            }
+            if (packet.hasReqForgotPassword()){
+                authService.forgotPassword(session, packet.getReqForgotPassword());
+            }
+            if (packet.hasReqVerifyForgotPassword()){
+                authService.verifyForgotPassword(session, packet.getReqVerifyForgotPassword());
+            }
+            if (packet.hasReqChangePasswordForgot()){
+                authService.changePasswordForgot(session, packet.getReqChangePasswordForgot());
+            }
+
+
         });
     }
 

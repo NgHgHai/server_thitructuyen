@@ -13,7 +13,10 @@ import java.util.List;
 @Getter
 @Setter
 public class RoomContext implements Serializable {
-    String roomId;
-    String hostId;
-    String testId;
+    int roomId;
+    int hostId;
+    int testId;
+    int currentQuestionId;
+    int status;
+    int examSessionId;
 }

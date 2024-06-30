@@ -2,18 +2,17 @@ package edu.vn.hcmuaf.layer1.services;
 
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
-import edu.vn.hcmuaf.layer2.LogUtils;
 import edu.vn.hcmuaf.layer2.dao.Game;
 import edu.vn.hcmuaf.layer2.dao.UserDAO;
 import edu.vn.hcmuaf.layer2.dao.bean.UserBean;
 import edu.vn.hcmuaf.layer2.proto.Proto;
 import edu.vn.hcmuaf.layer2.redis.SessionManage;
 import edu.vn.hcmuaf.layer2.redis.cache.SessionCache;
-import edu.vn.hcmuaf.layer2.redis.channel.RoomNotify;
 import edu.vn.hcmuaf.layer2.redis.context.SessionContext;
+import edu.vn.hcmuaf.layer2.sendEmail.EmailHelper;
 import jakarta.websocket.Session;
-import org.apache.log4j.Logger;
 
+import javax.mail.MessagingException;
 import java.util.Objects;
 import java.util.Random;
 import java.util.UUID;
@@ -35,7 +34,10 @@ public class AuthService {
         if (reqRegister.getPassword() == null || "".equals(reqRegister.getPassword())) {
             sendMsgRegiter(session, 401);
         }
-        if (reqRegister.getPhone() == null || "".equals(reqRegister.getPhone())) {
+        if (reqRegister.getUsername() == null || "".equals(reqRegister.getUsername())) {
+            sendMsgRegiter(session, 404);
+        }
+        if (reqRegister.getEmail() == null || "".equals(reqRegister.getEmail())) {
             sendMsgRegiter(session, 404);
         }
         int status = UserDAO.checkUserRegister(reqRegister.getUsername());
@@ -43,13 +45,27 @@ public class AuthService {
             sendMsgRegiter(session, status);
             return;
         }
+        status = UserDAO.checkEmailRegister(reqRegister.getEmail());
+        if (status != 200) {
+            sendMsgRegiter(session, status);
+            return;
+        }
 
-        status = UserDAO.insertRegisterUser(reqRegister.getUsername(),
-                BCrypt.withDefaults().hashToString(12, reqRegister.getPassword().toCharArray()),
-                reqRegister.getPhone());
-
+        String randomSixDigits = getRamdomSixDigits();
+        try {
+            EmailHelper.sendVerifyCode(reqRegister.getEmail(), randomSixDigits);
+        } catch (MessagingException e) {
+            throw new RuntimeException(e);
+        }
+        status = UserDAO.insertRegisterUser(reqRegister.getUsername(), BCrypt.withDefaults().hashToString(12, reqRegister.getPassword().toCharArray()), randomSixDigits);
 
         sendMsgRegiter(session, status);
+    }
+
+    private String getRamdomSixDigits() {
+        long currentTimeMillis = System.currentTimeMillis();
+        String randomSixDigits = Long.toString(currentTimeMillis).substring(Long.toString(currentTimeMillis).length() - 6);
+        return randomSixDigits;
     }
 
 
@@ -83,8 +99,7 @@ public class AuthService {
         } while (currSessionContext == null);
 
         UserBean userLogin = UserDAO.getUserLogin(packet.getUsername());
-        if (userLogin == null || userLogin.getReloginToken() == null || "".equals(userLogin.getReloginToken()) ||
-                !userLogin.getReloginToken().equals(packet.getToken()) || userLogin.getActive() != 1) {
+        if (userLogin == null || userLogin.getReloginToken() == null || "".equals(userLogin.getReloginToken()) || !userLogin.getReloginToken().equals(packet.getToken()) || userLogin.getActive() != 1) {
             sendLoginWithStatus(session, 403);
             return null;
         }
@@ -203,14 +218,7 @@ public class AuthService {
 
         UserDAO.updateReloginToken(userLogin.getId(), reloginToken);
 
-        Proto.User user = Proto.User.newBuilder()
-                .setUserId(userLogin.getId())
-                .setUsername(userLogin.getUsername())
-                .setPlayerName(Game.StringUtils.defaultIfNull(userLogin.getPlayerName()))
-                .setGender(userLogin.getGender())
-                .setEmail(Game.StringUtils.defaultIfNull(userLogin.getEmail()))
-                .setPhone(Game.StringUtils.defaultIfNull(userLogin.getPhone()))
-                .build();
+        Proto.User user = Proto.User.newBuilder().setUserId(userLogin.getId()).setUsername(userLogin.getUsername()).setPlayerName(Game.StringUtils.defaultIfNull(userLogin.getPlayerName())).setGender(userLogin.getGender()).setEmail(Game.StringUtils.defaultIfNull(userLogin.getEmail())).setPhone(Game.StringUtils.defaultIfNull(userLogin.getPhone())).build();
         //luu thông tin user vào Session context
 //        ThreadManage.me().execute(() -> {
         sessionContext.setUser(user);
@@ -218,10 +226,8 @@ public class AuthService {
         SessionCache.me().login(user, sessionManage.getSessionID(session));
 //        });
 
-        if ((userLogin.getGender() != 0 && userLogin.getGender() != 1))
-            resLogin.setStatus(201);
-        else
-            resLogin.setStatus(200);
+        if ((userLogin.getGender() != 0 && userLogin.getGender() != 1)) resLogin.setStatus(201);
+        else resLogin.setStatus(200);
         resLogin.setToken(reloginToken);
         resLogin.setUser(user);
         sendResponse(session, builder.setResLogin(resLogin.build()).build());
@@ -229,8 +235,94 @@ public class AuthService {
 
     private void sendResponse(Session session, Proto.Packet packet) {
         Proto.PacketWrapper packets = Proto.PacketWrapper.newBuilder().addPacket(packet).build();
-        if (session != null && session.isOpen())
-            session.getAsyncRemote().sendObject(packets);
+        if (session != null && session.isOpen()) session.getAsyncRemote().sendObject(packets);
+    }
+
+
+    public void verifyEmail(Session session, Proto.ReqVerify reqVerify) {
+        //lay ra user
+        SessionContext sessionContext = SessionCache.me().get(sessionManage.getSessionID(session));
+        String email = sessionContext.getUser().getEmail();
+        //lay code o database ra so sanh
+        //--neu giong nhau thi change active = 1
+
+        //xoa code trong database
+        //ghi lai thoi gian verify
+        //change status cua isVerifyEmail = 1
+        if (UserDAO.checkEmailVerify(email, reqVerify.getCode())) {
+            UserDAO.doVerifyEmail(email);
+        }
+        ;
+        //tao goi tin resVerifyEmail
+        Proto.ResVerify resVerify = Proto.ResVerify.newBuilder().setStatus(200).build();
+        Proto.Packet.Builder builder = Proto.Packet.newBuilder().setResVerify(resVerify);
+        sendResponse(session, builder.build());
+    }
+
+    public void changePassword(Session session, Proto.ReqChangePassword reqChangePassword) {
+        //kiem tra mat khau cu trong database
+        //neu dung thi update mat khau moi
+
+        try {
+            SessionContext sessionContext = SessionCache.me().get(sessionManage.getSessionID(session));
+            String username = sessionContext.getUser().getUsername();
+            System.out.println("checkLogin: " + username + " " + reqChangePassword.getOldPassword());
+
+            UserBean userLogin = UserDAO.getUserLogin(username);
+
+            Proto.Packet.Builder builder = Proto.Packet.newBuilder();
+            Proto.ResLogin.Builder resLogin = Proto.ResLogin.newBuilder();
+
+            if (userLogin == null || !BCrypt.verifyer().verify(reqChangePassword.getOldPassword().getBytes(), userLogin.getPassword().getBytes()).verified) {
+                resLogin.setStatus(400);
+                sendResponse(session, builder.setResLogin(resLogin.build()).build());
+                return;
+            }
+            UserDAO.changePassword(username, BCrypt.withDefaults().hashToString(12, reqChangePassword.getNewPassword().toCharArray()));
+
+            resLogin.setStatus(200);
+            sendResponse(session, builder.setResLogin(resLogin.build()).build());
+
+        } catch (Exception e) {
+//            logger.error("Authentication fail! ", e);
+            System.out.println(e);
+        }
+    }
+
+    public void forgotPassword(Session session, Proto.ReqForgotPassword reqForgotPassword) {
+
+        String randomSixDigits = getRamdomSixDigits();
+        //tao otp luu voa database
+        UserDAO.insertOTP(reqForgotPassword.getEmail(), randomSixDigits);
+        //gui otp qua email
+        try {
+            EmailHelper.sendVerifyCode(reqForgotPassword.getEmail(), randomSixDigits);
+        } catch (MessagingException e) {
+            throw new RuntimeException(e);
+        }
+        Proto.ResForgotPassword resForgotPassword = Proto.ResForgotPassword.newBuilder().setStatus(200).build();
+        Proto.Packet.Builder builder = Proto.Packet.newBuilder().setResForgotPassword(resForgotPassword);
+        sendResponse(session, builder.build());
+    }
+
+    public void verifyForgotPassword(Session session, Proto.ReqVerifyForgotPassword reqVerifyForgotPassword) {
+//    kiem tra xem otp co dung khong
+//    neu dung thi gui thong bao xac nhan thanh cong
+        int status = UserDAO.checkOTP(reqVerifyForgotPassword.getEmail(), reqVerifyForgotPassword.getOtp());
+        Proto.ResVerifyForgotPassword resVerifyForgotPassword = Proto.ResVerifyForgotPassword.newBuilder().setStatus(status).build();
+        Proto.Packet.Builder builder = Proto.Packet.newBuilder().setResVerifyForgotPassword(resVerifyForgotPassword);
+        sendResponse(session, builder.build());
+    }
+
+    public void changePasswordForgot(Session session, Proto.ReqChangePasswordForgot reqChangePasswordForgot) {
+//    kiem tra otp co dung khong neu dung thi thay doi pass moi, xoa otp trong database, gui thong bao thay doi pass thanh cong
+        int status = UserDAO.checkOTP(reqChangePasswordForgot.getEmail(), reqChangePasswordForgot.getOtp());
+        if (status == 200) {
+            UserDAO.changePassword(reqChangePasswordForgot.getEmail(), BCrypt.withDefaults().hashToString(12, reqChangePasswordForgot.getPassword().toCharArray()));
+        }
+        Proto.ResChangePasswordForgot resChangePasswordForgot = Proto.ResChangePasswordForgot.newBuilder().setStatus(status).build();
+        Proto.Packet.Builder builder = Proto.Packet.newBuilder().setResChangePasswordForgot(resChangePasswordForgot);
+        sendResponse(session, builder.build());
     }
 
 //    public static void main(String[] args) {

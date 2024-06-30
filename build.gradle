@@ -13,6 +13,7 @@ repositories {
 dependencies {
     api 'at.favre.lib:bcrypt:0.10.2'
     api 'org.jdbi:jdbi3-core:3.1.0'
+    api 'org.jdbi:jdbi3-sqlobject:3.1.0' // JDBI SQL Object library
     api 'com.zaxxer:HikariCP:5.0.1'
     api 'com.google.protobuf:protobuf-java:3.22.3'
 //    annotationProcessor 'org.projectlombok:lombok:1.18.30'
@@ -24,9 +25,16 @@ dependencies {
     api 'jakarta.websocket:jakarta.websocket-api:2.0.0'
     api 'mysql:mysql-connector-java:8.0.28'
     api 'log4j:log4j:1.2.12'
+    //quartz library for schedule job
     api 'org.quartz-scheduler:quartz:2.3.2'
+    //send mail library
+    api 'com.sun.mail:javax.mail:1.6.2'
 
-
+//test dependencies
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    testImplementation 'org.mockito:mockito-core:4.0.0'
+    testImplementation 'org.mockito:mockito-junit-jupiter:4.0.0'
     testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }

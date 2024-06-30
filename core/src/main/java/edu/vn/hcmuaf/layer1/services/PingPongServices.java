@@ -33,8 +33,6 @@ public class PingPongServices {
                 logger.error(e.getMessage(), e);
             }
         }
-//        remoweList.forEach(s -> sessionManage.addSessionIDToRemoveList(s));
-
     }
 
 }

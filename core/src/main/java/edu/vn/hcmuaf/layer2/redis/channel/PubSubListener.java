@@ -24,6 +24,7 @@ public class PubSubListener implements MessageListener<PubSubListener.Message> {
         if (sessions.contains(ssid) && session != null && session.isOpen()) {
             session.getAsyncRemote().sendObject(packetWrapper);
         }
+        System.out.println("PubSubListener : da nhan message tu channel : " + channel + " va gui toi session : " + ssid);
     }
 
     @Builder

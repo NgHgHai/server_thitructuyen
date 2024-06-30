@@ -12,7 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class RoomNotify extends RedisClusterHelper {
     private static final RoomNotify install = new RoomNotify();
-    private final Map<String, PubSubListener> roomListenerMap = new ConcurrentHashMap<>();
+    private final Map<Integer, PubSubListener> roomListenerMap = new ConcurrentHashMap<>();
     Logger log = Logger.getLogger(RoomNotify.class);
 
     private RoomNotify() {
@@ -21,7 +21,8 @@ public class RoomNotify extends RedisClusterHelper {
     public static RoomNotify me() {
         return install;
     }
-    public int getRoomListenerMapSize(){
+
+    public int getRoomListenerMapSize() {
         return roomListenerMap.size();
     }
 
@@ -31,7 +32,7 @@ public class RoomNotify extends RedisClusterHelper {
      *
      * @param roomId
      */
-    public void subscribe(String roomId) {
+    public void subscribe(int roomId) {
         if (roomListenerMap.containsKey(roomId)) {
             return;
         }
@@ -39,11 +40,10 @@ public class RoomNotify extends RedisClusterHelper {
         getRedissonClient().getTopic(getIdChannel(roomId)).addListener(PubSubListener.Message.class, listener);
         roomListenerMap.put(roomId, listener);
         log.info("Subscribe room " + getIdChannel(roomId));
-        System.out.println("Subscribe room " + getIdChannel(roomId));
-
+        System.out.println("RoomNotify : Subscribe room " + getIdChannel(roomId));
     }
 
-    public void publish(String sessionId, Proto.PacketWrapper packetWrapper, String roomId) {
+    public void publish(String sessionId, Proto.PacketWrapper packetWrapper, int roomId) {
 //        if (!roomListenerMap.containsKey(roomId)) {
 //            return;
 //        }
@@ -59,16 +59,17 @@ public class RoomNotify extends RedisClusterHelper {
      *
      * @param roomId
      */
-    public void unsubscribe(String roomId) {
+    public void unsubscribe(int roomId) {
         if (!roomListenerMap.containsKey(roomId)) {
             return;
         }
         log.info("Unsubscribe room " + getIdChannel(roomId));
+        System.out.println("RoomNotify : Unsubscribe room " + getIdChannel(roomId));
         PubSubListener pubSubListener = roomListenerMap.remove(roomId);
         getRedissonClient().getTopic(getIdChannel(roomId)).removeListener(pubSubListener);
     }
 
-    private String getIdChannel(String roomId) {
+    private String getIdChannel(int roomId) {
         return "ROOM_CHANEL:" + roomId;
     }
 

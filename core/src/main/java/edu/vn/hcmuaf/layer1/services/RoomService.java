@@ -27,29 +27,57 @@ public class RoomService {
     private RoomService() {
     }
 
-    public void createRoom(Proto.ReqCreateRoom packet) {
+    public void createRoom(Session session, Proto.ReqCreateRoom packet) {
+        /**
+         * client se gui thong diep proto.proto toi RoomHandler,
+         * sau do RoomHandler se goi tiep toi RoomService,
+         * o day no se tu tao ra 1 roomID (6 so), goi toi SessionManage truyen vao sesion(WS) de lay ra hostSsid sau do tao ra RoomContext .
+         * Sau do se luu 1 set co key la roomid vao redis va luu vao redis 1 hset key la RoomContext de luu thong tin fille la roomid va value la roomcoontext.
+         * sau do se goi toi roomNotify de dang ki lang nghe 1 channel co ten la roomid de lang nghe thong tin tu cac server khac.
+         * sau khi xong tao 1 goi tin resCreateRoom chua id room va gui lai cho client thong qua session(WS) luc dau
+         */
         //gen id 6 so  int
-        String roomId = genIdRoom();
-        // tao room
-        createRoom(roomId, packet.getUserId(), packet.getTestId());
-    }
+        int roomId = genIdRoom();
 
-    private String genIdRoom() {
-        String id = String.valueOf(System.currentTimeMillis()).substring(7);
-        return roomRedisClusterHelper.containKey(id) ? genIdRoom() : id;
-    }
+        String hostSessionId = SessionManage.me().getSessionID(session);
 
-    public void createRoom(String roomId, String hostId, String testId) {
         // tao room context
-        RoomContext room = RoomContext.builder().roomId(roomId).hostId(hostId).testId(testId).build();
+        RoomContext roomContext = RoomContext.builder().roomId(roomId).hostId(packet.getUserId()).testId(packet.getTestId()).build();
+        // tao room
+        createRoom(roomId, hostSessionId, roomContext);
+
+        // send response
+        sendResponse(session, Proto.Packet.newBuilder().setResCreateRoom(Proto.ResCreateRoom.newBuilder().setRoomId(roomId).build()).build());
+        session.getAsyncRemote().sendText(roomId + "");
+
+    }
+
+    private int genIdRoom() {
+        String id = String.valueOf(System.currentTimeMillis()).substring(7);
+        return roomRedisClusterHelper.containKey(Integer.parseInt(id)) ? genIdRoom() : Integer.parseInt(id);
+    }
+
+    public void createRoom(int roomId, String hostSessionId, RoomContext roomContext) {
         // add room va room context vao redis
-        roomRedisClusterHelper.addRoomAndRoomContext(roomId, hostId, room);
+        roomRedisClusterHelper.addRoomAndRoomContext(roomId, hostSessionId, roomContext);
         // dang ki xuong redis 1 channel, lang nghe channel do
         roomNotify.subscribe(roomId);
-        System.out.println("Nguoi choi : " + hostId + " -- da tao phong : " + roomId);
+        System.out.println("RoomService : da tao phong voi id : " + roomId + " va chu phong : " + hostSessionId);
     }
 
-    public void joinRoom(String roomId, String sessionId) {
+    public void joinRoom(int roomId, Session session) {
+        /**
+         * Hanh dong tham gia phong:
+         * client se gui thong diep proto.proto toi RoomHandler, sau do RoomHandler se goi tiep toi RoomService,
+         * o day no se lay ra roomID tu goi tin, goi toi SessionManage truyen vao sesion(WS) de lay ra ssid sau do
+         * nho vao ssid ma goi toi SessionCache de lay ra SessionContext cua user nay, thay doi lai thong tin phong trong SessionContext
+         * va update lai vao SessionCache. Sau do lay ra toan bo ssid nguoi online trong server nho vao goi ham o SessionManage.
+         * Sau do lay ra tat ca ssid nguoi choi trong phong tu redis. Tao ra 1 goi tin reqJoinRoom,
+         * sau do neu nguoi choi trong phong thuoc server thi se lay ra session(WS) thong qua SessionManage va gui goi tin di,
+         * con neu nguoi trong phong khong thuoc server thi se publish 1 thong diep xuong channel cua phong do o redis
+         */
+
+        String sessionId = SessionManage.me().getSessionID(session);
         // lay ra session context
         SessionContext sessionContext = sessionCache.get(sessionId);
         // set room id
@@ -63,6 +91,8 @@ public class RoomService {
         Set<String> sessionListInServer = SessionCache.me().getKeys();
         // them session vao room
         roomRedisClusterHelper.addUsersToRoom(roomId, sessionId);
+        // dang ki lang nghe channel room ma session vua join
+        roomNotify.subscribe(roomId);
 
         // tao goi tin resJoinRoom
         Proto.ResJoinRoom resJoinRoom = Proto.ResJoinRoom.newBuilder().setName(sessionContext.getUser().getUsername()).setSessionId(sessionId).build();
@@ -72,28 +102,34 @@ public class RoomService {
         Proto.PacketWrapper packetWrapper = Proto.PacketWrapper.newBuilder().addPacket(packet).build();
 
         // thong bao cho tat ca moi nguoi trong phong
+
+        // lay ra toan bo sessionId trong phong tu redis
         List<String> sessionList = roomRedisClusterHelper.getAllUserInRoom(roomId);
+        // gui goi tin toi tat ca moi nguoi trong phong neu online trong server nay
+        // neu khong thi publish xuong redis de cac server khac biet
         sessionList.forEach(s -> {
 
             if (sessionListInServer.contains(s)) {
-                Session session = SessionManage.me().get(s);
-                session.getAsyncRemote().sendText("Co " + sessionId + " moi vao phong");
+                Session session1 = SessionManage.me().get(s);
+                session1.getAsyncRemote().sendText("Co " + sessionId + " moi vao phong");
                 // gui goi tin toi session
-                session.getAsyncRemote().sendObject(packetWrapper);
+                session1.getAsyncRemote().sendObject(packetWrapper);
             } else {
                 // publish xuong redis de cac tomcat khac biet
                 roomNotify.publish(s, packetWrapper, roomId);
                 System.out.println("publish to redis user has session : " + s);
             }
         });
+
         System.out.println("session : " + sessionId + " da vao phong : " + roomId);
     }
 
-    public void outRoom(String roomId, String sessionId) {
+    public void outRoom(int roomId, Session session) {
+        String sessionId = SessionManage.me().getSessionID(session);
         // lay ra session context
         SessionContext sessionContext = sessionCache.get(sessionId);
         // set room id
-        sessionContext.setRoomId(null);
+        sessionContext.setRoomId(0);
 
         sessionCache.add(sessionId, sessionContext);// add local cache
         sessionCache.update(sessionContext);// update redis
@@ -103,20 +139,24 @@ public class RoomService {
         // xoa session khoi room
         roomRedisClusterHelper.deleteUserFromRoom(roomId, sessionId);
 
+
         // tao goi tin resOutRoom
         Proto.ResOutRoom resOutRoom = Proto.ResOutRoom.newBuilder().setName(sessionContext.getUser().getUsername()).setSessionId(sessionId).build();
         Proto.Packet packet = Proto.Packet.newBuilder().setResOutRoom(resOutRoom).build();
         Proto.PacketWrapper packetWrapper = Proto.PacketWrapper.newBuilder().addPacket(packet).build();
 
         // thong bao cho tat ca moi nguoi trong phong
+        // lay ra toan bo sessionId trong phong tu redis
         List<String> sessionList = roomRedisClusterHelper.getAllUserInRoom(roomId);
+        // gui goi tin toi tat ca moi nguoi trong phong neu online trong server nay
+        // neu khong thi publish xuong redis de cac server khac biet
         sessionList.forEach(s -> {
 
             if (sessionListInServer.contains(s)) {
-                Session session = SessionManage.me().get(s);
-                session.getAsyncRemote().sendText("Co " + sessionId + " thoat phong");
+                Session session1 = SessionManage.me().get(s);
+                session1.getAsyncRemote().sendText("Co " + sessionId + " thoat phong");
                 // gui goi tin toi session
-                session.getAsyncRemote().sendObject(packetWrapper);
+                session1.getAsyncRemote().sendObject(packetWrapper);
             } else {
                 // publish xuong redis de cac tomcat khac biet
                 roomNotify.publish(s, packetWrapper, roomId);
@@ -127,11 +167,11 @@ public class RoomService {
         System.out.println("session : " + sessionId + " da thoat khoi phong : " + roomId);
     }
 
-    public void closeRoom(String token, String roomId) {
+    public void closeRoom(String token, int roomId) {
 //        // lay ra room context
         RoomContext roomContext = roomRedisClusterHelper.getRoomContext(roomId);
 //        // kiem tra token
-        if (!UserDAO.checkToken(roomContext.getHostId(), token)) {
+        if (!UserDAO.checkToken(token, roomContext.getHostId())) {
             System.out.println("khong the xoa phong vi k phai chu phong");
             return;
         }
@@ -157,11 +197,11 @@ public class RoomService {
             } else {
                 // publish xuong redis de cac tomcat khac biet
                 roomNotify.publish(s, packetWrapper, roomId);
-                System.out.println("publish to redis user has session : " + s);
+                System.out.println("publish to redis user has session : " + s + "close room" + roomId);
             }
         });
 //      xoa room va room context trong redis
-        roomRedisClusterHelper.removeRoom(roomId, roomContext.getHostId());
+        roomRedisClusterHelper.removeRoom(roomId);
 //      Thong bao voi cac server khac ve thong tin phong co roomid da bi dong
 //        Proto.PacketWrapper reqCloseRoomPakageWrapper = Proto.PacketWrapper.newBuilder().addPacket(Proto.Packet.newBuilder().setReqCloseRoom(Proto.ReqCloseRoom.newBuilder().setRoomId(roomId).build()).build()).build();
 //        MainChannelNotify.me().publish(reqCloseRoomPakageWrapper);
@@ -170,12 +210,18 @@ public class RoomService {
 
     }
 
+    private void sendResponse(Session session, Proto.Packet packet) {
+        Proto.PacketWrapper packets = Proto.PacketWrapper.newBuilder().addPacket(packet).build();
+        if (session != null && session.isOpen())
+            session.getAsyncRemote().sendObject(packets);
+    }
+
     public static void main(String[] args) {
-        RoomService roomService = RoomService.me();
-        roomService.createRoom("123456", "1", "1");
-        roomService.joinRoom("123456", "2");
-        System.out.println(RoomNotify.me().getRoomListenerMapSize());
-        System.out.println("create room 123456");
+//        RoomService roomService = RoomService.me();
+//        roomService.createRoom("123456", "1", "1");
+//        roomService.joinRoom("123456", "2");
+//        System.out.println(RoomNotify.me().getRoomListenerMapSize());
+//        System.out.println("create room 123456");
 
     }
 

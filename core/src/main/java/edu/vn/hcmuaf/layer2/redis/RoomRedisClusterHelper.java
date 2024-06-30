@@ -1,14 +1,12 @@
 package edu.vn.hcmuaf.layer2.redis;
 
 import edu.vn.hcmuaf.layer2.CompressUtils;
-import edu.vn.hcmuaf.layer2.redis.cache.ICache;
 import edu.vn.hcmuaf.layer2.redis.context.RoomContext;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class RoomRedisClusterHelper extends RedisClusterHelper {
     private static final RoomRedisClusterHelper install = new RoomRedisClusterHelper();
@@ -23,56 +21,60 @@ public class RoomRedisClusterHelper extends RedisClusterHelper {
         }
     }
 
-    public boolean containKey(String roomId) {
+    public boolean containKey(int roomId) {
         return getConnection().exists((ROOM_KEY + roomId).getBytes());
     }
 
-    public boolean addUsersToRoom(String roomId, String userId) {
-        getConnection().sadd((ROOM_KEY + roomId).getBytes(), userId.getBytes());
+    public boolean addUsersToRoom(int roomId, String sessionId) {
+        getConnection().sadd((ROOM_KEY + roomId).getBytes(), sessionId.getBytes());
+        System.out.println("RoomRedisClusterHelper : da them user vao phong voi id : " + roomId + " va session id : " + sessionId);
         return true;
     }
 
-    public String deleteUserFromRoom(String roomId, String userId) {
-        getConnection().srem((ROOM_KEY + roomId).getBytes(), userId.getBytes());
-        return userId;
-    }
-
-    public boolean addRoomAndRoomContext(String roomId, String userId, RoomContext roomContext) {
-        getConnection().sadd((ROOM_KEY + roomId).getBytes(), userId.getBytes());
-        getConnection().hset(ROOM_CONTEXT.getBytes(), roomId.getBytes(), CompressUtils.compress(roomContext));
+    public boolean deleteUserFromRoom(int roomId, String sessionId) {
+        getConnection().srem((ROOM_KEY + roomId).getBytes(), sessionId.getBytes());
+        System.out.println("RoomRedisClusterHelper : da xoa user khoi phong voi id : " + roomId + " va session id : " + sessionId);
         return true;
     }
 
-    public boolean addRoom(String roomId, String userId) {
-        getConnection().sadd((ROOM_KEY + roomId).getBytes(), userId.getBytes());
+    public boolean addRoomAndRoomContext(int roomId, String hostSessionId, RoomContext roomContext) {
+        getConnection().sadd((ROOM_KEY + roomId).getBytes(), hostSessionId.getBytes());
+        getConnection().hset(ROOM_CONTEXT.getBytes(), String.valueOf(roomId).getBytes(), CompressUtils.compress(roomContext));
+        System.out.println("RoomRedisClusterHelper : da tao phong voi id : " + roomId + " va chu phong : " + hostSessionId);
         return true;
     }
 
-    public boolean removeRoom(String roomId, String userId) {
+    public boolean addRoom(int roomId, int userId) {
+        getConnection().sadd((ROOM_KEY + roomId).getBytes(), String.valueOf(userId).getBytes());
+        return true;
+    }
+
+    public boolean removeRoom(int roomId) {
         getConnection().del((ROOM_KEY + roomId).getBytes());
         removeRoomContext(roomId);
+        System.out.println("RoomRedisClusterHelper : da xoa phong voi id : " + roomId);
         return true;
     }
 
-    public boolean addRoomContext(String roomId, RoomContext roomContext) {
-        getConnection().hset(ROOM_CONTEXT.getBytes(), roomId.getBytes(), CompressUtils.compress(roomContext));
+    public boolean addRoomContext(int roomId, RoomContext roomContext) {
+        getConnection().hset(ROOM_CONTEXT.getBytes(),String.valueOf(roomId).getBytes(), CompressUtils.compress(roomContext));
         return true;
     }
 
-    public boolean removeRoomContext(String roomId) {
-        getConnection().hdel(ROOM_CONTEXT.getBytes(), roomId.getBytes());
+    public boolean removeRoomContext(int roomId) {
+        getConnection().hdel(ROOM_CONTEXT.getBytes(), String.valueOf(roomId).getBytes());
         return true;
     }
 
-    public List<String> getAllUserInRoom(String roomId) {
+    public List<String> getAllUserInRoom(int roomId) {
         Set<byte[]> set = getConnection().smembers((ROOM_KEY + roomId).getBytes());
         List<String> result = new java.util.ArrayList<>();
         set.forEach(s -> result.add(new String(s)));
         return result;
     }
 
-    public RoomContext getRoomContext(String roomId) {
-        byte[] bytes = getConnection().hget(ROOM_CONTEXT.getBytes(), roomId.getBytes());
+    public RoomContext getRoomContext(int roomId) {
+        byte[] bytes = getConnection().hget(ROOM_CONTEXT.getBytes(), String.valueOf(roomId).getBytes());
         return CompressUtils.decompress(bytes, RoomContext.class);
     }
 
