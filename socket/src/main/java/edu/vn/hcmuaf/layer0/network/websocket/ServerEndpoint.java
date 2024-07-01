@@ -36,6 +36,7 @@ public class ServerEndpoint {
         ServerEndpoint.subscribe(new AuthHandler());
         ServerEndpoint.subscribe(new RoomHandler());
         ServerEndpoint.subscribe(new ExamHandler());
+        ServerEndpoint.subscribe(new ProcessGameHandler());
 //        ServerEndpoint.subscribe(new NotificationHandler());
 //        ThreadManage.me().execute(() -> {
 ////            while (true) {

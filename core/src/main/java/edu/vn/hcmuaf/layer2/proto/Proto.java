@@ -1546,6 +1546,36 @@ public final class Proto {
      */
     edu.vn.hcmuaf.layer2.proto.Proto.ResCheckQuestionAnswerOrBuilder getResCheckQuestionAnswerOrBuilder();
 
+    /**
+     * <code>.proto.ResRoomScore resRoomScore = 53;</code>
+     * @return Whether the resRoomScore field is set.
+     */
+    boolean hasResRoomScore();
+    /**
+     * <code>.proto.ResRoomScore resRoomScore = 53;</code>
+     * @return The resRoomScore.
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore getResRoomScore();
+    /**
+     * <code>.proto.ResRoomScore resRoomScore = 53;</code>
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScoreOrBuilder getResRoomScoreOrBuilder();
+
+    /**
+     * <code>.proto.UserScore userScore = 54;</code>
+     * @return Whether the userScore field is set.
+     */
+    boolean hasUserScore();
+    /**
+     * <code>.proto.UserScore userScore = 54;</code>
+     * @return The userScore.
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.UserScore getUserScore();
+    /**
+     * <code>.proto.UserScore userScore = 54;</code>
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.UserScoreOrBuilder getUserScoreOrBuilder();
+
     edu.vn.hcmuaf.layer2.proto.Proto.Packet.DataCase getDataCase();
   }
   /**
@@ -1641,6 +1671,8 @@ public final class Proto {
       REQGETNEXTQUESTION(50),
       REQCHECKQUESTIONANSWER(51),
       RESCHECKQUESTIONANSWER(52),
+      RESROOMSCORE(53),
+      USERSCORE(54),
       DATA_NOT_SET(0);
       private final int value;
       private DataCase(int value) {
@@ -1710,6 +1742,8 @@ public final class Proto {
           case 50: return REQGETNEXTQUESTION;
           case 51: return REQCHECKQUESTIONANSWER;
           case 52: return RESCHECKQUESTIONANSWER;
+          case 53: return RESROOMSCORE;
+          case 54: return USERSCORE;
           case 0: return DATA_NOT_SET;
           default: return null;
         }
@@ -3337,6 +3371,68 @@ public final class Proto {
       return edu.vn.hcmuaf.layer2.proto.Proto.ResCheckQuestionAnswer.getDefaultInstance();
     }
 
+    public static final int RESROOMSCORE_FIELD_NUMBER = 53;
+    /**
+     * <code>.proto.ResRoomScore resRoomScore = 53;</code>
+     * @return Whether the resRoomScore field is set.
+     */
+    @java.lang.Override
+    public boolean hasResRoomScore() {
+      return dataCase_ == 53;
+    }
+    /**
+     * <code>.proto.ResRoomScore resRoomScore = 53;</code>
+     * @return The resRoomScore.
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore getResRoomScore() {
+      if (dataCase_ == 53) {
+         return (edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore) data_;
+      }
+      return edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore.getDefaultInstance();
+    }
+    /**
+     * <code>.proto.ResRoomScore resRoomScore = 53;</code>
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScoreOrBuilder getResRoomScoreOrBuilder() {
+      if (dataCase_ == 53) {
+         return (edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore) data_;
+      }
+      return edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore.getDefaultInstance();
+    }
+
+    public static final int USERSCORE_FIELD_NUMBER = 54;
+    /**
+     * <code>.proto.UserScore userScore = 54;</code>
+     * @return Whether the userScore field is set.
+     */
+    @java.lang.Override
+    public boolean hasUserScore() {
+      return dataCase_ == 54;
+    }
+    /**
+     * <code>.proto.UserScore userScore = 54;</code>
+     * @return The userScore.
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.UserScore getUserScore() {
+      if (dataCase_ == 54) {
+         return (edu.vn.hcmuaf.layer2.proto.Proto.UserScore) data_;
+      }
+      return edu.vn.hcmuaf.layer2.proto.Proto.UserScore.getDefaultInstance();
+    }
+    /**
+     * <code>.proto.UserScore userScore = 54;</code>
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.UserScoreOrBuilder getUserScoreOrBuilder() {
+      if (dataCase_ == 54) {
+         return (edu.vn.hcmuaf.layer2.proto.Proto.UserScore) data_;
+      }
+      return edu.vn.hcmuaf.layer2.proto.Proto.UserScore.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3506,6 +3602,12 @@ public final class Proto {
       }
       if (dataCase_ == 52) {
         output.writeMessage(52, (edu.vn.hcmuaf.layer2.proto.Proto.ResCheckQuestionAnswer) data_);
+      }
+      if (dataCase_ == 53) {
+        output.writeMessage(53, (edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore) data_);
+      }
+      if (dataCase_ == 54) {
+        output.writeMessage(54, (edu.vn.hcmuaf.layer2.proto.Proto.UserScore) data_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -3723,6 +3825,14 @@ public final class Proto {
       if (dataCase_ == 52) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(52, (edu.vn.hcmuaf.layer2.proto.Proto.ResCheckQuestionAnswer) data_);
+      }
+      if (dataCase_ == 53) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(53, (edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore) data_);
+      }
+      if (dataCase_ == 54) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(54, (edu.vn.hcmuaf.layer2.proto.Proto.UserScore) data_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -3949,6 +4059,14 @@ public final class Proto {
           if (!getResCheckQuestionAnswer()
               .equals(other.getResCheckQuestionAnswer())) return false;
           break;
+        case 53:
+          if (!getResRoomScore()
+              .equals(other.getResRoomScore())) return false;
+          break;
+        case 54:
+          if (!getUserScore()
+              .equals(other.getUserScore())) return false;
+          break;
         case 0:
         default:
       }
@@ -4171,6 +4289,14 @@ public final class Proto {
         case 52:
           hash = (37 * hash) + RESCHECKQUESTIONANSWER_FIELD_NUMBER;
           hash = (53 * hash) + getResCheckQuestionAnswer().hashCode();
+          break;
+        case 53:
+          hash = (37 * hash) + RESROOMSCORE_FIELD_NUMBER;
+          hash = (53 * hash) + getResRoomScore().hashCode();
+          break;
+        case 54:
+          hash = (37 * hash) + USERSCORE_FIELD_NUMBER;
+          hash = (53 * hash) + getUserScore().hashCode();
           break;
         case 0:
         default:
@@ -4461,6 +4587,12 @@ public final class Proto {
         if (resCheckQuestionAnswerBuilder_ != null) {
           resCheckQuestionAnswerBuilder_.clear();
         }
+        if (resRoomScoreBuilder_ != null) {
+          resRoomScoreBuilder_.clear();
+        }
+        if (userScoreBuilder_ != null) {
+          userScoreBuilder_.clear();
+        }
         dataCase_ = 0;
         data_ = null;
         return this;
@@ -4715,6 +4847,14 @@ public final class Proto {
             resCheckQuestionAnswerBuilder_ != null) {
           result.data_ = resCheckQuestionAnswerBuilder_.build();
         }
+        if (dataCase_ == 53 &&
+            resRoomScoreBuilder_ != null) {
+          result.data_ = resRoomScoreBuilder_.build();
+        }
+        if (dataCase_ == 54 &&
+            userScoreBuilder_ != null) {
+          result.data_ = userScoreBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -4936,6 +5076,14 @@ public final class Proto {
           }
           case RESCHECKQUESTIONANSWER: {
             mergeResCheckQuestionAnswer(other.getResCheckQuestionAnswer());
+            break;
+          }
+          case RESROOMSCORE: {
+            mergeResRoomScore(other.getResRoomScore());
+            break;
+          }
+          case USERSCORE: {
+            mergeUserScore(other.getUserScore());
             break;
           }
           case DATA_NOT_SET: {
@@ -5332,6 +5480,20 @@ public final class Proto {
                 dataCase_ = 52;
                 break;
               } // case 418
+              case 426: {
+                input.readMessage(
+                    getResRoomScoreFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                dataCase_ = 53;
+                break;
+              } // case 426
+              case 434: {
+                input.readMessage(
+                    getUserScoreFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                dataCase_ = 54;
+                break;
+              } // case 434
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -12747,6 +12909,290 @@ public final class Proto {
         dataCase_ = 52;
         onChanged();
         return resCheckQuestionAnswerBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore, edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScoreOrBuilder> resRoomScoreBuilder_;
+      /**
+       * <code>.proto.ResRoomScore resRoomScore = 53;</code>
+       * @return Whether the resRoomScore field is set.
+       */
+      @java.lang.Override
+      public boolean hasResRoomScore() {
+        return dataCase_ == 53;
+      }
+      /**
+       * <code>.proto.ResRoomScore resRoomScore = 53;</code>
+       * @return The resRoomScore.
+       */
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore getResRoomScore() {
+        if (resRoomScoreBuilder_ == null) {
+          if (dataCase_ == 53) {
+            return (edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore) data_;
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore.getDefaultInstance();
+        } else {
+          if (dataCase_ == 53) {
+            return resRoomScoreBuilder_.getMessage();
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.proto.ResRoomScore resRoomScore = 53;</code>
+       */
+      public Builder setResRoomScore(edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore value) {
+        if (resRoomScoreBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          resRoomScoreBuilder_.setMessage(value);
+        }
+        dataCase_ = 53;
+        return this;
+      }
+      /**
+       * <code>.proto.ResRoomScore resRoomScore = 53;</code>
+       */
+      public Builder setResRoomScore(
+          edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore.Builder builderForValue) {
+        if (resRoomScoreBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          resRoomScoreBuilder_.setMessage(builderForValue.build());
+        }
+        dataCase_ = 53;
+        return this;
+      }
+      /**
+       * <code>.proto.ResRoomScore resRoomScore = 53;</code>
+       */
+      public Builder mergeResRoomScore(edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore value) {
+        if (resRoomScoreBuilder_ == null) {
+          if (dataCase_ == 53 &&
+              data_ != edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore.getDefaultInstance()) {
+            data_ = edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore.newBuilder((edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore) data_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataCase_ == 53) {
+            resRoomScoreBuilder_.mergeFrom(value);
+          } else {
+            resRoomScoreBuilder_.setMessage(value);
+          }
+        }
+        dataCase_ = 53;
+        return this;
+      }
+      /**
+       * <code>.proto.ResRoomScore resRoomScore = 53;</code>
+       */
+      public Builder clearResRoomScore() {
+        if (resRoomScoreBuilder_ == null) {
+          if (dataCase_ == 53) {
+            dataCase_ = 0;
+            data_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataCase_ == 53) {
+            dataCase_ = 0;
+            data_ = null;
+          }
+          resRoomScoreBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.proto.ResRoomScore resRoomScore = 53;</code>
+       */
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore.Builder getResRoomScoreBuilder() {
+        return getResRoomScoreFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.ResRoomScore resRoomScore = 53;</code>
+       */
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScoreOrBuilder getResRoomScoreOrBuilder() {
+        if ((dataCase_ == 53) && (resRoomScoreBuilder_ != null)) {
+          return resRoomScoreBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataCase_ == 53) {
+            return (edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore) data_;
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.proto.ResRoomScore resRoomScore = 53;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore, edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScoreOrBuilder> 
+          getResRoomScoreFieldBuilder() {
+        if (resRoomScoreBuilder_ == null) {
+          if (!(dataCase_ == 53)) {
+            data_ = edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore.getDefaultInstance();
+          }
+          resRoomScoreBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore, edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScoreOrBuilder>(
+                  (edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore) data_,
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        dataCase_ = 53;
+        onChanged();
+        return resRoomScoreBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.UserScore, edu.vn.hcmuaf.layer2.proto.Proto.UserScore.Builder, edu.vn.hcmuaf.layer2.proto.Proto.UserScoreOrBuilder> userScoreBuilder_;
+      /**
+       * <code>.proto.UserScore userScore = 54;</code>
+       * @return Whether the userScore field is set.
+       */
+      @java.lang.Override
+      public boolean hasUserScore() {
+        return dataCase_ == 54;
+      }
+      /**
+       * <code>.proto.UserScore userScore = 54;</code>
+       * @return The userScore.
+       */
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.UserScore getUserScore() {
+        if (userScoreBuilder_ == null) {
+          if (dataCase_ == 54) {
+            return (edu.vn.hcmuaf.layer2.proto.Proto.UserScore) data_;
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.UserScore.getDefaultInstance();
+        } else {
+          if (dataCase_ == 54) {
+            return userScoreBuilder_.getMessage();
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.UserScore.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.proto.UserScore userScore = 54;</code>
+       */
+      public Builder setUserScore(edu.vn.hcmuaf.layer2.proto.Proto.UserScore value) {
+        if (userScoreBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          userScoreBuilder_.setMessage(value);
+        }
+        dataCase_ = 54;
+        return this;
+      }
+      /**
+       * <code>.proto.UserScore userScore = 54;</code>
+       */
+      public Builder setUserScore(
+          edu.vn.hcmuaf.layer2.proto.Proto.UserScore.Builder builderForValue) {
+        if (userScoreBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          userScoreBuilder_.setMessage(builderForValue.build());
+        }
+        dataCase_ = 54;
+        return this;
+      }
+      /**
+       * <code>.proto.UserScore userScore = 54;</code>
+       */
+      public Builder mergeUserScore(edu.vn.hcmuaf.layer2.proto.Proto.UserScore value) {
+        if (userScoreBuilder_ == null) {
+          if (dataCase_ == 54 &&
+              data_ != edu.vn.hcmuaf.layer2.proto.Proto.UserScore.getDefaultInstance()) {
+            data_ = edu.vn.hcmuaf.layer2.proto.Proto.UserScore.newBuilder((edu.vn.hcmuaf.layer2.proto.Proto.UserScore) data_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataCase_ == 54) {
+            userScoreBuilder_.mergeFrom(value);
+          } else {
+            userScoreBuilder_.setMessage(value);
+          }
+        }
+        dataCase_ = 54;
+        return this;
+      }
+      /**
+       * <code>.proto.UserScore userScore = 54;</code>
+       */
+      public Builder clearUserScore() {
+        if (userScoreBuilder_ == null) {
+          if (dataCase_ == 54) {
+            dataCase_ = 0;
+            data_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataCase_ == 54) {
+            dataCase_ = 0;
+            data_ = null;
+          }
+          userScoreBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.proto.UserScore userScore = 54;</code>
+       */
+      public edu.vn.hcmuaf.layer2.proto.Proto.UserScore.Builder getUserScoreBuilder() {
+        return getUserScoreFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.UserScore userScore = 54;</code>
+       */
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.UserScoreOrBuilder getUserScoreOrBuilder() {
+        if ((dataCase_ == 54) && (userScoreBuilder_ != null)) {
+          return userScoreBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataCase_ == 54) {
+            return (edu.vn.hcmuaf.layer2.proto.Proto.UserScore) data_;
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.UserScore.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.proto.UserScore userScore = 54;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.UserScore, edu.vn.hcmuaf.layer2.proto.Proto.UserScore.Builder, edu.vn.hcmuaf.layer2.proto.Proto.UserScoreOrBuilder> 
+          getUserScoreFieldBuilder() {
+        if (userScoreBuilder_ == null) {
+          if (!(dataCase_ == 54)) {
+            data_ = edu.vn.hcmuaf.layer2.proto.Proto.UserScore.getDefaultInstance();
+          }
+          userScoreBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              edu.vn.hcmuaf.layer2.proto.Proto.UserScore, edu.vn.hcmuaf.layer2.proto.Proto.UserScore.Builder, edu.vn.hcmuaf.layer2.proto.Proto.UserScoreOrBuilder>(
+                  (edu.vn.hcmuaf.layer2.proto.Proto.UserScore) data_,
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        dataCase_ = 54;
+        onChanged();
+        return userScoreBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -29755,20 +30201,12 @@ public final class Proto {
         int index);
 
     /**
-     * <pre>
-     * ID của người dùng tạo exam
-     * </pre>
-     *
      * <code>int32 userId = 5;</code>
      * @return The userId.
      */
     int getUserId();
 
     /**
-     * <pre>
-     * 0: chưa hoàn thành, 1: đã hoàn thành
-     * </pre>
-     *
      * <code>int32 status = 6;</code>
      * @return The status.
      */
@@ -29974,10 +30412,6 @@ public final class Proto {
     public static final int USERID_FIELD_NUMBER = 5;
     private int userId_ = 0;
     /**
-     * <pre>
-     * ID của người dùng tạo exam
-     * </pre>
-     *
      * <code>int32 userId = 5;</code>
      * @return The userId.
      */
@@ -29989,10 +30423,6 @@ public final class Proto {
     public static final int STATUS_FIELD_NUMBER = 6;
     private int status_ = 0;
     /**
-     * <pre>
-     * 0: chưa hoàn thành, 1: đã hoàn thành
-     * </pre>
-     *
      * <code>int32 status = 6;</code>
      * @return The status.
      */
@@ -30917,10 +31347,6 @@ public final class Proto {
 
       private int userId_ ;
       /**
-       * <pre>
-       * ID của người dùng tạo exam
-       * </pre>
-       *
        * <code>int32 userId = 5;</code>
        * @return The userId.
        */
@@ -30929,10 +31355,6 @@ public final class Proto {
         return userId_;
       }
       /**
-       * <pre>
-       * ID của người dùng tạo exam
-       * </pre>
-       *
        * <code>int32 userId = 5;</code>
        * @param value The userId to set.
        * @return This builder for chaining.
@@ -30945,10 +31367,6 @@ public final class Proto {
         return this;
       }
       /**
-       * <pre>
-       * ID của người dùng tạo exam
-       * </pre>
-       *
        * <code>int32 userId = 5;</code>
        * @return This builder for chaining.
        */
@@ -30961,10 +31379,6 @@ public final class Proto {
 
       private int status_ ;
       /**
-       * <pre>
-       * 0: chưa hoàn thành, 1: đã hoàn thành
-       * </pre>
-       *
        * <code>int32 status = 6;</code>
        * @return The status.
        */
@@ -30973,10 +31387,6 @@ public final class Proto {
         return status_;
       }
       /**
-       * <pre>
-       * 0: chưa hoàn thành, 1: đã hoàn thành
-       * </pre>
-       *
        * <code>int32 status = 6;</code>
        * @param value The status to set.
        * @return This builder for chaining.
@@ -30989,10 +31399,6 @@ public final class Proto {
         return this;
       }
       /**
-       * <pre>
-       * 0: chưa hoàn thành, 1: đã hoàn thành
-       * </pre>
-       *
        * <code>int32 status = 6;</code>
        * @return This builder for chaining.
        */
@@ -31089,10 +31495,6 @@ public final class Proto {
         getMessageBytes();
 
     /**
-     * <pre>
-     * ID của exam mới tạo nếu thành công
-     * </pre>
-     *
      * <code>int32 examId = 3;</code>
      * @return The examId.
      */
@@ -31187,10 +31589,6 @@ public final class Proto {
     public static final int EXAMID_FIELD_NUMBER = 3;
     private int examId_ = 0;
     /**
-     * <pre>
-     * ID của exam mới tạo nếu thành công
-     * </pre>
-     *
      * <code>int32 examId = 3;</code>
      * @return The examId.
      */
@@ -31644,10 +32042,6 @@ public final class Proto {
 
       private int examId_ ;
       /**
-       * <pre>
-       * ID của exam mới tạo nếu thành công
-       * </pre>
-       *
        * <code>int32 examId = 3;</code>
        * @return The examId.
        */
@@ -31656,10 +32050,6 @@ public final class Proto {
         return examId_;
       }
       /**
-       * <pre>
-       * ID của exam mới tạo nếu thành công
-       * </pre>
-       *
        * <code>int32 examId = 3;</code>
        * @param value The examId to set.
        * @return This builder for chaining.
@@ -31672,10 +32062,6 @@ public final class Proto {
         return this;
       }
       /**
-       * <pre>
-       * ID của exam mới tạo nếu thành công
-       * </pre>
-       *
        * <code>int32 examId = 3;</code>
        * @return This builder for chaining.
        */
@@ -32835,30 +33221,18 @@ public final class Proto {
         int index);
 
     /**
-     * <pre>
-     * ID của câu hỏi
-     * </pre>
-     *
      * <code>int32 questionIndex = 4;</code>
      * @return The questionIndex.
      */
     int getQuestionIndex();
 
     /**
-     * <pre>
-     * thời gian trả lời câu hỏi
-     * </pre>
-     *
      * <code>int32 time = 5;</code>
      * @return The time.
      */
     int getTime();
 
     /**
-     * <pre>
-     * ID của câu hỏi
-     * </pre>
-     *
      * <code>int32 questionId = 6;</code>
      * @return The questionId.
      */
@@ -33024,10 +33398,6 @@ public final class Proto {
     public static final int QUESTIONINDEX_FIELD_NUMBER = 4;
     private int questionIndex_ = 0;
     /**
-     * <pre>
-     * ID của câu hỏi
-     * </pre>
-     *
      * <code>int32 questionIndex = 4;</code>
      * @return The questionIndex.
      */
@@ -33039,10 +33409,6 @@ public final class Proto {
     public static final int TIME_FIELD_NUMBER = 5;
     private int time_ = 0;
     /**
-     * <pre>
-     * thời gian trả lời câu hỏi
-     * </pre>
-     *
      * <code>int32 time = 5;</code>
      * @return The time.
      */
@@ -33054,10 +33420,6 @@ public final class Proto {
     public static final int QUESTIONID_FIELD_NUMBER = 6;
     private int questionId_ = 0;
     /**
-     * <pre>
-     * ID của câu hỏi
-     * </pre>
-     *
      * <code>int32 questionId = 6;</code>
      * @return The questionId.
      */
@@ -33909,10 +34271,6 @@ public final class Proto {
 
       private int questionIndex_ ;
       /**
-       * <pre>
-       * ID của câu hỏi
-       * </pre>
-       *
        * <code>int32 questionIndex = 4;</code>
        * @return The questionIndex.
        */
@@ -33921,10 +34279,6 @@ public final class Proto {
         return questionIndex_;
       }
       /**
-       * <pre>
-       * ID của câu hỏi
-       * </pre>
-       *
        * <code>int32 questionIndex = 4;</code>
        * @param value The questionIndex to set.
        * @return This builder for chaining.
@@ -33937,10 +34291,6 @@ public final class Proto {
         return this;
       }
       /**
-       * <pre>
-       * ID của câu hỏi
-       * </pre>
-       *
        * <code>int32 questionIndex = 4;</code>
        * @return This builder for chaining.
        */
@@ -33953,10 +34303,6 @@ public final class Proto {
 
       private int time_ ;
       /**
-       * <pre>
-       * thời gian trả lời câu hỏi
-       * </pre>
-       *
        * <code>int32 time = 5;</code>
        * @return The time.
        */
@@ -33965,10 +34311,6 @@ public final class Proto {
         return time_;
       }
       /**
-       * <pre>
-       * thời gian trả lời câu hỏi
-       * </pre>
-       *
        * <code>int32 time = 5;</code>
        * @param value The time to set.
        * @return This builder for chaining.
@@ -33981,10 +34323,6 @@ public final class Proto {
         return this;
       }
       /**
-       * <pre>
-       * thời gian trả lời câu hỏi
-       * </pre>
-       *
        * <code>int32 time = 5;</code>
        * @return This builder for chaining.
        */
@@ -33997,10 +34335,6 @@ public final class Proto {
 
       private int questionId_ ;
       /**
-       * <pre>
-       * ID của câu hỏi
-       * </pre>
-       *
        * <code>int32 questionId = 6;</code>
        * @return The questionId.
        */
@@ -34009,10 +34343,6 @@ public final class Proto {
         return questionId_;
       }
       /**
-       * <pre>
-       * ID của câu hỏi
-       * </pre>
-       *
        * <code>int32 questionId = 6;</code>
        * @param value The questionId to set.
        * @return This builder for chaining.
@@ -34025,10 +34355,6 @@ public final class Proto {
         return this;
       }
       /**
-       * <pre>
-       * ID của câu hỏi
-       * </pre>
-       *
        * <code>int32 questionId = 6;</code>
        * @return This builder for chaining.
        */
@@ -34137,20 +34463,12 @@ public final class Proto {
     boolean getIsCorrect();
 
     /**
-     * <pre>
-     * ID của lựa chọn
-     * </pre>
-     *
      * <code>int32 choiceIndex = 4;</code>
      * @return The choiceIndex.
      */
     int getChoiceIndex();
 
     /**
-     * <pre>
-     * ID của lựa chọn
-     * </pre>
-     *
      * <code>int32 choiceId = 5;</code>
      * @return The choiceId.
      */
@@ -34285,10 +34603,6 @@ public final class Proto {
     public static final int CHOICEINDEX_FIELD_NUMBER = 4;
     private int choiceIndex_ = 0;
     /**
-     * <pre>
-     * ID của lựa chọn
-     * </pre>
-     *
      * <code>int32 choiceIndex = 4;</code>
      * @return The choiceIndex.
      */
@@ -34300,10 +34614,6 @@ public final class Proto {
     public static final int CHOICEID_FIELD_NUMBER = 5;
     private int choiceId_ = 0;
     /**
-     * <pre>
-     * ID của lựa chọn
-     * </pre>
-     *
      * <code>int32 choiceId = 5;</code>
      * @return The choiceId.
      */
@@ -34876,10 +35186,6 @@ public final class Proto {
 
       private int choiceIndex_ ;
       /**
-       * <pre>
-       * ID của lựa chọn
-       * </pre>
-       *
        * <code>int32 choiceIndex = 4;</code>
        * @return The choiceIndex.
        */
@@ -34888,10 +35194,6 @@ public final class Proto {
         return choiceIndex_;
       }
       /**
-       * <pre>
-       * ID của lựa chọn
-       * </pre>
-       *
        * <code>int32 choiceIndex = 4;</code>
        * @param value The choiceIndex to set.
        * @return This builder for chaining.
@@ -34904,10 +35206,6 @@ public final class Proto {
         return this;
       }
       /**
-       * <pre>
-       * ID của lựa chọn
-       * </pre>
-       *
        * <code>int32 choiceIndex = 4;</code>
        * @return This builder for chaining.
        */
@@ -34920,10 +35218,6 @@ public final class Proto {
 
       private int choiceId_ ;
       /**
-       * <pre>
-       * ID của lựa chọn
-       * </pre>
-       *
        * <code>int32 choiceId = 5;</code>
        * @return The choiceId.
        */
@@ -34932,10 +35226,6 @@ public final class Proto {
         return choiceId_;
       }
       /**
-       * <pre>
-       * ID của lựa chọn
-       * </pre>
-       *
        * <code>int32 choiceId = 5;</code>
        * @param value The choiceId to set.
        * @return This builder for chaining.
@@ -34948,10 +35238,6 @@ public final class Proto {
         return this;
       }
       /**
-       * <pre>
-       * ID của lựa chọn
-       * </pre>
-       *
        * <code>int32 choiceId = 5;</code>
        * @return This builder for chaining.
        */
@@ -48558,12 +48844,23 @@ public final class Proto {
   public interface ResEndExamOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.ResEndExam)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.proto.ResRoomScore resRoomScore = 1;</code>
+     * @return Whether the resRoomScore field is set.
+     */
+    boolean hasResRoomScore();
+    /**
+     * <code>.proto.ResRoomScore resRoomScore = 1;</code>
+     * @return The resRoomScore.
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore getResRoomScore();
+    /**
+     * <code>.proto.ResRoomScore resRoomScore = 1;</code>
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScoreOrBuilder getResRoomScoreOrBuilder();
   }
   /**
-   * <pre>
-   *gui lai ket qua cua bai thi
-   * </pre>
-   *
    * Protobuf type {@code proto.ResEndExam}
    */
   public static final class ResEndExam extends
@@ -48598,6 +48895,32 @@ public final class Proto {
               edu.vn.hcmuaf.layer2.proto.Proto.ResEndExam.class, edu.vn.hcmuaf.layer2.proto.Proto.ResEndExam.Builder.class);
     }
 
+    public static final int RESROOMSCORE_FIELD_NUMBER = 1;
+    private edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore resRoomScore_;
+    /**
+     * <code>.proto.ResRoomScore resRoomScore = 1;</code>
+     * @return Whether the resRoomScore field is set.
+     */
+    @java.lang.Override
+    public boolean hasResRoomScore() {
+      return resRoomScore_ != null;
+    }
+    /**
+     * <code>.proto.ResRoomScore resRoomScore = 1;</code>
+     * @return The resRoomScore.
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore getResRoomScore() {
+      return resRoomScore_ == null ? edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore.getDefaultInstance() : resRoomScore_;
+    }
+    /**
+     * <code>.proto.ResRoomScore resRoomScore = 1;</code>
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScoreOrBuilder getResRoomScoreOrBuilder() {
+      return resRoomScore_ == null ? edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore.getDefaultInstance() : resRoomScore_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -48612,6 +48935,9 @@ public final class Proto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (resRoomScore_ != null) {
+        output.writeMessage(1, getResRoomScore());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -48621,6 +48947,10 @@ public final class Proto {
       if (size != -1) return size;
 
       size = 0;
+      if (resRoomScore_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getResRoomScore());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -48636,6 +48966,11 @@ public final class Proto {
       }
       edu.vn.hcmuaf.layer2.proto.Proto.ResEndExam other = (edu.vn.hcmuaf.layer2.proto.Proto.ResEndExam) obj;
 
+      if (hasResRoomScore() != other.hasResRoomScore()) return false;
+      if (hasResRoomScore()) {
+        if (!getResRoomScore()
+            .equals(other.getResRoomScore())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -48647,6 +48982,10 @@ public final class Proto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasResRoomScore()) {
+        hash = (37 * hash) + RESROOMSCORE_FIELD_NUMBER;
+        hash = (53 * hash) + getResRoomScore().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -48743,10 +49082,6 @@ public final class Proto {
       return builder;
     }
     /**
-     * <pre>
-     *gui lai ket qua cua bai thi
-     * </pre>
-     *
      * Protobuf type {@code proto.ResEndExam}
      */
     public static final class Builder extends
@@ -48779,6 +49114,12 @@ public final class Proto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
+        resRoomScore_ = null;
+        if (resRoomScoreBuilder_ != null) {
+          resRoomScoreBuilder_.dispose();
+          resRoomScoreBuilder_ = null;
+        }
         return this;
       }
 
@@ -48805,8 +49146,18 @@ public final class Proto {
       @java.lang.Override
       public edu.vn.hcmuaf.layer2.proto.Proto.ResEndExam buildPartial() {
         edu.vn.hcmuaf.layer2.proto.Proto.ResEndExam result = new edu.vn.hcmuaf.layer2.proto.Proto.ResEndExam(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(edu.vn.hcmuaf.layer2.proto.Proto.ResEndExam result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.resRoomScore_ = resRoomScoreBuilder_ == null
+              ? resRoomScore_
+              : resRoomScoreBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -48821,6 +49172,9 @@ public final class Proto {
 
       public Builder mergeFrom(edu.vn.hcmuaf.layer2.proto.Proto.ResEndExam other) {
         if (other == edu.vn.hcmuaf.layer2.proto.Proto.ResEndExam.getDefaultInstance()) return this;
+        if (other.hasResRoomScore()) {
+          mergeResRoomScore(other.getResRoomScore());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -48847,6 +49201,13 @@ public final class Proto {
               case 0:
                 done = true;
                 break;
+              case 10: {
+                input.readMessage(
+                    getResRoomScoreFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -48861,6 +49222,126 @@ public final class Proto {
           onChanged();
         } // finally
         return this;
+      }
+      private int bitField0_;
+
+      private edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore resRoomScore_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore, edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScoreOrBuilder> resRoomScoreBuilder_;
+      /**
+       * <code>.proto.ResRoomScore resRoomScore = 1;</code>
+       * @return Whether the resRoomScore field is set.
+       */
+      public boolean hasResRoomScore() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <code>.proto.ResRoomScore resRoomScore = 1;</code>
+       * @return The resRoomScore.
+       */
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore getResRoomScore() {
+        if (resRoomScoreBuilder_ == null) {
+          return resRoomScore_ == null ? edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore.getDefaultInstance() : resRoomScore_;
+        } else {
+          return resRoomScoreBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.proto.ResRoomScore resRoomScore = 1;</code>
+       */
+      public Builder setResRoomScore(edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore value) {
+        if (resRoomScoreBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resRoomScore_ = value;
+        } else {
+          resRoomScoreBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.proto.ResRoomScore resRoomScore = 1;</code>
+       */
+      public Builder setResRoomScore(
+          edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore.Builder builderForValue) {
+        if (resRoomScoreBuilder_ == null) {
+          resRoomScore_ = builderForValue.build();
+        } else {
+          resRoomScoreBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.proto.ResRoomScore resRoomScore = 1;</code>
+       */
+      public Builder mergeResRoomScore(edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore value) {
+        if (resRoomScoreBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0) &&
+            resRoomScore_ != null &&
+            resRoomScore_ != edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore.getDefaultInstance()) {
+            getResRoomScoreBuilder().mergeFrom(value);
+          } else {
+            resRoomScore_ = value;
+          }
+        } else {
+          resRoomScoreBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.proto.ResRoomScore resRoomScore = 1;</code>
+       */
+      public Builder clearResRoomScore() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        resRoomScore_ = null;
+        if (resRoomScoreBuilder_ != null) {
+          resRoomScoreBuilder_.dispose();
+          resRoomScoreBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.proto.ResRoomScore resRoomScore = 1;</code>
+       */
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore.Builder getResRoomScoreBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getResRoomScoreFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.ResRoomScore resRoomScore = 1;</code>
+       */
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScoreOrBuilder getResRoomScoreOrBuilder() {
+        if (resRoomScoreBuilder_ != null) {
+          return resRoomScoreBuilder_.getMessageOrBuilder();
+        } else {
+          return resRoomScore_ == null ?
+              edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore.getDefaultInstance() : resRoomScore_;
+        }
+      }
+      /**
+       * <code>.proto.ResRoomScore resRoomScore = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore, edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScoreOrBuilder> 
+          getResRoomScoreFieldBuilder() {
+        if (resRoomScoreBuilder_ == null) {
+          resRoomScoreBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore, edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore.Builder, edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScoreOrBuilder>(
+                  getResRoomScore(),
+                  getParentForChildren(),
+                  isClean());
+          resRoomScore_ = null;
+        }
+        return resRoomScoreBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -49543,6 +50024,12 @@ public final class Proto {
      * @return The choiceId.
      */
     int getChoiceId();
+
+    /**
+     * <code>int32 roomId = 5;</code>
+     * @return The roomId.
+     */
+    int getRoomId();
   }
   /**
    * Protobuf type {@code proto.ReqCheckQuestionAnswer}
@@ -49627,6 +50114,17 @@ public final class Proto {
       return choiceId_;
     }
 
+    public static final int ROOMID_FIELD_NUMBER = 5;
+    private int roomId_ = 0;
+    /**
+     * <code>int32 roomId = 5;</code>
+     * @return The roomId.
+     */
+    @java.lang.Override
+    public int getRoomId() {
+      return roomId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -49653,6 +50151,9 @@ public final class Proto {
       if (choiceId_ != 0) {
         output.writeInt32(4, choiceId_);
       }
+      if (roomId_ != 0) {
+        output.writeInt32(5, roomId_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -49678,6 +50179,10 @@ public final class Proto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(4, choiceId_);
       }
+      if (roomId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, roomId_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -49701,6 +50206,8 @@ public final class Proto {
           != other.getQuestionId()) return false;
       if (getChoiceId()
           != other.getChoiceId()) return false;
+      if (getRoomId()
+          != other.getRoomId()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -49720,6 +50227,8 @@ public final class Proto {
       hash = (53 * hash) + getQuestionId();
       hash = (37 * hash) + CHOICEID_FIELD_NUMBER;
       hash = (53 * hash) + getChoiceId();
+      hash = (37 * hash) + ROOMID_FIELD_NUMBER;
+      hash = (53 * hash) + getRoomId();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -49853,6 +50362,7 @@ public final class Proto {
         userId_ = 0;
         questionId_ = 0;
         choiceId_ = 0;
+        roomId_ = 0;
         return this;
       }
 
@@ -49898,6 +50408,9 @@ public final class Proto {
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.choiceId_ = choiceId_;
         }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.roomId_ = roomId_;
+        }
       }
 
       @java.lang.Override
@@ -49923,6 +50436,9 @@ public final class Proto {
         }
         if (other.getChoiceId() != 0) {
           setChoiceId(other.getChoiceId());
+        }
+        if (other.getRoomId() != 0) {
+          setRoomId(other.getRoomId());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -49970,6 +50486,11 @@ public final class Proto {
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
+              case 40: {
+                roomId_ = input.readInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -50123,6 +50644,38 @@ public final class Proto {
       public Builder clearChoiceId() {
         bitField0_ = (bitField0_ & ~0x00000008);
         choiceId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int roomId_ ;
+      /**
+       * <code>int32 roomId = 5;</code>
+       * @return The roomId.
+       */
+      @java.lang.Override
+      public int getRoomId() {
+        return roomId_;
+      }
+      /**
+       * <code>int32 roomId = 5;</code>
+       * @param value The roomId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoomId(int value) {
+
+        roomId_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 roomId = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRoomId() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        roomId_ = 0;
         onChanged();
         return this;
       }
@@ -50724,6 +51277,1268 @@ public final class Proto {
 
   }
 
+  public interface UserScoreOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.UserScore)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 userId = 1;</code>
+     * @return The userId.
+     */
+    int getUserId();
+
+    /**
+     * <code>int32 score = 2;</code>
+     * @return The score.
+     */
+    int getScore();
+  }
+  /**
+   * Protobuf type {@code proto.UserScore}
+   */
+  public static final class UserScore extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.UserScore)
+      UserScoreOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UserScore.newBuilder() to construct.
+    private UserScore(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private UserScore() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UserScore();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_UserScore_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_UserScore_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              edu.vn.hcmuaf.layer2.proto.Proto.UserScore.class, edu.vn.hcmuaf.layer2.proto.Proto.UserScore.Builder.class);
+    }
+
+    public static final int USERID_FIELD_NUMBER = 1;
+    private int userId_ = 0;
+    /**
+     * <code>int32 userId = 1;</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public int getUserId() {
+      return userId_;
+    }
+
+    public static final int SCORE_FIELD_NUMBER = 2;
+    private int score_ = 0;
+    /**
+     * <code>int32 score = 2;</code>
+     * @return The score.
+     */
+    @java.lang.Override
+    public int getScore() {
+      return score_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (userId_ != 0) {
+        output.writeInt32(1, userId_);
+      }
+      if (score_ != 0) {
+        output.writeInt32(2, score_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (userId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, userId_);
+      }
+      if (score_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, score_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof edu.vn.hcmuaf.layer2.proto.Proto.UserScore)) {
+        return super.equals(obj);
+      }
+      edu.vn.hcmuaf.layer2.proto.Proto.UserScore other = (edu.vn.hcmuaf.layer2.proto.Proto.UserScore) obj;
+
+      if (getUserId()
+          != other.getUserId()) return false;
+      if (getScore()
+          != other.getScore()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USERID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId();
+      hash = (37 * hash) + SCORE_FIELD_NUMBER;
+      hash = (53 * hash) + getScore();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static edu.vn.hcmuaf.layer2.proto.Proto.UserScore parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.UserScore parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.UserScore parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.UserScore parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.UserScore parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.UserScore parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.UserScore parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.UserScore parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.UserScore parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.UserScore parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.UserScore parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.UserScore parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(edu.vn.hcmuaf.layer2.proto.Proto.UserScore prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.UserScore}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.UserScore)
+        edu.vn.hcmuaf.layer2.proto.Proto.UserScoreOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_UserScore_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_UserScore_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                edu.vn.hcmuaf.layer2.proto.Proto.UserScore.class, edu.vn.hcmuaf.layer2.proto.Proto.UserScore.Builder.class);
+      }
+
+      // Construct using edu.vn.hcmuaf.layer2.proto.Proto.UserScore.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        userId_ = 0;
+        score_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_UserScore_descriptor;
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.UserScore getDefaultInstanceForType() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.UserScore.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.UserScore build() {
+        edu.vn.hcmuaf.layer2.proto.Proto.UserScore result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.UserScore buildPartial() {
+        edu.vn.hcmuaf.layer2.proto.Proto.UserScore result = new edu.vn.hcmuaf.layer2.proto.Proto.UserScore(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(edu.vn.hcmuaf.layer2.proto.Proto.UserScore result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.userId_ = userId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.score_ = score_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof edu.vn.hcmuaf.layer2.proto.Proto.UserScore) {
+          return mergeFrom((edu.vn.hcmuaf.layer2.proto.Proto.UserScore)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(edu.vn.hcmuaf.layer2.proto.Proto.UserScore other) {
+        if (other == edu.vn.hcmuaf.layer2.proto.Proto.UserScore.getDefaultInstance()) return this;
+        if (other.getUserId() != 0) {
+          setUserId(other.getUserId());
+        }
+        if (other.getScore() != 0) {
+          setScore(other.getScore());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                userId_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                score_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int userId_ ;
+      /**
+       * <code>int32 userId = 1;</code>
+       * @return The userId.
+       */
+      @java.lang.Override
+      public int getUserId() {
+        return userId_;
+      }
+      /**
+       * <code>int32 userId = 1;</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserId(int value) {
+
+        userId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 userId = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        userId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int score_ ;
+      /**
+       * <code>int32 score = 2;</code>
+       * @return The score.
+       */
+      @java.lang.Override
+      public int getScore() {
+        return score_;
+      }
+      /**
+       * <code>int32 score = 2;</code>
+       * @param value The score to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScore(int value) {
+
+        score_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 score = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearScore() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        score_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.UserScore)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.UserScore)
+    private static final edu.vn.hcmuaf.layer2.proto.Proto.UserScore DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new edu.vn.hcmuaf.layer2.proto.Proto.UserScore();
+    }
+
+    public static edu.vn.hcmuaf.layer2.proto.Proto.UserScore getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UserScore>
+        PARSER = new com.google.protobuf.AbstractParser<UserScore>() {
+      @java.lang.Override
+      public UserScore parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<UserScore> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UserScore> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.UserScore getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ResRoomScoreOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.ResRoomScore)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .proto.UserScore userScores = 1;</code>
+     */
+    java.util.List<edu.vn.hcmuaf.layer2.proto.Proto.UserScore> 
+        getUserScoresList();
+    /**
+     * <code>repeated .proto.UserScore userScores = 1;</code>
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.UserScore getUserScores(int index);
+    /**
+     * <code>repeated .proto.UserScore userScores = 1;</code>
+     */
+    int getUserScoresCount();
+    /**
+     * <code>repeated .proto.UserScore userScores = 1;</code>
+     */
+    java.util.List<? extends edu.vn.hcmuaf.layer2.proto.Proto.UserScoreOrBuilder> 
+        getUserScoresOrBuilderList();
+    /**
+     * <code>repeated .proto.UserScore userScores = 1;</code>
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.UserScoreOrBuilder getUserScoresOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code proto.ResRoomScore}
+   */
+  public static final class ResRoomScore extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.ResRoomScore)
+      ResRoomScoreOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ResRoomScore.newBuilder() to construct.
+    private ResRoomScore(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ResRoomScore() {
+      userScores_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ResRoomScore();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ResRoomScore_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ResRoomScore_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore.class, edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore.Builder.class);
+    }
+
+    public static final int USERSCORES_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private java.util.List<edu.vn.hcmuaf.layer2.proto.Proto.UserScore> userScores_;
+    /**
+     * <code>repeated .proto.UserScore userScores = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<edu.vn.hcmuaf.layer2.proto.Proto.UserScore> getUserScoresList() {
+      return userScores_;
+    }
+    /**
+     * <code>repeated .proto.UserScore userScores = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends edu.vn.hcmuaf.layer2.proto.Proto.UserScoreOrBuilder> 
+        getUserScoresOrBuilderList() {
+      return userScores_;
+    }
+    /**
+     * <code>repeated .proto.UserScore userScores = 1;</code>
+     */
+    @java.lang.Override
+    public int getUserScoresCount() {
+      return userScores_.size();
+    }
+    /**
+     * <code>repeated .proto.UserScore userScores = 1;</code>
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.UserScore getUserScores(int index) {
+      return userScores_.get(index);
+    }
+    /**
+     * <code>repeated .proto.UserScore userScores = 1;</code>
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.UserScoreOrBuilder getUserScoresOrBuilder(
+        int index) {
+      return userScores_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < userScores_.size(); i++) {
+        output.writeMessage(1, userScores_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < userScores_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, userScores_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore)) {
+        return super.equals(obj);
+      }
+      edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore other = (edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore) obj;
+
+      if (!getUserScoresList()
+          .equals(other.getUserScoresList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getUserScoresCount() > 0) {
+        hash = (37 * hash) + USERSCORES_FIELD_NUMBER;
+        hash = (53 * hash) + getUserScoresList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.ResRoomScore}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.ResRoomScore)
+        edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScoreOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ResRoomScore_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ResRoomScore_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore.class, edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore.Builder.class);
+      }
+
+      // Construct using edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (userScoresBuilder_ == null) {
+          userScores_ = java.util.Collections.emptyList();
+        } else {
+          userScores_ = null;
+          userScoresBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_ResRoomScore_descriptor;
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore getDefaultInstanceForType() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore build() {
+        edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore buildPartial() {
+        edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore result = new edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore result) {
+        if (userScoresBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            userScores_ = java.util.Collections.unmodifiableList(userScores_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.userScores_ = userScores_;
+        } else {
+          result.userScores_ = userScoresBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore) {
+          return mergeFrom((edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore other) {
+        if (other == edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore.getDefaultInstance()) return this;
+        if (userScoresBuilder_ == null) {
+          if (!other.userScores_.isEmpty()) {
+            if (userScores_.isEmpty()) {
+              userScores_ = other.userScores_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureUserScoresIsMutable();
+              userScores_.addAll(other.userScores_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.userScores_.isEmpty()) {
+            if (userScoresBuilder_.isEmpty()) {
+              userScoresBuilder_.dispose();
+              userScoresBuilder_ = null;
+              userScores_ = other.userScores_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              userScoresBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getUserScoresFieldBuilder() : null;
+            } else {
+              userScoresBuilder_.addAllMessages(other.userScores_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                edu.vn.hcmuaf.layer2.proto.Proto.UserScore m =
+                    input.readMessage(
+                        edu.vn.hcmuaf.layer2.proto.Proto.UserScore.parser(),
+                        extensionRegistry);
+                if (userScoresBuilder_ == null) {
+                  ensureUserScoresIsMutable();
+                  userScores_.add(m);
+                } else {
+                  userScoresBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<edu.vn.hcmuaf.layer2.proto.Proto.UserScore> userScores_ =
+        java.util.Collections.emptyList();
+      private void ensureUserScoresIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          userScores_ = new java.util.ArrayList<edu.vn.hcmuaf.layer2.proto.Proto.UserScore>(userScores_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.UserScore, edu.vn.hcmuaf.layer2.proto.Proto.UserScore.Builder, edu.vn.hcmuaf.layer2.proto.Proto.UserScoreOrBuilder> userScoresBuilder_;
+
+      /**
+       * <code>repeated .proto.UserScore userScores = 1;</code>
+       */
+      public java.util.List<edu.vn.hcmuaf.layer2.proto.Proto.UserScore> getUserScoresList() {
+        if (userScoresBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(userScores_);
+        } else {
+          return userScoresBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .proto.UserScore userScores = 1;</code>
+       */
+      public int getUserScoresCount() {
+        if (userScoresBuilder_ == null) {
+          return userScores_.size();
+        } else {
+          return userScoresBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .proto.UserScore userScores = 1;</code>
+       */
+      public edu.vn.hcmuaf.layer2.proto.Proto.UserScore getUserScores(int index) {
+        if (userScoresBuilder_ == null) {
+          return userScores_.get(index);
+        } else {
+          return userScoresBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.UserScore userScores = 1;</code>
+       */
+      public Builder setUserScores(
+          int index, edu.vn.hcmuaf.layer2.proto.Proto.UserScore value) {
+        if (userScoresBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUserScoresIsMutable();
+          userScores_.set(index, value);
+          onChanged();
+        } else {
+          userScoresBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.UserScore userScores = 1;</code>
+       */
+      public Builder setUserScores(
+          int index, edu.vn.hcmuaf.layer2.proto.Proto.UserScore.Builder builderForValue) {
+        if (userScoresBuilder_ == null) {
+          ensureUserScoresIsMutable();
+          userScores_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          userScoresBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.UserScore userScores = 1;</code>
+       */
+      public Builder addUserScores(edu.vn.hcmuaf.layer2.proto.Proto.UserScore value) {
+        if (userScoresBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUserScoresIsMutable();
+          userScores_.add(value);
+          onChanged();
+        } else {
+          userScoresBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.UserScore userScores = 1;</code>
+       */
+      public Builder addUserScores(
+          int index, edu.vn.hcmuaf.layer2.proto.Proto.UserScore value) {
+        if (userScoresBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUserScoresIsMutable();
+          userScores_.add(index, value);
+          onChanged();
+        } else {
+          userScoresBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.UserScore userScores = 1;</code>
+       */
+      public Builder addUserScores(
+          edu.vn.hcmuaf.layer2.proto.Proto.UserScore.Builder builderForValue) {
+        if (userScoresBuilder_ == null) {
+          ensureUserScoresIsMutable();
+          userScores_.add(builderForValue.build());
+          onChanged();
+        } else {
+          userScoresBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.UserScore userScores = 1;</code>
+       */
+      public Builder addUserScores(
+          int index, edu.vn.hcmuaf.layer2.proto.Proto.UserScore.Builder builderForValue) {
+        if (userScoresBuilder_ == null) {
+          ensureUserScoresIsMutable();
+          userScores_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          userScoresBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.UserScore userScores = 1;</code>
+       */
+      public Builder addAllUserScores(
+          java.lang.Iterable<? extends edu.vn.hcmuaf.layer2.proto.Proto.UserScore> values) {
+        if (userScoresBuilder_ == null) {
+          ensureUserScoresIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, userScores_);
+          onChanged();
+        } else {
+          userScoresBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.UserScore userScores = 1;</code>
+       */
+      public Builder clearUserScores() {
+        if (userScoresBuilder_ == null) {
+          userScores_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          userScoresBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.UserScore userScores = 1;</code>
+       */
+      public Builder removeUserScores(int index) {
+        if (userScoresBuilder_ == null) {
+          ensureUserScoresIsMutable();
+          userScores_.remove(index);
+          onChanged();
+        } else {
+          userScoresBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.UserScore userScores = 1;</code>
+       */
+      public edu.vn.hcmuaf.layer2.proto.Proto.UserScore.Builder getUserScoresBuilder(
+          int index) {
+        return getUserScoresFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .proto.UserScore userScores = 1;</code>
+       */
+      public edu.vn.hcmuaf.layer2.proto.Proto.UserScoreOrBuilder getUserScoresOrBuilder(
+          int index) {
+        if (userScoresBuilder_ == null) {
+          return userScores_.get(index);  } else {
+          return userScoresBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.UserScore userScores = 1;</code>
+       */
+      public java.util.List<? extends edu.vn.hcmuaf.layer2.proto.Proto.UserScoreOrBuilder> 
+           getUserScoresOrBuilderList() {
+        if (userScoresBuilder_ != null) {
+          return userScoresBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(userScores_);
+        }
+      }
+      /**
+       * <code>repeated .proto.UserScore userScores = 1;</code>
+       */
+      public edu.vn.hcmuaf.layer2.proto.Proto.UserScore.Builder addUserScoresBuilder() {
+        return getUserScoresFieldBuilder().addBuilder(
+            edu.vn.hcmuaf.layer2.proto.Proto.UserScore.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.UserScore userScores = 1;</code>
+       */
+      public edu.vn.hcmuaf.layer2.proto.Proto.UserScore.Builder addUserScoresBuilder(
+          int index) {
+        return getUserScoresFieldBuilder().addBuilder(
+            index, edu.vn.hcmuaf.layer2.proto.Proto.UserScore.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.UserScore userScores = 1;</code>
+       */
+      public java.util.List<edu.vn.hcmuaf.layer2.proto.Proto.UserScore.Builder> 
+           getUserScoresBuilderList() {
+        return getUserScoresFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.UserScore, edu.vn.hcmuaf.layer2.proto.Proto.UserScore.Builder, edu.vn.hcmuaf.layer2.proto.Proto.UserScoreOrBuilder> 
+          getUserScoresFieldBuilder() {
+        if (userScoresBuilder_ == null) {
+          userScoresBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              edu.vn.hcmuaf.layer2.proto.Proto.UserScore, edu.vn.hcmuaf.layer2.proto.Proto.UserScore.Builder, edu.vn.hcmuaf.layer2.proto.Proto.UserScoreOrBuilder>(
+                  userScores_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          userScores_ = null;
+        }
+        return userScoresBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.ResRoomScore)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.ResRoomScore)
+    private static final edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore();
+    }
+
+    public static edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ResRoomScore>
+        PARSER = new com.google.protobuf.AbstractParser<ResRoomScore>() {
+      @java.lang.Override
+      public ResRoomScore parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ResRoomScore> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ResRoomScore> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.ResRoomScore getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_proto_PacketWrapper_descriptor;
   private static final 
@@ -51014,6 +52829,16 @@ public final class Proto {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_proto_ResCheckQuestionAnswer_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_UserScore_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_UserScore_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ResRoomScore_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ResRoomScore_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -51024,7 +52849,7 @@ public final class Proto {
   static {
     java.lang.String[] descriptorData = {
       "\n\013Proto.proto\022\005proto\".\n\rPacketWrapper\022\035\n" +
-      "\006packet\030\001 \003(\0132\r.proto.Packet\"\220\025\n\006Packet\022" +
+      "\006packet\030\001 \003(\0132\r.proto.Packet\"\344\025\n\006Packet\022" +
       "#\n\010reqLogin\030\001 \001(\0132\017.proto.ReqLoginH\000\022\'\n\n" +
       "reqRelogin\030\002 \001(\0132\021.proto.ReqReloginH\000\022#\n" +
       "\010resLogin\030\003 \001(\0132\017.proto.ResLoginH\000\022%\n\tre" +
@@ -51092,99 +52917,105 @@ public final class Proto {
       "\026reqCheckQuestionAnswer\0303 \001(\0132\035.proto.Re" +
       "qCheckQuestionAnswerH\000\022?\n\026resCheckQuesti" +
       "onAnswer\0304 \001(\0132\035.proto.ResCheckQuestionA" +
-      "nswerH\000B\006\n\004data\".\n\010ReqLogin\022\020\n\010username\030" +
-      "\001 \001(\t\022\020\n\010password\030\002 \001(\t\"-\n\nReqRelogin\022\020\n" +
-      "\010username\030\001 \001(\t\022\r\n\005token\030\002 \001(\t\"D\n\010ResLog" +
-      "in\022\016\n\006status\030\001 \001(\005\022\r\n\005token\030\002 \001(\t\022\031\n\004use" +
-      "r\030\003 \001(\0132\013.proto.User\"\036\n\014ResUserAlert\022\016\n\006" +
-      "status\030\001 \001(\005\"\013\n\tReqLogout\"\033\n\tResLogout\022\016" +
-      "\n\006status\030\001 \001(\005\"\"\n\021ReqForgotPassword\022\r\n\005e" +
-      "mail\030\001 \001(\t\"5\n\027ReqVerifyForgotPassword\022\r\n" +
-      "\005email\030\001 \001(\t\022\013\n\003otp\030\002 \001(\005\")\n\027ResVerifyFo" +
-      "rgotPassword\022\016\n\006status\030\001 \001(\005\"G\n\027ReqChang" +
-      "ePasswordForgot\022\020\n\010password\030\001 \001(\t\022\013\n\003otp" +
-      "\030\002 \001(\005\022\r\n\005email\030\003 \001(\t\")\n\027ResChangePasswo" +
-      "rdForgot\022\016\n\006status\030\001 \001(\005\"#\n\021ResForgotPas" +
-      "sword\022\016\n\006status\030\001 \001(\005\"`\n\013ReqRegister\022\020\n\010" +
-      "username\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\022\017\n\007spon" +
-      "sor\030\003 \001(\t\022\r\n\005phone\030\004 \001(\t\022\r\n\005email\030\005 \001(\t\"" +
-      "\035\n\013ResRegister\022\016\n\006status\030\001 \001(\005\"7\n\021ReqUpd" +
-      "ateUserInfo\022\022\n\nplayerName\030\001 \001(\t\022\016\n\006gende" +
-      "r\030\002 \001(\005\"(\n\013ResUserInfo\022\031\n\004user\030\001 \001(\0132\013.p" +
-      "roto.User\"j\n\004User\022\016\n\006userId\030\001 \001(\005\022\020\n\010use" +
-      "rname\030\002 \001(\t\022\022\n\nplayerName\030\003 \001(\t\022\016\n\006gende" +
-      "r\030\004 \001(\005\022\r\n\005email\030\006 \001(\t\022\r\n\005phone\030\007 \001(\t\"/\n" +
-      "\rReqCreateRoom\022\016\n\006userId\030\001 \001(\005\022\016\n\006testId" +
-      "\030\002 \001(\005\"/\n\rResCreateRoom\022\016\n\006status\030\001 \001(\005\022" +
-      "\016\n\006roomId\030\002 \001(\005\"\035\n\013ReqJoinRoom\022\016\n\006roomId" +
-      "\030\001 \001(\005\".\n\013ResJoinRoom\022\014\n\004name\030\001 \001(\t\022\021\n\ts" +
-      "essionId\030\002 \001(\t\"\034\n\nReqOutRoom\022\016\n\006roomId\030\001" +
-      " \001(\005\"-\n\nResOutRoom\022\014\n\004name\030\001 \001(\t\022\021\n\tsess" +
-      "ionId\030\002 \001(\t\"-\n\014ReqCloseRoom\022\016\n\006roomId\030\001 " +
-      "\001(\005\022\r\n\005token\030\002 \001(\t\"\036\n\014ResCloseRoom\022\016\n\006st" +
-      "atus\030\001 \001(\005\"\031\n\tReqVerify\022\014\n\004code\030\001 \001(\t\"\033\n" +
-      "\tResVerify\022\016\n\006status\030\001 \001(\005\"=\n\021ReqChangeP" +
-      "assword\022\023\n\013oldPassword\030\001 \001(\t\022\023\n\013newPassw" +
-      "ord\030\002 \001(\t\"#\n\021ResChangePassword\022\016\n\006status" +
-      "\030\001 \001(\005\"\215\001\n\021CreateExamRequest\022\r\n\005title\030\001 " +
-      "\001(\t\022\023\n\013description\030\002 \001(\t\022\020\n\010imageUrl\030\003 \001" +
-      "(\t\022\"\n\tquestions\030\004 \003(\0132\017.proto.Question\022\016" +
-      "\n\006userId\030\005 \001(\005\022\016\n\006status\030\006 \001(\005\"F\n\022Create" +
-      "ExamResponse\022\017\n\007success\030\001 \001(\010\022\017\n\007message" +
-      "\030\002 \001(\t\022\016\n\006examId\030\003 \001(\005\"#\n\021DeleteExamRequ" +
-      "est\022\016\n\006examId\030\001 \001(\005\"6\n\022DeleteExamRespons" +
-      "e\022\017\n\007success\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\"\213\001\n\010" +
-      "Question\022\024\n\014questionText\030\001 \001(\t\022\020\n\010imageU" +
-      "rl\030\002 \001(\t\022\036\n\007choices\030\003 \003(\0132\r.proto.Choice" +
-      "\022\025\n\rquestionIndex\030\004 \001(\005\022\014\n\004time\030\005 \001(\005\022\022\n" +
-      "\nquestionId\030\006 \001(\005\"h\n\006Choice\022\022\n\nchoiceTex" +
-      "t\030\001 \001(\t\022\020\n\010imageUrl\030\002 \001(\t\022\021\n\tisCorrect\030\003" +
-      " \001(\010\022\023\n\013choiceIndex\030\004 \001(\005\022\020\n\010choiceId\030\005 " +
-      "\001(\005\"\224\001\n\025CreateQuestionRequest\022\024\n\014questio" +
-      "nText\030\001 \001(\t\022\020\n\010imageUrl\030\002 \001(\t\022\036\n\007choices" +
-      "\030\003 \003(\0132\r.proto.Choice\022\025\n\rquestionIndex\030\004" +
-      " \001(\005\022\014\n\004time\030\005 \001(\005\022\016\n\006examId\030\006 \001(\005\"=\n\026Cr" +
-      "eateQuestionResponse\022\017\n\007success\030\001 \001(\010\022\022\n" +
-      "\nquestionId\030\002 \001(\005\"\250\001\n\025UpdateQuestionRequ" +
-      "est\022\022\n\nquestionId\030\001 \001(\005\022\024\n\014questionText\030" +
-      "\002 \001(\t\022\020\n\010imageUrl\030\003 \001(\t\022\036\n\007choices\030\004 \003(\013" +
-      "2\r.proto.Choice\022\025\n\rquestionIndex\030\005 \001(\005\022\014" +
-      "\n\004time\030\006 \001(\005\022\016\n\006examId\030\007 \001(\005\":\n\026UpdateQu" +
-      "estionResponse\022\017\n\007success\030\001 \001(\010\022\017\n\007messa" +
-      "ge\030\002 \001(\t\";\n\025DeleteQuestionRequest\022\022\n\nque" +
-      "stionId\030\001 \001(\005\022\016\n\006examId\030\002 \001(\005\":\n\026DeleteQ" +
-      "uestionResponse\022\017\n\007success\030\001 \001(\010\022\017\n\007mess" +
-      "age\030\002 \001(\t\"\215\001\n\021UpdateExamRequest\022\016\n\006examI" +
-      "d\030\001 \001(\005\022\r\n\005title\030\002 \001(\t\022\023\n\013description\030\003 " +
-      "\001(\t\022\"\n\tquestions\030\004 \003(\0132\017.proto.Question\022" +
-      "\020\n\010imageUrl\030\005 \001(\t\022\016\n\006status\030\006 \001(\005\"6\n\022Upd" +
-      "ateExamResponse\022\017\n\007success\030\001 \001(\010\022\017\n\007mess" +
-      "age\030\002 \001(\t\"]\n\016ChoiceResponse\022\022\n\nchoiceTex" +
-      "t\030\001 \001(\t\022\020\n\010imageUrl\030\002 \001(\t\022\020\n\010choiceId\030\003 " +
-      "\001(\005\022\023\n\013choiceIndex\030\004 \001(\005\"\233\001\n\020QuestionRes" +
-      "ponse\022\022\n\nquestionId\030\006 \001(\005\022\024\n\014questionTex" +
-      "t\030\001 \001(\t\022\020\n\010imageUrl\030\002 \001(\t\022&\n\007choices\030\003 \003" +
-      "(\0132\025.proto.ChoiceResponse\022\014\n\004time\030\004 \001(\005\022" +
-      "\025\n\rquestionIndex\030\005 \001(\005\" \n\016GetExamRequest" +
-      "\022\016\n\006examId\030\001 \001(\005\"\236\001\n\017GetExamResponse\022\016\n\006" +
-      "examId\030\001 \001(\005\022\r\n\005title\030\002 \001(\t\022\023\n\013descripti" +
-      "on\030\003 \001(\t\022\"\n\tquestions\030\004 \003(\0132\017.proto.Ques" +
-      "tion\022\020\n\010imageUrl\030\005 \001(\t\022\016\n\006status\030\006 \001(\005\022\021" +
-      "\n\tcreatedAt\030\007 \001(\t\"#\n\021GetAllExamRequest\022\016" +
-      "\n\006userId\030\001 \001(\005\";\n\022GetAllExamResponse\022%\n\005" +
-      "exams\030\001 \003(\0132\026.proto.GetExamResponse\">\n\014R" +
-      "eqStartExam\022\016\n\006roomId\030\001 \001(\005\022\016\n\006examId\030\002 " +
-      "\001(\005\022\016\n\006hostId\030\003 \001(\005\"%\n\014ResStartExam\022\025\n\re" +
-      "xamSessionId\030\001 \001(\005\"<\n\nReqEndExam\022\016\n\006exam" +
-      "Id\030\001 \001(\005\022\016\n\006hostId\030\002 \001(\005\022\016\n\006roomId\030\003 \001(\005" +
-      "\"\014\n\nResEndExam\"H\n\022ReqGetNextQuestion\022\016\n\006" +
-      "examId\030\001 \001(\005\022\022\n\nquestionId\030\002 \001(\005\022\016\n\006room" +
-      "Id\030\003 \001(\005\"e\n\026ReqCheckQuestionAnswer\022\025\n\rex" +
-      "amSessionId\030\003 \001(\005\022\016\n\006userId\030\001 \001(\005\022\022\n\nque" +
-      "stionId\030\002 \001(\005\022\020\n\010choiceId\030\004 \001(\005\"<\n\026ResCh" +
-      "eckQuestionAnswer\022\016\n\006status\030\001 \001(\005\022\022\n\nque" +
-      "stionId\030\002 \001(\005B\034\n\032edu.vn.hcmuaf.layer2.pr" +
-      "otob\006proto3"
+      "nswerH\000\022+\n\014resRoomScore\0305 \001(\0132\023.proto.Re" +
+      "sRoomScoreH\000\022%\n\tuserScore\0306 \001(\0132\020.proto." +
+      "UserScoreH\000B\006\n\004data\".\n\010ReqLogin\022\020\n\010usern" +
+      "ame\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\"-\n\nReqRelogi" +
+      "n\022\020\n\010username\030\001 \001(\t\022\r\n\005token\030\002 \001(\t\"D\n\010Re" +
+      "sLogin\022\016\n\006status\030\001 \001(\005\022\r\n\005token\030\002 \001(\t\022\031\n" +
+      "\004user\030\003 \001(\0132\013.proto.User\"\036\n\014ResUserAlert" +
+      "\022\016\n\006status\030\001 \001(\005\"\013\n\tReqLogout\"\033\n\tResLogo" +
+      "ut\022\016\n\006status\030\001 \001(\005\"\"\n\021ReqForgotPassword\022" +
+      "\r\n\005email\030\001 \001(\t\"5\n\027ReqVerifyForgotPasswor" +
+      "d\022\r\n\005email\030\001 \001(\t\022\013\n\003otp\030\002 \001(\005\")\n\027ResVeri" +
+      "fyForgotPassword\022\016\n\006status\030\001 \001(\005\"G\n\027ReqC" +
+      "hangePasswordForgot\022\020\n\010password\030\001 \001(\t\022\013\n" +
+      "\003otp\030\002 \001(\005\022\r\n\005email\030\003 \001(\t\")\n\027ResChangePa" +
+      "sswordForgot\022\016\n\006status\030\001 \001(\005\"#\n\021ResForgo" +
+      "tPassword\022\016\n\006status\030\001 \001(\005\"`\n\013ReqRegister" +
+      "\022\020\n\010username\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\022\017\n\007" +
+      "sponsor\030\003 \001(\t\022\r\n\005phone\030\004 \001(\t\022\r\n\005email\030\005 " +
+      "\001(\t\"\035\n\013ResRegister\022\016\n\006status\030\001 \001(\005\"7\n\021Re" +
+      "qUpdateUserInfo\022\022\n\nplayerName\030\001 \001(\t\022\016\n\006g" +
+      "ender\030\002 \001(\005\"(\n\013ResUserInfo\022\031\n\004user\030\001 \001(\013" +
+      "2\013.proto.User\"j\n\004User\022\016\n\006userId\030\001 \001(\005\022\020\n" +
+      "\010username\030\002 \001(\t\022\022\n\nplayerName\030\003 \001(\t\022\016\n\006g" +
+      "ender\030\004 \001(\005\022\r\n\005email\030\006 \001(\t\022\r\n\005phone\030\007 \001(" +
+      "\t\"/\n\rReqCreateRoom\022\016\n\006userId\030\001 \001(\005\022\016\n\006te" +
+      "stId\030\002 \001(\005\"/\n\rResCreateRoom\022\016\n\006status\030\001 " +
+      "\001(\005\022\016\n\006roomId\030\002 \001(\005\"\035\n\013ReqJoinRoom\022\016\n\006ro" +
+      "omId\030\001 \001(\005\".\n\013ResJoinRoom\022\014\n\004name\030\001 \001(\t\022" +
+      "\021\n\tsessionId\030\002 \001(\t\"\034\n\nReqOutRoom\022\016\n\006room" +
+      "Id\030\001 \001(\005\"-\n\nResOutRoom\022\014\n\004name\030\001 \001(\t\022\021\n\t" +
+      "sessionId\030\002 \001(\t\"-\n\014ReqCloseRoom\022\016\n\006roomI" +
+      "d\030\001 \001(\005\022\r\n\005token\030\002 \001(\t\"\036\n\014ResCloseRoom\022\016" +
+      "\n\006status\030\001 \001(\005\"\031\n\tReqVerify\022\014\n\004code\030\001 \001(" +
+      "\t\"\033\n\tResVerify\022\016\n\006status\030\001 \001(\005\"=\n\021ReqCha" +
+      "ngePassword\022\023\n\013oldPassword\030\001 \001(\t\022\023\n\013newP" +
+      "assword\030\002 \001(\t\"#\n\021ResChangePassword\022\016\n\006st" +
+      "atus\030\001 \001(\005\"\215\001\n\021CreateExamRequest\022\r\n\005titl" +
+      "e\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\022\020\n\010imageUrl" +
+      "\030\003 \001(\t\022\"\n\tquestions\030\004 \003(\0132\017.proto.Questi" +
+      "on\022\016\n\006userId\030\005 \001(\005\022\016\n\006status\030\006 \001(\005\"F\n\022Cr" +
+      "eateExamResponse\022\017\n\007success\030\001 \001(\010\022\017\n\007mes" +
+      "sage\030\002 \001(\t\022\016\n\006examId\030\003 \001(\005\"#\n\021DeleteExam" +
+      "Request\022\016\n\006examId\030\001 \001(\005\"6\n\022DeleteExamRes" +
+      "ponse\022\017\n\007success\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\"" +
+      "\213\001\n\010Question\022\024\n\014questionText\030\001 \001(\t\022\020\n\010im" +
+      "ageUrl\030\002 \001(\t\022\036\n\007choices\030\003 \003(\0132\r.proto.Ch" +
+      "oice\022\025\n\rquestionIndex\030\004 \001(\005\022\014\n\004time\030\005 \001(" +
+      "\005\022\022\n\nquestionId\030\006 \001(\005\"h\n\006Choice\022\022\n\nchoic" +
+      "eText\030\001 \001(\t\022\020\n\010imageUrl\030\002 \001(\t\022\021\n\tisCorre" +
+      "ct\030\003 \001(\010\022\023\n\013choiceIndex\030\004 \001(\005\022\020\n\010choiceI" +
+      "d\030\005 \001(\005\"\224\001\n\025CreateQuestionRequest\022\024\n\014que" +
+      "stionText\030\001 \001(\t\022\020\n\010imageUrl\030\002 \001(\t\022\036\n\007cho" +
+      "ices\030\003 \003(\0132\r.proto.Choice\022\025\n\rquestionInd" +
+      "ex\030\004 \001(\005\022\014\n\004time\030\005 \001(\005\022\016\n\006examId\030\006 \001(\005\"=" +
+      "\n\026CreateQuestionResponse\022\017\n\007success\030\001 \001(" +
+      "\010\022\022\n\nquestionId\030\002 \001(\005\"\250\001\n\025UpdateQuestion" +
+      "Request\022\022\n\nquestionId\030\001 \001(\005\022\024\n\014questionT" +
+      "ext\030\002 \001(\t\022\020\n\010imageUrl\030\003 \001(\t\022\036\n\007choices\030\004" +
+      " \003(\0132\r.proto.Choice\022\025\n\rquestionIndex\030\005 \001" +
+      "(\005\022\014\n\004time\030\006 \001(\005\022\016\n\006examId\030\007 \001(\005\":\n\026Upda" +
+      "teQuestionResponse\022\017\n\007success\030\001 \001(\010\022\017\n\007m" +
+      "essage\030\002 \001(\t\";\n\025DeleteQuestionRequest\022\022\n" +
+      "\nquestionId\030\001 \001(\005\022\016\n\006examId\030\002 \001(\005\":\n\026Del" +
+      "eteQuestionResponse\022\017\n\007success\030\001 \001(\010\022\017\n\007" +
+      "message\030\002 \001(\t\"\215\001\n\021UpdateExamRequest\022\016\n\006e" +
+      "xamId\030\001 \001(\005\022\r\n\005title\030\002 \001(\t\022\023\n\013descriptio" +
+      "n\030\003 \001(\t\022\"\n\tquestions\030\004 \003(\0132\017.proto.Quest" +
+      "ion\022\020\n\010imageUrl\030\005 \001(\t\022\016\n\006status\030\006 \001(\005\"6\n" +
+      "\022UpdateExamResponse\022\017\n\007success\030\001 \001(\010\022\017\n\007" +
+      "message\030\002 \001(\t\"]\n\016ChoiceResponse\022\022\n\nchoic" +
+      "eText\030\001 \001(\t\022\020\n\010imageUrl\030\002 \001(\t\022\020\n\010choiceI" +
+      "d\030\003 \001(\005\022\023\n\013choiceIndex\030\004 \001(\005\"\233\001\n\020Questio" +
+      "nResponse\022\022\n\nquestionId\030\006 \001(\005\022\024\n\014questio" +
+      "nText\030\001 \001(\t\022\020\n\010imageUrl\030\002 \001(\t\022&\n\007choices" +
+      "\030\003 \003(\0132\025.proto.ChoiceResponse\022\014\n\004time\030\004 " +
+      "\001(\005\022\025\n\rquestionIndex\030\005 \001(\005\" \n\016GetExamReq" +
+      "uest\022\016\n\006examId\030\001 \001(\005\"\236\001\n\017GetExamResponse" +
+      "\022\016\n\006examId\030\001 \001(\005\022\r\n\005title\030\002 \001(\t\022\023\n\013descr" +
+      "iption\030\003 \001(\t\022\"\n\tquestions\030\004 \003(\0132\017.proto." +
+      "Question\022\020\n\010imageUrl\030\005 \001(\t\022\016\n\006status\030\006 \001" +
+      "(\005\022\021\n\tcreatedAt\030\007 \001(\t\"#\n\021GetAllExamReque" +
+      "st\022\016\n\006userId\030\001 \001(\005\";\n\022GetAllExamResponse" +
+      "\022%\n\005exams\030\001 \003(\0132\026.proto.GetExamResponse\"" +
+      ">\n\014ReqStartExam\022\016\n\006roomId\030\001 \001(\005\022\016\n\006examI" +
+      "d\030\002 \001(\005\022\016\n\006hostId\030\003 \001(\005\"%\n\014ResStartExam\022" +
+      "\025\n\rexamSessionId\030\001 \001(\005\"<\n\nReqEndExam\022\016\n\006" +
+      "examId\030\001 \001(\005\022\016\n\006hostId\030\002 \001(\005\022\016\n\006roomId\030\003" +
+      " \001(\005\"7\n\nResEndExam\022)\n\014resRoomScore\030\001 \001(\013" +
+      "2\023.proto.ResRoomScore\"H\n\022ReqGetNextQuest" +
+      "ion\022\016\n\006examId\030\001 \001(\005\022\022\n\nquestionId\030\002 \001(\005\022" +
+      "\016\n\006roomId\030\003 \001(\005\"u\n\026ReqCheckQuestionAnswe" +
+      "r\022\025\n\rexamSessionId\030\003 \001(\005\022\016\n\006userId\030\001 \001(\005" +
+      "\022\022\n\nquestionId\030\002 \001(\005\022\020\n\010choiceId\030\004 \001(\005\022\016" +
+      "\n\006roomId\030\005 \001(\005\"<\n\026ResCheckQuestionAnswer" +
+      "\022\016\n\006status\030\001 \001(\005\022\022\n\nquestionId\030\002 \001(\005\"*\n\t" +
+      "UserScore\022\016\n\006userId\030\001 \001(\005\022\r\n\005score\030\002 \001(\005" +
+      "\"4\n\014ResRoomScore\022$\n\nuserScores\030\001 \003(\0132\020.p" +
+      "roto.UserScoreB\034\n\032edu.vn.hcmuaf.layer2.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -51201,7 +53032,7 @@ public final class Proto {
     internal_static_proto_Packet_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Packet_descriptor,
-        new java.lang.String[] { "ReqLogin", "ReqRelogin", "ResLogin", "ReqLogout", "ResLogout", "ReqForgotPassword", "ResForgotPassword", "ReqRegister", "ResRegister", "ReqUpdateUserInfo", "ResUserInfo", "ReqCreateRoom", "ResCreateRoom", "ReqJoinRoom", "ResJoinRoom", "ReqOutRoom", "ResOutRoom", "ReqCloseRoom", "ResCloseRoom", "ReqVerify", "ResVerify", "ReqChangePassword", "ResChangePassword", "CreateExamRequest", "CreateExamResponse", "UpdateExamRequest", "UpdateExamResponse", "QuestionResponse", "ChoiceResponse", "GetExamRequest", "GetExamResponse", "DeleteExamRequest", "DeleteExamResponse", "GetAllExamRequest", "GetAllExamResponse", "ReqVerifyForgotPassword", "ResVerifyForgotPassword", "ReqChangePasswordForgot", "ResChangePasswordForgot", "CreateQuestionRequest", "CreateQuestionResponse", "UpdateQuestionRequest", "UpdateQuestionResponse", "DeleteQuestionRequest", "DeleteQuestionResponse", "ReqStartExam", "ResStartExam", "ReqEndExam", "ResEndExam", "ReqGetNextQuestion", "ReqCheckQuestionAnswer", "ResCheckQuestionAnswer", "Data", });
+        new java.lang.String[] { "ReqLogin", "ReqRelogin", "ResLogin", "ReqLogout", "ResLogout", "ReqForgotPassword", "ResForgotPassword", "ReqRegister", "ResRegister", "ReqUpdateUserInfo", "ResUserInfo", "ReqCreateRoom", "ResCreateRoom", "ReqJoinRoom", "ResJoinRoom", "ReqOutRoom", "ResOutRoom", "ReqCloseRoom", "ResCloseRoom", "ReqVerify", "ResVerify", "ReqChangePassword", "ResChangePassword", "CreateExamRequest", "CreateExamResponse", "UpdateExamRequest", "UpdateExamResponse", "QuestionResponse", "ChoiceResponse", "GetExamRequest", "GetExamResponse", "DeleteExamRequest", "DeleteExamResponse", "GetAllExamRequest", "GetAllExamResponse", "ReqVerifyForgotPassword", "ResVerifyForgotPassword", "ReqChangePasswordForgot", "ResChangePasswordForgot", "CreateQuestionRequest", "CreateQuestionResponse", "UpdateQuestionRequest", "UpdateQuestionResponse", "DeleteQuestionRequest", "DeleteQuestionResponse", "ReqStartExam", "ResStartExam", "ReqEndExam", "ResEndExam", "ReqGetNextQuestion", "ReqCheckQuestionAnswer", "ResCheckQuestionAnswer", "ResRoomScore", "UserScore", "Data", });
     internal_static_proto_ReqLogin_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_proto_ReqLogin_fieldAccessorTable = new
@@ -51519,7 +53350,7 @@ public final class Proto {
     internal_static_proto_ResEndExam_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ResEndExam_descriptor,
-        new java.lang.String[] { });
+        new java.lang.String[] { "ResRoomScore", });
     internal_static_proto_ReqGetNextQuestion_descriptor =
       getDescriptor().getMessageTypes().get(55);
     internal_static_proto_ReqGetNextQuestion_fieldAccessorTable = new
@@ -51531,13 +53362,25 @@ public final class Proto {
     internal_static_proto_ReqCheckQuestionAnswer_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ReqCheckQuestionAnswer_descriptor,
-        new java.lang.String[] { "ExamSessionId", "UserId", "QuestionId", "ChoiceId", });
+        new java.lang.String[] { "ExamSessionId", "UserId", "QuestionId", "ChoiceId", "RoomId", });
     internal_static_proto_ResCheckQuestionAnswer_descriptor =
       getDescriptor().getMessageTypes().get(57);
     internal_static_proto_ResCheckQuestionAnswer_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ResCheckQuestionAnswer_descriptor,
         new java.lang.String[] { "Status", "QuestionId", });
+    internal_static_proto_UserScore_descriptor =
+      getDescriptor().getMessageTypes().get(58);
+    internal_static_proto_UserScore_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_UserScore_descriptor,
+        new java.lang.String[] { "UserId", "Score", });
+    internal_static_proto_ResRoomScore_descriptor =
+      getDescriptor().getMessageTypes().get(59);
+    internal_static_proto_ResRoomScore_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ResRoomScore_descriptor,
+        new java.lang.String[] { "UserScores", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

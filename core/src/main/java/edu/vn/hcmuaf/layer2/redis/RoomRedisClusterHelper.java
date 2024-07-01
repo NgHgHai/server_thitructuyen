@@ -1,6 +1,7 @@
 package edu.vn.hcmuaf.layer2.redis;
 
 import edu.vn.hcmuaf.layer2.CompressUtils;
+import edu.vn.hcmuaf.layer2.proto.Proto;
 import edu.vn.hcmuaf.layer2.redis.context.RoomContext;
 
 import java.util.HashMap;
@@ -12,6 +13,7 @@ public class RoomRedisClusterHelper extends RedisClusterHelper {
     private static final RoomRedisClusterHelper install = new RoomRedisClusterHelper();
     public static final String ROOM_KEY = ":room:";
     public static final String ROOM_CONTEXT = RoomContext.class + ":roomContext:";
+    private static final String ROOM_SCORE = ":roomScore:";
 
     public static RoomRedisClusterHelper me() {
         if (install == null) {
@@ -57,7 +59,7 @@ public class RoomRedisClusterHelper extends RedisClusterHelper {
     }
 
     public boolean addRoomContext(int roomId, RoomContext roomContext) {
-        getConnection().hset(ROOM_CONTEXT.getBytes(),String.valueOf(roomId).getBytes(), CompressUtils.compress(roomContext));
+        getConnection().hset(ROOM_CONTEXT.getBytes(), String.valueOf(roomId).getBytes(), CompressUtils.compress(roomContext));
         return true;
     }
 
@@ -86,5 +88,26 @@ public class RoomRedisClusterHelper extends RedisClusterHelper {
             result.put(new String(k), roomContext);
         });
         return result;
+    }
+
+    public Map<Integer, Integer> getRoomScore(int roomid) {
+        Map<byte[], byte[]> map = getConnection().hgetAll((ROOM_SCORE + roomid).getBytes());
+        Map<Integer, Integer> result = new HashMap<>();
+        if (map.isEmpty()) return null;
+        map.forEach((k, v) -> {
+            result.put(Integer.parseInt(new String(k)), Integer.parseInt(new String(v)));
+        });
+        return result;
+    }
+
+    public void saveRoomScore(Map<Integer, Integer> userScores, int roomid) {
+        userScores.forEach((k, v) -> {
+            getConnection().hset((ROOM_SCORE + roomid).getBytes(), String.valueOf(k).getBytes(), String.valueOf(v).getBytes());
+        });
+    }
+
+    public boolean removeRoomScore(int roomid) {
+        getConnection().del((ROOM_SCORE + roomid).getBytes());
+        return true;
     }
 }

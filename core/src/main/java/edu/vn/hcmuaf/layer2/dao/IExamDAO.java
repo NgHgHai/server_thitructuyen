@@ -33,21 +33,21 @@ public interface IExamDAO {
 
     default ExamBean getCompleteExamById(int id, Jdbi jdbi) {
         try (Handle handle = jdbi.open()) {
-            // Lấy thông tin exam
+            // lay thong tin bai thi
             ExamBean exam = handle.createQuery("SELECT * FROM exams WHERE id = :id AND status != -1")
                     .bind("id", id)
                     .mapToBean(ExamBean.class)
                     .findOnly();
 
             if (exam != null) {
-                // Lấy danh sách câu hỏi của exam
+                // lay dạnh sach cau hoi cua bai thi
                 List<QuestionBean> questions = handle.createQuery("SELECT * FROM questions WHERE exam_id = :examId AND status != -1 ORDER BY question_index")
                         .bind("examId", exam.getId())
                         .mapToBean(QuestionBean.class)
                         .list();
 
                 for (QuestionBean question : questions) {
-                    // Lấy danh sách các lựa chọn của câu hỏi
+                    // lay danh sach lua chon cua cau hoi
                     List<ChoiceBean> choices = handle.createQuery("SELECT * FROM choices WHERE question_id = :questionId AND status != -1 ORDER BY choice_index")
                             .bind("questionId", question.getId())
                             .mapToBean(ChoiceBean.class)
@@ -61,4 +61,7 @@ public interface IExamDAO {
             return exam;
         }
     }
+
+    @SqlQuery("SELECT * FROM exams WHERE user_id = :userId AND status != -1")
+    List<ExamBean> getAllExamsByUserId(int userId);
 }

@@ -17,6 +17,7 @@ public class RoomContext implements Serializable {
     int hostId;
     int testId;
     int currentQuestionId;
+    int currentquestionIndex;
     int status;
     int examSessionId;
 }
