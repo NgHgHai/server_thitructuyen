@@ -5,6 +5,9 @@ import org.apache.log4j.Logger;
 
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
+
+import java.io.File;
+
 @WebListener
 
 public class SocketInitialization implements ServletContextListener {
@@ -17,6 +20,12 @@ public class SocketInitialization implements ServletContextListener {
         System.out.println("host : "+System.getenv("DB_HOST")+" port : "+System.getenv("DB_PORT"));
         logger.info("SocketInitialization.contextInitialized");
         logger.info("host : "+System.getenv("DB_HOST")+" port : "+System.getenv("DB_PORT"));
+
+//        File uploadDir = new File("/usr/local/tomcat/webapps/ROOT/uploads");
+//        if (!uploadDir.exists()) {
+//            uploadDir.mkdirs();
+//        }
+//        System.out.println(uploadDir.getAbsolutePath());
         ServerEndpoint.init();
     }
 

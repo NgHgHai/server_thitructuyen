@@ -28073,12 +28073,24 @@ public final class Proto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string code = 1;</code>
+     * <code>string email = 1;</code>
+     * @return The email.
+     */
+    java.lang.String getEmail();
+    /**
+     * <code>string email = 1;</code>
+     * @return The bytes for email.
+     */
+    com.google.protobuf.ByteString
+        getEmailBytes();
+
+    /**
+     * <code>string code = 2;</code>
      * @return The code.
      */
     java.lang.String getCode();
     /**
-     * <code>string code = 1;</code>
+     * <code>string code = 2;</code>
      * @return The bytes for code.
      */
     com.google.protobuf.ByteString
@@ -28097,6 +28109,7 @@ public final class Proto {
       super(builder);
     }
     private ReqVerify() {
+      email_ = "";
       code_ = "";
     }
 
@@ -28120,11 +28133,50 @@ public final class Proto {
               edu.vn.hcmuaf.layer2.proto.Proto.ReqVerify.class, edu.vn.hcmuaf.layer2.proto.Proto.ReqVerify.Builder.class);
     }
 
-    public static final int CODE_FIELD_NUMBER = 1;
+    public static final int EMAIL_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object email_ = "";
+    /**
+     * <code>string email = 1;</code>
+     * @return The email.
+     */
+    @java.lang.Override
+    public java.lang.String getEmail() {
+      java.lang.Object ref = email_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        email_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string email = 1;</code>
+     * @return The bytes for email.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getEmailBytes() {
+      java.lang.Object ref = email_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        email_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CODE_FIELD_NUMBER = 2;
     @SuppressWarnings("serial")
     private volatile java.lang.Object code_ = "";
     /**
-     * <code>string code = 1;</code>
+     * <code>string code = 2;</code>
      * @return The code.
      */
     @java.lang.Override
@@ -28141,7 +28193,7 @@ public final class Proto {
       }
     }
     /**
-     * <code>string code = 1;</code>
+     * <code>string code = 2;</code>
      * @return The bytes for code.
      */
     @java.lang.Override
@@ -28173,8 +28225,11 @@ public final class Proto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, email_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, code_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, code_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -28185,8 +28240,11 @@ public final class Proto {
       if (size != -1) return size;
 
       size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, email_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, code_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, code_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -28203,6 +28261,8 @@ public final class Proto {
       }
       edu.vn.hcmuaf.layer2.proto.Proto.ReqVerify other = (edu.vn.hcmuaf.layer2.proto.Proto.ReqVerify) obj;
 
+      if (!getEmail()
+          .equals(other.getEmail())) return false;
       if (!getCode()
           .equals(other.getCode())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -28216,6 +28276,8 @@ public final class Proto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getEmail().hashCode();
       hash = (37 * hash) + CODE_FIELD_NUMBER;
       hash = (53 * hash) + getCode().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
@@ -28347,6 +28409,7 @@ public final class Proto {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
+        email_ = "";
         code_ = "";
         return this;
       }
@@ -28382,6 +28445,9 @@ public final class Proto {
       private void buildPartial0(edu.vn.hcmuaf.layer2.proto.Proto.ReqVerify result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.email_ = email_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
           result.code_ = code_;
         }
       }
@@ -28398,9 +28464,14 @@ public final class Proto {
 
       public Builder mergeFrom(edu.vn.hcmuaf.layer2.proto.Proto.ReqVerify other) {
         if (other == edu.vn.hcmuaf.layer2.proto.Proto.ReqVerify.getDefaultInstance()) return this;
+        if (!other.getEmail().isEmpty()) {
+          email_ = other.email_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
         if (!other.getCode().isEmpty()) {
           code_ = other.code_;
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -28430,10 +28501,15 @@ public final class Proto {
                 done = true;
                 break;
               case 10: {
-                code_ = input.readStringRequireUtf8();
+                email_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+              case 18: {
+                code_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -28451,9 +28527,81 @@ public final class Proto {
       }
       private int bitField0_;
 
+      private java.lang.Object email_ = "";
+      /**
+       * <code>string email = 1;</code>
+       * @return The email.
+       */
+      public java.lang.String getEmail() {
+        java.lang.Object ref = email_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          email_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string email = 1;</code>
+       * @return The bytes for email.
+       */
+      public com.google.protobuf.ByteString
+          getEmailBytes() {
+        java.lang.Object ref = email_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          email_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string email = 1;</code>
+       * @param value The email to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEmail(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        email_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string email = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEmail() {
+        email_ = getDefaultInstance().getEmail();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string email = 1;</code>
+       * @param value The bytes for email to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEmailBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        email_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object code_ = "";
       /**
-       * <code>string code = 1;</code>
+       * <code>string code = 2;</code>
        * @return The code.
        */
       public java.lang.String getCode() {
@@ -28469,7 +28617,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string code = 1;</code>
+       * <code>string code = 2;</code>
        * @return The bytes for code.
        */
       public com.google.protobuf.ByteString
@@ -28486,7 +28634,7 @@ public final class Proto {
         }
       }
       /**
-       * <code>string code = 1;</code>
+       * <code>string code = 2;</code>
        * @param value The code to set.
        * @return This builder for chaining.
        */
@@ -28494,22 +28642,22 @@ public final class Proto {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         code_ = value;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
-       * <code>string code = 1;</code>
+       * <code>string code = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearCode() {
         code_ = getDefaultInstance().getCode();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
       /**
-       * <code>string code = 1;</code>
+       * <code>string code = 2;</code>
        * @param value The bytes for code to set.
        * @return This builder for chaining.
        */
@@ -28518,7 +28666,7 @@ public final class Proto {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         code_ = value;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -52949,73 +53097,73 @@ public final class Proto {
       "Id\030\001 \001(\005\"-\n\nResOutRoom\022\014\n\004name\030\001 \001(\t\022\021\n\t" +
       "sessionId\030\002 \001(\t\"-\n\014ReqCloseRoom\022\016\n\006roomI" +
       "d\030\001 \001(\005\022\r\n\005token\030\002 \001(\t\"\036\n\014ResCloseRoom\022\016" +
-      "\n\006status\030\001 \001(\005\"\031\n\tReqVerify\022\014\n\004code\030\001 \001(" +
-      "\t\"\033\n\tResVerify\022\016\n\006status\030\001 \001(\005\"=\n\021ReqCha" +
-      "ngePassword\022\023\n\013oldPassword\030\001 \001(\t\022\023\n\013newP" +
-      "assword\030\002 \001(\t\"#\n\021ResChangePassword\022\016\n\006st" +
-      "atus\030\001 \001(\005\"\215\001\n\021CreateExamRequest\022\r\n\005titl" +
-      "e\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\022\020\n\010imageUrl" +
-      "\030\003 \001(\t\022\"\n\tquestions\030\004 \003(\0132\017.proto.Questi" +
-      "on\022\016\n\006userId\030\005 \001(\005\022\016\n\006status\030\006 \001(\005\"F\n\022Cr" +
-      "eateExamResponse\022\017\n\007success\030\001 \001(\010\022\017\n\007mes" +
-      "sage\030\002 \001(\t\022\016\n\006examId\030\003 \001(\005\"#\n\021DeleteExam" +
-      "Request\022\016\n\006examId\030\001 \001(\005\"6\n\022DeleteExamRes" +
-      "ponse\022\017\n\007success\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\"" +
-      "\213\001\n\010Question\022\024\n\014questionText\030\001 \001(\t\022\020\n\010im" +
-      "ageUrl\030\002 \001(\t\022\036\n\007choices\030\003 \003(\0132\r.proto.Ch" +
-      "oice\022\025\n\rquestionIndex\030\004 \001(\005\022\014\n\004time\030\005 \001(" +
-      "\005\022\022\n\nquestionId\030\006 \001(\005\"h\n\006Choice\022\022\n\nchoic" +
-      "eText\030\001 \001(\t\022\020\n\010imageUrl\030\002 \001(\t\022\021\n\tisCorre" +
-      "ct\030\003 \001(\010\022\023\n\013choiceIndex\030\004 \001(\005\022\020\n\010choiceI" +
-      "d\030\005 \001(\005\"\224\001\n\025CreateQuestionRequest\022\024\n\014que" +
-      "stionText\030\001 \001(\t\022\020\n\010imageUrl\030\002 \001(\t\022\036\n\007cho" +
-      "ices\030\003 \003(\0132\r.proto.Choice\022\025\n\rquestionInd" +
-      "ex\030\004 \001(\005\022\014\n\004time\030\005 \001(\005\022\016\n\006examId\030\006 \001(\005\"=" +
-      "\n\026CreateQuestionResponse\022\017\n\007success\030\001 \001(" +
-      "\010\022\022\n\nquestionId\030\002 \001(\005\"\250\001\n\025UpdateQuestion" +
-      "Request\022\022\n\nquestionId\030\001 \001(\005\022\024\n\014questionT" +
-      "ext\030\002 \001(\t\022\020\n\010imageUrl\030\003 \001(\t\022\036\n\007choices\030\004" +
-      " \003(\0132\r.proto.Choice\022\025\n\rquestionIndex\030\005 \001" +
-      "(\005\022\014\n\004time\030\006 \001(\005\022\016\n\006examId\030\007 \001(\005\":\n\026Upda" +
-      "teQuestionResponse\022\017\n\007success\030\001 \001(\010\022\017\n\007m" +
-      "essage\030\002 \001(\t\";\n\025DeleteQuestionRequest\022\022\n" +
-      "\nquestionId\030\001 \001(\005\022\016\n\006examId\030\002 \001(\005\":\n\026Del" +
-      "eteQuestionResponse\022\017\n\007success\030\001 \001(\010\022\017\n\007" +
-      "message\030\002 \001(\t\"\215\001\n\021UpdateExamRequest\022\016\n\006e" +
-      "xamId\030\001 \001(\005\022\r\n\005title\030\002 \001(\t\022\023\n\013descriptio" +
-      "n\030\003 \001(\t\022\"\n\tquestions\030\004 \003(\0132\017.proto.Quest" +
-      "ion\022\020\n\010imageUrl\030\005 \001(\t\022\016\n\006status\030\006 \001(\005\"6\n" +
-      "\022UpdateExamResponse\022\017\n\007success\030\001 \001(\010\022\017\n\007" +
-      "message\030\002 \001(\t\"]\n\016ChoiceResponse\022\022\n\nchoic" +
-      "eText\030\001 \001(\t\022\020\n\010imageUrl\030\002 \001(\t\022\020\n\010choiceI" +
-      "d\030\003 \001(\005\022\023\n\013choiceIndex\030\004 \001(\005\"\233\001\n\020Questio" +
-      "nResponse\022\022\n\nquestionId\030\006 \001(\005\022\024\n\014questio" +
-      "nText\030\001 \001(\t\022\020\n\010imageUrl\030\002 \001(\t\022&\n\007choices" +
-      "\030\003 \003(\0132\025.proto.ChoiceResponse\022\014\n\004time\030\004 " +
-      "\001(\005\022\025\n\rquestionIndex\030\005 \001(\005\" \n\016GetExamReq" +
-      "uest\022\016\n\006examId\030\001 \001(\005\"\236\001\n\017GetExamResponse" +
-      "\022\016\n\006examId\030\001 \001(\005\022\r\n\005title\030\002 \001(\t\022\023\n\013descr" +
-      "iption\030\003 \001(\t\022\"\n\tquestions\030\004 \003(\0132\017.proto." +
-      "Question\022\020\n\010imageUrl\030\005 \001(\t\022\016\n\006status\030\006 \001" +
-      "(\005\022\021\n\tcreatedAt\030\007 \001(\t\"#\n\021GetAllExamReque" +
-      "st\022\016\n\006userId\030\001 \001(\005\";\n\022GetAllExamResponse" +
-      "\022%\n\005exams\030\001 \003(\0132\026.proto.GetExamResponse\"" +
-      ">\n\014ReqStartExam\022\016\n\006roomId\030\001 \001(\005\022\016\n\006examI" +
-      "d\030\002 \001(\005\022\016\n\006hostId\030\003 \001(\005\"%\n\014ResStartExam\022" +
-      "\025\n\rexamSessionId\030\001 \001(\005\"<\n\nReqEndExam\022\016\n\006" +
-      "examId\030\001 \001(\005\022\016\n\006hostId\030\002 \001(\005\022\016\n\006roomId\030\003" +
-      " \001(\005\"7\n\nResEndExam\022)\n\014resRoomScore\030\001 \001(\013" +
-      "2\023.proto.ResRoomScore\"H\n\022ReqGetNextQuest" +
-      "ion\022\016\n\006examId\030\001 \001(\005\022\022\n\nquestionId\030\002 \001(\005\022" +
-      "\016\n\006roomId\030\003 \001(\005\"u\n\026ReqCheckQuestionAnswe" +
-      "r\022\025\n\rexamSessionId\030\003 \001(\005\022\016\n\006userId\030\001 \001(\005" +
-      "\022\022\n\nquestionId\030\002 \001(\005\022\020\n\010choiceId\030\004 \001(\005\022\016" +
-      "\n\006roomId\030\005 \001(\005\"<\n\026ResCheckQuestionAnswer" +
-      "\022\016\n\006status\030\001 \001(\005\022\022\n\nquestionId\030\002 \001(\005\"*\n\t" +
-      "UserScore\022\016\n\006userId\030\001 \001(\005\022\r\n\005score\030\002 \001(\005" +
-      "\"4\n\014ResRoomScore\022$\n\nuserScores\030\001 \003(\0132\020.p" +
-      "roto.UserScoreB\034\n\032edu.vn.hcmuaf.layer2.p" +
-      "rotob\006proto3"
+      "\n\006status\030\001 \001(\005\"(\n\tReqVerify\022\r\n\005email\030\001 \001" +
+      "(\t\022\014\n\004code\030\002 \001(\t\"\033\n\tResVerify\022\016\n\006status\030" +
+      "\001 \001(\005\"=\n\021ReqChangePassword\022\023\n\013oldPasswor" +
+      "d\030\001 \001(\t\022\023\n\013newPassword\030\002 \001(\t\"#\n\021ResChang" +
+      "ePassword\022\016\n\006status\030\001 \001(\005\"\215\001\n\021CreateExam" +
+      "Request\022\r\n\005title\030\001 \001(\t\022\023\n\013description\030\002 " +
+      "\001(\t\022\020\n\010imageUrl\030\003 \001(\t\022\"\n\tquestions\030\004 \003(\013" +
+      "2\017.proto.Question\022\016\n\006userId\030\005 \001(\005\022\016\n\006sta" +
+      "tus\030\006 \001(\005\"F\n\022CreateExamResponse\022\017\n\007succe" +
+      "ss\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\022\016\n\006examId\030\003 \001(" +
+      "\005\"#\n\021DeleteExamRequest\022\016\n\006examId\030\001 \001(\005\"6" +
+      "\n\022DeleteExamResponse\022\017\n\007success\030\001 \001(\010\022\017\n" +
+      "\007message\030\002 \001(\t\"\213\001\n\010Question\022\024\n\014questionT" +
+      "ext\030\001 \001(\t\022\020\n\010imageUrl\030\002 \001(\t\022\036\n\007choices\030\003" +
+      " \003(\0132\r.proto.Choice\022\025\n\rquestionIndex\030\004 \001" +
+      "(\005\022\014\n\004time\030\005 \001(\005\022\022\n\nquestionId\030\006 \001(\005\"h\n\006" +
+      "Choice\022\022\n\nchoiceText\030\001 \001(\t\022\020\n\010imageUrl\030\002" +
+      " \001(\t\022\021\n\tisCorrect\030\003 \001(\010\022\023\n\013choiceIndex\030\004" +
+      " \001(\005\022\020\n\010choiceId\030\005 \001(\005\"\224\001\n\025CreateQuestio" +
+      "nRequest\022\024\n\014questionText\030\001 \001(\t\022\020\n\010imageU" +
+      "rl\030\002 \001(\t\022\036\n\007choices\030\003 \003(\0132\r.proto.Choice" +
+      "\022\025\n\rquestionIndex\030\004 \001(\005\022\014\n\004time\030\005 \001(\005\022\016\n" +
+      "\006examId\030\006 \001(\005\"=\n\026CreateQuestionResponse\022" +
+      "\017\n\007success\030\001 \001(\010\022\022\n\nquestionId\030\002 \001(\005\"\250\001\n" +
+      "\025UpdateQuestionRequest\022\022\n\nquestionId\030\001 \001" +
+      "(\005\022\024\n\014questionText\030\002 \001(\t\022\020\n\010imageUrl\030\003 \001" +
+      "(\t\022\036\n\007choices\030\004 \003(\0132\r.proto.Choice\022\025\n\rqu" +
+      "estionIndex\030\005 \001(\005\022\014\n\004time\030\006 \001(\005\022\016\n\006examI" +
+      "d\030\007 \001(\005\":\n\026UpdateQuestionResponse\022\017\n\007suc" +
+      "cess\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\";\n\025DeleteQue" +
+      "stionRequest\022\022\n\nquestionId\030\001 \001(\005\022\016\n\006exam" +
+      "Id\030\002 \001(\005\":\n\026DeleteQuestionResponse\022\017\n\007su" +
+      "ccess\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\"\215\001\n\021UpdateE" +
+      "xamRequest\022\016\n\006examId\030\001 \001(\005\022\r\n\005title\030\002 \001(" +
+      "\t\022\023\n\013description\030\003 \001(\t\022\"\n\tquestions\030\004 \003(" +
+      "\0132\017.proto.Question\022\020\n\010imageUrl\030\005 \001(\t\022\016\n\006" +
+      "status\030\006 \001(\005\"6\n\022UpdateExamResponse\022\017\n\007su" +
+      "ccess\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\"]\n\016ChoiceRe" +
+      "sponse\022\022\n\nchoiceText\030\001 \001(\t\022\020\n\010imageUrl\030\002" +
+      " \001(\t\022\020\n\010choiceId\030\003 \001(\005\022\023\n\013choiceIndex\030\004 " +
+      "\001(\005\"\233\001\n\020QuestionResponse\022\022\n\nquestionId\030\006" +
+      " \001(\005\022\024\n\014questionText\030\001 \001(\t\022\020\n\010imageUrl\030\002" +
+      " \001(\t\022&\n\007choices\030\003 \003(\0132\025.proto.ChoiceResp" +
+      "onse\022\014\n\004time\030\004 \001(\005\022\025\n\rquestionIndex\030\005 \001(" +
+      "\005\" \n\016GetExamRequest\022\016\n\006examId\030\001 \001(\005\"\236\001\n\017" +
+      "GetExamResponse\022\016\n\006examId\030\001 \001(\005\022\r\n\005title" +
+      "\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022\"\n\tquestions" +
+      "\030\004 \003(\0132\017.proto.Question\022\020\n\010imageUrl\030\005 \001(" +
+      "\t\022\016\n\006status\030\006 \001(\005\022\021\n\tcreatedAt\030\007 \001(\t\"#\n\021" +
+      "GetAllExamRequest\022\016\n\006userId\030\001 \001(\005\";\n\022Get" +
+      "AllExamResponse\022%\n\005exams\030\001 \003(\0132\026.proto.G" +
+      "etExamResponse\">\n\014ReqStartExam\022\016\n\006roomId" +
+      "\030\001 \001(\005\022\016\n\006examId\030\002 \001(\005\022\016\n\006hostId\030\003 \001(\005\"%" +
+      "\n\014ResStartExam\022\025\n\rexamSessionId\030\001 \001(\005\"<\n" +
+      "\nReqEndExam\022\016\n\006examId\030\001 \001(\005\022\016\n\006hostId\030\002 " +
+      "\001(\005\022\016\n\006roomId\030\003 \001(\005\"7\n\nResEndExam\022)\n\014res" +
+      "RoomScore\030\001 \001(\0132\023.proto.ResRoomScore\"H\n\022" +
+      "ReqGetNextQuestion\022\016\n\006examId\030\001 \001(\005\022\022\n\nqu" +
+      "estionId\030\002 \001(\005\022\016\n\006roomId\030\003 \001(\005\"u\n\026ReqChe" +
+      "ckQuestionAnswer\022\025\n\rexamSessionId\030\003 \001(\005\022" +
+      "\016\n\006userId\030\001 \001(\005\022\022\n\nquestionId\030\002 \001(\005\022\020\n\010c" +
+      "hoiceId\030\004 \001(\005\022\016\n\006roomId\030\005 \001(\005\"<\n\026ResChec" +
+      "kQuestionAnswer\022\016\n\006status\030\001 \001(\005\022\022\n\nquest" +
+      "ionId\030\002 \001(\005\"*\n\tUserScore\022\016\n\006userId\030\001 \001(\005" +
+      "\022\r\n\005score\030\002 \001(\005\"4\n\014ResRoomScore\022$\n\nuserS" +
+      "cores\030\001 \003(\0132\020.proto.UserScoreB\034\n\032edu.vn." +
+      "hcmuaf.layer2.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -53188,7 +53336,7 @@ public final class Proto {
     internal_static_proto_ReqVerify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ReqVerify_descriptor,
-        new java.lang.String[] { "Code", });
+        new java.lang.String[] { "Email", "Code", });
     internal_static_proto_ResVerify_descriptor =
       getDescriptor().getMessageTypes().get(28);
     internal_static_proto_ResVerify_fieldAccessorTable = new

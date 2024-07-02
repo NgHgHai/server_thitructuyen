@@ -158,12 +158,13 @@ public class AuthService {
 //
 //            LogUtils.warnIfSlow(logger, begin, 300, "checkLogin Time: check DB ");
             long begin1 = System.currentTimeMillis();
-//
+//              accc bi khoa
             if (userLogin.getActive() == 2) {
                 resLogin.setStatus(401);
                 sendResponse(session, builder.setResLogin(resLogin.build()).build());
                 return;
             }
+//            accc chua kich hoat
             if (userLogin.getActive() == 0) {
                 resLogin.setStatus(402);
                 sendResponse(session, builder.setResLogin(resLogin.build()).build());
@@ -241,8 +242,8 @@ public class AuthService {
 
     public void verifyEmail(Session session, Proto.ReqVerify reqVerify) {
         //lay ra user
-        SessionContext sessionContext = SessionCache.me().get(sessionManage.getSessionID(session));
-        String email = sessionContext.getUser().getEmail();
+//        SessionContext sessionContext = SessionCache.me().get(sessionManage.getSessionID(session));
+        String email = reqVerify.getEmail();
         //lay code o database ra so sanh
         //--neu giong nhau thi change active = 1
 

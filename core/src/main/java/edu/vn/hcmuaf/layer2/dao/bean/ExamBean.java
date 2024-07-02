@@ -1,5 +1,6 @@
 package edu.vn.hcmuaf.layer2.dao.bean;
 
+import edu.vn.hcmuaf.layer2.proto.Proto;
 import lombok.*;
 import org.jdbi.v3.core.mapper.reflect.ColumnName;
 
@@ -32,4 +33,6 @@ public class ExamBean {
 
 
     private List<QuestionBean> questions;
+
+
 }

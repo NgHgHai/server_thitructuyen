@@ -134,9 +134,9 @@ public class ExamService extends PoolConnectDAO {
     }
 
     public Proto.CreateQuestionResponse createQuestion(Session session, Proto.CreateQuestionRequest request) {
-        if (!checkUserRequestIsHasPermission(session, request.getExamId())) {
-            return null;
-        }
+//        if (!checkUserRequestIsHasPermission(session, request.getExamId())) {
+//            return null;
+//        }
         QuestionBean questionBean = new QuestionBean();
         questionBean.setExamId(request.getExamId());
         questionBean.setQuestionText(request.getQuestionText());
