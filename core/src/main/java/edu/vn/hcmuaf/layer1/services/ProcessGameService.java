@@ -219,6 +219,7 @@ public class ProcessGameService extends PoolConnectDAO {
                 roomScore.addUserScores(userScore);
             });
         }
+        roomScore.getUserScoresList().stream().sorted((o1, o2) -> o2.getScore() - o1.getScore());
         return roomScore.build();
     }
 }
