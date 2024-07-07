@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
-@jakarta.websocket.server.ServerEndpoint(value = "/", configurator = CustomEndpointConfigurator.class, decoders = MessageDecoder.class, encoders = MessageEncoder.class)
+@jakarta.websocket.server.ServerEndpoint(value = "/", decoders = MessageDecoder.class, encoders = MessageEncoder.class)
 public class ServerEndpoint {
 //    private static final Logger logger = Logger.getLogger(ServerEndpoint.class);
 
@@ -81,10 +81,10 @@ public class ServerEndpoint {
         if(packetWrapper==null || packetWrapper.getPacketList()==null || packetWrapper.getPacketList().isEmpty()) return;
 //        boolean login = SessionService.me().checkLogin(session);
         subscribers.forEach(s -> ThreadManage.me().execute(() -> {
-            if (!s.requireLogin()) {
+//            if (!s.requireLogin()) {
                 s.onMessage(session, packetWrapper);
                 return;
-            }
+//            }
 //            if (login) {
 //                s.onMessage(session, packetWrapper);
 //                return;

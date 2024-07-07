@@ -77,7 +77,7 @@ CREATE TABLE `exam_answers`
     `question_id`     int(11) NOT NULL,
     `choice_id`       int(11) DEFAULT NULL,
     `user_id`         int(11) DEFAULT NULL,
-    `answer_time`     timestamp NOT NULL DEFAULT current_timestamp()
+    `answer_time`     timestamp DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -91,8 +91,8 @@ CREATE TABLE `exam_sessions`
     `id`         int(11) NOT NULL,
     `exam_id`    int(11) NOT NULL,
     `host_id`    int(11) NOT NULL,
-    `start_time` timestamp NOT NULL DEFAULT current_timestamp(),
-    `end_time`   timestamp NOT NULL DEFAULT current_timestamp(),
+    `start_time` timestamp  DEFAULT current_timestamp(),
+    `end_time`   timestamp  DEFAULT current_timestamp(),
     `status`     int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -109,7 +109,7 @@ CREATE TABLE `questions`
     `question_index` int(11) NOT NULL,
     `question_text`  text         DEFAULT NULL,
     `image_url`      varchar(255) DEFAULT NULL,
-    `time`           int(11) DEFAULT NULL,
+    `time`           int(11) DEFAULT 0,
     `status`         int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -201,6 +201,11 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `choices`
+--
+ALTER TABLE `choices`
+    MODIFY `id` int (11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `exams`
 --

@@ -2,6 +2,7 @@ package edu.vn.hcmuaf.layer0.network.websocket;
 
 import edu.vn.hcmuaf.layer2.proto.Proto;
 
+import jakarta.websocket.EncodeException;
 import jakarta.websocket.Encoder;
 import jakarta.websocket.EndpointConfig;
 import java.io.ByteArrayInputStream;
@@ -10,11 +11,11 @@ import java.io.OutputStream;
 
 public class MessageEncoder implements Encoder.BinaryStream<Proto.PacketWrapper> {
 
-    //    @SneakyThrows
+//        @SneakyThrows
     @Override
     public void encode(Proto.PacketWrapper packetWrapper, OutputStream outputStream) throws IOException {
-        outputStream.write(packetWrapper.toByteArray());
-        outputStream.flush();
+//        outputStream.write(packetWrapper.toByteArray());
+//        outputStream.flush();
         if(packetWrapper == null || packetWrapper.toByteArray().length<=1) return;
 
         ByteArrayInputStream baos = new ByteArrayInputStream(packetWrapper.toByteArray());
@@ -36,4 +37,6 @@ public class MessageEncoder implements Encoder.BinaryStream<Proto.PacketWrapper>
     public void destroy() {
 
     }
+
+
 }

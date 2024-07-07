@@ -1,7 +1,10 @@
 package edu.vn.hcmuaf.layer1.services;
 
 import edu.vn.hcmuaf.layer2.convert.ExamConverter;
-import edu.vn.hcmuaf.layer2.dao.*;
+import edu.vn.hcmuaf.layer2.dao.ChoiceDAO;
+import edu.vn.hcmuaf.layer2.dao.ExamDAO;
+import edu.vn.hcmuaf.layer2.dao.PoolConnectDAO;
+import edu.vn.hcmuaf.layer2.dao.QuestionDAO;
 import edu.vn.hcmuaf.layer2.dao.bean.ChoiceBean;
 import edu.vn.hcmuaf.layer2.dao.bean.ExamBean;
 import edu.vn.hcmuaf.layer2.dao.bean.QuestionBean;
@@ -24,17 +27,16 @@ public class ExamService extends PoolConnectDAO {
     public Jdbi jdbi = getJdbi();
 
     public Proto.CreateExamResponse createExam(Session session, Proto.CreateExamRequest request) {
-        ExamBean examBean = new ExamBean();
-//        examBean = ExamConverter.convertCreateExamRequestToExamBean(request);
-        examBean.setTitle(request.getTitle());
-        examBean.setDescription(request.getDescription());
-        examBean.setImageUrl(request.getImageUrl());
-        examBean.setUserId(request.getUserId());
-        examBean.setStatus(request.getStatus());
-//        int examId = ExamDAO.insertExam(examBean);
-        int examId = jdbi.onDemand(IExamDAO.class).insertExam(examBean);
-
-
+        ExamBean examBean = new ExamBean(request.getExam());
+        int examId = ExamDAO.insertExam(examBean);
+        QuestionBean questionBean =  QuestionBean.builder().examId(examId).questionIndex(1).build();
+        int firstQuestionId = QuestionDAO.insertQuestion(QuestionBean.builder().examId(examId).questionIndex(1).build());
+        for (int i = 1; i <= 4; i++) {
+            ChoiceBean choiceBean = new ChoiceBean();
+            choiceBean.setQuestionId(firstQuestionId);
+            choiceBean.setChoiceIndex(i);
+            ChoiceDAO.insertChoice(choiceBean);
+        }
         boolean success = examId != -1;
         String message = examId != -1 ? "Exam created successfully" : "Failed to create exam";
         System.out.println("ExamService : " + message + " with examId = " + examId);
@@ -43,6 +45,7 @@ public class ExamService extends PoolConnectDAO {
                 .setSuccess(success)
                 .setMessage(message)
                 .setExamId(examId)
+                .setFirstQuestionId(firstQuestionId)
                 .build();
 
         sendResponse(session, Proto.Packet.newBuilder()
@@ -53,18 +56,12 @@ public class ExamService extends PoolConnectDAO {
     }
 
     public Proto.UpdateExamResponse updateExam(Session session, Proto.UpdateExamRequest request) {
-        if (!checkUserRequestIsHasPermission(session, request.getExamId())) {
-            return null;
-        }
-        ExamBean examBean = new ExamBean();
-//        examBean = ExamConverter.convertUpdateExamRequestToExamBean(request);
-        examBean.setId(request.getExamId());
-        examBean.setTitle(request.getTitle());
-        examBean.setDescription(request.getDescription());
-        examBean.setImageUrl(request.getImageUrl());
-        examBean.setStatus(request.getStatus());
+//        if (!checkUserRequestIsHasPermission(session, request.getExam().getExamId())) {
+//            return null;
+//        }
+        ExamBean examBean = new ExamBean(request.getExam());
 
-        boolean success = jdbi.onDemand(IExamDAO.class).updateExam(examBean) > 0;
+        boolean success = ExamDAO.updateExam(examBean) > 0;
 
         String message = success ? "Exam updated successfully" : "Failed to update exam";
         System.out.println("ExamService : " + message + " with examId = " + examBean.getId());
@@ -80,14 +77,17 @@ public class ExamService extends PoolConnectDAO {
     }
 
     public Proto.GetExamResponse getExam(Session session, Proto.GetExamRequest getExamRequest) {
-        if (!checkUserRequestIsHasPermission(session, getExamRequest.getExamId())) {
-            return null;
-        }
-        ExamBean examBean = jdbi.onDemand(IExamDAO.class).getCompleteExamById(getExamRequest.getExamId(), jdbi);
+//        if (!checkUserRequestIsHasPermission(session, getExamRequest.getExamId())) {
+//            return null;
+//        }
+        ExamBean examBean = ExamDAO.getCompleteExamById(getExamRequest.getExamId());
 
-        Proto.GetExamResponse response = ExamConverter.convertExamBeanToGetExamResponse(examBean, true);
+        Proto.Exam protoExam = ExamConverter.convertExamBeanToProtoExam(examBean, true);
+        Proto.GetExamResponse response = Proto.GetExamResponse.newBuilder()
+                .setExam(protoExam)
+                .build();
 
-        System.out.println("ExamService : Get exam with examId = " + getExamRequest.getExamId());
+        System.out.println("ExamService : Get exam with examId = " + protoExam.getExamId());
 
         sendResponse(session, Proto.Packet.newBuilder()
                 .setGetExamResponse(response)
@@ -100,7 +100,7 @@ public class ExamService extends PoolConnectDAO {
             if (!checkUserRequestIsHasPermission(session, deleteExamRequest.getExamId())) {
                 return false;
             }
-            boolean success = jdbi.onDemand(IExamDAO.class).deleteExam(deleteExamRequest.getExamId()) > 0;
+            boolean success = ExamDAO.deleteExam(deleteExamRequest.getExamId()) > 0;
             String message = success ? "Exam deleted successfully" : "Failed to delete exam";
 
             System.out.println("ExamService : " + message + " with examId = " + deleteExamRequest.getExamId());
@@ -121,7 +121,7 @@ public class ExamService extends PoolConnectDAO {
     }
 
     private boolean checkUserRequestIsHasPermission(Session session, int examId) {
-        int UserIdFromExam = jdbi.onDemand(IExamDAO.class).getExamById(examId).getUserId();
+        int UserIdFromExam = ExamDAO.getExamById(examId).getUserId();
         String sessionId = SessionManage.me().getSessionID(session);
         SessionCache sessionCache = SessionCache.me();
         int userId = sessionCache.get(sessionId).getUser().getUserId();
@@ -139,17 +139,15 @@ public class ExamService extends PoolConnectDAO {
 //        }
         QuestionBean questionBean = new QuestionBean();
         questionBean.setExamId(request.getExamId());
-        questionBean.setQuestionText(request.getQuestionText());
-        questionBean.setImageUrl(request.getImageUrl());
-        questionBean.setTime(request.getTime());
-        questionBean.setQuestionIndex(request.getQuestionIndex());
+//        questionBean.setTime(0);
 
-        int questionId = jdbi.onDemand(IQuestionDAO.class).insertQuestion(questionBean);
+        int questionId = QuestionDAO.insertQuestion(questionBean);
         for (int i = 1; i <= 4; i++) {
             ChoiceBean choiceBean = new ChoiceBean();
             choiceBean.setQuestionId(questionId);
             choiceBean.setChoiceIndex(i);
-            jdbi.onDemand(IChoiceDAO.class).insertChoice(choiceBean);
+            System.out.println("dang o exam service, tu tao choice voi id = " + choiceBean.getQuestionId() + " va index = " + choiceBean.getChoiceIndex());
+            ChoiceDAO.insertChoice(choiceBean);
         }
         boolean success = questionId != -1;
         String message = questionId != -1 ? "Question created successfully" : "Failed to create question";
@@ -168,35 +166,23 @@ public class ExamService extends PoolConnectDAO {
     }
 
     public Proto.UpdateQuestionResponse updateQuestion(Session session, Proto.UpdateQuestionRequest request) {
-        if (!checkUserRequestIsHasPermission(session, request.getExamId())) {
-            return null;
-        }
-        QuestionBean questionBean = new QuestionBean();
-        questionBean.setId(request.getQuestionId());
-        questionBean.setExamId(request.getExamId());
-        questionBean.setQuestionText(request.getQuestionText());
-        questionBean.setImageUrl(request.getImageUrl());
-        questionBean.setTime(request.getTime());
-        questionBean.setQuestionIndex(request.getQuestionIndex());
+//        if (!checkUserRequestIsHasPermission(session, request.getQuestion().getExamId())) {
+//            return null;
+//        }
+        Proto.Question question = request.getQuestion();
+        QuestionBean questionBean = new QuestionBean(question);
 
-        boolean success = jdbi.onDemand(IQuestionDAO.class).updateQuestion(questionBean) > 0;
-        List<ChoiceBean> choiceBeans = request.getChoicesList().stream()
-                .map(choice -> {
-                    ChoiceBean choiceBean = new ChoiceBean();
-                    choiceBean.setQuestionId(questionBean.getId());
-                    choiceBean.setChoiceIndex(choiceBean.getChoiceIndex());
-                    choiceBean.setChoiceText(choice.getChoiceText());
-                    choiceBean.setImageUrl(choice.getImageUrl());
-                    choiceBean.setCorrect(choice.getIsCorrect());
-                    return choiceBean;
-                })
-                .collect(Collectors.toList());
-        for (ChoiceBean choiceBean : choiceBeans) {
-            jdbi.onDemand(IChoiceDAO.class).updateChoice(choiceBean);
+
+        boolean success = QuestionDAO.updateQuestion(questionBean) > 0;
+        List<Proto.Choice> choices = question.getChoicesList();
+        for (Proto.Choice choice : choices) {
+            ChoiceBean choiceBean = new ChoiceBean(choice);
+            ChoiceDAO.updateChoice(choiceBean);
         }
         String message = success ? "Question updated successfully" : "Failed to update question";
         System.out.println("ExamService : " + message + " with questionId = " + questionBean.getId());
         Proto.UpdateQuestionResponse response = Proto.UpdateQuestionResponse.newBuilder()
+                .setQuestion(question)
                 .setSuccess(success)
                 .setMessage(message)
                 .build();
@@ -208,17 +194,19 @@ public class ExamService extends PoolConnectDAO {
     }
 
     public void deleteQuestion(Session session, Proto.DeleteQuestionRequest deleteQuestionRequest) {
-        if (!checkUserRequestIsHasPermission(session, deleteQuestionRequest.getExamId())) {
-            return;
-        }
-        boolean success = jdbi.onDemand(IQuestionDAO.class).deleteQuestion(deleteQuestionRequest.getQuestionId()) > 0;
+//        int examId = QuestionDAO.getQuestionById(deleteQuestionRequest.getQuestionId()).getExamId();
+//        if (!checkUserRequestIsHasPermission(session, )) {
+//            return;
+//        }
+        boolean success = QuestionDAO.deleteQuestion(deleteQuestionRequest.getQuestionId()) > 0;
         for (int i = 1; i <= 4; i++) {
-            jdbi.onDemand(IChoiceDAO.class).deleteChoice(deleteQuestionRequest.getQuestionId());
+            ChoiceDAO.deleteChoice(deleteQuestionRequest.getQuestionId());
         }
         String message = success ? "Question deleted successfully" : "Failed to delete question";
 
         System.out.println("ExamService : " + message + " with questionId = " + deleteQuestionRequest.getQuestionId());
         Proto.DeleteQuestionResponse response = Proto.DeleteQuestionResponse.newBuilder()
+                .setQuestionId(deleteQuestionRequest.getQuestionId())
                 .setSuccess(success)
                 .setMessage(message)
                 .build();
@@ -239,10 +227,10 @@ public class ExamService extends PoolConnectDAO {
         String sessionId = SessionManage.me().getSessionID(session);
         SessionCache sessionCache = SessionCache.me();
         int userId = sessionCache.get(sessionId).getUser().getUserId();
-        List<ExamBean> exams = jdbi.onDemand(IExamDAO.class).getAllExamsByUserId(userId);
+        List<ExamBean> exams = ExamDAO.getAllExamsByUserId(userId);
         Proto.GetAllExamResponse response = Proto.GetAllExamResponse.newBuilder()
-                .addAllExams(exams.stream()
-                        .map(examBean -> ExamConverter.convertExamBeanToGetExamResponse(examBean, false))
+                .addAllExam(exams.stream()
+                        .map(examBean -> ExamConverter.convertExamBeanToProtoExam(examBean, false))
                         .collect(Collectors.toList()))
                 .build();
 
@@ -250,6 +238,17 @@ public class ExamService extends PoolConnectDAO {
                 .setGetAllExamResponse(response)
                 .build());
     }
+//    public void getExamByExamId(Session session, Proto.GetExamRequest request) {
+//        ExamBean examBean = ExamDAO.getCompleteExamById(request.getExamId());
+//        Proto.Exam protoExam = ExamConverter.convertExamBeanToProtoExam(examBean, true);
+//        Proto.GetExamResponse response = Proto.GetExamResponse.newBuilder()
+//                .setExam(protoExam)
+//                .build();
+//
+//        sendResponse(session, Proto.Packet.newBuilder()
+//                .setGetExamResponse(response)
+//                .build());
+//    }
 
 }
 

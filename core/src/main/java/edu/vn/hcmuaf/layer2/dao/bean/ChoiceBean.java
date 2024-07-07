@@ -32,12 +32,28 @@ public class ChoiceBean {
     @ColumnName("updated_at")
     private Timestamp updatedAt;
 
-    public Proto.ChoiceResponse getChoiceResponse() {
-        Proto.ChoiceResponse.Builder builder = Proto.ChoiceResponse.newBuilder();
+    public ChoiceBean(Proto.Choice choice) {
+        this.id = choice.getChoiceId();
+        this.questionId = choice.getQuestionId();
+        this.choiceIndex = choice.getChoiceIndex();
+        this.choiceText = choice.getChoiceText();
+        this.imageUrl = choice.getImageUrl();
+        this.isCorrect = choice.getIsCorrect();
+        this.status = choice.getStatus();
+    }
+
+    public Proto.Choice getProtoChoice(boolean includeCorrectness) {
+        Proto.Choice.Builder builder = Proto.Choice.newBuilder();
         builder.setChoiceId(id);
+        builder.setQuestionId(questionId);
         builder.setChoiceIndex(choiceIndex);
         builder.setChoiceText(choiceText);
         builder.setImageUrl(imageUrl);
+        if (includeCorrectness)
+            builder.setIsCorrect(isCorrect);//
+        builder.setStatus(status);
         return builder.build();
     }
+
+
 }

@@ -10,15 +10,14 @@ import java.util.stream.Collectors;
 
 public class ExamConverter {
 
-    public static Proto.GetExamResponse convertExamBeanToGetExamResponse(ExamBean examBean, boolean includeQuestions) {
+    public static Proto.Exam convertExamBeanToProtoExam(ExamBean examBean, boolean includeQuestions) {
 
-        Proto.GetExamResponse.Builder responseBuilder = Proto.GetExamResponse.newBuilder();
-
+        Proto.Exam.Builder responseBuilder = Proto.Exam.newBuilder();
 
         responseBuilder.setExamId(examBean.getId());
-        responseBuilder.setTitle(examBean.getTitle());
-        responseBuilder.setDescription(examBean.getDescription());
-        responseBuilder.setImageUrl(examBean.getImageUrl());
+        responseBuilder.setTitle(examBean.getTitle() + "");
+        responseBuilder.setDescription(examBean.getDescription() + "");
+        responseBuilder.setImageUrl(examBean.getImageUrl() + "");
         responseBuilder.setCreatedAt(String.valueOf(examBean.getCreatedAt()));
         responseBuilder.setStatus(examBean.getStatus());
 
@@ -41,8 +40,8 @@ public class ExamConverter {
 
         questionBuilder.setQuestionId(questionBean.getId());
         questionBuilder.setQuestionIndex(questionBean.getQuestionIndex());
-        questionBuilder.setQuestionText(questionBean.getQuestionText());
-        questionBuilder.setImageUrl(questionBean.getImageUrl());
+        questionBuilder.setQuestionText(questionBean.getQuestionText() + "");
+        questionBuilder.setImageUrl(questionBean.getImageUrl() + "");
 
 
         if (questionBean.getChoices() != null) {
@@ -62,8 +61,8 @@ public class ExamConverter {
 
         choiceBuilder.setChoiceId(choiceBean.getId());
         choiceBuilder.setChoiceIndex(choiceBean.getChoiceIndex());
-        choiceBuilder.setChoiceText(choiceBean.getChoiceText());
-        choiceBuilder.setImageUrl(choiceBean.getImageUrl());
+        choiceBuilder.setChoiceText(choiceBean.getChoiceText() + "");
+        choiceBuilder.setImageUrl(choiceBean.getImageUrl() + "");
         if (includeCorrectness)
             choiceBuilder.setIsCorrect(choiceBean.isCorrect());
         return choiceBuilder.build();

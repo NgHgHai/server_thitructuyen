@@ -1,6 +1,9 @@
 package edu.vn.hcmuaf.layer1.services;
 
-import edu.vn.hcmuaf.layer2.dao.*;
+import edu.vn.hcmuaf.layer2.dao.ExamAnswerDAO;
+import edu.vn.hcmuaf.layer2.dao.ExamSessionDAO;
+import edu.vn.hcmuaf.layer2.dao.PoolConnectDAO;
+import edu.vn.hcmuaf.layer2.dao.QuestionDAO;
 import edu.vn.hcmuaf.layer2.dao.bean.ChoiceBean;
 import edu.vn.hcmuaf.layer2.dao.bean.ExamAnswerBean;
 import edu.vn.hcmuaf.layer2.dao.bean.ExamSessionBean;
@@ -37,7 +40,7 @@ public class ProcessGameService extends PoolConnectDAO {
         examSessionBean.setStatus(1);
         examSessionBean.setStartTime(new java.sql.Timestamp(System.currentTimeMillis()));
 
-        int examSessionId = jdbi.onDemand(IExamSessionDAO.class).insertExamSession(examSessionBean);
+        int examSessionId = ExamSessionDAO.insertExamSession(examSessionBean);
         // lay ra roomContext tu redis
         RoomContext roomContext = roomRedisClusterHelper.getRoomContext(reqStartExam.getRoomId());
         // set cac thong tin cua roomContext
@@ -47,9 +50,9 @@ public class ProcessGameService extends PoolConnectDAO {
         roomContext.setTestId(reqStartExam.getExamId());//lay tam
 
         roomContext.setStatus(1);
-        List<QuestionBean> questionBeans = jdbi.onDemand(IQuestionDAO.class).getQuestionsByExamId(reqStartExam.getExamId());
+//        List<QuestionBean> questionBeans = QuestionDAO.getQuestionsByExamId(reqStartExam.getExamId());
         // lay ra cau hoi dau tien
-        QuestionBean firstQuestion = jdbi.onDemand(IQuestionDAO.class).getCompleteQuestionById(questionBeans.get(0).getId(), jdbi.onDemand(IChoiceDAO.class));
+        QuestionBean firstQuestion = QuestionDAO.getCompleteQuestionByIndexAndExamId(reqStartExam.getExamId(), 1);
         // cap nhat thong tin ve cau hoi hien tai cua roomContext cho redis
         roomContext.setCurrentQuestionId(firstQuestion.getId());
         roomContext.setCurrentquestionIndex(firstQuestion.getQuestionIndex());
@@ -57,29 +60,37 @@ public class ProcessGameService extends PoolConnectDAO {
         roomRedisClusterHelper.addRoomContext(roomContext.getRoomId(), roomContext);
 
         // tao goi tin tra ve cho client
-        Proto.ResStartExam.Builder resStartExam = Proto.ResStartExam.newBuilder().setExamSessionId(examSessionId);
-        Proto.QuestionResponse.Builder questionResponse = Proto.QuestionResponse.newBuilder().setQuestionId(firstQuestion.getId()).setQuestionIndex(firstQuestion.getQuestionIndex()).setQuestionText(firstQuestion.getQuestionText()).setImageUrl(firstQuestion.getImageUrl()).setTime(firstQuestion.getTime());
-
-
+        Proto.Question question = firstQuestion.getProtoQuestion(false);
+        Proto.ResStartExam resStartExam = Proto.ResStartExam.newBuilder().setExamSessionId(examSessionId).setQuestion(question).build();
         Proto.Packet packetResExam = Proto.Packet.newBuilder().setResStartExam(resStartExam).build();
-        Proto.Packet packetQuestion = Proto.Packet.newBuilder().setQuestionResponse(questionResponse).build();
-
-        Proto.PacketWrapper packetWrapper = Proto.PacketWrapper.newBuilder().addPacket(packetResExam).addPacket(packetQuestion).build();
+        Proto.PacketWrapper packetWrapper = Proto.PacketWrapper.newBuilder().addPacket(packetResExam).build();
 
 
         // gui thong tin ve cho clients
         sendForAllSessionInRoom(packetWrapper, reqStartExam.getRoomId());
-
+        System.out.println("start exam success");
 
     }
 
     public void nextQuestion(Session session, Proto.ReqGetNextQuestion reqGetNextQuestion) {
         // lay ra roomContext tu redis
         RoomContext roomContext = roomRedisClusterHelper.getRoomContext(reqGetNextQuestion.getRoomId());
-        // lay ra danh sach cau hoi tu db
-        List<QuestionBean> questionBeans = jdbi.onDemand(IQuestionDAO.class).getQuestionsByExamId(roomContext.getTestId());
+        // lay ra id cua bai thi
+        int examId = roomContext.getTestId();
+        // lay ra so luong cau hoi cua bai thi
+        int totalQuestion = QuestionDAO.getTotalQuestionByExamId(examId);
+
+        // lay ra cau hoi hien tai
+        int currentQuestionIndex = roomContext.getCurrentquestionIndex();
         // lay ra cau hoi tiep theo
-        QuestionBean nextQuestion = roomContext.getCurrentquestionIndex() < questionBeans.size() - 1 ? jdbi.onDemand(IQuestionDAO.class).getCompleteQuestionById(questionBeans.get(roomContext.getCurrentquestionIndex() + 1).getId(), jdbi.onDemand(IChoiceDAO.class)) : null;
+        QuestionBean nextQuestion = QuestionDAO.getCompleteQuestionByIndexAndExamId(examId, currentQuestionIndex + 1);
+
+        // neu khong co cau hoi tiep theo thi ket thuc bai thi
+        if (nextQuestion == null) {
+            endExam(session, Proto.ReqEndExam.newBuilder().setRoomId(reqGetNextQuestion.getRoomId()).build());
+            return;
+        }
+
         // cap nhat thong tin ve cau hoi hien tai cua roomContext cho redis
         roomContext.setCurrentQuestionId(nextQuestion.getId());
         roomContext.setCurrentquestionIndex(nextQuestion.getQuestionIndex());
@@ -87,14 +98,15 @@ public class ProcessGameService extends PoolConnectDAO {
         roomRedisClusterHelper.addRoomContext(roomContext.getRoomId(), roomContext);
 
         // tao goi tin tra ve cho client
-        Proto.QuestionResponse questionResponse = Proto.QuestionResponse.newBuilder().setQuestionId(nextQuestion.getId()).setQuestionIndex(nextQuestion.getQuestionIndex()).setQuestionText(nextQuestion.getQuestionText()).setImageUrl(nextQuestion.getImageUrl()).setTime(nextQuestion.getTime()).build();
-        Proto.ResRoomScore resRoomScore = getRoomScore(reqGetNextQuestion.getRoomId());
+        Proto.Question question = nextQuestion.getProtoQuestion(true);
+        Proto.RoomScore resRoomScore = getRoomScore(reqGetNextQuestion.getRoomId());
 
-        Proto.Packet packetQuestion = Proto.Packet.newBuilder().setQuestionResponse(questionResponse).build();
-        Proto.Packet packetResRoomScore = Proto.Packet.newBuilder().setResRoomScore(resRoomScore).build();
-
-        Proto.PacketWrapper packetWrapper = Proto.PacketWrapper.newBuilder().addPacket(packetQuestion).addPacket(packetResRoomScore).build();
-
+        Proto.ResGetNextQuestion resGetNextQuestion = Proto.ResGetNextQuestion.newBuilder().setQuestion(question).setTotalQuestion(totalQuestion).build();
+        Proto.Packet packet = Proto.Packet.newBuilder().setResGetNextQuestion(resGetNextQuestion).build();
+        Proto.Packet packetRoomScore = Proto.Packet.newBuilder().setRoomScore(resRoomScore).build();
+        Proto.PacketWrapper packetWrapper = Proto.PacketWrapper.newBuilder().addPacket(packet).addPacket(packetRoomScore).build();
+        System.out.println("next question success");
+        System.out.println(packetWrapper);
         // gui thong tin ve cho client
         sendForAllSessionInRoom(packetWrapper, reqGetNextQuestion.getRoomId());
     }
@@ -109,6 +121,11 @@ public class ProcessGameService extends PoolConnectDAO {
         roomContext.setCurrentQuestionId(0);
         // luu lai roomContext vao redis
         roomRedisClusterHelper.addRoomContext(roomContext.getRoomId(), roomContext);
+        // them vao exam_session end time
+        ExamSessionBean examSessionBean = ExamSessionDAO.getExamSessionById(roomContext.getExamSessionId());
+        examSessionBean.setEndTime(new java.sql.Timestamp(System.currentTimeMillis()));
+        ExamSessionDAO.updateExamSession(examSessionBean);
+
 
         // tao goi tin tra ve cho client
         Proto.ResEndExam.Builder resEndExam = Proto.ResEndExam.newBuilder().setResRoomScore(getRoomScore(reqEndExam.getRoomId()));
@@ -119,17 +136,28 @@ public class ProcessGameService extends PoolConnectDAO {
         sendForAllSessionInRoom(packetWrapper, reqEndExam.getRoomId());
     }
 
+
     public void checkQuestionAnswer(Session session, Proto.ReqCheckQuestionAnswer reqCheckQuestionAnswer) {
+        System.out.println("check question answer");
+        System.out.println(reqCheckQuestionAnswer);
+        // neu user nao da tra loi cau hoi nay roi thi khong cho tra loi nua
+        if (ExamAnswerDAO.checkHasAnswerBySessionIdAndUserIdAndQuestionId(reqCheckQuestionAnswer.getExamSessionId(), reqCheckQuestionAnswer.getQuestionId(), reqCheckQuestionAnswer.getUserId())) {
+            System.out.println("user has answered this question");
+            Proto.ResCheckQuestionAnswer.Builder resCheckQuestionAnswer = Proto.ResCheckQuestionAnswer.newBuilder().setStatus(400).setQuestionId(reqCheckQuestionAnswer.getQuestionId());
+            Proto.Packet packet = Proto.Packet.newBuilder().setResCheckQuestionAnswer(resCheckQuestionAnswer).build();
+            Proto.PacketWrapper packetWrapper = Proto.PacketWrapper.newBuilder().addPacket(packet).build();
+            return;
+        }
         // luu cau tra loi cua nguoi choi vao db
         ExamAnswerBean examAnswerBean = new ExamAnswerBean();
         examAnswerBean.setExamSessionId(reqCheckQuestionAnswer.getExamSessionId());
         examAnswerBean.setQuestionId(reqCheckQuestionAnswer.getQuestionId());
         examAnswerBean.setChoiceId(reqCheckQuestionAnswer.getChoiceId());
-        jdbi.onDemand(IExamAnswerDAO.class).insertExamAnswer(examAnswerBean);
-
+        examAnswerBean.setUserId(reqCheckQuestionAnswer.getUserId());
+        ExamAnswerDAO.insertExamAnswer(examAnswerBean);
 
         //check xem cau tra loi dung hay sai
-        QuestionBean questionBean = jdbi.onDemand(IQuestionDAO.class).getCompleteQuestionById(reqCheckQuestionAnswer.getQuestionId(), jdbi.onDemand(IChoiceDAO.class));
+        QuestionBean questionBean = QuestionDAO.getCompleteQuestionById(reqCheckQuestionAnswer.getQuestionId());
         List<ChoiceBean> choiceBeans = questionBean.getChoices();
         boolean isCorrect = false;
         for (ChoiceBean choiceBean : choiceBeans) {
@@ -138,19 +166,18 @@ public class ProcessGameService extends PoolConnectDAO {
                 break;
             }
         }
-
         // xoa diem cua ca phong choi duoi redis
         roomRedisClusterHelper.removeRoomScore(reqCheckQuestionAnswer.getRoomId());
 
         // tao goi tin tra ve cho client
-        Proto.ResCheckQuestionAnswer.Builder resCheckQuestionAnswer = Proto.ResCheckQuestionAnswer.newBuilder().setStatus(0).setQuestionId(reqCheckQuestionAnswer.getQuestionId());
+        Proto.ResCheckQuestionAnswer.Builder resCheckQuestionAnswer = Proto.ResCheckQuestionAnswer.newBuilder().setStatus(isCorrect ? 1 : 0).setQuestionId(reqCheckQuestionAnswer.getQuestionId());
         Proto.Packet packet = Proto.Packet.newBuilder().setResCheckQuestionAnswer(resCheckQuestionAnswer).build();
         Proto.PacketWrapper packetWrapper = Proto.PacketWrapper.newBuilder().addPacket(packet).build();
 
         // gui thong tin ve cho client
         session.getAsyncRemote().sendObject(packetWrapper);
-
-
+        System.out.println(reqCheckQuestionAnswer);
+        System.out.println("check question answer success");
     }
 
     public void sendForAllSessionInRoom(Proto.PacketWrapper packetWrapper, int roomId) {
@@ -172,24 +199,23 @@ public class ProcessGameService extends PoolConnectDAO {
         });
     }
 
-    public Proto.ResRoomScore getRoomScore(int roomid) {
+    public Proto.RoomScore getRoomScore(int roomid) {
         // lay ra diem cua cac nguoi choi trong phong
-        Map<Integer, Integer> userScores = roomRedisClusterHelper.getRoomScore(roomid);
-        Proto.ResRoomScore.Builder resRoomScore = Proto.ResRoomScore.newBuilder();
+        Map<String, Integer> userScores = roomRedisClusterHelper.getRoomScore(roomid);
+        Proto.RoomScore.Builder roomScore = Proto.RoomScore.newBuilder();
         if (userScores != null) {
             userScores.forEach((k, v) -> {
-                Proto.UserScore.Builder userScore = Proto.UserScore.newBuilder().setUserId(k).setScore(v);
-                resRoomScore.addUserScores(userScore);
+                Proto.UserScore.Builder userScore = Proto.UserScore.newBuilder().setUserName(k).setScore(v);
+                roomScore.addUserScores(userScore);
             });
         } else {
-            userScores = jdbi.onDemand(IExamAnswerDAO.class).getUserScoresBySessionId(roomRedisClusterHelper.getRoomContext(roomid).getExamSessionId());
+            userScores = ExamAnswerDAO.getUserScoresBySessionId(roomRedisClusterHelper.getRoomContext(roomid).getExamSessionId());
             roomRedisClusterHelper.saveRoomScore(userScores, roomid);
             userScores.forEach((k, v) -> {
-                Proto.UserScore.Builder userScore = Proto.UserScore.newBuilder().setUserId(k).setScore(v);
-                resRoomScore.addUserScores(userScore);
+                Proto.UserScore.Builder userScore = Proto.UserScore.newBuilder().setUserName(k).setScore(v);
+                roomScore.addUserScores(userScore);
             });
         }
-        return resRoomScore.build();
+        return roomScore.build();
     }
-
 }

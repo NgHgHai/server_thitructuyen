@@ -80,6 +80,14 @@ public class RoomService {
         String sessionId = SessionManage.me().getSessionID(session);
         // lay ra session context
         SessionContext sessionContext = sessionCache.get(sessionId);
+        if (sessionContext.getUser() == null) {
+            System.out.println("User null");
+            Proto.ResJoinRoom resJoinRoom1 = Proto.ResJoinRoom.newBuilder().setStatus(400).build();
+            Proto.Packet packet1 = Proto.Packet.newBuilder().setResJoinRoom(resJoinRoom1).build();
+            Proto.PacketWrapper packetWrapper1 = Proto.PacketWrapper.newBuilder().addPacket(packet1).build();
+            session.getAsyncRemote().sendObject(packetWrapper1);
+            return;
+        }
         // set room id
         sessionContext.setRoomId(roomId);
 
@@ -89,29 +97,34 @@ public class RoomService {
 
         // lay ra toan bo session dang online trong server nay
         Set<String> sessionListInServer = SessionCache.me().getKeys();
+        System.out.printf("RoomService : sessionListInServer : %s\n", sessionListInServer.toString());
         // them session vao room
         roomRedisClusterHelper.addUsersToRoom(roomId, sessionId);
+        System.out.printf("RoomService : da them user vao phong voi id : %d va session id : %s\n", roomId, sessionId);
         // dang ki lang nghe channel room ma session vua join
         roomNotify.subscribe(roomId);
-
+        //gethostId
+        String hostId = String.valueOf(roomRedisClusterHelper.getRoomContext(roomId).getHostId());
         // tao goi tin resJoinRoom
-        Proto.ResJoinRoom resJoinRoom = Proto.ResJoinRoom.newBuilder().setName(sessionContext.getUser().getUsername()).setSessionId(sessionId).build();
-//        Proto.ResJoinRoom resJoinRoom = Proto.ResJoinRoom.newBuilder().setName("hai").setSessionId(sessionId).build();
+//        Proto.ResJoinRoom resJoinRoom = Proto.ResJoinRoom.newBuilder().setName(sessionContext.getUser().getUsername()).setSessionId(sessionId).build();
+        Proto.ResJoinRoom resJoinRoom = Proto.ResJoinRoom.newBuilder().setName(sessionContext.getUser().getUsername()).setStatus(200).setSessionId(sessionId).setHostId(hostId).build();
 
         Proto.Packet packet = Proto.Packet.newBuilder().setResJoinRoom(resJoinRoom).build();
         Proto.PacketWrapper packetWrapper = Proto.PacketWrapper.newBuilder().addPacket(packet).build();
 
+//        session.getAsyncRemote().sendText("Da vao phong" + sessionContext.getUser().getUsername());
         // thong bao cho tat ca moi nguoi trong phong
 
         // lay ra toan bo sessionId trong phong tu redis
         List<String> sessionList = roomRedisClusterHelper.getAllUserInRoom(roomId);
+        System.out.printf("RoomService : sessionList user im room: %s\n", sessionList.toString());
         // gui goi tin toi tat ca moi nguoi trong phong neu online trong server nay
         // neu khong thi publish xuong redis de cac server khac biet
         sessionList.forEach(s -> {
 
             if (sessionListInServer.contains(s)) {
                 Session session1 = SessionManage.me().get(s);
-                session1.getAsyncRemote().sendText("Co " + sessionId + " moi vao phong");
+//                session1.getAsyncRemote().sendText("Co " + sessionId + " moi vao  phong dưedadas");
                 // gui goi tin toi session
                 session1.getAsyncRemote().sendObject(packetWrapper);
             } else {

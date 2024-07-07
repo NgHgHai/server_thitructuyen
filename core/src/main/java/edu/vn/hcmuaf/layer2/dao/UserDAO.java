@@ -97,15 +97,16 @@ public class UserDAO extends PoolConnectDAO {
     }
 
 
-    public static int insertRegisterUser(String username, String pass, String randomSixDigits) {
+    public static int insertRegisterUser(String username, String email, String pass, String randomSixDigits) {
         Jdbi jdbi = getJdbi();
         if (jdbi == null) {
             return 500;
         }
 
         int result = jdbi.withHandle(handle ->
-                handle.createUpdate("INSERT INTO users (username, password,email_code) VALUES (:username, :password,:randomSixDigits)")
+                handle.createUpdate("INSERT INTO users (username, email, password,email_code) VALUES (:username, :email, :password,:randomSixDigits)")
                         .bind("username", username)
+                        .bind("email", email)
                         .bind("password", pass)
                         .bind("randomSixDigits", randomSixDigits)
                         .execute());
@@ -178,7 +179,7 @@ public class UserDAO extends PoolConnectDAO {
         }
     }
 
-    public static int checkOTP(String email, int otp) {
+    public static int checkOTP(String email, String otp) {
         Jdbi jdbi = getJdbi();
         if (jdbi == null) {
             return 500; // Lỗi máy chủ cơ sở dữ liệu
@@ -196,5 +197,16 @@ public class UserDAO extends PoolConnectDAO {
         } else {
             return 400; // nguoi dung chua ton tai trong csdl
         }
+    }
+
+    public static UserBean getUserById(int hostId) {
+        Jdbi jdbi = getJdbi();
+        if (jdbi == null) {
+            return null;
+        }
+        return jdbi.withHandle(h -> h.createQuery("select * from users where id = :id")
+                .bind("id", hostId)
+                .mapToBean(UserBean.class)
+                .findFirst().orElse(null));
     }
 }

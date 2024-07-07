@@ -1,11 +1,13 @@
 package edu.vn.hcmuaf.layer0.handler;
 
 import edu.vn.hcmuaf.layer1.services.ExamService;
+import edu.vn.hcmuaf.layer1.services.ReportService;
 import edu.vn.hcmuaf.layer2.proto.Proto;
 import jakarta.websocket.Session;
 
 public class ExamHandler implements Subscriber {
     ExamService examService = ExamService.me();
+    ReportService reportService = ReportService.me();
     @Override
     public void onOpen(Session session, String... params) {
 
@@ -39,6 +41,11 @@ public class ExamHandler implements Subscriber {
                 session.getAsyncRemote().sendText("da nhan yeu cau get all exam");
                 examService.getAllExamByUserId(session,packet.getGetAllExamRequest());
             }
+            if (packet.hasGetExamRequest()){
+                System.out.println("ExamHandler : co req get exam");
+                session.getAsyncRemote().sendText("da nhan yeu cau get exam");
+                examService.getExam(session,packet.getGetExamRequest());
+            }
             if (packet.hasCreateQuestionRequest()){
                 System.out.println("ExamHandler : co req update exam");
                 session.getAsyncRemote().sendText("da nhan yeu cau update exam");
@@ -54,7 +61,21 @@ public class ExamHandler implements Subscriber {
                 session.getAsyncRemote().sendText("da nhan yeu cau update exam");
                 examService.deleteQuestion(session,packet.getDeleteQuestionRequest());
             }
-
+            if (packet.hasReqGetAllReportByHostId()){
+                System.out.println("ExamHandler : co req get all report by host id");
+                session.getAsyncRemote().sendText("da nhan yeu cau get all report by host id");
+                reportService.getAllReportByHostId(session,packet.getReqGetAllReportByHostId());
+            }
+            if (packet.hasReqGetAllReportByPlayerId()){
+                System.out.println("ExamHandler : co req get all report by user id");
+                session.getAsyncRemote().sendText("da nhan yeu cau get all report by user id");
+                reportService.getAllReportByUserId(session,packet.getReqGetAllReportByPlayerId());
+            }
+            if (packet.hasReqGetReport()){
+                System.out.println("ExamHandler : co req get report");
+                session.getAsyncRemote().sendText("da nhan yeu cau get report");
+                reportService.getReport(session,packet.getReqGetReport());
+            }
 
 
         });

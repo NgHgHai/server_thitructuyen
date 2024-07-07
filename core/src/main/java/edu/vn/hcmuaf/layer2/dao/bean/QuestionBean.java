@@ -33,17 +33,27 @@ public class QuestionBean {
     @ColumnName("updated_at")
     private Timestamp updatedAt;
     private List<ChoiceBean> choices;
-
-    public Proto.QuestionResponse getQuestionResponse() {
-        Proto.QuestionResponse.Builder builder = Proto.QuestionResponse.newBuilder();
+    public QuestionBean(Proto.Question question) {
+        this.id = question.getQuestionId();
+        this.examId = question.getExamId();
+        this.questionIndex = question.getQuestionIndex();
+        this.questionText = question.getQuestionText();
+        this.imageUrl = question.getImageUrl();
+        this.time = question.getTime();
+        this.status = question.getStatus();
+    }
+    public Proto.Question getProtoQuestion(boolean includeRightAnswer) {
+        Proto.Question.Builder builder = Proto.Question.newBuilder();
         builder.setQuestionId(id);
+        builder.setExamId(examId);
         builder.setQuestionIndex(questionIndex);
         builder.setQuestionText(questionText);
         builder.setImageUrl(imageUrl);
         builder.setTime(time);
+        builder.setStatus(status);
         builder.setQuestionIndex(questionIndex);
         for (ChoiceBean choice : choices) {
-            builder.addChoices(choice.getChoiceResponse());
+            builder.addChoices(choice.getProtoChoice(includeRightAnswer));
         }
         return builder.build();
     }

@@ -20,6 +20,16 @@ public class UploadImgService extends HttpServlet {
     private static final String UPLOAD_DIR = "uploads";
 
     @Override
+    protected void doOptions(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // Handle preflight request
+        resp.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
+        resp.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
+        resp.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+        resp.setHeader("Access-Control-Max-Age", "3600");
+        resp.setStatus(HttpServletResponse.SC_OK);
+    }
+
+    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.getWriter().print("This is a POST service, please send a POST request to upload a file.");
     }
@@ -27,6 +37,7 @@ public class UploadImgService extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
         String applicationPath = request.getServletContext().getRealPath("");
 //        String applicationPath = "I:" + File.separator + "server";
         String uploadFilePath = applicationPath + File.separator + UPLOAD_DIR;

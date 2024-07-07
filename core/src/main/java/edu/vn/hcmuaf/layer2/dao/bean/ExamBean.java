@@ -30,9 +30,16 @@ public class ExamBean {
     private int userId;
     @ColumnName("status")
     private int status;
-
-
     private List<QuestionBean> questions;
 
-
+    public ExamBean(Proto.Exam exam) {
+        this.id = exam.getExamId();
+        this.title = exam.getTitle();
+        this.description = exam.getDescription();
+        this.imageUrl = exam.getImageUrl();
+//        this.createdAt = new Timestamp(exam.getCreatedAt());
+//        this.updatedAt = new Timestamp(exam.getUpdatedAt());
+        this.userId = exam.getUserId();
+        this.status = exam.getStatus();
+    }
 }

@@ -90,17 +90,17 @@ public class RoomRedisClusterHelper extends RedisClusterHelper {
         return result;
     }
 
-    public Map<Integer, Integer> getRoomScore(int roomid) {
+    public Map<String, Integer> getRoomScore(int roomid) {
         Map<byte[], byte[]> map = getConnection().hgetAll((ROOM_SCORE + roomid).getBytes());
-        Map<Integer, Integer> result = new HashMap<>();
+        Map<String, Integer> result = new HashMap<>();
         if (map.isEmpty()) return null;
         map.forEach((k, v) -> {
-            result.put(Integer.parseInt(new String(k)), Integer.parseInt(new String(v)));
+            result.put(new String(k), Integer.parseInt(new String(v)));
         });
         return result;
     }
 
-    public void saveRoomScore(Map<Integer, Integer> userScores, int roomid) {
+    public void saveRoomScore(Map<String, Integer> userScores, int roomid) {
         userScores.forEach((k, v) -> {
             getConnection().hset((ROOM_SCORE + roomid).getBytes(), String.valueOf(k).getBytes(), String.valueOf(v).getBytes());
         });

@@ -33,18 +33,28 @@ public class AuthHandler implements Subscriber {
                 authService.processRegister(session, packet.getReqRegister());
             }
             if (packet.hasReqVerify()){
+                System.out.println("co req verify");
+                session.getAsyncRemote().sendText("da nhan yeu cau verify");
                 authService.verifyEmail(session, packet.getReqVerify());
             }
             if (packet.hasReqChangePassword()){
+                System.out.println("co req change password");
+                session.getAsyncRemote().sendText("da nhan yeu cau change password");
                 authService.changePassword(session, packet.getReqChangePassword());
             }
             if (packet.hasReqForgotPassword()){
+                System.out.println("co req forgot password");
+                session.getAsyncRemote().sendText("da nhan yeu cau forgot password");
                 authService.forgotPassword(session, packet.getReqForgotPassword());
             }
             if (packet.hasReqVerifyForgotPassword()){
+                System.out.println("co req verify forgot password");
+                session.getAsyncRemote().sendText("da nhan yeu cau verify forgot password");
                 authService.verifyForgotPassword(session, packet.getReqVerifyForgotPassword());
             }
             if (packet.hasReqChangePasswordForgot()){
+                System.out.println("co req change password forgot");
+                session.getAsyncRemote().sendText("da nhan yeu cau change password forgot");
                 authService.changePasswordForgot(session, packet.getReqChangePasswordForgot());
             }
 
