@@ -114,6 +114,9 @@ public class ProcessGameService extends PoolConnectDAO {
     public void endExam(Session session, Proto.ReqEndExam reqEndExam) {
         // lay ra roomContext tu redis
         RoomContext roomContext = roomRedisClusterHelper.getRoomContext(reqEndExam.getRoomId());
+
+        ExamSessionBean examSessionBean = ExamSessionDAO.getExamSessionById(roomContext.getExamSessionId());
+
         // cap nhat trang thai cua roomContext
         roomContext.setStatus(0);
         roomContext.setExamSessionId(0);
@@ -122,7 +125,7 @@ public class ProcessGameService extends PoolConnectDAO {
         // luu lai roomContext vao redis
         roomRedisClusterHelper.addRoomContext(roomContext.getRoomId(), roomContext);
         // them vao exam_session end time
-        ExamSessionBean examSessionBean = ExamSessionDAO.getExamSessionById(roomContext.getExamSessionId());
+
         examSessionBean.setEndTime(new java.sql.Timestamp(System.currentTimeMillis()));
         ExamSessionDAO.updateExamSession(examSessionBean);
 
