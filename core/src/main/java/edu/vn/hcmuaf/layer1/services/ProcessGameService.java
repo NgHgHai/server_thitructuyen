@@ -20,6 +20,7 @@ import org.jdbi.v3.core.Jdbi;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class ProcessGameService extends PoolConnectDAO {
     public static final ProcessGameService instance = new ProcessGameService();
@@ -219,7 +220,16 @@ public class ProcessGameService extends PoolConnectDAO {
                 roomScore.addUserScores(userScore);
             });
         }
-        roomScore.getUserScoresList().stream().sorted((o1, o2) -> o2.getScore() - o1.getScore());
+        // sap xep lai diem cua cac nguoi choi
+        List<Proto.UserScore> sortedUserScores = roomScore.getUserScoresList().stream()
+                .sorted((o1, o2) -> Integer.compare(o2.getScore(), o1.getScore()))
+                .collect(Collectors.toList());
+
+        // tao 1 goi tin moi de tra ve
+        Proto.RoomScore.Builder sortedRoomScore = Proto.RoomScore.newBuilder();
+        for (Proto.UserScore userScore : sortedUserScores) {
+            sortedRoomScore.addUserScores(userScore);
+        }
         return roomScore.build();
     }
 }
