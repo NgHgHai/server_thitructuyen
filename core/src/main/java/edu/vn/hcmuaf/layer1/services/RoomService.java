@@ -94,7 +94,8 @@ public class RoomService {
         sessionCache.add(sessionId, sessionContext);// add local cache
         sessionCache.update(sessionContext);// update redis
 
-
+        // lay ra toan bo sessionId trong phong tu redis
+        List<String> sessionList = roomRedisClusterHelper.getAllUserInRoom(roomId);
         // lay ra toan bo session dang online trong server nay
         Set<String> sessionListInServer = SessionCache.me().getKeys();
         System.out.printf("RoomService : sessionListInServer : %s\n", sessionListInServer.toString());
@@ -107,7 +108,7 @@ public class RoomService {
         String hostId = String.valueOf(roomRedisClusterHelper.getRoomContext(roomId).getHostId());
         // tao goi tin resJoinRoom
 //        Proto.ResJoinRoom resJoinRoom = Proto.ResJoinRoom.newBuilder().setName(sessionContext.getUser().getUsername()).setSessionId(sessionId).build();
-        Proto.ResJoinRoom resJoinRoom = Proto.ResJoinRoom.newBuilder().setName(sessionContext.getUser().getUsername()).setStatus(200).setSessionId(sessionId).setHostId(hostId).build();
+        Proto.ResJoinRoom resJoinRoom = Proto.ResJoinRoom.newBuilder().setName(sessionContext.getUser().getUsername()).setStatus(200).setSessionId(sessionId).setHostId(hostId).setTotalPlayer(sessionList.size()).build();
 
         Proto.Packet packet = Proto.Packet.newBuilder().setResJoinRoom(resJoinRoom).build();
         Proto.PacketWrapper packetWrapper = Proto.PacketWrapper.newBuilder().addPacket(packet).build();
@@ -115,8 +116,7 @@ public class RoomService {
 //        session.getAsyncRemote().sendText("Da vao phong" + sessionContext.getUser().getUsername());
         // thong bao cho tat ca moi nguoi trong phong
 
-        // lay ra toan bo sessionId trong phong tu redis
-        List<String> sessionList = roomRedisClusterHelper.getAllUserInRoom(roomId);
+
         System.out.printf("RoomService : sessionList user im room: %s\n", sessionList.toString());
         // gui goi tin toi tat ca moi nguoi trong phong neu online trong server nay
         // neu khong thi publish xuong redis de cac server khac biet

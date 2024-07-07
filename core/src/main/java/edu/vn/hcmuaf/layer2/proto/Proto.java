@@ -1756,6 +1756,36 @@ public final class Proto {
      */
     edu.vn.hcmuaf.layer2.proto.Proto.ResGetAllReportByPlayerIdOrBuilder getResGetAllReportByPlayerIdOrBuilder();
 
+    /**
+     * <code>.proto.GetQuestionRequest getQuestionRequest = 67;</code>
+     * @return Whether the getQuestionRequest field is set.
+     */
+    boolean hasGetQuestionRequest();
+    /**
+     * <code>.proto.GetQuestionRequest getQuestionRequest = 67;</code>
+     * @return The getQuestionRequest.
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest getGetQuestionRequest();
+    /**
+     * <code>.proto.GetQuestionRequest getQuestionRequest = 67;</code>
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequestOrBuilder getGetQuestionRequestOrBuilder();
+
+    /**
+     * <code>.proto.GetQuestionResponse getQuestionResponse = 68;</code>
+     * @return Whether the getQuestionResponse field is set.
+     */
+    boolean hasGetQuestionResponse();
+    /**
+     * <code>.proto.GetQuestionResponse getQuestionResponse = 68;</code>
+     * @return The getQuestionResponse.
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse getGetQuestionResponse();
+    /**
+     * <code>.proto.GetQuestionResponse getQuestionResponse = 68;</code>
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponseOrBuilder getGetQuestionResponseOrBuilder();
+
     edu.vn.hcmuaf.layer2.proto.Proto.Packet.DataCase getDataCase();
   }
   /**
@@ -1865,6 +1895,8 @@ public final class Proto {
       REQGETALLREPORTBYPLAYERID(64),
       RESGETALLREPORTBYHOSTID(65),
       RESGETALLREPORTBYPLAYERID(66),
+      GETQUESTIONREQUEST(67),
+      GETQUESTIONRESPONSE(68),
       DATA_NOT_SET(0);
       private final int value;
       private DataCase(int value) {
@@ -1948,6 +1980,8 @@ public final class Proto {
           case 64: return REQGETALLREPORTBYPLAYERID;
           case 65: return RESGETALLREPORTBYHOSTID;
           case 66: return RESGETALLREPORTBYPLAYERID;
+          case 67: return GETQUESTIONREQUEST;
+          case 68: return GETQUESTIONRESPONSE;
           case 0: return DATA_NOT_SET;
           default: return null;
         }
@@ -4009,6 +4043,68 @@ public final class Proto {
       return edu.vn.hcmuaf.layer2.proto.Proto.ResGetAllReportByPlayerId.getDefaultInstance();
     }
 
+    public static final int GETQUESTIONREQUEST_FIELD_NUMBER = 67;
+    /**
+     * <code>.proto.GetQuestionRequest getQuestionRequest = 67;</code>
+     * @return Whether the getQuestionRequest field is set.
+     */
+    @java.lang.Override
+    public boolean hasGetQuestionRequest() {
+      return dataCase_ == 67;
+    }
+    /**
+     * <code>.proto.GetQuestionRequest getQuestionRequest = 67;</code>
+     * @return The getQuestionRequest.
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest getGetQuestionRequest() {
+      if (dataCase_ == 67) {
+         return (edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest) data_;
+      }
+      return edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest.getDefaultInstance();
+    }
+    /**
+     * <code>.proto.GetQuestionRequest getQuestionRequest = 67;</code>
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequestOrBuilder getGetQuestionRequestOrBuilder() {
+      if (dataCase_ == 67) {
+         return (edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest) data_;
+      }
+      return edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest.getDefaultInstance();
+    }
+
+    public static final int GETQUESTIONRESPONSE_FIELD_NUMBER = 68;
+    /**
+     * <code>.proto.GetQuestionResponse getQuestionResponse = 68;</code>
+     * @return Whether the getQuestionResponse field is set.
+     */
+    @java.lang.Override
+    public boolean hasGetQuestionResponse() {
+      return dataCase_ == 68;
+    }
+    /**
+     * <code>.proto.GetQuestionResponse getQuestionResponse = 68;</code>
+     * @return The getQuestionResponse.
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse getGetQuestionResponse() {
+      if (dataCase_ == 68) {
+         return (edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse) data_;
+      }
+      return edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse.getDefaultInstance();
+    }
+    /**
+     * <code>.proto.GetQuestionResponse getQuestionResponse = 68;</code>
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponseOrBuilder getGetQuestionResponseOrBuilder() {
+      if (dataCase_ == 68) {
+         return (edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse) data_;
+      }
+      return edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -4220,6 +4316,12 @@ public final class Proto {
       }
       if (dataCase_ == 66) {
         output.writeMessage(66, (edu.vn.hcmuaf.layer2.proto.Proto.ResGetAllReportByPlayerId) data_);
+      }
+      if (dataCase_ == 67) {
+        output.writeMessage(67, (edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest) data_);
+      }
+      if (dataCase_ == 68) {
+        output.writeMessage(68, (edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse) data_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -4493,6 +4595,14 @@ public final class Proto {
       if (dataCase_ == 66) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(66, (edu.vn.hcmuaf.layer2.proto.Proto.ResGetAllReportByPlayerId) data_);
+      }
+      if (dataCase_ == 67) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(67, (edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest) data_);
+      }
+      if (dataCase_ == 68) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(68, (edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse) data_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -4775,6 +4885,14 @@ public final class Proto {
           if (!getResGetAllReportByPlayerId()
               .equals(other.getResGetAllReportByPlayerId())) return false;
           break;
+        case 67:
+          if (!getGetQuestionRequest()
+              .equals(other.getGetQuestionRequest())) return false;
+          break;
+        case 68:
+          if (!getGetQuestionResponse()
+              .equals(other.getGetQuestionResponse())) return false;
+          break;
         case 0:
         default:
       }
@@ -5053,6 +5171,14 @@ public final class Proto {
         case 66:
           hash = (37 * hash) + RESGETALLREPORTBYPLAYERID_FIELD_NUMBER;
           hash = (53 * hash) + getResGetAllReportByPlayerId().hashCode();
+          break;
+        case 67:
+          hash = (37 * hash) + GETQUESTIONREQUEST_FIELD_NUMBER;
+          hash = (53 * hash) + getGetQuestionRequest().hashCode();
+          break;
+        case 68:
+          hash = (37 * hash) + GETQUESTIONRESPONSE_FIELD_NUMBER;
+          hash = (53 * hash) + getGetQuestionResponse().hashCode();
           break;
         case 0:
         default:
@@ -5386,6 +5512,12 @@ public final class Proto {
         if (resGetAllReportByPlayerIdBuilder_ != null) {
           resGetAllReportByPlayerIdBuilder_.clear();
         }
+        if (getQuestionRequestBuilder_ != null) {
+          getQuestionRequestBuilder_.clear();
+        }
+        if (getQuestionResponseBuilder_ != null) {
+          getQuestionResponseBuilder_.clear();
+        }
         dataCase_ = 0;
         data_ = null;
         return this;
@@ -5701,6 +5833,14 @@ public final class Proto {
             resGetAllReportByPlayerIdBuilder_ != null) {
           result.data_ = resGetAllReportByPlayerIdBuilder_.build();
         }
+        if (dataCase_ == 67 &&
+            getQuestionRequestBuilder_ != null) {
+          result.data_ = getQuestionRequestBuilder_.build();
+        }
+        if (dataCase_ == 68 &&
+            getQuestionResponseBuilder_ != null) {
+          result.data_ = getQuestionResponseBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -5978,6 +6118,14 @@ public final class Proto {
           }
           case RESGETALLREPORTBYPLAYERID: {
             mergeResGetAllReportByPlayerId(other.getResGetAllReportByPlayerId());
+            break;
+          }
+          case GETQUESTIONREQUEST: {
+            mergeGetQuestionRequest(other.getGetQuestionRequest());
+            break;
+          }
+          case GETQUESTIONRESPONSE: {
+            mergeGetQuestionResponse(other.getGetQuestionResponse());
             break;
           }
           case DATA_NOT_SET: {
@@ -6472,6 +6620,20 @@ public final class Proto {
                 dataCase_ = 66;
                 break;
               } // case 530
+              case 538: {
+                input.readMessage(
+                    getGetQuestionRequestFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                dataCase_ = 67;
+                break;
+              } // case 538
+              case 546: {
+                input.readMessage(
+                    getGetQuestionResponseFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                dataCase_ = 68;
+                break;
+              } // case 546
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -15876,6 +16038,290 @@ public final class Proto {
         dataCase_ = 66;
         onChanged();
         return resGetAllReportByPlayerIdBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest, edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest.Builder, edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequestOrBuilder> getQuestionRequestBuilder_;
+      /**
+       * <code>.proto.GetQuestionRequest getQuestionRequest = 67;</code>
+       * @return Whether the getQuestionRequest field is set.
+       */
+      @java.lang.Override
+      public boolean hasGetQuestionRequest() {
+        return dataCase_ == 67;
+      }
+      /**
+       * <code>.proto.GetQuestionRequest getQuestionRequest = 67;</code>
+       * @return The getQuestionRequest.
+       */
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest getGetQuestionRequest() {
+        if (getQuestionRequestBuilder_ == null) {
+          if (dataCase_ == 67) {
+            return (edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest) data_;
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest.getDefaultInstance();
+        } else {
+          if (dataCase_ == 67) {
+            return getQuestionRequestBuilder_.getMessage();
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.proto.GetQuestionRequest getQuestionRequest = 67;</code>
+       */
+      public Builder setGetQuestionRequest(edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest value) {
+        if (getQuestionRequestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          getQuestionRequestBuilder_.setMessage(value);
+        }
+        dataCase_ = 67;
+        return this;
+      }
+      /**
+       * <code>.proto.GetQuestionRequest getQuestionRequest = 67;</code>
+       */
+      public Builder setGetQuestionRequest(
+          edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest.Builder builderForValue) {
+        if (getQuestionRequestBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          getQuestionRequestBuilder_.setMessage(builderForValue.build());
+        }
+        dataCase_ = 67;
+        return this;
+      }
+      /**
+       * <code>.proto.GetQuestionRequest getQuestionRequest = 67;</code>
+       */
+      public Builder mergeGetQuestionRequest(edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest value) {
+        if (getQuestionRequestBuilder_ == null) {
+          if (dataCase_ == 67 &&
+              data_ != edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest.getDefaultInstance()) {
+            data_ = edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest.newBuilder((edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest) data_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataCase_ == 67) {
+            getQuestionRequestBuilder_.mergeFrom(value);
+          } else {
+            getQuestionRequestBuilder_.setMessage(value);
+          }
+        }
+        dataCase_ = 67;
+        return this;
+      }
+      /**
+       * <code>.proto.GetQuestionRequest getQuestionRequest = 67;</code>
+       */
+      public Builder clearGetQuestionRequest() {
+        if (getQuestionRequestBuilder_ == null) {
+          if (dataCase_ == 67) {
+            dataCase_ = 0;
+            data_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataCase_ == 67) {
+            dataCase_ = 0;
+            data_ = null;
+          }
+          getQuestionRequestBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.proto.GetQuestionRequest getQuestionRequest = 67;</code>
+       */
+      public edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest.Builder getGetQuestionRequestBuilder() {
+        return getGetQuestionRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.GetQuestionRequest getQuestionRequest = 67;</code>
+       */
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequestOrBuilder getGetQuestionRequestOrBuilder() {
+        if ((dataCase_ == 67) && (getQuestionRequestBuilder_ != null)) {
+          return getQuestionRequestBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataCase_ == 67) {
+            return (edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest) data_;
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.proto.GetQuestionRequest getQuestionRequest = 67;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest, edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest.Builder, edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequestOrBuilder> 
+          getGetQuestionRequestFieldBuilder() {
+        if (getQuestionRequestBuilder_ == null) {
+          if (!(dataCase_ == 67)) {
+            data_ = edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest.getDefaultInstance();
+          }
+          getQuestionRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest, edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest.Builder, edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequestOrBuilder>(
+                  (edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest) data_,
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        dataCase_ = 67;
+        onChanged();
+        return getQuestionRequestBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse, edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse.Builder, edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponseOrBuilder> getQuestionResponseBuilder_;
+      /**
+       * <code>.proto.GetQuestionResponse getQuestionResponse = 68;</code>
+       * @return Whether the getQuestionResponse field is set.
+       */
+      @java.lang.Override
+      public boolean hasGetQuestionResponse() {
+        return dataCase_ == 68;
+      }
+      /**
+       * <code>.proto.GetQuestionResponse getQuestionResponse = 68;</code>
+       * @return The getQuestionResponse.
+       */
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse getGetQuestionResponse() {
+        if (getQuestionResponseBuilder_ == null) {
+          if (dataCase_ == 68) {
+            return (edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse) data_;
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse.getDefaultInstance();
+        } else {
+          if (dataCase_ == 68) {
+            return getQuestionResponseBuilder_.getMessage();
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.proto.GetQuestionResponse getQuestionResponse = 68;</code>
+       */
+      public Builder setGetQuestionResponse(edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse value) {
+        if (getQuestionResponseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          getQuestionResponseBuilder_.setMessage(value);
+        }
+        dataCase_ = 68;
+        return this;
+      }
+      /**
+       * <code>.proto.GetQuestionResponse getQuestionResponse = 68;</code>
+       */
+      public Builder setGetQuestionResponse(
+          edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse.Builder builderForValue) {
+        if (getQuestionResponseBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          getQuestionResponseBuilder_.setMessage(builderForValue.build());
+        }
+        dataCase_ = 68;
+        return this;
+      }
+      /**
+       * <code>.proto.GetQuestionResponse getQuestionResponse = 68;</code>
+       */
+      public Builder mergeGetQuestionResponse(edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse value) {
+        if (getQuestionResponseBuilder_ == null) {
+          if (dataCase_ == 68 &&
+              data_ != edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse.getDefaultInstance()) {
+            data_ = edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse.newBuilder((edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse) data_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataCase_ == 68) {
+            getQuestionResponseBuilder_.mergeFrom(value);
+          } else {
+            getQuestionResponseBuilder_.setMessage(value);
+          }
+        }
+        dataCase_ = 68;
+        return this;
+      }
+      /**
+       * <code>.proto.GetQuestionResponse getQuestionResponse = 68;</code>
+       */
+      public Builder clearGetQuestionResponse() {
+        if (getQuestionResponseBuilder_ == null) {
+          if (dataCase_ == 68) {
+            dataCase_ = 0;
+            data_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataCase_ == 68) {
+            dataCase_ = 0;
+            data_ = null;
+          }
+          getQuestionResponseBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.proto.GetQuestionResponse getQuestionResponse = 68;</code>
+       */
+      public edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse.Builder getGetQuestionResponseBuilder() {
+        return getGetQuestionResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.GetQuestionResponse getQuestionResponse = 68;</code>
+       */
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponseOrBuilder getGetQuestionResponseOrBuilder() {
+        if ((dataCase_ == 68) && (getQuestionResponseBuilder_ != null)) {
+          return getQuestionResponseBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataCase_ == 68) {
+            return (edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse) data_;
+          }
+          return edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.proto.GetQuestionResponse getQuestionResponse = 68;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse, edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse.Builder, edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponseOrBuilder> 
+          getGetQuestionResponseFieldBuilder() {
+        if (getQuestionResponseBuilder_ == null) {
+          if (!(dataCase_ == 68)) {
+            data_ = edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse.getDefaultInstance();
+          }
+          getQuestionResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse, edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse.Builder, edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponseOrBuilder>(
+                  (edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse) data_,
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        dataCase_ = 68;
+        onChanged();
+        return getQuestionResponseBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -28122,6 +28568,12 @@ public final class Proto {
      */
     com.google.protobuf.ByteString
         getHostIdBytes();
+
+    /**
+     * <code>int32 totalPlayer = 5;</code>
+     * @return The totalPlayer.
+     */
+    int getTotalPlayer();
   }
   /**
    * Protobuf type {@code proto.ResJoinRoom}
@@ -28289,6 +28741,17 @@ public final class Proto {
       }
     }
 
+    public static final int TOTALPLAYER_FIELD_NUMBER = 5;
+    private int totalPlayer_ = 0;
+    /**
+     * <code>int32 totalPlayer = 5;</code>
+     * @return The totalPlayer.
+     */
+    @java.lang.Override
+    public int getTotalPlayer() {
+      return totalPlayer_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -28315,6 +28778,9 @@ public final class Proto {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hostId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, hostId_);
       }
+      if (totalPlayer_ != 0) {
+        output.writeInt32(5, totalPlayer_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -28336,6 +28802,10 @@ public final class Proto {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hostId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, hostId_);
+      }
+      if (totalPlayer_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, totalPlayer_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -28360,6 +28830,8 @@ public final class Proto {
           != other.getStatus()) return false;
       if (!getHostId()
           .equals(other.getHostId())) return false;
+      if (getTotalPlayer()
+          != other.getTotalPlayer()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -28379,6 +28851,8 @@ public final class Proto {
       hash = (53 * hash) + getStatus();
       hash = (37 * hash) + HOSTID_FIELD_NUMBER;
       hash = (53 * hash) + getHostId().hashCode();
+      hash = (37 * hash) + TOTALPLAYER_FIELD_NUMBER;
+      hash = (53 * hash) + getTotalPlayer();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -28512,6 +28986,7 @@ public final class Proto {
         sessionId_ = "";
         status_ = 0;
         hostId_ = "";
+        totalPlayer_ = 0;
         return this;
       }
 
@@ -28557,6 +29032,9 @@ public final class Proto {
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.hostId_ = hostId_;
         }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.totalPlayer_ = totalPlayer_;
+        }
       }
 
       @java.lang.Override
@@ -28588,6 +29066,9 @@ public final class Proto {
           hostId_ = other.hostId_;
           bitField0_ |= 0x00000008;
           onChanged();
+        }
+        if (other.getTotalPlayer() != 0) {
+          setTotalPlayer(other.getTotalPlayer());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -28635,6 +29116,11 @@ public final class Proto {
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+              case 40: {
+                totalPlayer_ = input.readInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -28896,6 +29382,38 @@ public final class Proto {
         checkByteStringIsUtf8(value);
         hostId_ = value;
         bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private int totalPlayer_ ;
+      /**
+       * <code>int32 totalPlayer = 5;</code>
+       * @return The totalPlayer.
+       */
+      @java.lang.Override
+      public int getTotalPlayer() {
+        return totalPlayer_;
+      }
+      /**
+       * <code>int32 totalPlayer = 5;</code>
+       * @param value The totalPlayer to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalPlayer(int value) {
+
+        totalPlayer_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 totalPlayer = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalPlayer() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        totalPlayer_ = 0;
         onChanged();
         return this;
       }
@@ -44376,6 +44894,1014 @@ public final class Proto {
 
   }
 
+  public interface GetQuestionRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.GetQuestionRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 questionId = 1;</code>
+     * @return The questionId.
+     */
+    int getQuestionId();
+  }
+  /**
+   * Protobuf type {@code proto.GetQuestionRequest}
+   */
+  public static final class GetQuestionRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.GetQuestionRequest)
+      GetQuestionRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetQuestionRequest.newBuilder() to construct.
+    private GetQuestionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetQuestionRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetQuestionRequest();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_GetQuestionRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_GetQuestionRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest.class, edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest.Builder.class);
+    }
+
+    public static final int QUESTIONID_FIELD_NUMBER = 1;
+    private int questionId_ = 0;
+    /**
+     * <code>int32 questionId = 1;</code>
+     * @return The questionId.
+     */
+    @java.lang.Override
+    public int getQuestionId() {
+      return questionId_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (questionId_ != 0) {
+        output.writeInt32(1, questionId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (questionId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, questionId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest)) {
+        return super.equals(obj);
+      }
+      edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest other = (edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest) obj;
+
+      if (getQuestionId()
+          != other.getQuestionId()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + QUESTIONID_FIELD_NUMBER;
+      hash = (53 * hash) + getQuestionId();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.GetQuestionRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.GetQuestionRequest)
+        edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_GetQuestionRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_GetQuestionRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest.class, edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest.Builder.class);
+      }
+
+      // Construct using edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        questionId_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_GetQuestionRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest getDefaultInstanceForType() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest build() {
+        edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest buildPartial() {
+        edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest result = new edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.questionId_ = questionId_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest) {
+          return mergeFrom((edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest other) {
+        if (other == edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest.getDefaultInstance()) return this;
+        if (other.getQuestionId() != 0) {
+          setQuestionId(other.getQuestionId());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                questionId_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int questionId_ ;
+      /**
+       * <code>int32 questionId = 1;</code>
+       * @return The questionId.
+       */
+      @java.lang.Override
+      public int getQuestionId() {
+        return questionId_;
+      }
+      /**
+       * <code>int32 questionId = 1;</code>
+       * @param value The questionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQuestionId(int value) {
+
+        questionId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 questionId = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearQuestionId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        questionId_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.GetQuestionRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.GetQuestionRequest)
+    private static final edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest();
+    }
+
+    public static edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetQuestionRequest>
+        PARSER = new com.google.protobuf.AbstractParser<GetQuestionRequest>() {
+      @java.lang.Override
+      public GetQuestionRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetQuestionRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetQuestionRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetQuestionResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.GetQuestionResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.proto.Question question = 1;</code>
+     * @return Whether the question field is set.
+     */
+    boolean hasQuestion();
+    /**
+     * <code>.proto.Question question = 1;</code>
+     * @return The question.
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.Question getQuestion();
+    /**
+     * <code>.proto.Question question = 1;</code>
+     */
+    edu.vn.hcmuaf.layer2.proto.Proto.QuestionOrBuilder getQuestionOrBuilder();
+  }
+  /**
+   * Protobuf type {@code proto.GetQuestionResponse}
+   */
+  public static final class GetQuestionResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.GetQuestionResponse)
+      GetQuestionResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetQuestionResponse.newBuilder() to construct.
+    private GetQuestionResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetQuestionResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetQuestionResponse();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_GetQuestionResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_GetQuestionResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse.class, edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse.Builder.class);
+    }
+
+    public static final int QUESTION_FIELD_NUMBER = 1;
+    private edu.vn.hcmuaf.layer2.proto.Proto.Question question_;
+    /**
+     * <code>.proto.Question question = 1;</code>
+     * @return Whether the question field is set.
+     */
+    @java.lang.Override
+    public boolean hasQuestion() {
+      return question_ != null;
+    }
+    /**
+     * <code>.proto.Question question = 1;</code>
+     * @return The question.
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.Question getQuestion() {
+      return question_ == null ? edu.vn.hcmuaf.layer2.proto.Proto.Question.getDefaultInstance() : question_;
+    }
+    /**
+     * <code>.proto.Question question = 1;</code>
+     */
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.QuestionOrBuilder getQuestionOrBuilder() {
+      return question_ == null ? edu.vn.hcmuaf.layer2.proto.Proto.Question.getDefaultInstance() : question_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (question_ != null) {
+        output.writeMessage(1, getQuestion());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (question_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getQuestion());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse)) {
+        return super.equals(obj);
+      }
+      edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse other = (edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse) obj;
+
+      if (hasQuestion() != other.hasQuestion()) return false;
+      if (hasQuestion()) {
+        if (!getQuestion()
+            .equals(other.getQuestion())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasQuestion()) {
+        hash = (37 * hash) + QUESTION_FIELD_NUMBER;
+        hash = (53 * hash) + getQuestion().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.GetQuestionResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.GetQuestionResponse)
+        edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_GetQuestionResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_GetQuestionResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse.class, edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse.Builder.class);
+      }
+
+      // Construct using edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        question_ = null;
+        if (questionBuilder_ != null) {
+          questionBuilder_.dispose();
+          questionBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.internal_static_proto_GetQuestionResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse getDefaultInstanceForType() {
+        return edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse build() {
+        edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse buildPartial() {
+        edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse result = new edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.question_ = questionBuilder_ == null
+              ? question_
+              : questionBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse) {
+          return mergeFrom((edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse other) {
+        if (other == edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse.getDefaultInstance()) return this;
+        if (other.hasQuestion()) {
+          mergeQuestion(other.getQuestion());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getQuestionFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private edu.vn.hcmuaf.layer2.proto.Proto.Question question_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.Question, edu.vn.hcmuaf.layer2.proto.Proto.Question.Builder, edu.vn.hcmuaf.layer2.proto.Proto.QuestionOrBuilder> questionBuilder_;
+      /**
+       * <code>.proto.Question question = 1;</code>
+       * @return Whether the question field is set.
+       */
+      public boolean hasQuestion() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <code>.proto.Question question = 1;</code>
+       * @return The question.
+       */
+      public edu.vn.hcmuaf.layer2.proto.Proto.Question getQuestion() {
+        if (questionBuilder_ == null) {
+          return question_ == null ? edu.vn.hcmuaf.layer2.proto.Proto.Question.getDefaultInstance() : question_;
+        } else {
+          return questionBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.proto.Question question = 1;</code>
+       */
+      public Builder setQuestion(edu.vn.hcmuaf.layer2.proto.Proto.Question value) {
+        if (questionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          question_ = value;
+        } else {
+          questionBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.proto.Question question = 1;</code>
+       */
+      public Builder setQuestion(
+          edu.vn.hcmuaf.layer2.proto.Proto.Question.Builder builderForValue) {
+        if (questionBuilder_ == null) {
+          question_ = builderForValue.build();
+        } else {
+          questionBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.proto.Question question = 1;</code>
+       */
+      public Builder mergeQuestion(edu.vn.hcmuaf.layer2.proto.Proto.Question value) {
+        if (questionBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0) &&
+            question_ != null &&
+            question_ != edu.vn.hcmuaf.layer2.proto.Proto.Question.getDefaultInstance()) {
+            getQuestionBuilder().mergeFrom(value);
+          } else {
+            question_ = value;
+          }
+        } else {
+          questionBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.proto.Question question = 1;</code>
+       */
+      public Builder clearQuestion() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        question_ = null;
+        if (questionBuilder_ != null) {
+          questionBuilder_.dispose();
+          questionBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.proto.Question question = 1;</code>
+       */
+      public edu.vn.hcmuaf.layer2.proto.Proto.Question.Builder getQuestionBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getQuestionFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto.Question question = 1;</code>
+       */
+      public edu.vn.hcmuaf.layer2.proto.Proto.QuestionOrBuilder getQuestionOrBuilder() {
+        if (questionBuilder_ != null) {
+          return questionBuilder_.getMessageOrBuilder();
+        } else {
+          return question_ == null ?
+              edu.vn.hcmuaf.layer2.proto.Proto.Question.getDefaultInstance() : question_;
+        }
+      }
+      /**
+       * <code>.proto.Question question = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          edu.vn.hcmuaf.layer2.proto.Proto.Question, edu.vn.hcmuaf.layer2.proto.Proto.Question.Builder, edu.vn.hcmuaf.layer2.proto.Proto.QuestionOrBuilder> 
+          getQuestionFieldBuilder() {
+        if (questionBuilder_ == null) {
+          questionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              edu.vn.hcmuaf.layer2.proto.Proto.Question, edu.vn.hcmuaf.layer2.proto.Proto.Question.Builder, edu.vn.hcmuaf.layer2.proto.Proto.QuestionOrBuilder>(
+                  getQuestion(),
+                  getParentForChildren(),
+                  isClean());
+          question_ = null;
+        }
+        return questionBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.GetQuestionResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.GetQuestionResponse)
+    private static final edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse();
+    }
+
+    public static edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetQuestionResponse>
+        PARSER = new com.google.protobuf.AbstractParser<GetQuestionResponse>() {
+      @java.lang.Override
+      public GetQuestionResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetQuestionResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetQuestionResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public edu.vn.hcmuaf.layer2.proto.Proto.GetQuestionResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface GetExamRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.GetExamRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -58904,6 +60430,16 @@ public final class Proto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_proto_DeleteQuestionResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_GetQuestionRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_GetQuestionRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_GetQuestionResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_GetQuestionResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_proto_GetExamRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -59028,7 +60564,7 @@ public final class Proto {
   static {
     java.lang.String[] descriptorData = {
       "\n\013Proto.proto\022\005proto\".\n\rPacketWrapper\022\035\n" +
-      "\006packet\030\001 \003(\0132\r.proto.Packet\"\266\032\n\006Packet\022" +
+      "\006packet\030\001 \003(\0132\r.proto.Packet\"\252\033\n\006Packet\022" +
       "#\n\010reqLogin\030\001 \001(\0132\017.proto.ReqLoginH\000\022\'\n\n" +
       "reqRelogin\030\002 \001(\0132\021.proto.ReqReloginH\000\022#\n" +
       "\010resLogin\030\003 \001(\0132\017.proto.ResLoginH\000\022+\n\014re" +
@@ -59113,110 +60649,116 @@ public final class Proto {
       "ReportByHostId\030A \001(\0132\036.proto.ResGetAllRe" +
       "portByHostIdH\000\022E\n\031resGetAllReportByPlaye" +
       "rId\030B \001(\0132 .proto.ResGetAllReportByPlaye" +
-      "rIdH\000B\006\n\004data\".\n\010ReqLogin\022\020\n\010username\030\001 " +
-      "\001(\t\022\020\n\010password\030\002 \001(\t\"-\n\nReqRelogin\022\020\n\010u" +
-      "sername\030\001 \001(\t\022\r\n\005token\030\002 \001(\t\"D\n\010ResLogin" +
-      "\022\016\n\006status\030\001 \001(\005\022\r\n\005token\030\002 \001(\t\022\031\n\004user\030" +
-      "\003 \001(\0132\013.proto.User\"\036\n\014ResUserAlert\022\016\n\006st" +
-      "atus\030\001 \001(\005\"\013\n\tReqLogout\"\033\n\tResLogout\022\016\n\006" +
-      "status\030\001 \001(\005\"\"\n\021ReqForgotPassword\022\r\n\005ema" +
-      "il\030\001 \001(\t\"5\n\027ReqVerifyForgotPassword\022\r\n\005e" +
-      "mail\030\001 \001(\t\022\013\n\003otp\030\002 \001(\t\")\n\027ResVerifyForg" +
-      "otPassword\022\016\n\006status\030\001 \001(\005\"G\n\027ReqChangeP" +
-      "asswordForgot\022\020\n\010password\030\001 \001(\t\022\013\n\003otp\030\002" +
-      " \001(\t\022\r\n\005email\030\003 \001(\t\")\n\027ResChangePassword" +
-      "Forgot\022\016\n\006status\030\001 \001(\005\"#\n\021ResForgotPassw" +
-      "ord\022\016\n\006status\030\001 \001(\005\"`\n\013ReqRegister\022\020\n\010us" +
-      "ername\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\022\017\n\007sponso" +
-      "r\030\003 \001(\t\022\r\n\005phone\030\004 \001(\t\022\r\n\005email\030\005 \001(\t\"\035\n" +
-      "\013ResRegister\022\016\n\006status\030\001 \001(\005\"7\n\021ReqUpdat" +
-      "eUserInfo\022\022\n\nplayerName\030\001 \001(\t\022\016\n\006gender\030" +
-      "\002 \001(\005\"(\n\013ResUserInfo\022\031\n\004user\030\001 \001(\0132\013.pro" +
-      "to.User\"j\n\004User\022\016\n\006userId\030\001 \001(\005\022\020\n\010usern" +
-      "ame\030\002 \001(\t\022\022\n\nplayerName\030\003 \001(\t\022\016\n\006gender\030" +
-      "\004 \001(\005\022\r\n\005email\030\006 \001(\t\022\r\n\005phone\030\007 \001(\t\"/\n\rR" +
-      "eqCreateRoom\022\016\n\006userId\030\001 \001(\005\022\016\n\006testId\030\002" +
-      " \001(\005\"/\n\rResCreateRoom\022\016\n\006status\030\001 \001(\005\022\016\n" +
-      "\006roomId\030\002 \001(\005\"\035\n\013ReqJoinRoom\022\016\n\006roomId\030\001" +
-      " \001(\005\"N\n\013ResJoinRoom\022\014\n\004name\030\001 \001(\t\022\021\n\tses" +
-      "sionId\030\002 \001(\t\022\016\n\006status\030\003 \001(\005\022\016\n\006hostId\030\004" +
-      " \001(\t\"\034\n\nReqOutRoom\022\016\n\006roomId\030\001 \001(\005\"-\n\nRe" +
-      "sOutRoom\022\014\n\004name\030\001 \001(\t\022\021\n\tsessionId\030\002 \001(" +
-      "\t\"-\n\014ReqCloseRoom\022\016\n\006roomId\030\001 \001(\005\022\r\n\005tok" +
-      "en\030\002 \001(\t\"\036\n\014ResCloseRoom\022\016\n\006status\030\001 \001(\005" +
-      "\"(\n\tReqVerify\022\r\n\005email\030\001 \001(\t\022\014\n\004code\030\002 \001" +
-      "(\t\"\033\n\tResVerify\022\016\n\006status\030\001 \001(\005\"=\n\021ReqCh" +
-      "angePassword\022\023\n\013oldPassword\030\001 \001(\t\022\023\n\013new" +
-      "Password\030\002 \001(\t\"#\n\021ResChangePassword\022\016\n\006s" +
-      "tatus\030\001 \001(\005\".\n\021CreateExamRequest\022\031\n\004exam" +
-      "\030\001 \001(\0132\013.proto.Exam\"_\n\022CreateExamRespons" +
-      "e\022\017\n\007success\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\022\016\n\006e" +
-      "xamId\030\003 \001(\005\022\027\n\017firstQuestionId\030\004 \001(\005\".\n\021" +
-      "UpdateExamRequest\022\031\n\004exam\030\001 \001(\0132\013.proto." +
-      "Exam\"6\n\022UpdateExamResponse\022\017\n\007success\030\001 " +
-      "\001(\010\022\017\n\007message\030\002 \001(\t\"3\n\021DeleteExamReques" +
-      "t\022\016\n\006examId\030\001 \001(\005\022\016\n\006userId\030\002 \001(\005\"6\n\022Del" +
-      "eteExamResponse\022\017\n\007success\030\001 \001(\010\022\017\n\007mess" +
-      "age\030\002 \001(\t\"\243\001\n\004Exam\022\016\n\006examId\030\001 \001(\005\022\r\n\005ti" +
-      "tle\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022\"\n\tquesti" +
-      "ons\030\004 \003(\0132\017.proto.Question\022\020\n\010imageUrl\030\005" +
-      " \001(\t\022\016\n\006status\030\006 \001(\005\022\021\n\tcreatedAt\030\007 \001(\t\022" +
-      "\016\n\006userId\030\010 \001(\005\"\253\001\n\010Question\022\024\n\014question" +
-      "Text\030\001 \001(\t\022\020\n\010imageUrl\030\002 \001(\t\022\036\n\007choices\030" +
-      "\003 \003(\0132\r.proto.Choice\022\025\n\rquestionIndex\030\004 " +
-      "\001(\005\022\014\n\004time\030\005 \001(\005\022\022\n\nquestionId\030\006 \001(\005\022\016\n" +
-      "\006examId\030\007 \001(\005\022\016\n\006status\030\010 \001(\005\"\214\001\n\006Choice" +
-      "\022\022\n\nchoiceText\030\001 \001(\t\022\020\n\010imageUrl\030\002 \001(\t\022\021" +
-      "\n\tisCorrect\030\003 \001(\010\022\023\n\013choiceIndex\030\004 \001(\005\022\020" +
-      "\n\010choiceId\030\005 \001(\005\022\022\n\nquestionId\030\006 \001(\005\022\016\n\006" +
-      "status\030\007 \001(\005\"\'\n\025CreateQuestionRequest\022\016\n" +
-      "\006examId\030\001 \001(\005\"=\n\026CreateQuestionResponse\022" +
-      "\017\n\007success\030\001 \001(\010\022\022\n\nquestionId\030\002 \001(\005\":\n\025" +
-      "UpdateQuestionRequest\022!\n\010question\030\001 \001(\0132" +
-      "\017.proto.Question\"]\n\026UpdateQuestionRespon" +
-      "se\022!\n\010question\030\003 \001(\0132\017.proto.Question\022\017\n" +
-      "\007success\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\";\n\025Delet" +
-      "eQuestionRequest\022\022\n\nquestionId\030\001 \001(\005\022\016\n\006" +
-      "userId\030\002 \001(\005\"N\n\026DeleteQuestionResponse\022\022" +
-      "\n\nquestionId\030\003 \001(\005\022\017\n\007success\030\001 \001(\010\022\017\n\007m" +
-      "essage\030\002 \001(\t\" \n\016GetExamRequest\022\016\n\006examId" +
-      "\030\001 \001(\005\",\n\017GetExamResponse\022\031\n\004exam\030\001 \001(\0132" +
-      "\013.proto.Exam\"#\n\021GetAllExamRequest\022\016\n\006use" +
-      "rId\030\001 \001(\005\"/\n\022GetAllExamResponse\022\031\n\004exam\030" +
-      "\001 \003(\0132\013.proto.Exam\">\n\014ReqStartExam\022\016\n\006ro" +
-      "omId\030\001 \001(\005\022\016\n\006examId\030\002 \001(\005\022\016\n\006hostId\030\003 \001" +
-      "(\005\"H\n\014ResStartExam\022\025\n\rexamSessionId\030\001 \001(" +
-      "\005\022!\n\010question\030\002 \001(\0132\017.proto.Question\"<\n\n" +
-      "ReqEndExam\022\016\n\006examId\030\001 \001(\005\022\016\n\006hostId\030\002 \001" +
-      "(\005\022\016\n\006roomId\030\003 \001(\005\"D\n\nResEndExam\022\016\n\006stat" +
-      "us\030\001 \001(\005\022&\n\014resRoomScore\030\002 \001(\0132\020.proto.R" +
-      "oomScore\"H\n\022ReqGetNextQuestion\022\016\n\006examId" +
-      "\030\001 \001(\005\022\022\n\nquestionId\030\002 \001(\005\022\016\n\006roomId\030\003 \001" +
-      "(\005\"^\n\022ResGetNextQuestion\022\016\n\006status\030\001 \001(\005" +
-      "\022!\n\010question\030\002 \001(\0132\017.proto.Question\022\025\n\rt" +
-      "otalQuestion\030\003 \001(\005\"u\n\026ReqCheckQuestionAn" +
-      "swer\022\025\n\rexamSessionId\030\003 \001(\005\022\016\n\006userId\030\001 " +
-      "\001(\005\022\022\n\nquestionId\030\002 \001(\005\022\020\n\010choiceId\030\004 \001(" +
-      "\005\022\016\n\006roomId\030\005 \001(\005\"<\n\026ResCheckQuestionAns" +
-      "wer\022\016\n\006status\030\001 \001(\005\022\022\n\nquestionId\030\002 \001(\005\"" +
-      ",\n\tUserScore\022\020\n\010userName\030\001 \001(\t\022\r\n\005score\030" +
-      "\002 \001(\005\"H\n\tRoomScore\022\025\n\rtotalQuestion\030\002 \001(" +
-      "\005\022$\n\nuserScores\030\001 \003(\0132\020.proto.UserScore\"" +
-      "!\n\017ReqGetRoomScore\022\016\n\006roomId\030\001 \001(\005\"6\n\017Re" +
-      "sGetRoomScore\022#\n\troomScore\030\001 \001(\0132\020.proto" +
-      ".RoomScore\"\215\001\n\006Report\022\025\n\rexamSessionId\030\005" +
-      " \001(\005\022\021\n\tExamTitle\030\001 \001(\t\022\020\n\010HostName\030\002 \001(" +
-      "\t\022\021\n\tstartTime\030\003 \001(\t\022\017\n\007endTime\030\004 \001(\t\022#\n" +
-      "\troomScore\030\006 \001(\0132\020.proto.RoomScore\"%\n\014Re" +
-      "qGetReport\022\025\n\rexamSessionId\030\001 \001(\005\"-\n\014Res" +
-      "GetReport\022\035\n\006report\030\001 \001(\0132\r.proto.Report" +
-      "\")\n\027ReqGetAllReportByHostId\022\016\n\006hostId\030\001 " +
-      "\001(\005\"9\n\027ResGetAllReportByHostId\022\036\n\007report" +
-      "s\030\001 \003(\0132\r.proto.Report\"+\n\031ReqGetAllRepor" +
-      "tByPlayerId\022\016\n\006userId\030\001 \001(\005\";\n\031ResGetAll" +
-      "ReportByPlayerId\022\036\n\007reports\030\001 \003(\0132\r.prot" +
-      "o.ReportB\034\n\032edu.vn.hcmuaf.layer2.protob\006" +
-      "proto3"
+      "rIdH\000\0227\n\022getQuestionRequest\030C \001(\0132\031.prot" +
+      "o.GetQuestionRequestH\000\0229\n\023getQuestionRes" +
+      "ponse\030D \001(\0132\032.proto.GetQuestionResponseH" +
+      "\000B\006\n\004data\".\n\010ReqLogin\022\020\n\010username\030\001 \001(\t\022" +
+      "\020\n\010password\030\002 \001(\t\"-\n\nReqRelogin\022\020\n\010usern" +
+      "ame\030\001 \001(\t\022\r\n\005token\030\002 \001(\t\"D\n\010ResLogin\022\016\n\006" +
+      "status\030\001 \001(\005\022\r\n\005token\030\002 \001(\t\022\031\n\004user\030\003 \001(" +
+      "\0132\013.proto.User\"\036\n\014ResUserAlert\022\016\n\006status" +
+      "\030\001 \001(\005\"\013\n\tReqLogout\"\033\n\tResLogout\022\016\n\006stat" +
+      "us\030\001 \001(\005\"\"\n\021ReqForgotPassword\022\r\n\005email\030\001" +
+      " \001(\t\"5\n\027ReqVerifyForgotPassword\022\r\n\005email" +
+      "\030\001 \001(\t\022\013\n\003otp\030\002 \001(\t\")\n\027ResVerifyForgotPa" +
+      "ssword\022\016\n\006status\030\001 \001(\005\"G\n\027ReqChangePassw" +
+      "ordForgot\022\020\n\010password\030\001 \001(\t\022\013\n\003otp\030\002 \001(\t" +
+      "\022\r\n\005email\030\003 \001(\t\")\n\027ResChangePasswordForg" +
+      "ot\022\016\n\006status\030\001 \001(\005\"#\n\021ResForgotPassword\022" +
+      "\016\n\006status\030\001 \001(\005\"`\n\013ReqRegister\022\020\n\010userna" +
+      "me\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\022\017\n\007sponsor\030\003 " +
+      "\001(\t\022\r\n\005phone\030\004 \001(\t\022\r\n\005email\030\005 \001(\t\"\035\n\013Res" +
+      "Register\022\016\n\006status\030\001 \001(\005\"7\n\021ReqUpdateUse" +
+      "rInfo\022\022\n\nplayerName\030\001 \001(\t\022\016\n\006gender\030\002 \001(" +
+      "\005\"(\n\013ResUserInfo\022\031\n\004user\030\001 \001(\0132\013.proto.U" +
+      "ser\"j\n\004User\022\016\n\006userId\030\001 \001(\005\022\020\n\010username\030" +
+      "\002 \001(\t\022\022\n\nplayerName\030\003 \001(\t\022\016\n\006gender\030\004 \001(" +
+      "\005\022\r\n\005email\030\006 \001(\t\022\r\n\005phone\030\007 \001(\t\"/\n\rReqCr" +
+      "eateRoom\022\016\n\006userId\030\001 \001(\005\022\016\n\006testId\030\002 \001(\005" +
+      "\"/\n\rResCreateRoom\022\016\n\006status\030\001 \001(\005\022\016\n\006roo" +
+      "mId\030\002 \001(\005\"\035\n\013ReqJoinRoom\022\016\n\006roomId\030\001 \001(\005" +
+      "\"c\n\013ResJoinRoom\022\014\n\004name\030\001 \001(\t\022\021\n\tsession" +
+      "Id\030\002 \001(\t\022\016\n\006status\030\003 \001(\005\022\016\n\006hostId\030\004 \001(\t" +
+      "\022\023\n\013totalPlayer\030\005 \001(\005\"\034\n\nReqOutRoom\022\016\n\006r" +
+      "oomId\030\001 \001(\005\"-\n\nResOutRoom\022\014\n\004name\030\001 \001(\t\022" +
+      "\021\n\tsessionId\030\002 \001(\t\"-\n\014ReqCloseRoom\022\016\n\006ro" +
+      "omId\030\001 \001(\005\022\r\n\005token\030\002 \001(\t\"\036\n\014ResCloseRoo" +
+      "m\022\016\n\006status\030\001 \001(\005\"(\n\tReqVerify\022\r\n\005email\030" +
+      "\001 \001(\t\022\014\n\004code\030\002 \001(\t\"\033\n\tResVerify\022\016\n\006stat" +
+      "us\030\001 \001(\005\"=\n\021ReqChangePassword\022\023\n\013oldPass" +
+      "word\030\001 \001(\t\022\023\n\013newPassword\030\002 \001(\t\"#\n\021ResCh" +
+      "angePassword\022\016\n\006status\030\001 \001(\005\".\n\021CreateEx" +
+      "amRequest\022\031\n\004exam\030\001 \001(\0132\013.proto.Exam\"_\n\022" +
+      "CreateExamResponse\022\017\n\007success\030\001 \001(\010\022\017\n\007m" +
+      "essage\030\002 \001(\t\022\016\n\006examId\030\003 \001(\005\022\027\n\017firstQue" +
+      "stionId\030\004 \001(\005\".\n\021UpdateExamRequest\022\031\n\004ex" +
+      "am\030\001 \001(\0132\013.proto.Exam\"6\n\022UpdateExamRespo" +
+      "nse\022\017\n\007success\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\"3\n" +
+      "\021DeleteExamRequest\022\016\n\006examId\030\001 \001(\005\022\016\n\006us" +
+      "erId\030\002 \001(\005\"6\n\022DeleteExamResponse\022\017\n\007succ" +
+      "ess\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\"\243\001\n\004Exam\022\016\n\006e" +
+      "xamId\030\001 \001(\005\022\r\n\005title\030\002 \001(\t\022\023\n\013descriptio" +
+      "n\030\003 \001(\t\022\"\n\tquestions\030\004 \003(\0132\017.proto.Quest" +
+      "ion\022\020\n\010imageUrl\030\005 \001(\t\022\016\n\006status\030\006 \001(\005\022\021\n" +
+      "\tcreatedAt\030\007 \001(\t\022\016\n\006userId\030\010 \001(\005\"\253\001\n\010Que" +
+      "stion\022\024\n\014questionText\030\001 \001(\t\022\020\n\010imageUrl\030" +
+      "\002 \001(\t\022\036\n\007choices\030\003 \003(\0132\r.proto.Choice\022\025\n" +
+      "\rquestionIndex\030\004 \001(\005\022\014\n\004time\030\005 \001(\005\022\022\n\nqu" +
+      "estionId\030\006 \001(\005\022\016\n\006examId\030\007 \001(\005\022\016\n\006status" +
+      "\030\010 \001(\005\"\214\001\n\006Choice\022\022\n\nchoiceText\030\001 \001(\t\022\020\n" +
+      "\010imageUrl\030\002 \001(\t\022\021\n\tisCorrect\030\003 \001(\010\022\023\n\013ch" +
+      "oiceIndex\030\004 \001(\005\022\020\n\010choiceId\030\005 \001(\005\022\022\n\nque" +
+      "stionId\030\006 \001(\005\022\016\n\006status\030\007 \001(\005\"\'\n\025CreateQ" +
+      "uestionRequest\022\016\n\006examId\030\001 \001(\005\"=\n\026Create" +
+      "QuestionResponse\022\017\n\007success\030\001 \001(\010\022\022\n\nque" +
+      "stionId\030\002 \001(\005\":\n\025UpdateQuestionRequest\022!" +
+      "\n\010question\030\001 \001(\0132\017.proto.Question\"]\n\026Upd" +
+      "ateQuestionResponse\022!\n\010question\030\003 \001(\0132\017." +
+      "proto.Question\022\017\n\007success\030\001 \001(\010\022\017\n\007messa" +
+      "ge\030\002 \001(\t\";\n\025DeleteQuestionRequest\022\022\n\nque" +
+      "stionId\030\001 \001(\005\022\016\n\006userId\030\002 \001(\005\"N\n\026DeleteQ" +
+      "uestionResponse\022\022\n\nquestionId\030\003 \001(\005\022\017\n\007s" +
+      "uccess\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\"(\n\022GetQues" +
+      "tionRequest\022\022\n\nquestionId\030\001 \001(\005\"8\n\023GetQu" +
+      "estionResponse\022!\n\010question\030\001 \001(\0132\017.proto" +
+      ".Question\" \n\016GetExamRequest\022\016\n\006examId\030\001 " +
+      "\001(\005\",\n\017GetExamResponse\022\031\n\004exam\030\001 \001(\0132\013.p" +
+      "roto.Exam\"#\n\021GetAllExamRequest\022\016\n\006userId" +
+      "\030\001 \001(\005\"/\n\022GetAllExamResponse\022\031\n\004exam\030\001 \003" +
+      "(\0132\013.proto.Exam\">\n\014ReqStartExam\022\016\n\006roomI" +
+      "d\030\001 \001(\005\022\016\n\006examId\030\002 \001(\005\022\016\n\006hostId\030\003 \001(\005\"" +
+      "H\n\014ResStartExam\022\025\n\rexamSessionId\030\001 \001(\005\022!" +
+      "\n\010question\030\002 \001(\0132\017.proto.Question\"<\n\nReq" +
+      "EndExam\022\016\n\006examId\030\001 \001(\005\022\016\n\006hostId\030\002 \001(\005\022" +
+      "\016\n\006roomId\030\003 \001(\005\"D\n\nResEndExam\022\016\n\006status\030" +
+      "\001 \001(\005\022&\n\014resRoomScore\030\002 \001(\0132\020.proto.Room" +
+      "Score\"H\n\022ReqGetNextQuestion\022\016\n\006examId\030\001 " +
+      "\001(\005\022\022\n\nquestionId\030\002 \001(\005\022\016\n\006roomId\030\003 \001(\005\"" +
+      "^\n\022ResGetNextQuestion\022\016\n\006status\030\001 \001(\005\022!\n" +
+      "\010question\030\002 \001(\0132\017.proto.Question\022\025\n\rtota" +
+      "lQuestion\030\003 \001(\005\"u\n\026ReqCheckQuestionAnswe" +
+      "r\022\025\n\rexamSessionId\030\003 \001(\005\022\016\n\006userId\030\001 \001(\005" +
+      "\022\022\n\nquestionId\030\002 \001(\005\022\020\n\010choiceId\030\004 \001(\005\022\016" +
+      "\n\006roomId\030\005 \001(\005\"<\n\026ResCheckQuestionAnswer" +
+      "\022\016\n\006status\030\001 \001(\005\022\022\n\nquestionId\030\002 \001(\005\",\n\t" +
+      "UserScore\022\020\n\010userName\030\001 \001(\t\022\r\n\005score\030\002 \001" +
+      "(\005\"H\n\tRoomScore\022\025\n\rtotalQuestion\030\002 \001(\005\022$" +
+      "\n\nuserScores\030\001 \003(\0132\020.proto.UserScore\"!\n\017" +
+      "ReqGetRoomScore\022\016\n\006roomId\030\001 \001(\005\"6\n\017ResGe" +
+      "tRoomScore\022#\n\troomScore\030\001 \001(\0132\020.proto.Ro" +
+      "omScore\"\215\001\n\006Report\022\025\n\rexamSessionId\030\005 \001(" +
+      "\005\022\021\n\tExamTitle\030\001 \001(\t\022\020\n\010HostName\030\002 \001(\t\022\021" +
+      "\n\tstartTime\030\003 \001(\t\022\017\n\007endTime\030\004 \001(\t\022#\n\tro" +
+      "omScore\030\006 \001(\0132\020.proto.RoomScore\"%\n\014ReqGe" +
+      "tReport\022\025\n\rexamSessionId\030\001 \001(\005\"-\n\014ResGet" +
+      "Report\022\035\n\006report\030\001 \001(\0132\r.proto.Report\")\n" +
+      "\027ReqGetAllReportByHostId\022\016\n\006hostId\030\001 \001(\005" +
+      "\"9\n\027ResGetAllReportByHostId\022\036\n\007reports\030\001" +
+      " \003(\0132\r.proto.Report\"+\n\031ReqGetAllReportBy" +
+      "PlayerId\022\016\n\006userId\030\001 \001(\005\";\n\031ResGetAllRep" +
+      "ortByPlayerId\022\036\n\007reports\030\001 \003(\0132\r.proto.R" +
+      "eportB\034\n\032edu.vn.hcmuaf.layer2.protob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -59233,7 +60775,7 @@ public final class Proto {
     internal_static_proto_Packet_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Packet_descriptor,
-        new java.lang.String[] { "ReqLogin", "ReqRelogin", "ResLogin", "ResUserAlert", "ReqLogout", "ResLogout", "ReqForgotPassword", "ReqVerifyForgotPassword", "ResVerifyForgotPassword", "ReqChangePasswordForgot", "ResChangePasswordForgot", "ResForgotPassword", "ReqRegister", "ResRegister", "ReqUpdateUserInfo", "ResUserInfo", "ReqCreateRoom", "ResCreateRoom", "ReqJoinRoom", "ResJoinRoom", "ReqOutRoom", "ResOutRoom", "ReqCloseRoom", "ResCloseRoom", "ReqVerify", "ResVerify", "ReqChangePassword", "ResChangePassword", "CreateExamRequest", "CreateExamResponse", "UpdateExamRequest", "UpdateExamResponse", "DeleteExamRequest", "DeleteExamResponse", "GetExamRequest", "GetExamResponse", "GetAllExamRequest", "GetAllExamResponse", "CreateQuestionRequest", "CreateQuestionResponse", "UpdateQuestionRequest", "UpdateQuestionResponse", "DeleteQuestionRequest", "DeleteQuestionResponse", "ReqStartExam", "ResStartExam", "ReqEndExam", "ResEndExam", "ReqGetNextQuestion", "ReqCheckQuestionAnswer", "ResCheckQuestionAnswer", "UserScore", "RoomScore", "Exam", "Question", "Choice", "ResGetNextQuestion", "ReqGetRoomScore", "ResGetRoomScore", "Report", "ReqGetReport", "ResGetReport", "ReqGetAllReportByHostId", "ReqGetAllReportByPlayerId", "ResGetAllReportByHostId", "ResGetAllReportByPlayerId", "Data", });
+        new java.lang.String[] { "ReqLogin", "ReqRelogin", "ResLogin", "ResUserAlert", "ReqLogout", "ResLogout", "ReqForgotPassword", "ReqVerifyForgotPassword", "ResVerifyForgotPassword", "ReqChangePasswordForgot", "ResChangePasswordForgot", "ResForgotPassword", "ReqRegister", "ResRegister", "ReqUpdateUserInfo", "ResUserInfo", "ReqCreateRoom", "ResCreateRoom", "ReqJoinRoom", "ResJoinRoom", "ReqOutRoom", "ResOutRoom", "ReqCloseRoom", "ResCloseRoom", "ReqVerify", "ResVerify", "ReqChangePassword", "ResChangePassword", "CreateExamRequest", "CreateExamResponse", "UpdateExamRequest", "UpdateExamResponse", "DeleteExamRequest", "DeleteExamResponse", "GetExamRequest", "GetExamResponse", "GetAllExamRequest", "GetAllExamResponse", "CreateQuestionRequest", "CreateQuestionResponse", "UpdateQuestionRequest", "UpdateQuestionResponse", "DeleteQuestionRequest", "DeleteQuestionResponse", "ReqStartExam", "ResStartExam", "ReqEndExam", "ResEndExam", "ReqGetNextQuestion", "ReqCheckQuestionAnswer", "ResCheckQuestionAnswer", "UserScore", "RoomScore", "Exam", "Question", "Choice", "ResGetNextQuestion", "ReqGetRoomScore", "ResGetRoomScore", "Report", "ReqGetReport", "ResGetReport", "ReqGetAllReportByHostId", "ReqGetAllReportByPlayerId", "ResGetAllReportByHostId", "ResGetAllReportByPlayerId", "GetQuestionRequest", "GetQuestionResponse", "Data", });
     internal_static_proto_ReqLogin_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_proto_ReqLogin_fieldAccessorTable = new
@@ -59359,7 +60901,7 @@ public final class Proto {
     internal_static_proto_ResJoinRoom_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ResJoinRoom_descriptor,
-        new java.lang.String[] { "Name", "SessionId", "Status", "HostId", });
+        new java.lang.String[] { "Name", "SessionId", "Status", "HostId", "TotalPlayer", });
     internal_static_proto_ReqOutRoom_descriptor =
       getDescriptor().getMessageTypes().get(23);
     internal_static_proto_ReqOutRoom_fieldAccessorTable = new
@@ -59498,140 +61040,152 @@ public final class Proto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_DeleteQuestionResponse_descriptor,
         new java.lang.String[] { "QuestionId", "Success", "Message", });
-    internal_static_proto_GetExamRequest_descriptor =
+    internal_static_proto_GetQuestionRequest_descriptor =
       getDescriptor().getMessageTypes().get(46);
+    internal_static_proto_GetQuestionRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_GetQuestionRequest_descriptor,
+        new java.lang.String[] { "QuestionId", });
+    internal_static_proto_GetQuestionResponse_descriptor =
+      getDescriptor().getMessageTypes().get(47);
+    internal_static_proto_GetQuestionResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_GetQuestionResponse_descriptor,
+        new java.lang.String[] { "Question", });
+    internal_static_proto_GetExamRequest_descriptor =
+      getDescriptor().getMessageTypes().get(48);
     internal_static_proto_GetExamRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_GetExamRequest_descriptor,
         new java.lang.String[] { "ExamId", });
     internal_static_proto_GetExamResponse_descriptor =
-      getDescriptor().getMessageTypes().get(47);
+      getDescriptor().getMessageTypes().get(49);
     internal_static_proto_GetExamResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_GetExamResponse_descriptor,
         new java.lang.String[] { "Exam", });
     internal_static_proto_GetAllExamRequest_descriptor =
-      getDescriptor().getMessageTypes().get(48);
+      getDescriptor().getMessageTypes().get(50);
     internal_static_proto_GetAllExamRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_GetAllExamRequest_descriptor,
         new java.lang.String[] { "UserId", });
     internal_static_proto_GetAllExamResponse_descriptor =
-      getDescriptor().getMessageTypes().get(49);
+      getDescriptor().getMessageTypes().get(51);
     internal_static_proto_GetAllExamResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_GetAllExamResponse_descriptor,
         new java.lang.String[] { "Exam", });
     internal_static_proto_ReqStartExam_descriptor =
-      getDescriptor().getMessageTypes().get(50);
+      getDescriptor().getMessageTypes().get(52);
     internal_static_proto_ReqStartExam_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ReqStartExam_descriptor,
         new java.lang.String[] { "RoomId", "ExamId", "HostId", });
     internal_static_proto_ResStartExam_descriptor =
-      getDescriptor().getMessageTypes().get(51);
+      getDescriptor().getMessageTypes().get(53);
     internal_static_proto_ResStartExam_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ResStartExam_descriptor,
         new java.lang.String[] { "ExamSessionId", "Question", });
     internal_static_proto_ReqEndExam_descriptor =
-      getDescriptor().getMessageTypes().get(52);
+      getDescriptor().getMessageTypes().get(54);
     internal_static_proto_ReqEndExam_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ReqEndExam_descriptor,
         new java.lang.String[] { "ExamId", "HostId", "RoomId", });
     internal_static_proto_ResEndExam_descriptor =
-      getDescriptor().getMessageTypes().get(53);
+      getDescriptor().getMessageTypes().get(55);
     internal_static_proto_ResEndExam_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ResEndExam_descriptor,
         new java.lang.String[] { "Status", "ResRoomScore", });
     internal_static_proto_ReqGetNextQuestion_descriptor =
-      getDescriptor().getMessageTypes().get(54);
+      getDescriptor().getMessageTypes().get(56);
     internal_static_proto_ReqGetNextQuestion_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ReqGetNextQuestion_descriptor,
         new java.lang.String[] { "ExamId", "QuestionId", "RoomId", });
     internal_static_proto_ResGetNextQuestion_descriptor =
-      getDescriptor().getMessageTypes().get(55);
+      getDescriptor().getMessageTypes().get(57);
     internal_static_proto_ResGetNextQuestion_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ResGetNextQuestion_descriptor,
         new java.lang.String[] { "Status", "Question", "TotalQuestion", });
     internal_static_proto_ReqCheckQuestionAnswer_descriptor =
-      getDescriptor().getMessageTypes().get(56);
+      getDescriptor().getMessageTypes().get(58);
     internal_static_proto_ReqCheckQuestionAnswer_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ReqCheckQuestionAnswer_descriptor,
         new java.lang.String[] { "ExamSessionId", "UserId", "QuestionId", "ChoiceId", "RoomId", });
     internal_static_proto_ResCheckQuestionAnswer_descriptor =
-      getDescriptor().getMessageTypes().get(57);
+      getDescriptor().getMessageTypes().get(59);
     internal_static_proto_ResCheckQuestionAnswer_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ResCheckQuestionAnswer_descriptor,
         new java.lang.String[] { "Status", "QuestionId", });
     internal_static_proto_UserScore_descriptor =
-      getDescriptor().getMessageTypes().get(58);
+      getDescriptor().getMessageTypes().get(60);
     internal_static_proto_UserScore_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_UserScore_descriptor,
         new java.lang.String[] { "UserName", "Score", });
     internal_static_proto_RoomScore_descriptor =
-      getDescriptor().getMessageTypes().get(59);
+      getDescriptor().getMessageTypes().get(61);
     internal_static_proto_RoomScore_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_RoomScore_descriptor,
         new java.lang.String[] { "TotalQuestion", "UserScores", });
     internal_static_proto_ReqGetRoomScore_descriptor =
-      getDescriptor().getMessageTypes().get(60);
+      getDescriptor().getMessageTypes().get(62);
     internal_static_proto_ReqGetRoomScore_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ReqGetRoomScore_descriptor,
         new java.lang.String[] { "RoomId", });
     internal_static_proto_ResGetRoomScore_descriptor =
-      getDescriptor().getMessageTypes().get(61);
+      getDescriptor().getMessageTypes().get(63);
     internal_static_proto_ResGetRoomScore_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ResGetRoomScore_descriptor,
         new java.lang.String[] { "RoomScore", });
     internal_static_proto_Report_descriptor =
-      getDescriptor().getMessageTypes().get(62);
+      getDescriptor().getMessageTypes().get(64);
     internal_static_proto_Report_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Report_descriptor,
         new java.lang.String[] { "ExamSessionId", "ExamTitle", "HostName", "StartTime", "EndTime", "RoomScore", });
     internal_static_proto_ReqGetReport_descriptor =
-      getDescriptor().getMessageTypes().get(63);
+      getDescriptor().getMessageTypes().get(65);
     internal_static_proto_ReqGetReport_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ReqGetReport_descriptor,
         new java.lang.String[] { "ExamSessionId", });
     internal_static_proto_ResGetReport_descriptor =
-      getDescriptor().getMessageTypes().get(64);
+      getDescriptor().getMessageTypes().get(66);
     internal_static_proto_ResGetReport_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ResGetReport_descriptor,
         new java.lang.String[] { "Report", });
     internal_static_proto_ReqGetAllReportByHostId_descriptor =
-      getDescriptor().getMessageTypes().get(65);
+      getDescriptor().getMessageTypes().get(67);
     internal_static_proto_ReqGetAllReportByHostId_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ReqGetAllReportByHostId_descriptor,
         new java.lang.String[] { "HostId", });
     internal_static_proto_ResGetAllReportByHostId_descriptor =
-      getDescriptor().getMessageTypes().get(66);
+      getDescriptor().getMessageTypes().get(68);
     internal_static_proto_ResGetAllReportByHostId_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ResGetAllReportByHostId_descriptor,
         new java.lang.String[] { "Reports", });
     internal_static_proto_ReqGetAllReportByPlayerId_descriptor =
-      getDescriptor().getMessageTypes().get(67);
+      getDescriptor().getMessageTypes().get(69);
     internal_static_proto_ReqGetAllReportByPlayerId_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ReqGetAllReportByPlayerId_descriptor,
         new java.lang.String[] { "UserId", });
     internal_static_proto_ResGetAllReportByPlayerId_descriptor =
-      getDescriptor().getMessageTypes().get(68);
+      getDescriptor().getMessageTypes().get(70);
     internal_static_proto_ResGetAllReportByPlayerId_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ResGetAllReportByPlayerId_descriptor,

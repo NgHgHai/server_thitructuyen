@@ -8,6 +8,7 @@ import jakarta.websocket.Session;
 public class ExamHandler implements Subscriber {
     ExamService examService = ExamService.me();
     ReportService reportService = ReportService.me();
+
     @Override
     public void onOpen(Session session, String... params) {
 
@@ -19,64 +20,68 @@ public class ExamHandler implements Subscriber {
             if (packet.hasCreateExamRequest()) {
                 System.out.println("ExamHandler : co req Create exam");
                 session.getAsyncRemote().sendText("da nhan yeu cau Create exam");
-                examService.createExam(session,packet.getCreateExamRequest());
+                examService.createExam(session, packet.getCreateExamRequest());
             }
             if (packet.hasUpdateExamRequest()) {
                 System.out.println("ExamHandler : co req Update exam");
                 session.getAsyncRemote().sendText("da nhan yeu cau Update exam");
-                examService.updateExam(session,packet.getUpdateExamRequest());
+                examService.updateExam(session, packet.getUpdateExamRequest());
             }
             if (packet.hasGetExamRequest()) {
                 System.out.println("ExamHandler : co req get exam");
                 session.getAsyncRemote().sendText("da nhan yeu cau get exam");
-                examService.getExam(session,packet.getGetExamRequest());
+                examService.getExam(session, packet.getGetExamRequest());
             }
             if (packet.hasDeleteExamRequest()) {
                 System.out.println("ExamHandler : co req delete exam");
                 session.getAsyncRemote().sendText("da nhan yeu cau delete exam");
-                examService.deleteExam(session,packet.getDeleteExamRequest());
+                examService.deleteExam(session, packet.getDeleteExamRequest());
             }
             if (packet.hasGetAllExamRequest()) {
                 System.out.println("ExamHandler : co req get all exam");
                 session.getAsyncRemote().sendText("da nhan yeu cau get all exam");
-                examService.getAllExamByUserId(session,packet.getGetAllExamRequest());
+                examService.getAllExamByUserId(session, packet.getGetAllExamRequest());
             }
-            if (packet.hasGetExamRequest()){
+            if (packet.hasGetExamRequest()) {
                 System.out.println("ExamHandler : co req get exam");
                 session.getAsyncRemote().sendText("da nhan yeu cau get exam");
-                examService.getExam(session,packet.getGetExamRequest());
+                examService.getExam(session, packet.getGetExamRequest());
             }
-            if (packet.hasCreateQuestionRequest()){
+            if (packet.hasCreateQuestionRequest()) {
                 System.out.println("ExamHandler : co req update exam");
                 session.getAsyncRemote().sendText("da nhan yeu cau update exam");
-                examService.createQuestion(session,packet.getCreateQuestionRequest());
+                examService.createQuestion(session, packet.getCreateQuestionRequest());
             }
-            if (packet.hasUpdateQuestionRequest()){
+            if (packet.hasUpdateQuestionRequest()) {
                 System.out.println("ExamHandler : co req update exam");
                 session.getAsyncRemote().sendText("da nhan yeu cau update exam");
-                examService.updateQuestion(session,packet.getUpdateQuestionRequest());
+                examService.updateQuestion(session, packet.getUpdateQuestionRequest());
             }
-            if (packet.hasDeleteQuestionRequest()){
+            if (packet.hasDeleteQuestionRequest()) {
                 System.out.println("ExamHandler : co req update exam");
                 session.getAsyncRemote().sendText("da nhan yeu cau update exam");
-                examService.deleteQuestion(session,packet.getDeleteQuestionRequest());
+                examService.deleteQuestion(session, packet.getDeleteQuestionRequest());
             }
-            if (packet.hasReqGetAllReportByHostId()){
+            if (packet.hasReqGetAllReportByHostId()) {
                 System.out.println("ExamHandler : co req get all report by host id");
                 session.getAsyncRemote().sendText("da nhan yeu cau get all report by host id");
-                reportService.getAllReportByHostId(session,packet.getReqGetAllReportByHostId());
+                reportService.getAllReportByHostId(session, packet.getReqGetAllReportByHostId());
             }
-            if (packet.hasReqGetAllReportByPlayerId()){
+            if (packet.hasReqGetAllReportByPlayerId()) {
                 System.out.println("ExamHandler : co req get all report by user id");
                 session.getAsyncRemote().sendText("da nhan yeu cau get all report by user id");
-                reportService.getAllReportByUserId(session,packet.getReqGetAllReportByPlayerId());
+                reportService.getAllReportByUserId(session, packet.getReqGetAllReportByPlayerId());
             }
-            if (packet.hasReqGetReport()){
+            if (packet.hasReqGetReport()) {
                 System.out.println("ExamHandler : co req get report");
                 session.getAsyncRemote().sendText("da nhan yeu cau get report");
-                reportService.getReport(session,packet.getReqGetReport());
+                reportService.getReport(session, packet.getReqGetReport());
             }
-
+            if (packet.hasGetQuestionRequest()) {
+                System.out.println("ExamHandler : co req get question");
+                session.getAsyncRemote().sendText("da nhan yeu cau get question");
+                examService.getQuestion(session, packet.getGetQuestionRequest());
+            }
 
         });
     }

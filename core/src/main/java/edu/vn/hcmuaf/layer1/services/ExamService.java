@@ -29,7 +29,7 @@ public class ExamService extends PoolConnectDAO {
     public Proto.CreateExamResponse createExam(Session session, Proto.CreateExamRequest request) {
         ExamBean examBean = new ExamBean(request.getExam());
         int examId = ExamDAO.insertExam(examBean);
-        QuestionBean questionBean =  QuestionBean.builder().examId(examId).questionIndex(1).build();
+        QuestionBean questionBean = QuestionBean.builder().examId(examId).questionIndex(1).build();
         int firstQuestionId = QuestionDAO.insertQuestion(QuestionBean.builder().examId(examId).questionIndex(1).build());
         for (int i = 1; i <= 4; i++) {
             ChoiceBean choiceBean = new ChoiceBean();
@@ -41,16 +41,9 @@ public class ExamService extends PoolConnectDAO {
         String message = examId != -1 ? "Exam created successfully" : "Failed to create exam";
         System.out.println("ExamService : " + message + " with examId = " + examId);
 
-        Proto.CreateExamResponse response = Proto.CreateExamResponse.newBuilder()
-                .setSuccess(success)
-                .setMessage(message)
-                .setExamId(examId)
-                .setFirstQuestionId(firstQuestionId)
-                .build();
+        Proto.CreateExamResponse response = Proto.CreateExamResponse.newBuilder().setSuccess(success).setMessage(message).setExamId(examId).setFirstQuestionId(firstQuestionId).build();
 
-        sendResponse(session, Proto.Packet.newBuilder()
-                .setCreateExamResponse(response)
-                .build());
+        sendResponse(session, Proto.Packet.newBuilder().setCreateExamResponse(response).build());
 
         return response;
     }
@@ -65,14 +58,9 @@ public class ExamService extends PoolConnectDAO {
 
         String message = success ? "Exam updated successfully" : "Failed to update exam";
         System.out.println("ExamService : " + message + " with examId = " + examBean.getId());
-        Proto.UpdateExamResponse response = Proto.UpdateExamResponse.newBuilder()
-                .setSuccess(success)
-                .setMessage(message)
-                .build();
+        Proto.UpdateExamResponse response = Proto.UpdateExamResponse.newBuilder().setSuccess(success).setMessage(message).build();
 
-        sendResponse(session, Proto.Packet.newBuilder()
-                .setUpdateExamResponse(response)
-                .build());
+        sendResponse(session, Proto.Packet.newBuilder().setUpdateExamResponse(response).build());
         return response;
     }
 
@@ -83,15 +71,11 @@ public class ExamService extends PoolConnectDAO {
         ExamBean examBean = ExamDAO.getCompleteExamById(getExamRequest.getExamId());
 
         Proto.Exam protoExam = ExamConverter.convertExamBeanToProtoExam(examBean, true);
-        Proto.GetExamResponse response = Proto.GetExamResponse.newBuilder()
-                .setExam(protoExam)
-                .build();
+        Proto.GetExamResponse response = Proto.GetExamResponse.newBuilder().setExam(protoExam).build();
 
         System.out.println("ExamService : Get exam with examId = " + protoExam.getExamId());
 
-        sendResponse(session, Proto.Packet.newBuilder()
-                .setGetExamResponse(response)
-                .build());
+        sendResponse(session, Proto.Packet.newBuilder().setGetExamResponse(response).build());
         return response;
     }
 
@@ -104,14 +88,9 @@ public class ExamService extends PoolConnectDAO {
             String message = success ? "Exam deleted successfully" : "Failed to delete exam";
 
             System.out.println("ExamService : " + message + " with examId = " + deleteExamRequest.getExamId());
-            Proto.DeleteExamResponse response = Proto.DeleteExamResponse.newBuilder()
-                    .setSuccess(success)
-                    .setMessage(message)
-                    .build();
+            Proto.DeleteExamResponse response = Proto.DeleteExamResponse.newBuilder().setSuccess(success).setMessage(message).build();
 
-            sendResponse(session, Proto.Packet.newBuilder()
-                    .setDeleteExamResponse(response)
-                    .build());
+            sendResponse(session, Proto.Packet.newBuilder().setDeleteExamResponse(response).build());
             return success;
         } catch (Exception e) {
             e.printStackTrace();
@@ -153,14 +132,9 @@ public class ExamService extends PoolConnectDAO {
         String message = questionId != -1 ? "Question created successfully" : "Failed to create question";
         System.out.println("ExamService : " + message + " with questionId = " + questionId);
 
-        Proto.CreateQuestionResponse response = Proto.CreateQuestionResponse.newBuilder()
-                .setSuccess(success)
-                .setQuestionId(questionId)
-                .build();
+        Proto.CreateQuestionResponse response = Proto.CreateQuestionResponse.newBuilder().setSuccess(success).setQuestionId(questionId).build();
 
-        sendResponse(session, Proto.Packet.newBuilder()
-                .setCreateQuestionResponse(response)
-                .build());
+        sendResponse(session, Proto.Packet.newBuilder().setCreateQuestionResponse(response).build());
 
         return response;
     }
@@ -181,15 +155,9 @@ public class ExamService extends PoolConnectDAO {
         }
         String message = success ? "Question updated successfully" : "Failed to update question";
         System.out.println("ExamService : " + message + " with questionId = " + questionBean.getId());
-        Proto.UpdateQuestionResponse response = Proto.UpdateQuestionResponse.newBuilder()
-                .setQuestion(question)
-                .setSuccess(success)
-                .setMessage(message)
-                .build();
+        Proto.UpdateQuestionResponse response = Proto.UpdateQuestionResponse.newBuilder().setQuestion(question).setSuccess(success).setMessage(message).build();
 
-        sendResponse(session, Proto.Packet.newBuilder()
-                .setUpdateQuestionResponse(response)
-                .build());
+        sendResponse(session, Proto.Packet.newBuilder().setUpdateQuestionResponse(response).build());
         return response;
     }
 
@@ -205,21 +173,22 @@ public class ExamService extends PoolConnectDAO {
         String message = success ? "Question deleted successfully" : "Failed to delete question";
 
         System.out.println("ExamService : " + message + " with questionId = " + deleteQuestionRequest.getQuestionId());
-        Proto.DeleteQuestionResponse response = Proto.DeleteQuestionResponse.newBuilder()
-                .setQuestionId(deleteQuestionRequest.getQuestionId())
-                .setSuccess(success)
-                .setMessage(message)
-                .build();
+        Proto.DeleteQuestionResponse response = Proto.DeleteQuestionResponse.newBuilder().setQuestionId(deleteQuestionRequest.getQuestionId()).setSuccess(success).setMessage(message).build();
 
-        sendResponse(session, Proto.Packet.newBuilder()
-                .setDeleteQuestionResponse(response)
-                .build());
+        sendResponse(session, Proto.Packet.newBuilder().setDeleteQuestionResponse(response).build());
+    }
+
+    public void getQuestion(Session session, Proto.GetQuestionRequest getQuestionRequest) {
+        QuestionBean questionBean = QuestionDAO.getCompleteQuestionById(getQuestionRequest.getQuestionId());
+        Proto.Question protoQuestion = ExamConverter.convertQuestionBeanToQuestion(questionBean, true);
+        Proto.GetQuestionResponse response = Proto.GetQuestionResponse.newBuilder().setQuestion(protoQuestion).build();
+        System.out.println("ExamService : Get question with questionId = " + protoQuestion.getQuestionId());
+        sendResponse(session, Proto.Packet.newBuilder().setGetQuestionResponse(response).build());
     }
 
     private void sendResponse(Session session, Proto.Packet packet) {
         Proto.PacketWrapper packets = Proto.PacketWrapper.newBuilder().addPacket(packet).build();
-        if (session != null && session.isOpen())
-            session.getAsyncRemote().sendObject(packets);
+        if (session != null && session.isOpen()) session.getAsyncRemote().sendObject(packets);
     }
 
 
@@ -228,15 +197,9 @@ public class ExamService extends PoolConnectDAO {
         SessionCache sessionCache = SessionCache.me();
         int userId = sessionCache.get(sessionId).getUser().getUserId();
         List<ExamBean> exams = ExamDAO.getAllExamsByUserId(userId);
-        Proto.GetAllExamResponse response = Proto.GetAllExamResponse.newBuilder()
-                .addAllExam(exams.stream()
-                        .map(examBean -> ExamConverter.convertExamBeanToProtoExam(examBean, false))
-                        .collect(Collectors.toList()))
-                .build();
+        Proto.GetAllExamResponse response = Proto.GetAllExamResponse.newBuilder().addAllExam(exams.stream().map(examBean -> ExamConverter.convertExamBeanToProtoExam(examBean, false)).collect(Collectors.toList())).build();
 
-        sendResponse(session, Proto.Packet.newBuilder()
-                .setGetAllExamResponse(response)
-                .build());
+        sendResponse(session, Proto.Packet.newBuilder().setGetAllExamResponse(response).build());
     }
 //    public void getExamByExamId(Session session, Proto.GetExamRequest request) {
 //        ExamBean examBean = ExamDAO.getCompleteExamById(request.getExamId());
