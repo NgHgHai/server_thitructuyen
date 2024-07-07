@@ -60,8 +60,8 @@ public class ExamAnswerDAO extends PoolConnectDAO {
                             "JOIN users u ON ea.user_id = u.id " +
                             "WHERE ea.exam_session_id = :examSessionId " +
                             "AND c.is_correct = 1 " +
-                            "GROUP BY ea.user_id;" +
-                            "ORDER BY correct_answers DESC")
+                            "GROUP BY ea.user_id " +
+                            "ORDER BY correct_answers DESC;")
                     .bind("examSessionId", examSessionId);
             return query.mapToMap().list().stream().collect(Collectors.toMap(
                     map -> (String) map.get("username"),
