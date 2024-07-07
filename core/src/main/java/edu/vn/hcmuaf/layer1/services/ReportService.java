@@ -40,7 +40,7 @@ public class ReportService {
 
 
             reportBuilder.setStartTime(report.getStartTime().toString());
-            reportBuilder.setEndTime(report.getEndTime().toString());
+            reportBuilder.setEndTime(report.getEndTime()+"");
             reportBuilder.setExamSessionId(report.getId());
             reportList.add(reportBuilder.build());
         }
@@ -63,6 +63,8 @@ public class ReportService {
             String hostName = UserDAO.getUserById(report.getHostId()).getUsername();
             reportBuilder.setExamTitle(examtitle);
             reportBuilder.setHostName(hostName);
+            reportBuilder.setStartTime(report.getStartTime().toString());
+            reportBuilder.setEndTime(report.getEndTime()+"");
         }
         resGetAllReportByPlayerId.addAllReports(reportList);
         Proto.Packet packet = Proto.Packet.newBuilder().setResGetAllReportByPlayerId(resGetAllReportByPlayerId).build();
@@ -79,7 +81,7 @@ public class ReportService {
         reportBuilder.setExamTitle(examtitle);
         reportBuilder.setHostName(hostName);
         reportBuilder.setStartTime(report.getStartTime().toString());
-        reportBuilder.setEndTime(report.getEndTime().toString());
+        reportBuilder.setEndTime(report.getEndTime()+"");
         reportBuilder.setExamSessionId(report.getId());
         //
         Proto.RoomScore.Builder roomScore = Proto.RoomScore.newBuilder();
