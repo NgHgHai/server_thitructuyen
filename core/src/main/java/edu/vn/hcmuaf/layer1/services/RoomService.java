@@ -94,8 +94,7 @@ public class RoomService {
         sessionCache.add(sessionId, sessionContext);// add local cache
         sessionCache.update(sessionContext);// update redis
 
-        // lay ra toan bo sessionId trong phong tu redis
-        List<String> sessionList = roomRedisClusterHelper.getAllUserInRoom(roomId);
+
         // lay ra toan bo session dang online trong server nay
         Set<String> sessionListInServer = SessionCache.me().getKeys();
         System.out.printf("RoomService : sessionListInServer : %s\n", sessionListInServer.toString());
@@ -106,10 +105,16 @@ public class RoomService {
         roomNotify.subscribe(roomId);
         //gethostId
         String hostId = String.valueOf(roomRedisClusterHelper.getRoomContext(roomId).getHostId());
+
+        // lay ra toan bo sessionId trong phong tu redis
+        List<String> sessionList = roomRedisClusterHelper.getAllUserInRoom(roomId);
+
+
         // tao goi tin resJoinRoom
+
 //        Proto.ResJoinRoom resJoinRoom = Proto.ResJoinRoom.newBuilder().setName(sessionContext.getUser().getUsername()).setSessionId(sessionId).build();
         Proto.ResJoinRoom resJoinRoom = Proto.ResJoinRoom.newBuilder().setName(sessionContext.getUser().getUsername()).setStatus(200).setSessionId(sessionId).setHostId(hostId).setTotalPlayer(sessionList.size()).build();
-
+        System.out.println("RoomService : resJoinRoom : " + resJoinRoom);
         Proto.Packet packet = Proto.Packet.newBuilder().setResJoinRoom(resJoinRoom).build();
         Proto.PacketWrapper packetWrapper = Proto.PacketWrapper.newBuilder().addPacket(packet).build();
 

@@ -145,7 +145,7 @@ public class ExamService extends PoolConnectDAO {
 //        }
         Proto.Question question = request.getQuestion();
         QuestionBean questionBean = new QuestionBean(question);
-
+        System.out.println(question);
 
         boolean success = QuestionDAO.updateQuestion(questionBean) > 0;
         List<Proto.Choice> choices = question.getChoicesList();
@@ -154,7 +154,7 @@ public class ExamService extends PoolConnectDAO {
             ChoiceDAO.updateChoice(choiceBean);
         }
         String message = success ? "Question updated successfully" : "Failed to update question";
-        System.out.println("ExamService : " + message + " with questionId = " + questionBean.getId());
+        System.out.println("ExamService : " + message + " with questionId = " + questionBean.getId() + "question_index = " + questionBean.getQuestionIndex());
         Proto.UpdateQuestionResponse response = Proto.UpdateQuestionResponse.newBuilder().setQuestion(question).setSuccess(success).setMessage(message).build();
 
         sendResponse(session, Proto.Packet.newBuilder().setUpdateQuestionResponse(response).build());

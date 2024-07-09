@@ -15,25 +15,25 @@ public class ProcessGameHandler implements Subscriber {
     public void onMessage(Session session, Proto.PacketWrapper message) {
         message.getPacketList().forEach(packet -> {
             if (packet.hasReqStartExam()) {
-                System.out.println("ProcessGameHandler : co req start exam");
+//                System.out.println("ProcessGameHandler : co req start exam");
                 session.getAsyncRemote().sendText("da nhan yeu cau req start exam");
                 // service start exam
                 service.startExam(session,packet.getReqStartExam());
             }
             if(packet.hasReqGetNextQuestion()){
-                System.out.println("ProcessGameHandler : co req get next question");
+//                System.out.println("ProcessGameHandler : co req get next question");
                 session.getAsyncRemote().sendText("da nhan yeu cau req get next question");
                 // service get next question
                 service.nextQuestion(session,packet.getReqGetNextQuestion());
             }
             if(packet.hasReqEndExam()){
-                System.out.println("ProcessGameHandler : co req end exam");
+//                System.out.println("ProcessGameHandler : co req end exam");
                 session.getAsyncRemote().sendText("da nhan yeu cau req end exam");
                 // service end exam
                 service.endExam(session,packet.getReqEndExam());
             }
             if (packet.hasReqCheckQuestionAnswer()){
-                System.out.println("ProcessGameHandler : co req check question answer");
+//                System.out.println("ProcessGameHandler : co req check question answer");
                 session.getAsyncRemote().sendText("da nhan yeu cau req check question answer");
                 // service check question answer
                 service.checkQuestionAnswer(session,packet.getReqCheckQuestionAnswer());

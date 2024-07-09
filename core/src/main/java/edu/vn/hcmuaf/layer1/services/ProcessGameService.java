@@ -130,9 +130,11 @@ public class ProcessGameService extends PoolConnectDAO {
         examSessionBean.setEndTime(new java.sql.Timestamp(System.currentTimeMillis()));
         ExamSessionDAO.updateExamSession(examSessionBean);
 
-
+        Proto.RoomScore resRoomScore = getRoomScore(reqEndExam.getRoomId());
+        System.out.println("end exam success");
+        System.out.println(resRoomScore);
         // tao goi tin tra ve cho client
-        Proto.ResEndExam.Builder resEndExam = Proto.ResEndExam.newBuilder().setResRoomScore(getRoomScore(reqEndExam.getRoomId()));
+        Proto.ResEndExam.Builder resEndExam = Proto.ResEndExam.newBuilder().setResRoomScore(resRoomScore);
         Proto.Packet packet = Proto.Packet.newBuilder().setResEndExam(resEndExam).build();
         Proto.PacketWrapper packetWrapper = Proto.PacketWrapper.newBuilder().addPacket(packet).build();
 
@@ -145,7 +147,13 @@ public class ProcessGameService extends PoolConnectDAO {
         System.out.println("check question answer");
         System.out.println(reqCheckQuestionAnswer);
         // neu user nao da tra loi cau hoi nay roi thi khong cho tra loi nua
-        if (ExamAnswerDAO.checkHasAnswerBySessionIdAndUserIdAndQuestionId(reqCheckQuestionAnswer.getExamSessionId(), reqCheckQuestionAnswer.getQuestionId(), reqCheckQuestionAnswer.getUserId())) {
+        boolean check = ExamAnswerDAO.checkHasAnswerBySessionIdAndUserIdAndQuestionId(reqCheckQuestionAnswer.getExamSessionId(), reqCheckQuestionAnswer.getUserId(), reqCheckQuestionAnswer.getQuestionId());
+        System.out.println(check);
+        System.out.println("check examssID"+ reqCheckQuestionAnswer.getExamSessionId());
+        System.out.println("check userID"+ reqCheckQuestionAnswer.getUserId());
+        System.out.println("check questionID"+ reqCheckQuestionAnswer.getQuestionId());
+
+        if (check) {
             System.out.println("user has answered this question");
             Proto.ResCheckQuestionAnswer.Builder resCheckQuestionAnswer = Proto.ResCheckQuestionAnswer.newBuilder().setStatus(400).setQuestionId(reqCheckQuestionAnswer.getQuestionId());
             Proto.Packet packet = Proto.Packet.newBuilder().setResCheckQuestionAnswer(resCheckQuestionAnswer).build();

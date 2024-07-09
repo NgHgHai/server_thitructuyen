@@ -14,7 +14,7 @@ public class ExamAnswerDAO extends PoolConnectDAO {
 
     public static int insertExamAnswer(ExamAnswerBean examAnswer) {
         return jdbi.withHandle(handle -> {
-            Update update = handle.createUpdate("INSERT INTO exam_answers (exam_session_id, question_id, choice_id, user_id, answer_time) VALUES (:examSessionId, :questionId, :choiceId, :userId, :answerTime)")
+            Update update = handle.createUpdate("INSERT INTO exam_answers (exam_session_id, question_id, choice_id, user_id) VALUES (:examSessionId, :questionId, :choiceId, :userId)")
                     .bindBean(examAnswer);
             return update.executeAndReturnGeneratedKeys("id").mapTo(int.class).findOnly();
         });
